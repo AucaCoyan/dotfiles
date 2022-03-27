@@ -34,4 +34,8 @@ Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to star
 
 # Contributing
 
-Do you think I missed something? do you know a better way to do something? do you have questions on any lines? Let me know at: [aucacoyan@gmail.com](mailto:aucacoyan@gmail.com) or by submitting an issue or PR. They are always welcome!
+Do you think I missed something? do you know a better way to do something? do you have questions on any lines?
+
+Let me know at: [aucacoyan@gmail.com](mailto:aucacoyan@gmail.com) or by submitting an issue or PR.
+
+They are always welcome!
