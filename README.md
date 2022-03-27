@@ -15,7 +15,7 @@ My config files
 -->
 
 [Files](#features) •
-[Installation](#installation) •
+[Walkthrough](#walkthrough) •
 [Contributing](#contributing)
 
 </div>
