@@ -52,6 +52,7 @@ Plug 'jiangmiao/auto-pairs'                     " Automatically close parenthesi
 Plug 'ap/vim-css-color'                         " fancy color highligter for CSS
 Plug 'tpope/vim-fugitive'                       " a git wrapper
 Plug 'rbong/vim-flog'                           " a git branch viewer
+Plug 'airblade/vim-gitgutter'                   " see + - and ~ on the left of the line numbers
 Plug 'wakatime/vim-wakatime'                    " Wakatime for counting time coding
 Plug 'andweeb/presence.nvim'                    " discord rich presence
 Plug 'junegunn/vim-emoji'                       " emojis in vim
@@ -62,6 +63,7 @@ Plug 'ncm2/ncm2'                                " Python autocompletion
 Plug 'roxma/nvim-yarp'                          " requierement for ncm2
 Plug 'fisadev/vim-isort'                        " Automatically sort python imports
 Plug 'jmcantrell/vim-virtualenv'                " vim plugin for working python envs
+Plug 'psf/black', { 'branch': 'stable' }        " black formatter official plugin
 
 " Plug 'ncm2/ncm2-bufword'                        " Completion sources
 " Plug 'ncm2/ncm2-path'                           " ncm2 Filepath completion
@@ -74,6 +76,7 @@ colorscheme shades_of_purple                    " Theme settings
 set termguicolors                               " To make the colorscheme actually work
 let g:python_host_prog = '/usr/bin/python3'
 let g:python3_host_prog = '/usr/bin/python3'
+let g:transparent_enabled = 1                   " transparency only works when you toggle it, documentation doesnt help. Better change the plugin"
 
 " --------------- PlugIn Settings ---------------  "
 " Telescope to search files on the project. Settings
@@ -82,7 +85,7 @@ nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<cr>
 nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
-
+" vim-airline settings
 let g:shades_of_purple_airline = 1
 let g:airline_theme='shades_of_purple'
 if !exists('g:airline_symbols')                 " Add airline symbols to vim-airline
@@ -102,9 +105,17 @@ let g:airline_symbols.linenr = '☰'
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 
+" vim-gitgutter
+let g:gitgutter_highlight_lines = 1
+set updatetime=100                              " which determines how long (in
+                                                " milliseconds) the plugin will wait after you stop typing before it updates the
+                                                " signs.  Vim's default is 4000.  I recommend 100.  Note this also controls how
+                                                " long vim waits before writing its swap file.
 
-autocmd BufEnter * call ncm2#enable_for_buffer() " ncm2 settings
+                                                " ncm2 settings
+autocmd BufEnter * call ncm2#enable_for_buffer() 
 
+" NERDTree settings
 let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time. default: 0
 let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
 let g:NERDTreeGitStatusIndicatorMapCustom = {
@@ -125,8 +136,10 @@ set completeopt=noinsert,menuone,noselect
 
 " -------- CoC Config -------- 
 "  After you installed CoC, run
-"  :CocInstall marketplace
+"  :CocInstall coc-marketplace
 "  to instal a looooong list with all the plugins available.
+"  list them with
+"  :CocList marketplace
 "  I instaled:
 "  :CocInstall coc-pyright coc-html coc-css coc-sql coc-toml coc-markdownlint
 "  coc-json coc-htmldjango
