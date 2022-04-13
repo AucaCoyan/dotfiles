@@ -119,3 +119,4 @@ fi
 # fzf keybindings to bash
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
+. "$HOME/.cargo/env"
