@@ -1,6 +1,7 @@
 " General default vim settings "
 set encoding=utf-8
-set tabstop=4 softtabstop=4		" tabs goes 4 spaces, not 8 (default)
+set tabstop=8                   " you shouldn't change the default tabstop value
+set softtabstop=4		        " check https://www.reddit.com/r/vim/wiki/tabstop
 set shiftwidth=4
 set expandtab 					" converts tabs to spaces. Real tab with Ctrl-V <Tab>
 set shiftwidth					" changes the spaces inserted for indentation
@@ -13,13 +14,6 @@ set smartcase                   " ignore case if all lowercase (for searching)
 set nobackup                    " CoC has some problems with backups
 set nowritebackup               " I live on the edge
 set scrolloff=5                 " leave 5 lines below the cursor when scrolling down, and viceversa
-
-" --- Auto-install vim-plug if not already installed --- "
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source ~/.vimrc
-endif 
 
 
 call plug#begin()
@@ -40,11 +34,6 @@ Plug 'mbbill/undotree'                          " for unlimited power Ctrl Z
 Plug 'preservim/nerdtree' |                     " folder tree for vim
         \ Plug 'Xuyuanp/nerdtree-git-plugin'    " git icons for nerdtree
 
-Plug 'ncm2/ncm2'                                " Completion-[dep]: nvim-0.2.2, nvim-yarp, python3
-Plug 'ncm2/ncm2-bufword'                        " Completes words in buffer
-Plug 'ncm2/ncm2-path'                           " Completes paths
-Plug 'roxma/nvim-yarp'                          " remote plugin framework required for ncm2
-
 " General code plugins
 Plug 'sheerun/vim-polyglot'                     " Solid language pack for vim
 Plug 'vim-syntastic/syntastic'                  " Syntax checker for vim
@@ -59,15 +48,15 @@ Plug 'junegunn/vim-emoji'                       " emojis in vim
 
 " Pythonic thingies
 Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' } " Python syntax highliting
-Plug 'ncm2/ncm2'                                " Python autocompletion
-Plug 'roxma/nvim-yarp'                          " requierement for ncm2
-Plug 'fisadev/vim-isort'                        " Automatically sort python imports
 Plug 'jmcantrell/vim-virtualenv'                " vim plugin for working python envs
 Plug 'psf/black', { 'branch': 'stable' }        " black formatter official plugin
+Plug 'fisadev/vim-isort'                        " Automatically sort python imports
+                                                " call :Isort or go visual
+                                                " mode and press Ctrl-i
 
-" Plug 'ncm2/ncm2-bufword'                        " Completion sources
-" Plug 'ncm2/ncm2-path'                           " ncm2 Filepath completion
- 
+" Go thingies
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' } " Go dev plugin
+
 " Always add vim-devicons as the last one!
 Plug 'ryanoasis/vim-devicons'                   " devicons for nerdtree
 call plug#end()
@@ -106,14 +95,12 @@ let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.dirty='⚡'
 
 " vim-gitgutter
-let g:gitgutter_highlight_lines = 1
+let g:gitgutter_highlight_lines = 0
 set updatetime=100                              " which determines how long (in
                                                 " milliseconds) the plugin will wait after you stop typing before it updates the
                                                 " signs.  Vim's default is 4000.  I recommend 100.  Note this also controls how
                                                 " long vim waits before writing its swap file.
 
-                                                " ncm2 settings
-autocmd BufEnter * call ncm2#enable_for_buffer() 
 
 " NERDTree settings
 let g:NERDTreeGitStatusShowIgnored = 1 " a heavy feature may cost much more time. default: 0
@@ -130,9 +117,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Clean'     :'✔︎',
                 \ 'Unknown'   :'?',
                 \ }
-" IMPORTANT: :help Ncm2PopupOpen for more info
-set completeopt=noinsert,menuone,noselect
-
 
 " -------- CoC Config -------- 
 "  After you installed CoC, run

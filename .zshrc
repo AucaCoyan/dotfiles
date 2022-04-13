@@ -83,7 +83,7 @@ ZSH_THEME="agnoster"
 plugins=(git                        # git
          colored-man-pages          # add colors to manpages
          colorize                   # cat syntax highlight support
-         command-not-found          # suggest package name with relevan command
+         command-not-found          # suggest package name with relevant command
          cp                         # cp now has a progress bar
         #vi-mode                    # vi-mode in zsh.... wait what?
          themes                     # theme switcher (w/o editing .zshrc)
@@ -115,7 +115,7 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 # Example aliases
-# alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 # change gnu's ls for exa, a more advanced list explorer
@@ -126,11 +126,20 @@ alias ls="exa --long --sort=type"
 
 # enable 'config' alias for configuring dotfiles in the $HOME/.cfg folder
 alias config='/usr/bin/git --git-dir=/home/auca/.cfg/ --work-tree=/home/auca'
+alias python3='python3'
 
-# fzf keybindings
+######################################## fzf keybindings ##################################
 # Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
 source /usr/share/doc/fzf/examples/key-bindings.zsh
 
 # Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
 source /usr/share/doc/fzf/examples/completion.zsh
 
+########################################### starship ######################################
+# Install starship/starship in .zshrc 
+# SUSPENDED
+# eval "$(starship init zsh)"
+
+######################################## zsh autocomplete #################################
+# set Tab key to autocomplete
+bindkey '^I' autosuggest-accept
