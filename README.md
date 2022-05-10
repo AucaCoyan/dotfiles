@@ -27,6 +27,7 @@ My config files
 - [x] .bashrc
 - [x] .gitconfig
 - [x] .config/coc/extensions/package.json
+- [x] PowerShell $PROFILE
 
 # Walkthrough
 
