@@ -3,6 +3,47 @@
 - Install `Windows Terminal` from Windows App Store
 - Install `chocolatey`
 - Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
+- install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
+- Go to Windows Terminal Settings / Windows Powershell / Appearece / Font face = `CaskaydiaCove NF`
+- Install [`oh-my-posh`](https://ohmyposh.dev/docs/installation/windows)
+
+  > winget install oh-my-posh
+
+- Copy `jandedobbeleer.omp.json` into `~/jandedobbeleer.omp.json`
+
+  > cd ~/Code/dotfiles/Powershell/
+  > cp jandedobbeler.omp.json ~/
+
+- Install `TerminalIcons`
+
+https://github.com/devblackops/Terminal-Icons
+
+> Install-Module -Name Terminal-Icons -Repository PSGallery
+
+- If you didn't upgrade Powershell, PSReadLineOption won't be available
+  > Set-PSReadLineOption : The prediction plugin source is not supported in this version of PowerShell. The 7.2 or a higher version of PowerShell is required to use this source.
+
+upgrade it via
+
+## Windows Terminal config
+
+[`settings.json` location](https://stackoverflow.com/a/67400504/8552476)
+
+- For configuring the same nerd font for all profiles:
+
+```json
+{
+  "profiles": {
+    "defaults": {
+      "font": {
+        "face": "MesloLGM NF"
+      }
+    }
+  }
+}
+```
+
+[see here](https://ohmyposh.dev/docs/configuration/fonts)
 
 ## possible errors
 
