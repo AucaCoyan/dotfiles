@@ -9,6 +9,7 @@ Plug 'xiyaowong/nvim-transparent'               " make the background transparen
 Plug 'yuttie/comfortable-motion.vim'            " smooth scrolling
 Plug 'vim-airline/vim-airline'                  " Vim Status line
 Plug 'vim-airline/vim-airline-themes'           " And its themes
+Plug 'dag/vim-fish'				" Fish syntax highligting
 call plug#end()
 
 colorscheme shades_of_purple
