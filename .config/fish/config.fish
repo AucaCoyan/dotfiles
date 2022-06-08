@@ -8,6 +8,8 @@ alias fishconfig="nvim ~/.config/fish/config.fish"
 alias nvimconfig="nvim ~/.config/nvim/init.vim"
 alias ls="exa --long --sort=type"
 alias config='/usr/bin/git --git-dir=/home/auca/.cfg/ --work-tree=/home/auca'
+alias explorer='nautilus'
+alias python='python3'
 
 # Set the fish-colored-man plugin to 
 # Solarized Dark & Green highlight
