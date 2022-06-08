@@ -10,6 +10,12 @@ chsh -s /usr/bin/fish
 
 - Install [Fisher](https://github.com/jorgebucaran/fisher#installation)
 
-- Install Tide, fish-colored-man, plugins
+- Copy the fish_plugins and install them
 
 - Copy the config into `~/.config/fish/config.fish`
+
+- Install [bat](https://github.com/sharkdp/bat#installation)
+
+- Install [fd](https://github.com/sharkdp/fd#installation)
+
+- Install [ripgrep](https://github.com/BurntSushi/ripgrep#installation)

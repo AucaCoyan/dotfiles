@@ -2,6 +2,7 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+bind \t accept-autosuggestion
 alias so="source"
 alias zshconfig="nvim ~/.zshrc"
 alias fishconfig="nvim ~/.config/fish/config.fish"
@@ -10,6 +11,10 @@ alias ls="exa --long --sort=type"
 alias config='/usr/bin/git --git-dir=/home/auca/.cfg/ --work-tree=/home/auca'
 alias explorer='nautilus'
 alias python='python3'
+alias bat='batcat'
+alias cat='batcat'
+alias grep='rgrep'
+
 
 # Set the fish-colored-man plugin to 
 # Solarized Dark & Green highlight
