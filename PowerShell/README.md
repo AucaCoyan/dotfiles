@@ -1,6 +1,10 @@
 # How to config Powershell in windows
 
 - Install `Windows Terminal` from Windows App Store
+- Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision)
+
+  > winget install Microsoft.PowerShell
+
 - Install `chocolatey`
 - Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
 - install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
