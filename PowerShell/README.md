@@ -49,6 +49,18 @@ upgrade it via
 
 [see here](https://ohmyposh.dev/docs/configuration/fonts)
 
+## Extra! - Install all the packages of chocolatey
+
+bat
+dart-sdk
+fd
+gh
+less
+neovim
+ripgrep
+ripgrepall
+sass
+
 ## possible errors
 
     oh-my-posh : The term 'oh-my-posh' is not recognized as the name of a cmdlet, function, script file, or operable
