@@ -1,7 +1,13 @@
 # How to config Powershell in windows
 
 - Install `Windows Terminal` from Windows App Store
+- Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision)
+
+  > winget install Microsoft.PowerShell
+
 - Install `chocolatey`
+  Install the packages on the `packages.config` file
+
 - Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
 - install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
 - Go to Windows Terminal Settings / Windows Powershell / Appearece / Font face = `CaskaydiaCove NF`
@@ -44,6 +50,34 @@ upgrade it via
 ```
 
 [see here](https://ohmyposh.dev/docs/configuration/fonts)
+
+## Extra! - Install all the packages of chocolatey
+
+There are some other pkgs that you could install with choco, like:
+
+- git-lfs
+- nodejs.install (18)
+- nodejs-lts (16.15.1)
+- vscode
+- sumatrapdf.install
+- microsoft-windows-terminal
+- slack
+- spotify
+- virtualbox
+- golang
+- postman (or whatever)
+- autohotkey.install
+- everything
+- calibre
+- windirstat
+- qbittorrent
+- whatsapp
+- telegram.install
+- poshgit
+- discord.install
+- obs-studio.install
+- keepassxc
+- steam-client
 
 ## possible errors
 

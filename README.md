@@ -8,6 +8,8 @@ My config files
 ![Lines of code](https://img.shields.io/tokei/lines/github/AucaCoyan/dotfiles)
 
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
+[![Windows](https://badgen.net/badge/icon/windows?icon=windows&label)](https://badgen.net/badge/icon/windows?icon=windows&label)
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/AucaCoyan/dotfiles)
 ![GitHub](https://img.shields.io/github/license/AucaCoyan/dotfiles)
 
