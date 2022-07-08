@@ -1,12 +1,28 @@
 # How to config Powershell in windows
 
 - Install `Windows Terminal` from Windows App Store
+
 - Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision)
 
   > winget install Microsoft.PowerShell
 
 - Install `chocolatey`
-  Install the packages on the `packages.config` file
+
+- Install the packages on the `packages.config` file
+
+| package     | description                                |
+| ----------- | ------------------------------------------ |
+| bat         | better `cat` in rust                       |
+| dart-sdk    | dart language                              |
+| fd          | better `fd` in rust                        |
+| gh          | github CLI                                 |
+| git         | `--distributed-even-if-your-workflow-isnt` |
+| less        | less is more                               |
+| delta       | `git diff` made right in rust              |
+| ripgrep     | better `grep` in rust                      |
+| ripgrep-all | better `ripgrep` in rust                   |
+| sass        | official `sass` library                    |
+| gitui       | CLI UI interface                           |
 
 - Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
 - install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
@@ -30,6 +46,8 @@ https://github.com/devblackops/Terminal-Icons
   > Set-PSReadLineOption : The prediction plugin source is not supported in this version of PowerShell. The 7.2 or a higher version of PowerShell is required to use this source.
 
 upgrade it via
+
+> winget install Microsoft.PowerShell
 
 ## Windows Terminal config
 
@@ -81,6 +99,8 @@ There are some other pkgs that you could install with choco, like:
 
 ## possible errors
 
+oh-my-posh
+
     oh-my-posh : The term 'oh-my-posh' is not recognized as the name of a cmdlet, function, script file, or operable
     program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
     At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:2 char:1
@@ -89,6 +109,8 @@ There are some other pkgs that you could install with choco, like:
         + CategoryInfo          : ObjectNotFound: (oh-my-posh:String) [], CommandNotFoundException
         + FullyQualifiedErrorId : CommandNotFoundException
 
+Terminal-Icons
+
     Import-Module : The specified module 'Terminal-Icons' was not loaded because no valid module file was found in any
     module directory.
     At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:17 char:1
@@ -96,6 +118,8 @@ There are some other pkgs that you could install with choco, like:
     + ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         + CategoryInfo          : ResourceUnavailable: (Terminal-Icons:String) [Import-Module], FileNotFoundException
         + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
+
+PSReadLineOption
 
     Set-PSReadLineOption : A parameter cannot be found that matches parameter name 'PredictionSource'.
     At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:21 char:22
