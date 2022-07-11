@@ -96,6 +96,7 @@ There are some other pkgs that you could install with choco, like:
 - obs-studio.install
 - keepassxc
 - steam-client
+- eartrumpet
 
 ## possible errors
 
