@@ -6,6 +6,12 @@
 
   > winget install Microsoft.PowerShell
 
+⚠️ make sure you select the new `PowerShell` as the default shell!. It has a black icon
+
+- Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
+- install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
+- Go to Windows Terminal Settings / Windows Powershell / Appearece / Font face = `CaskaydiaCove NF`
+
 - Install `chocolatey`
 
 - Install the packages on the `packages.config` file
@@ -24,9 +30,6 @@
 | sass        | official `sass` library                    |
 | gitui       | CLI UI interface                           |
 
-- Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
-- install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
-- Go to Windows Terminal Settings / Windows Powershell / Appearece / Font face = `CaskaydiaCove NF`
 - Install [`oh-my-posh`](https://ohmyposh.dev/docs/installation/windows)
 
   > winget install oh-my-posh
@@ -100,7 +103,7 @@ There are some other pkgs that you could install with choco, like:
 
 ## possible errors
 
-oh-my-posh
+#### oh-my-posh
 
     oh-my-posh : The term 'oh-my-posh' is not recognized as the name of a cmdlet, function, script file, or operable
     program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
@@ -110,7 +113,7 @@ oh-my-posh
         + CategoryInfo          : ObjectNotFound: (oh-my-posh:String) [], CommandNotFoundException
         + FullyQualifiedErrorId : CommandNotFoundException
 
-Terminal-Icons
+#### Terminal-Icons
 
     Import-Module : The specified module 'Terminal-Icons' was not loaded because no valid module file was found in any
     module directory.
@@ -120,7 +123,9 @@ Terminal-Icons
         + CategoryInfo          : ResourceUnavailable: (Terminal-Icons:String) [Import-Module], FileNotFoundException
         + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
 
-PSReadLineOption
+#### PSReadLineOption
+
+Error:
 
     Set-PSReadLineOption : A parameter cannot be found that matches parameter name 'PredictionSource'.
     At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:21 char:22
