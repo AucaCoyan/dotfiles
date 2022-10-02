@@ -16,19 +16,23 @@
 
 - Install the packages on the `packages.config` file
 
-| package     | description                                |
-| ----------- | ------------------------------------------ |
-| bat         | better `cat` in rust                       |
-| dart-sdk    | dart language                              |
-| fd          | better `fd` in rust                        |
-| gh          | github CLI                                 |
-| git         | `--distributed-even-if-your-workflow-isnt` |
-| less        | less is more                               |
-| delta       | `git diff` made right in rust              |
-| ripgrep     | better `grep` in rust                      |
-| ripgrep-all | better `ripgrep` in rust                   |
-| sass        | official `sass` library                    |
-| gitui       | CLI UI interface                           |
+| package     | description                                     |
+| ----------- | ----------------------------------------------- |
+| bat         | better `cat` in rust                            |
+| dart-sdk    | dart language                                   |
+| delta       | `git diff` made right in rust                   |
+| deno        | A modern runtime for JavaScript and TypeScript  |
+| fd          | better `fd` in rust                             |
+| fnm         | fast NodeJS Manager in rust                     |
+| gh          | github CLI                                      |
+| git         | `--distributed-even-if-your-workflow-isnt`      |
+| gitui       | CLI UI interface                                |
+| glow        | Render markdown on the CLI, with pizzazz! 💅🏻    |
+| less        | less is more                                    |
+| neovim      | Vim-fork focused on extensibility and usability |
+| ripgrep     | better `grep` in rust                           |
+| ripgrep-all | better `ripgrep` in rust                        |
+| sass        | official `sass` library                         |
 
 - Install [`oh-my-posh`](https://ohmyposh.dev/docs/installation/windows)
 
