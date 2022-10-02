@@ -1,10 +1,25 @@
 [user]
-	email = forosypaginas@gmail.com
-	name = Auca
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+	email = aucacoyan@gmail.com
+	name = Auca Maillot
 [init]
 	defaultBranch = main
+[core]
+	editor = \"C:\\Users\\aucac\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = true
+
+[merge]
+    conflictstyle = diff3
+
+[diff]
+    colorMoved = default
+
+[commit]
+	template = C:\\Users\\aucac\\.gitmessage.txt
