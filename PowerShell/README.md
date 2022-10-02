@@ -36,7 +36,12 @@
 
 - Modules by PowerShell:
 
-|
+| Version | Name           | Repository | Description                                                                                                                       |
+| ------- | -------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
+| 7.62.0  | oh-my-posh     | PSGallery  | A prompt theme engine for any shell                                                                                               |
+| 2.4.0   | PSFzf          | PSGallery  | A thin wrapper around Fzf (https://github.com/junegunn/fzf). If PSReadline is loaded, this wrapper registers Fzf with the keyboa… |
+| 2.2.2   | PSReadLine     | PSGallery  | Great command line editing in the PowerShell console host                                                                         |
+| 0.9.0   | Terminal-Icons | PSGallery  | PowerShell module to add file icons to terminal based on file extension                                                           |
 
 - Install [`oh-my-posh`](https://ohmyposh.dev/docs/installation/windows)
 
