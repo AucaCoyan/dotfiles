@@ -13,9 +13,6 @@ My config files
 ![GitHub last commit](https://img.shields.io/github/last-commit/AucaCoyan/dotfiles)
 ![GitHub](https://img.shields.io/github/license/AucaCoyan/dotfiles)
 
-<!-- template badges
--->
-
 [Files](#features) •
 [Walkthrough](#walkthrough) •
 [Contributing](#contributing)
@@ -30,6 +27,10 @@ My config files
 - [x] .gitconfig
 - [x] .config/coc/extensions/package.json
 - [x] PowerShell $PROFILE
+- [x] `chocolatey` packages
+- [x] PowerShell modules
+- [x] Winget packages
+- [x] `pipx` packages
 
 # Walkthrough
 

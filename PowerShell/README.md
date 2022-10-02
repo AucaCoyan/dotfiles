@@ -34,6 +34,10 @@
 | ripgrep-all | better `ripgrep` in rust                        |
 | sass        | official `sass` library                         |
 
+- Modules by PowerShell:
+
+|
+
 - Install [`oh-my-posh`](https://ohmyposh.dev/docs/installation/windows)
 
   > winget install oh-my-posh
@@ -56,9 +60,33 @@ upgrade it via
 
 > winget install Microsoft.PowerShell
 
+## Check your installed packages
+
+For `chocolatey` you can run
+
+```sh
+choco list --local-only
+```
+
+And for PowerShell Modules, run:
+
+```sh
+Get-InstalledModule
+```
+
+and from `winget`
+
+```sh
+# to get an infinite list of packages
+winget list
+
+# to export the actually installed
+winget export -o packages.json
+```
+
 ## Windows Terminal config
 
-[`settings.json` location](https://stackoverflow.com/a/67400504/8552476)
+Stackoverflow on [`settings.json` location](https://stackoverflow.com/a/67400504/8552476)
 
 - For configuring the same nerd font for all profiles:
 
