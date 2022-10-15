@@ -25,6 +25,9 @@ Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 
+# colored man-pages
+Import-Module man-highlighting
+
 # `fnm`:
 # load the `.node-version` or `.nvmrc` file on cd and load the NodeJS version correctly
 fnm env --use-on-cd | Out-String | Invoke-Expression
