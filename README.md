@@ -26,7 +26,7 @@ My config files
 - [x] .bashrc
 - [x] .gitconfig
 - [x] .config/coc/extensions/package.json
-- [x] PowerShell $PROFILE
+- [x] PowerShell `$PROFILE`
 - [x] `chocolatey` packages
 - [x] PowerShell modules
 - [x] Winget packages
@@ -35,6 +35,14 @@ My config files
 # Walkthrough
 
 Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to start backing up your dotfiles and to install them on a new system
+
+# Shell preferences
+
+Here is a list of what I would like to have in any shell, and checkmarks indicate if they are currently working with this config.
+
+- [x] tab autocompletion in all or most commands
+- [x] quotes (`'` and `"`) smart autocompletion (like VS Code)
+- [ ] installation script
 
 # Contributing
 
