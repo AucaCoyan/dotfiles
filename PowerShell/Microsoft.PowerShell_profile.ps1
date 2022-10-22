@@ -1,17 +1,38 @@
-# imports for `deno` autocompletion
+# imports for autocompletion
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
+# Full path of scripting directory 
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2#psscriptroot
+$profileDir = $PSScriptRoot;
+
+# Load other profile config files
+foreach ( $includeFile in ("my-aliases") ) {
+    Unblock-File $profileDir\$includeFile.ps1
+    . "$profileDir\$includeFile.ps1"
+    Write-Output "$includedFile imported."
+}
+
+# a bunch of aliases nice functions
+function open($file) {
+    invoke-item $file
+}
+
+function explorer {
+    explorer.exe .
+}
+
+<# function get-path {
+	($Env:Path).Split(";")
+} #>
+
+# Produce UTF-8 by default
+# https://news.ycombinator.com/item?id=12991690
+$PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
+
 # Import the Chocolatey Profile that contains the necessary code to enable
 oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
-# tab-completions to function for `choco`.
-# Be aware that if you are missing these line from your profile, tab completion
-# for `choco` will not function.
-# See https://ch0.co/tab-completion for details.
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-    Import-Module "$ChocolateyProfile"
-}
+
 # Install-Module ZLocation -Scope CurrentUser; Import-Module ZLocation; Add-Content -Value "`r`n`r`nImport-Module ZLocation`r`n" -Encoding utf8 -Path $PROFILE.CurrentUserAllHosts
 # Write-Host -Foreground Green "`n[ZLocation] knows about $((Get-ZLocation).Keys.Count) locations.`n"
 
@@ -55,6 +76,16 @@ Import-Module man-highlighting
 # load the `.node-version` or `.nvmrc` file on cd and load the NodeJS version correctly
 fnm env --use-on-cd | Out-String | Invoke-Expression
 # more on `fnm` autocompletion below!
+
+# -------------------------------------------------------------------------------------
+# chocolatey autocompletion
+# Be aware that if you are missing these line from your profile, tab completion
+# for `choco` will not function.
+# See https://ch0.co/tab-completion for details.
+$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
+if (Test-Path($ChocolateyProfile)) {
+    Import-Module "$ChocolateyProfile"
+}
 
 # -------------------------------------------------------------------------------------
 # deno autocompletion
@@ -1045,7 +1076,7 @@ Register-ArgumentCompleter -CommandName 'gh' -ScriptBlock {
 }
 
 # -------------------------------------------------------------------------------------
-# powershell completion for glab (gitlab CLI)
+# powershell autocompletion for glab (gitlab CLI)
 
 function __glab_debug {
     if ($env:BASH_COMP_DEBUG_FILE) {

@@ -43,6 +43,7 @@ Here is a list of what I would like to have in any shell, and checkmarks indicat
 - [x] tab autocompletion in all or most commands
 - [x] quotes (`'` and `"`) smart autocompletion (like VS Code)
 - [ ] installation script
+- [ ] aliases in a separated file
 
 # Contributing
 
