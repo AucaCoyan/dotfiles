@@ -116,6 +116,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# autocompletion for all-repos
+eval "$(all-repos-complete -C ~/all-repos/all-repos.json --bash)"
+
+# Bun config
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
 # fzf keybindings to bash
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
