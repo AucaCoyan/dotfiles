@@ -4,7 +4,7 @@
 [init]
 	defaultBranch = main
 [core]
-	editor = \"C:\\Users\\aucac\\AppData\\Local\\Programs\\Microsoft VS Code\\bin\\code\" --wait
+	editor = code --wait
     pager = delta
 
 [interactive]
@@ -22,4 +22,4 @@
     colorMoved = default
 
 [commit]
-	template = C:\\Users\\aucac\\.gitmessage.txt
+	template = ~\\.gitmessage.txt
