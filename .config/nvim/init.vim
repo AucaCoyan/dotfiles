@@ -2,6 +2,8 @@
 " syntax on
 set relativenumber
 set number
+set tabstop=4
+set shiftwidth=4
 
 call plug#begin()
 Plug 'Rigellute/shades-of-purple.vim'           " based on shades-of-purple-vscode
@@ -9,7 +11,7 @@ Plug 'xiyaowong/nvim-transparent'               " make the background transparen
 Plug 'yuttie/comfortable-motion.vim'            " smooth scrolling
 Plug 'vim-airline/vim-airline'                  " Vim Status line
 Plug 'vim-airline/vim-airline-themes'           " And its themes
-Plug 'dag/vim-fish'				" Fish syntax highligting
+Plug 'dag/vim-fish'								" Fish syntax highlighting
 call plug#end()
 
 colorscheme shades_of_purple
