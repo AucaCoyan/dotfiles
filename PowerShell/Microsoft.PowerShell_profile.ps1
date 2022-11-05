@@ -41,7 +41,14 @@ Import-Module -Name Terminal-Icons
 
 # Predictive intellisense
 Import-Module PSReadLine
-Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+if ($PSVersionTable.PSVersion.Major -gt 7)
+{
+    Set-PSReadLineOption -PredictionSource HistoryAndPlugin
+}
+else
+{
+    Write-Output "Boo"
+}
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete #set \t to autocomplete key
