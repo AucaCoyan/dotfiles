@@ -58,10 +58,25 @@ return packer.startup(function(use)
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
+  use "hrsh7th/cmp-nvim-lsp"
+  use "hrsh7th/cmp-nvim-lua" -- autocompletion for `vim.lsp.*`
+
+  -- npm pgk completions on package.json files
+  use {'David-Kunz/cmp-npm', requires = {
+    'nvim-lua/plenary.nvim'
+    }
+  }
 
   -- snippets
   use "L3MON4D3/LuaSnip" --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
+
+  -- LSP
+  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
+  use "neovim/nvim-lspconfig" -- enable LSP
+  use "jose-elias-alvarez/null-ls.nvim" -- for formartters and linters
+  -- use "RRethy/vim-illuminate" -- highlight the current word on the cursor in the screen
 
   -- breadcrups
   --[[

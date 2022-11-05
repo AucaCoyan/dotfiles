@@ -45,6 +45,10 @@ local kind_icons = {
 }
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
+-- setup npm autocompletion
+-- require('cmp-npm').setup({})
+-- currently not working
+
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -60,7 +64,7 @@ cmp.setup {
     ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
     ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
     -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-    ["<C-y>"] = cmp.config.disable, 
+    ["<C-y>"] = cmp.config.disable,
     -- Ctrl E to abort the suggestion
     ["<C-e>"] = cmp.mapping {
       i = cmp.mapping.abort(),
@@ -106,13 +110,16 @@ cmp.setup {
   -- then the word 'abbr' and 
   -- lastly the 'menu' or docs
   formatting = {
-    fields = { "kind", "abbr", "menu" },
+    fields = { "kind", "abbr", "menu"},
     format = function(entry, vim_item)
       -- option 1: only Kind icons
       -- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
       -- option 2: Kind icon and the kind name
-      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
+      vim_item.kind = string.format('%s', kind_icons[vim_item.kind]) -- This concatonates the icons with the name of the item kind
+      -- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
       vim_item.menu = ({
+        nvim_lua = "[NV_LUA]",
+        nvim_lsp = "[LSP]",
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -120,8 +127,12 @@ cmp.setup {
       return vim_item
     end,
   },
+
   sources = {
     -- order of the sources showing 
+    -- { name = "npm", keyword_length = 4 },
+    { name = "nvim_lsp" },
+    { name = "nvim_lua" },
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
