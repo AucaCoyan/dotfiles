@@ -1,0 +1,78 @@
+# Does not insert a new line between shell prompts
+add_newline = false
+
+# Sets the fields of the prompt
+format = """
+$character\
+$username\
+$directory\
+$git_branch\
+$git_commit\
+$git_status\
+"""
+
+[character]
+success_symbol = ""
+error_symbol = "[✘](red)"
+
+[username]
+style_root = "fg:cb4b16 #bg:#103541"
+style_user = "fg:2b8bd2 #bg:#103541"
+format = """
+[ ⚡ $user@$hostname]($style)\
+[](fg:#103541 bg:#2b8bd2)\
+"""
+show_always = false
+
+[hostname]
+# only show hostname when connected to an SSH session
+ssh_only = false
+
+[directory]
+truncation_length = 100
+# cuts the path to the root of repo
+truncate_to_repo = false
+format = """
+[ $path ]($style)\
+[$read_only]($read_only_style)\
+[](fg:#2b8bd2)\
+"""
+style = "bg:#268bd2 fg:#103541"
+resd_only = "🔒"
+read_only_style = "bg:#268bd2"
+home_symbol = "~"
+
+[git_branch]
+format = """\
+[ $symbol$branch ]($style)\
+[](fg:#829916)\
+"""
+symbol = " "
+style = "bg:#829916 fg:#073642"
+# Only show the branch name when not in a detached HEAD state (default: false)
+only_attached = true
+
+[git_commit]
+commit_hash_lenght = 7
+format = """
+[ ~ $hash$tag ]($style)\
+[](fg:#b58922)\
+"""
+style = "bg:#b58922 fg:#073642"
+
+
+
+[git_status]
+format = "([$stashed$staged$modified$renamed$untracked$deleted$conflicted$ahead_behind[](fg:#E0B25D)]($style))"
+conflicted = "${count}"
+ahead = "ﲗ ${count}"
+behind = "ﲔ ${count}"
+diverged = "李 ${ahead_count} ${behind_count}"
+untracked = "  ${count}"
+stashed = " ${count}"
+modified = " 凜${count}"
+staged = "  ${count}"
+renamed = "﫦${count}"
+deleted = " ${count}"
+style = "bg:#E0B25D fg:#000000"
+

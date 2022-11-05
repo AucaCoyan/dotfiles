@@ -1,0 +1,8 @@
+# Does not insert a new line between shell prompts
+add_newline = false
+
+[python]
+symbol = " "
+
+[cmd_duration]
+disabled = true
