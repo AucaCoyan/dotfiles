@@ -10,7 +10,6 @@ $profileDir = $PSScriptRoot;
 foreach ( $includeFile in ("my-aliases") ) {
     Unblock-File $profileDir\$includeFile.ps1
     . "$profileDir\$includeFile.ps1"
-    Write-Output "$includedFile imported."
 }
 
 # a bunch of aliases nice functions
@@ -41,13 +40,13 @@ Import-Module -Name Terminal-Icons
 
 # Predictive intellisense
 Import-Module PSReadLine
-if ($PSVersionTable.PSVersion.Major -gt 7)
+if ($PSVersionTable.PSVersion.Major -ge 7)
 {
     Set-PSReadLineOption -PredictionSource HistoryAndPlugin
 }
 else
 {
-    Write-Output "Boo"
+    Write-Output "HistoryAndPlugin not enabled"
 }
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
