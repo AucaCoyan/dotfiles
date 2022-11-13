@@ -10,6 +10,9 @@ require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
 
+-- telescope
+require("user.telescope")
+
 -- neovide
 require "user.neovide"
 
