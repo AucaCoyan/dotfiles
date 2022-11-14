@@ -4,17 +4,48 @@
 
 - Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision)
 
-  > winget install Microsoft.PowerShell
+```powershell
+winget install Microsoft.PowerShell
+```
 
 ⚠️ make sure you select the new `PowerShell` as the default shell!. It has a black icon
 
-- Copy `Microsoft.PowerShell_profile.ps1` into `echo $PROFILE`
+- Make a `Junction` from this `PowerShell` folder into `echo $PROFILE`
 - install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
-- Go to Windows Terminal Settings / Windows Powershell / Appearece / Font face = `CaskaydiaCove NF`
+- Go to Windows Terminal Settings / Windows Powershell / Appearence / Font face = `CaskaydiaCove NF`
 
-- Install `chocolatey`
+- Install a package manager (`scoop`, `chocolatey` or `winget`)
 
-- Install the packages on the `packages.config` file
+# Option A: `scoop`
+
+I find scoop easy to use, because it install portable apps from the command line. This way the registry it's less modified and cluttered, so in the end you have less install pollution.
+
+Install `scoop` with:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+irm get.scoop.sh | iex
+```
+
+Then, you can import the packages in `scoop-list.json` found in this folder.
+
+# Option B: `chocolatey`
+
+Chocolatey is the first package manager made for windows. It has wide support for a lot of applications.
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+For upgrading run
+
+```
+choco upgrade chocolatey
+```
+
+You can also import and install the packages on the `packages.config` file with `choco install packages.config`
 
 | package     | description                                     |
 | ----------- | ----------------------------------------------- |
@@ -142,15 +173,23 @@ There are some other pkgs that you could install with choco, like:
 
 #### oh-my-posh
 
-    oh-my-posh : The term 'oh-my-posh' is not recognized as the name of a cmdlet, function, script file, or operable
-    program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
-    At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:2 char:1
-    + oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | I ...
-    + ~~~~~~~~~~
-        + CategoryInfo          : ObjectNotFound: (oh-my-posh:String) [], CommandNotFoundException
-        + FullyQualifiedErrorId : CommandNotFoundException
+if you have this error:
+
+```
+oh-my-posh : The term 'oh-my-posh' is not recognized as the name of a cmdlet, function, script file, or operable
+program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:2 char:1
++ oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | I ...
++ ~~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (oh-my-posh:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+```
+
+you need to install `oh my posh`
 
 #### Terminal-Icons
+
+Same here, if you have this error:
 
     Import-Module : The specified module 'Terminal-Icons' was not loaded because no valid module file was found in any
     module directory.
@@ -160,20 +199,4 @@ There are some other pkgs that you could install with choco, like:
         + CategoryInfo          : ResourceUnavailable: (Terminal-Icons:String) [Import-Module], FileNotFoundException
         + FullyQualifiedErrorId : Modules_ModuleNotFound,Microsoft.PowerShell.Commands.ImportModuleCommand
 
-#### PSReadLineOption
-
-Error:
-
-    Set-PSReadLineOption : A parameter cannot be found that matches parameter name 'PredictionSource'.
-    At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:21 char:22
-    + Set-PSReadLineOption -PredictionSource HistoryAndPlugin
-    +                      ~~~~~~~~~~~~~~~~~
-        + CategoryInfo          : InvalidArgument: (:) [Set-PSReadLineOption], ParameterBindingException
-        + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.SetPSReadLineOption
-
-    Set-PSReadLineOption : A parameter cannot be found that matches parameter name 'PredictionViewStyle'.
-    At C:\Users\aucac\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1:22 char:22
-    + Set-PSReadLineOption -PredictionViewStyle ListView
-    +                      ~~~~~~~~~~~~~~~~~~~~
-        + CategoryInfo          : InvalidArgument: (:) [Set-PSReadLineOption], ParameterBindingException
-        + FullyQualifiedErrorId : NamedParameterNotFound,Microsoft.PowerShell.SetPSReadLineOption`
+you need to install `terminal-icons`
