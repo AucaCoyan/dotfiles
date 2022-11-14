@@ -19,7 +19,7 @@ My config files
 
 </div>
 
-# Files
+# Config Files
 
 - [x] vim `init.lua`
 - [x] .zshrc
@@ -30,7 +30,16 @@ My config files
 - [x] `scoop` packages
 - [x] Winget packages
 - [x] PowerShell modules
-- [x] `pipx` packages
+
+# Enviromnent apps
+
+To manage different versions, I use:
+
+- [x] [`fnm`](https://github.com/Schniz/fnm) to manage NodeJS.
+- [x] [`pyenv`](https://github.com/pyenv/pyenv) and [`pyenv-win`](https://github.com/pyenv-win/pyenv-win) to manage Python.
+- [x] [`pipx`](https://github.com/pypa/pipx) to manage common python packages (black, mypy, flake8, all-repos & pipenv)
+
+_Tip: If you don't find `pipx` on PowerShell, try to add manually to PATH_. [Source](https://stackoverflow.com/questions/69686581/the-term-pipx-is-not-recognized-as-the-name-of-a-cmdlet)
 
 # Walkthrough
 
