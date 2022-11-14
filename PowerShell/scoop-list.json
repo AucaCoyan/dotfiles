@@ -1,0 +1,156 @@
+{
+    "apps": [
+        {
+            "Info": "",
+            "Version": "22.01",
+            "Source": "main",
+            "Updated": "2022-11-04T09:05:30.5801572-03:00",
+            "Name": "7zip"
+        },
+        {
+            "Info": "",
+            "Version": "0.22.1",
+            "Source": "main",
+            "Updated": "2022-11-04T15:18:21.0454442-03:00",
+            "Name": "bat"
+        },
+        {
+            "Info": "",
+            "Version": "2.2.2",
+            "Source": "nerd-fonts",
+            "Updated": "2022-11-05T19:54:40.9159203-03:00",
+            "Name": "CascadiaCode-NF"
+        },
+        {
+            "Info": "",
+            "Version": "0.14.0",
+            "Source": "main",
+            "Updated": "2022-11-04T15:21:09.1559503-03:00",
+            "Name": "delta"
+        },
+        {
+            "Info": "",
+            "Version": "8.5.2",
+            "Source": "anderlli0053_DEV-tools",
+            "Updated": "2022-11-11T12:59:21.4907269-03:00",
+            "Name": "fd"
+        },
+        {
+            "Info": "",
+            "Version": "1.31.1",
+            "Source": "main",
+            "Updated": "2022-11-03T17:15:46.5048095-03:00",
+            "Name": "fnm"
+        },
+        {
+            "Info": "",
+            "Version": "2.19.0",
+            "Source": "anderlli0053_DEV-tools",
+            "Updated": "2022-11-08T08:40:53.2823691-03:00",
+            "Name": "Github-CLI"
+        },
+        {
+            "Info": "",
+            "Version": "2022.6.0",
+            "Source": "extras",
+            "Updated": "2022-11-04T09:05:44.9146347-03:00",
+            "Name": "insomnia"
+        },
+        {
+            "Info": "",
+            "Version": "0.10.1",
+            "Source": "extras",
+            "Updated": "2022-11-04T13:20:42.6434356-03:00",
+            "Name": "neovide"
+        },
+        {
+            "Info": "",
+            "Version": "0.8.0",
+            "Source": "main",
+            "Updated": "2022-11-04T13:18:50.0468364-03:00",
+            "Name": "neovim"
+        },
+        {
+            "Info": "",
+            "Version": "12.13.0",
+            "Source": "main",
+            "Updated": "2022-11-05T19:53:17.9667713-03:00",
+            "Name": "oh-my-posh"
+        },
+        {
+            "Info": "",
+            "Version": "10.0.1",
+            "Source": "extras",
+            "Updated": "2022-11-04T09:06:38.1309288-03:00",
+            "Name": "postman"
+        },
+        {
+            "Info": "",
+            "Version": "2.2.6",
+            "Source": "extras",
+            "Updated": "2022-11-05T19:59:32.734299-03:00",
+            "Name": "psreadline"
+        },
+        {
+            "Info": "",
+            "Version": "0.9.6",
+            "Source": "anderlli0053_DEV-tools",
+            "Updated": "2022-11-10T14:05:19.5969829-03:00",
+            "Name": "rga"
+        },
+        {
+            "Info": "",
+            "Version": "13.0.0",
+            "Source": "anderlli0053_DEV-tools",
+            "Updated": "2022-11-10T14:04:26.0039859-03:00",
+            "Name": "ripgrep"
+        },
+        {
+            "Info": "",
+            "Version": "1.25.1",
+            "Source": "main",
+            "Updated": "2022-11-03T17:24:57.8057366-03:00",
+            "Name": "rustup"
+        },
+        {
+            "Info": "",
+            "Version": "0.2.4",
+            "Source": "extras",
+            "Updated": "2022-11-05T20:05:18.4304931-03:00",
+            "Name": "scoop-completion"
+        },
+        {
+            "Info": "",
+            "Version": "0.10.0",
+            "Source": "extras",
+            "Updated": "2022-11-05T19:14:00.8643919-03:00",
+            "Name": "terminal-icons"
+        }
+    ],
+    "buckets": [
+        {
+            "Name": "anderlli0053_DEV-tools",
+            "Source": "https://github.com/anderlli0053/DEV-tools",
+            "Updated": "2022-11-11T12:05:20-03:00",
+            "Manifests": 10761
+        },
+        {
+            "Name": "extras",
+            "Source": "https://github.com/ScoopInstaller/Extras",
+            "Updated": "2022-11-11T09:32:16-03:00",
+            "Manifests": 1729
+        },
+        {
+            "Name": "main",
+            "Source": "https://github.com/ScoopInstaller/Main",
+            "Updated": "2022-11-11T09:31:29-03:00",
+            "Manifests": 1112
+        },
+        {
+            "Name": "nerd-fonts",
+            "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
+            "Updated": "2022-10-24T11:03:46-03:00",
+            "Manifests": 204
+        }
+    ]
+}
