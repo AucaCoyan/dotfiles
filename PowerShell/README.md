@@ -47,25 +47,38 @@ choco upgrade chocolatey
 
 You can also import and install the packages on the `packages.config` file with `choco install packages.config`
 
-| package     | description                                     |
-| ----------- | ----------------------------------------------- |
-| bat         | better `cat` in rust                            |
-| dart-sdk    | dart language                                   |
-| delta       | `git diff` made right in rust                   |
-| deno        | A modern runtime for JavaScript and TypeScript  |
-| fd          | better `fd` in rust                             |
-| fnm         | fast NodeJS Manager in rust                     |
-| gh          | github CLI                                      |
-| git         | `--distributed-even-if-your-workflow-isnt`      |
-| gitui       | CLI UI interface                                |
-| glow        | Render markdown on the CLI, with pizzazz! 💅🏻    |
-| less        | less is more                                    |
-| neovim      | Vim-fork focused on extensibility and usability |
-| ripgrep     | better `grep` in rust                           |
-| ripgrep-all | better `ripgrep` in rust                        |
-| sass        | official `sass` library                         |
+# used modules
 
-- Modules by PowerShell:
+Below you will find the modules I use most of the time.
+
+| package     | description                                           |
+| ----------- | ----------------------------------------------------- |
+| bat         | better `cat` in rust                                  |
+| dart-sdk    | dart language                                         |
+| delta       | `git diff` made right in rust                         |
+| deno        | A modern runtime for JavaScript and TypeScript        |
+| fd          | better `fd` in rust                                   |
+| fnm         | fast NodeJS Manager in rust                           |
+| gh          | github CLI                                            |
+| git         | `--distributed-even-if-your-workflow-isnt`            |
+| gitui       | CLI UI interface                                      |
+| glow        | Render markdown on the CLI, with pizzazz! 💅🏻          |
+| less        | less is more                                          |
+| neovim      | Vim-fork focused on extensibility and usability       |
+| pnpm        | A fast and disk space efficient Node package manager. |
+| pyenv-win   | a simple python version management tool               |
+| ripgrep     | better `grep` in rust                                 |
+| ripgrep-all | better `ripgrep` in rust                              |
+| sass        | official `sass` library                               |
+
+# `npm` modules
+
+| module      | description                                                             |
+| ----------- | ----------------------------------------------------------------------- |
+| gitmoji-cli | A gitmoji interactive command line tool for using emojis on commits. 💻 |
+| pnpm        | _It is installed with scoop_                                            |
+
+# Modules by PowerShell:
 
 | Version | Name           | Repository | Description                                                                                                                       |
 | ------- | -------------- | ---------- | --------------------------------------------------------------------------------------------------------------------------------- |
