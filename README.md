@@ -21,15 +21,15 @@ My config files
 
 # Files
 
-- [x] .vimrc
+- [x] vim `init.lua`
 - [x] .zshrc
 - [x] .bashrc
 - [x] .gitconfig
-- [x] .config/coc/extensions/package.json
 - [x] PowerShell `$PROFILE`
 - [x] `chocolatey` packages
-- [x] PowerShell modules
+- [x] `scoop` packages
 - [x] Winget packages
+- [x] PowerShell modules
 - [x] `pipx` packages
 
 # Walkthrough
