@@ -1,1 +1,4 @@
 .config/nvim/plugin/
+PowerShell/Help/
+PowerShell/Modules/
+PowerShell/Scripts
