@@ -155,6 +155,16 @@ Stackoverflow on [`settings.json` location](https://stackoverflow.com/a/67400504
 
 [see here](https://ohmyposh.dev/docs/configuration/fonts)
 
+## Nice to have symlinks
+
+You can learn what symlinks are [with this Thio Joe video](https://www.youtube.com/watch?v=RDH5IuyPJtk).
+
+Some nice to have symlinks:
+
+- `~\.gitconfig  ~\repos\dotfiles\.gitconfig`
+
+- `~\Downloads  ~\OneDrive\Downloads`
+
 ## Extra! - Install all the packages of chocolatey
 
 There are some other pkgs that you could install with choco, like:
