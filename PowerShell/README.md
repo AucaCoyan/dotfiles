@@ -57,16 +57,18 @@ Below you will find the modules I use most of the time.
 | dart-sdk    | dart language                                         |
 | delta       | `git diff` made right in rust                         |
 | deno        | A modern runtime for JavaScript and TypeScript        |
+| eartrumpet  | Volume control for Windows                            |
 | fd          | better `fd` in rust                                   |
 | fnm         | fast NodeJS Manager in rust                           |
 | gh          | github CLI                                            |
 | git         | `--distributed-even-if-your-workflow-isnt`            |
 | gitui       | CLI UI interface                                      |
 | glow        | Render markdown on the CLI, with pizzazz! 💅🏻          |
-| less        | less is more                                          |
+| less        | less is more (I prefer bat tho)                       |
 | neovim      | Vim-fork focused on extensibility and usability       |
 | pnpm        | A fast and disk space efficient Node package manager. |
 | pyenv-win   | a simple python version management tool               |
+| QuickLook   | Bring macOS "Quick Look" feature to Windows           |
 | ripgrep     | better `grep` in rust                                 |
 | ripgrep-all | better `ripgrep` in rust                              |
 | sass        | official `sass` library                               |
@@ -171,6 +173,7 @@ There are some other pkgs that you could install with choco, like:
 - autohotkey.install
 - everything
 - calibre
+- mailspring
 - windirstat
 - qbittorrent
 - whatsapp
@@ -180,7 +183,6 @@ There are some other pkgs that you could install with choco, like:
 - obs-studio.install
 - keepassxc
 - steam-client
-- eartrumpet
 
 ## possible errors
 
