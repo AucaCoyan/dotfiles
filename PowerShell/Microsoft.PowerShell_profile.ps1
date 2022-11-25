@@ -30,7 +30,9 @@ function explorer {
 $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
 # Import the Chocolatey Profile that contains the necessary code to enable
-oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
+oh-my-posh init pwsh --config 'C:\Users\aucac\scoop\apps\oh-my-posh\current\themes\aliens.omp.json' | Invoke-Expression
+
+# oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
 
 # Install-Module ZLocation -Scope CurrentUser; Import-Module ZLocation; Add-Content -Value "`r`n`r`nImport-Module ZLocation`r`n" -Encoding utf8 -Path $PROFILE.CurrentUserAllHosts
 # Write-Host -Foreground Green "`n[ZLocation] knows about $((Get-ZLocation).Keys.Count) locations.`n"
