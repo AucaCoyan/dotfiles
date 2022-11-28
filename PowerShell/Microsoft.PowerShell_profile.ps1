@@ -29,13 +29,11 @@ function explorer {
 # https://news.ycombinator.com/item?id=12991690
 $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
-# Import the Chocolatey Profile that contains the necessary code to enable
-oh-my-posh init pwsh --config 'C:\Users\aucac\scoop\apps\oh-my-posh\current\themes\aliens.omp.json' | Invoke-Expression
+# oh my posh config
+oh-my-posh init pwsh --config C:\Users\aucac\repos\dotfiles\PowerShell\oh-my-posh.config.json | Invoke-Expression
 
-# oh-my-posh --init --shell pwsh --config ~/jandedobbeleer.omp.json | Invoke-Expression
-
-# Install-Module ZLocation -Scope CurrentUser; Import-Module ZLocation; Add-Content -Value "`r`n`r`nImport-Module ZLocation`r`n" -Encoding utf8 -Path $PROFILE.CurrentUserAllHosts
-# Write-Host -Foreground Green "`n[ZLocation] knows about $((Get-ZLocation).Keys.Count) locations.`n"
+# scoop autocompletion
+Import-Module scoop-completion
 
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
