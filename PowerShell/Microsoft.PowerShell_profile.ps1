@@ -30,7 +30,7 @@ function explorer {
 $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
 # oh my posh config
-oh-my-posh init pwsh --config C:\Users\aucac\repos\dotfiles\PowerShell\oh-my-posh.config.json | Invoke-Expression
+oh-my-posh init pwsh --config ~\repos\dotfiles\PowerShell\oh-my-posh.config.json | Invoke-Expression
 
 # scoop autocompletion
 Import-Module scoop-completion
