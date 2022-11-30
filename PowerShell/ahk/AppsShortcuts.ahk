@@ -16,7 +16,7 @@
     { if WinExist("ahk_exe WindowsTerminal.exe")
         WinActivate ; Use the window found by WinExist.
         else
-            Run 'C:\Windows apps shorcuts\Windows Terminal - Shortcut.lnk'
+            Run 'C:\Windows apps shortcuts\Windows Terminal - Shortcut.lnk'
     }
 
 ; Win + W = Whatsapp
@@ -24,5 +24,5 @@
     { if WinExist("Whatsapp")
         WinActivate ; Use the window found by WinExist.
         else
-            Run 'C:\Windows apps shorcuts\WhatsApp - Shortcut.lnk'
+            Run 'C:\Windows apps shortcuts\WhatsApp - Shortcut.lnk'
     }
