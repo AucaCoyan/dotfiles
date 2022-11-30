@@ -41,7 +41,7 @@
         },
         {
           "type": "git",
-          "background": "#fffb38",
+          "background": "#99ff66",
           "foreground": "#193549",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
