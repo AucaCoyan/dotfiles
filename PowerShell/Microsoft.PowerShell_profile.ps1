@@ -2,6 +2,10 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
+# Produce UTF-8 by default
+# https://news.ycombinator.com/item?id=12991690
+$PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
+
 # Full path of scripting directory 
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2#psscriptroot
 $profileDir = $PSScriptRoot;
@@ -25,9 +29,6 @@ function explorer {
 	($Env:Path).Split(";")
 } #>
 
-# Produce UTF-8 by default
-# https://news.ycombinator.com/item?id=12991690
-$PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
 # oh my posh config
 oh-my-posh init pwsh --config ~\repos\dotfiles\PowerShell\oh-my-posh.config.json | Invoke-Expression
