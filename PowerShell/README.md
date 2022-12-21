@@ -27,7 +27,11 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 ```
 
-Then, you can import the packages in `scoop-list.json` found in this folder.
+Then, you can import the packages in `scoop-list.json` found in this folder like this:
+
+```powershell
+scoop export > .\scoop-list.json
+```
 
 # Option B: `chocolatey`
 
