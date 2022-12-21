@@ -1,156 +1,337 @@
 {
     "apps": [
         {
+            "Source": "main",
+            "Name": "7zip",
             "Info": "",
             "Version": "22.01",
-            "Source": "main",
-            "Updated": "2022-11-04T09:05:30.5801572-03:00",
-            "Name": "7zip"
+            "Updated": "2022-11-21T00:55:39.8245462-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "azuredatastudio",
+            "Info": "",
+            "Version": "1.40.1",
+            "Updated": "2022-12-03T16:59:35.2895995-03:00"
+        },
+        {
+            "Source": "main",
+            "Name": "bat",
             "Info": "",
             "Version": "0.22.1",
-            "Source": "main",
-            "Updated": "2022-11-04T15:18:21.0454442-03:00",
-            "Name": "bat"
+            "Updated": "2022-11-21T00:58:37.8176814-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "calibre",
+            "Info": "",
+            "Version": "6.10.0",
+            "Updated": "2022-12-21T19:45:55.0817423-03:00"
+        },
+        {
+            "Source": "nerd-fonts",
+            "Name": "CascadiaCode-NF",
             "Info": "",
             "Version": "2.2.2",
-            "Source": "nerd-fonts",
-            "Updated": "2022-11-05T19:54:40.9159203-03:00",
-            "Name": "CascadiaCode-NF"
+            "Updated": "2022-11-21T00:58:48.3677097-03:00"
         },
         {
-            "Info": "",
-            "Version": "0.14.0",
-            "Source": "main",
-            "Updated": "2022-11-04T15:21:09.1559503-03:00",
-            "Name": "delta"
-        },
-        {
-            "Info": "",
-            "Version": "8.5.2",
             "Source": "anderlli0053_DEV-tools",
-            "Updated": "2022-11-11T12:59:21.4907269-03:00",
-            "Name": "fd"
+            "Name": "dark",
+            "Info": "",
+            "Version": "3.11.2",
+            "Updated": "2022-11-21T15:00:04.312177-03:00"
         },
         {
-            "Info": "",
-            "Version": "1.31.1",
             "Source": "main",
-            "Updated": "2022-11-03T17:15:46.5048095-03:00",
-            "Name": "fnm"
+            "Name": "delta",
+            "Info": "",
+            "Version": "0.15.1",
+            "Updated": "2022-12-08T17:12:25.9290905-03:00"
         },
         {
-            "Info": "",
-            "Version": "2.19.0",
             "Source": "anderlli0053_DEV-tools",
-            "Updated": "2022-11-08T08:40:53.2823691-03:00",
-            "Name": "Github-CLI"
+            "Name": "discord",
+            "Info": "",
+            "Version": "1.0.9007-14",
+            "Updated": "2022-11-21T10:11:40.948957-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "everything",
             "Info": "",
-            "Version": "2022.6.0",
-            "Source": "extras",
-            "Updated": "2022-11-04T09:05:44.9146347-03:00",
-            "Name": "insomnia"
+            "Version": "1.4.1.1022",
+            "Updated": "2022-12-01T11:37:30.7003959-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "fd",
             "Info": "",
-            "Version": "0.10.1",
-            "Source": "extras",
-            "Updated": "2022-11-04T13:20:42.6434356-03:00",
-            "Name": "neovide"
+            "Version": "8.6.0",
+            "Updated": "2022-12-15T21:26:02.7780606-03:00"
         },
         {
-            "Info": "",
-            "Version": "0.8.0",
             "Source": "main",
-            "Updated": "2022-11-04T13:18:50.0468364-03:00",
-            "Name": "neovim"
+            "Name": "fnm",
+            "Info": "",
+            "Version": "1.33.1",
+            "Updated": "2022-12-08T17:12:27.6093967-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "Github-CLI",
             "Info": "",
-            "Version": "12.13.0",
-            "Source": "main",
-            "Updated": "2022-11-05T19:53:17.9667713-03:00",
-            "Name": "oh-my-posh"
+            "Version": "2.20.2",
+            "Updated": "2022-11-21T00:59:00.2406587-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "gitleaks",
             "Info": "",
-            "Version": "10.0.1",
+            "Version": "8.15.2",
+            "Updated": "2022-12-09T19:20:22.9738606-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "glow",
+            "Info": "",
+            "Version": "1.4.1",
+            "Updated": "2022-11-24T08:31:54.0113508-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "inkscape",
+            "Info": "",
+            "Version": "1.2.1_2022-07-14",
+            "Updated": "2022-12-03T10:06:23.4985997-03:00"
+        },
+        {
             "Source": "extras",
-            "Updated": "2022-11-04T09:06:38.1309288-03:00",
-            "Name": "postman"
+            "Name": "insomnia",
+            "Info": "",
+            "Version": "2022.7.0",
+            "Updated": "2022-12-15T21:26:19.1509714-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "jpegview",
+            "Info": "",
+            "Version": "1.0.37",
+            "Updated": "2022-11-22T08:16:55.7605635-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "microsoft-teams",
+            "Info": "",
+            "Version": "1.5.00.33362",
+            "Updated": "2022-12-15T21:26:36.0773006-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "mpv",
+            "Info": "",
+            "Version": "0.35.0",
+            "Updated": "2022-12-08T09:36:28.9206722-03:00"
+        },
+        {
+            "Source": "extras",
+            "Name": "neovide",
+            "Info": "",
+            "Version": "0.10.3",
+            "Updated": "2022-11-21T00:59:22.9162079-03:00"
+        },
+        {
+            "Source": "main",
+            "Name": "neovim",
+            "Info": "",
+            "Version": "0.8.1",
+            "Updated": "2022-11-21T00:59:34.6625966-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "netcat",
+            "Info": "",
+            "Version": "1.12",
+            "Updated": "2022-12-17T01:14:07.5820332-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "obs-studio",
+            "Info": "",
+            "Version": "28.1.2",
+            "Updated": "2022-11-25T22:40:08.7474275-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "obsidian",
+            "Info": "",
+            "Version": "1.0.3",
+            "Updated": "2022-11-21T10:07:29.1320072-03:00"
+        },
+        {
+            "Source": "main",
+            "Name": "oh-my-posh",
+            "Info": "",
+            "Version": "12.28.2",
+            "Updated": "2022-12-21T19:52:01.9011653-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "peazip",
+            "Info": "",
+            "Version": "9.0.0",
+            "Updated": "2022-12-19T21:00:08.7158671-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "pnpm",
+            "Info": "",
+            "Version": "7.19.0",
+            "Updated": "2022-12-21T19:52:07.3609651-03:00"
+        },
+        {
+            "Source": "extras",
+            "Name": "postman",
+            "Info": "",
+            "Version": "10.6.0",
+            "Updated": "2022-12-15T21:27:10.0682802-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "powertoys",
+            "Info": "",
+            "Version": "0.65.0",
+            "Updated": "2022-12-15T21:27:34.6164112-03:00"
+        },
+        {
+            "Source": "extras",
+            "Name": "psreadline",
             "Info": "",
             "Version": "2.2.6",
-            "Source": "extras",
-            "Updated": "2022-11-05T19:59:32.734299-03:00",
-            "Name": "psreadline"
+            "Updated": "2022-11-21T01:00:01.1193209-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "rga",
             "Info": "",
             "Version": "0.9.6",
-            "Source": "anderlli0053_DEV-tools",
-            "Updated": "2022-11-10T14:05:19.5969829-03:00",
-            "Name": "rga"
+            "Updated": "2022-11-21T01:00:03.6665182-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "ripgrep",
             "Info": "",
             "Version": "13.0.0",
-            "Source": "anderlli0053_DEV-tools",
-            "Updated": "2022-11-10T14:04:26.0039859-03:00",
-            "Name": "ripgrep"
+            "Updated": "2022-11-21T01:00:06.2600025-03:00"
         },
         {
+            "Source": "main",
+            "Name": "rustup",
             "Info": "",
             "Version": "1.25.1",
-            "Source": "main",
-            "Updated": "2022-11-03T17:24:57.8057366-03:00",
-            "Name": "rustup"
+            "Updated": "2022-11-21T01:01:47.7289868-03:00"
         },
         {
+            "Source": "extras",
+            "Name": "scoop-completion",
             "Info": "",
             "Version": "0.2.4",
-            "Source": "extras",
-            "Updated": "2022-11-05T20:05:18.4304931-03:00",
-            "Name": "scoop-completion"
+            "Updated": "2022-11-21T01:01:48.796284-03:00"
         },
         {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "spotify",
+            "Info": "",
+            "Version": "1.2.0.1165.gabf054ab",
+            "Updated": "2022-12-08T17:13:23.360905-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "spotify-tui",
+            "Info": "",
+            "Version": "0.25.0",
+            "Updated": "2022-11-21T10:22:26.8864768-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "stremio",
+            "Info": "",
+            "Version": "4.4.142",
+            "Updated": "2022-11-21T13:30:46.5379648-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "sumatrapdf",
+            "Info": "",
+            "Version": "3.4.6",
+            "Updated": "2022-11-21T01:40:54.9829144-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "telegram",
+            "Info": "",
+            "Version": "4.4.1",
+            "Updated": "2022-12-08T17:13:32.2052132-03:00"
+        },
+        {
+            "Source": "extras",
+            "Name": "terminal-icons",
             "Info": "",
             "Version": "0.10.0",
-            "Source": "extras",
-            "Updated": "2022-11-05T19:14:00.8643919-03:00",
-            "Name": "terminal-icons"
+            "Updated": "2022-11-21T01:01:49.3562667-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "vlc",
+            "Info": "",
+            "Version": "3.0.18",
+            "Updated": "2022-12-08T17:13:45.8935033-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "vscode",
+            "Info": "",
+            "Version": "1.74.2",
+            "Updated": "2022-12-21T19:52:24.8031926-03:00"
+        },
+        {
+            "Source": "anderlli0053_DEV-tools",
+            "Name": "windirstat",
+            "Info": "",
+            "Version": "1.1.2",
+            "Updated": "2022-11-22T08:07:41.3731922-03:00"
         }
     ],
     "buckets": [
         {
             "Name": "anderlli0053_DEV-tools",
             "Source": "https://github.com/anderlli0053/DEV-tools",
-            "Updated": "2022-11-11T12:05:20-03:00",
-            "Manifests": 10761
+            "Updated": "2022-12-21T19:07:54-03:00",
+            "Manifests": 11400
         },
         {
             "Name": "extras",
             "Source": "https://github.com/ScoopInstaller/Extras",
-            "Updated": "2022-11-11T09:32:16-03:00",
-            "Manifests": 1729
+            "Updated": "2022-12-21T17:28:34-03:00",
+            "Manifests": 1751
         },
         {
             "Name": "main",
             "Source": "https://github.com/ScoopInstaller/Main",
-            "Updated": "2022-11-11T09:31:29-03:00",
-            "Manifests": 1112
+            "Updated": "2022-12-21T17:25:34-03:00",
+            "Manifests": 1130
         },
         {
             "Name": "nerd-fonts",
             "Source": "https://github.com/matthewjberger/scoop-nerd-fonts",
-            "Updated": "2022-10-24T11:03:46-03:00",
-            "Manifests": 204
+            "Updated": "2022-12-13T18:12:47-03:00",
+            "Manifests": 209
+        },
+        {
+            "Name": "scoop-bucket",
+            "Source": "https://github.com/Rigellute/scoop-bucket",
+            "Updated": "2021-01-06T09:30:27-03:00",
+            "Manifests": 0
         }
     ]
 }
