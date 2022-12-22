@@ -19,6 +19,7 @@
 :*:mas::más
 :*:exito::éxito
 :*:critico::crítico
+:*:miercoles::miércoles
 
 ;------------------------------------------------------------------------------
 ; Word middles
