@@ -41,6 +41,12 @@ To manage different versions, I use:
 
 _Tip: If you don't find `pipx` on PowerShell, try to add manually to PATH_. [Source](https://stackoverflow.com/questions/69686581/the-term-pipx-is-not-recognized-as-the-name-of-a-cmdlet)
 
+Probably it will be that this is not in PATH.
+
+```
+C:\Users\aucac\AppData\Roaming\Python\Python311\Scripts
+```
+
 # Walkthrough
 
 Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to start backing up your dotfiles and to install them on a new system
