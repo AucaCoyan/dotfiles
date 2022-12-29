@@ -87,8 +87,14 @@ return packer.startup(function(use)
   --]]
 
   -- Telescope
-    use "nvim-telescope/telescope.nvim"
-    use 'nvim-telescope/telescope-media-files.nvim'
+   use "nvim-telescope/telescope.nvim"
+   use 'nvim-telescope/telescope-media-files.nvim'
+
+  -- Treesitter
+  use {"nvim-treesitter/nvim-treesitter", run = "TSUpdate",  }
+
+  -- glow previewer
+  use {"ellisonleao/glow.nvim"}
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
