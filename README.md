@@ -28,7 +28,8 @@ My config files
 - [x] PowerShell `$PROFILE`
 - [x] `chocolatey` packages
 - [x] `scoop` packages
-- [x] Winget packages
+- [x] `Winget` packages
+- [x] Rust `cargo install` packages
 - [x] PowerShell modules
 
 # Enviromnent apps
