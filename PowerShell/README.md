@@ -77,6 +77,14 @@ Below you will find the modules I use most of the time.
 | ripgrep-all | better `ripgrep` in rust                              |
 | sass        | official `sass` library                               |
 
+### Install flutter with
+
+```
+scoop install fvm
+fvm doctor # to check what you need
+fvm install stable # to install flutter channel stable
+```
+
 # `npm` modules
 
 | module      | description                                                             |
