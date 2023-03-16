@@ -60,13 +60,13 @@
           }
         },
         {
+          "type": "python",
           "background": "#FF6471",
           "foreground": "#ffffff",
           "leading_diamond": "<transparent,background>\ue0b0</>",
           "style": "diamond",
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "\ue0b4",
-          "type": "python"
+          "trailing_diamond": "\ue0b4"
         }
       ]
     }
