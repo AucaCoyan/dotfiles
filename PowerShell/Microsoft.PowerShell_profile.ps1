@@ -1088,7 +1088,7 @@ Register-ArgumentCompleter -CommandName 'gh' -ScriptBlock {
 
     }
 }
-"
+
 # -------------------------------------------------------------------------------------
 # powershell autocompletion for glab (gitlab CLI+y)"
 
@@ -1936,6 +1936,7 @@ Register-ArgumentCompleter -Native -CommandName 'rustup' -ScriptBlock {
     $completions.Where{ $_.CompletionText -like "$wordToComplete*" } |
         Sort-Object -Property ListItemTextu
 
+}
 # -------------------------------------------------------------------------------------
 
 Invoke-Expression nu
