@@ -307,7 +307,7 @@ let-env config = {
     always_trash: false # always act as if -t was given. Can be overridden with -p
   }
   cd: {
-    abbreviations: false # allows `cd s/o/f` to expand to `cd some/other/folder`
+    abbreviations: true # allows `cd s/o/f` to expand to `cd some/other/folder`
   }
   table: {
     mode: light # basic, compact, compact_double, light, thin, with_love, rounded, reinforced, heavy, none, other
@@ -646,5 +646,6 @@ let-env config = {
   ]
 }
 
+source ~/repos/dotfiles/nushell/my-aliases.nu
 source ~/repos/dotfiles/nushell/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/zoxide-config.nu
