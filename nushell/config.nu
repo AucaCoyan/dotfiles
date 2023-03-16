@@ -647,4 +647,4 @@ let-env config = {
 }
 
 source ~/repos/dotfiles/nushell/.oh-my-posh.nu
-
+source ~/repos/dotfiles/nushell/zoxide-config.nu
