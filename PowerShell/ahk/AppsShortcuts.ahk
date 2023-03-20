@@ -1,5 +1,5 @@
 ﻿#Requires AutoHotkey v2.0-beta
-
+#SingleInstance force
 ;-------------------------------------------------------------------------------
 ; Apps shortcuts
 
@@ -26,3 +26,13 @@
         else
             Run 'C:\Windows apps shortcuts\WhatsApp - Shortcut.lnk'
     }
+
+    ; -------------------------------------------------------------------------------
+    ; Move window to the another monitor
+    ; Win + F is "move to the left"
+    #f::Send "#+{Left}"
+
+    ; Win + G is "move to the right"
+    ; if it doesn't work, try this regedit
+    ; https://superuser.com/a/1097169
+    #g::Send "#+{Right}"
