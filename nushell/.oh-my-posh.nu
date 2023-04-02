@@ -1,7 +1,7 @@
 export-env {
     let-env POWERLINE_COMMAND = 'oh-my-posh'
     # let-env POSH_THEME = "C:\\Users\\a_maillot\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"
-    let-env POSH_THEME = ([$env.USERPROFILE, "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"] | str join)
+    let-env POSH_THEME = ([$env.USERPROFILE, "\\repos\\dotfiles\\nushell\\oh-my-posh.config.json"] | str join)
     let-env PROMPT_INDICATOR = ""
     let-env POSH_PID = (random uuid)
     # By default displays the right prompt on the first line
