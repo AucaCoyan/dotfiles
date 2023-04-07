@@ -7,13 +7,13 @@ export-env {
     # By default displays the right prompt on the first line
     # making it annoying when you have a multiline prompt
     # making the behavior different compared to other shells
-    let-env PROMPT_COMMAND_RIGHT = {''}
+    let-env PROMPT_COMMAND_RIGHT = {|| ''}
     let-env NU_VERSION = (version | get version)
 
     # PROMPTS
     let-env PROMPT_MULTILINE_INDICATOR = (^([$env.USERPROFILE, "\\scoop\\apps\\oh-my-posh\\current\\oh-my-posh.exe"] | str join) print secondary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.NU_VERSION)")
 
-    let-env PROMPT_COMMAND = {
+    let-env PROMPT_COMMAND = { ||
         # We have to do this because the initial value of `$env.CMD_DURATION_MS` is always `0823`,
         # which is an official setting.
         # See https://github.com/nushell/nushell/discussions/6402#discussioncomment-3466687.
