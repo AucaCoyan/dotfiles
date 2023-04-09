@@ -93,7 +93,7 @@ M.on_attach = function(client, bufnr)
     -- (so you don't have to pick one of the 2 available)
     client.server_capabilities.documentFormattingProvider = false
   end
-  if client.name == "sumneko_lua" then
+  if client.name == "lua_ls" then
     -- ignore the formatting provider
     client.server_capabilities.documentFormattingProvider = false
     -- add exception for skipping the global vim variable
