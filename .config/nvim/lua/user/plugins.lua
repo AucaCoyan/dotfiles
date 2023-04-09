@@ -51,6 +51,7 @@ return packer.startup(function(use)
   use "lunarvim/darkplus.nvim"
   use "lunarvim/horizon.nvim"
   use "ellisonleao/gruvbox.nvim"
+  use "wuelnerdotexe/vim-enfocado"
 
   -- cmp plugins
   use "hrsh7th/nvim-cmp" -- The completion plugin
@@ -93,8 +94,9 @@ return packer.startup(function(use)
   -- Treesitter
   use {"nvim-treesitter/nvim-treesitter", run = "TSUpdate",  }
 
-  -- glow previewer
-  use {"ellisonleao/glow.nvim"}
+  -- other plugins
+  use {"ellisonleao/glow.nvim"} -- glow previewer
+  use {'LhKipp/nvim-nu', run = "TSInstall nu", }
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
