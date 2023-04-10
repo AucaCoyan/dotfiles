@@ -16,3 +16,6 @@ require "user.telescope"
 -- neovide
 require "user.neovide"
 
+-- treesitter
+require "user.treesitter"
+

@@ -2,7 +2,8 @@
 -- local colorscheme = "shades_of_purple"
 -- local colorscheme = "darksplus"
 -- local colorscheme = "horizon"
-local colorscheme = "gruvbox"
+-- local colorscheme = "gruvbox"
+local colorscheme = "enfocado"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

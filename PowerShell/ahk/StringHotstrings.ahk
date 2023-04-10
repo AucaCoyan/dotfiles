@@ -2,6 +2,9 @@
 
 ;-------------------------------------------------------------------------------
 ; Strings hotstrings
+; https://www.autohotkey.com/docs/v2/Hotstrings.htm#Options
+; * means to trigger the hotstring the moment the last character is pressed
+; ? means to trigger the hotstring even if it's inside a word
 
 :*o:ag.::aucacoyan@gmail.com
 :*o:ah.::aucacoyan@hotmail.com
@@ -11,3 +14,7 @@
 :*o:aucacv::http://tiny.cc/AucaCV
 :*o:linp::https://www.linkedin.com/in/auca-coyan-maillot/
 
+;-------------------------------------------------------------------------------
+; english into spanish hotstrings
+:*o?:a;o::año
+::mas::más
