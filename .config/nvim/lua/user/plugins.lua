@@ -97,6 +97,7 @@ return packer.startup(function(use)
   -- other plugins
   use {"ellisonleao/glow.nvim"} -- glow previewer
   use {'LhKipp/nvim-nu', run = "TSInstall nu", }
+  use { "yuttie/comfortable-motion.vim" } -- cursed scrolling
 
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
