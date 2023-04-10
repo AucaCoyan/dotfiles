@@ -81,8 +81,10 @@ keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 local builtin = require('telescope.builtin')
-keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", opts)
-keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>ff", "<cmd>Telescope find_files hidden=true<cr>", opts)                -- find files 
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)                             -- find text (live grep)
+keymap("n", "<leader>th", "<cmd>lua require('telescope.builtin').colorscheme()<cr>", opts)  -- search through themes
+
 -- vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
