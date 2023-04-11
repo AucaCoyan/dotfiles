@@ -18,3 +18,7 @@
 ; english into spanish hotstrings
 :*o?:a;o::año
 ::mas::más
+::d[ia::día
+::todav[ia::todavía
+::empez[o::empezó
+::ma;ana::mañana
