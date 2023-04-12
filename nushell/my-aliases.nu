@@ -11,3 +11,10 @@ alias diff = delta
 alias cler =  clear
 alias clar =  clear
 alias claer =  clear
+
+# misspellings for scoop
+alias scoo = scoop
+
+# nvim configurations
+# my vim
+alias nv = nvim -u ~\repos\dotfiles\.config\nvim\init.lua

@@ -599,5 +599,5 @@ source ~/repos/dotfiles/nushell/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/zoxide-config.nu
 source ~/repos/dotfiles/nushell/completions.nu
 
-# test source vs use
-# source ~/repos/dotfiles/nushell/test.nu
+# import the module scripts
+use ~/repos/dotfiles/nushell/scripts.nu

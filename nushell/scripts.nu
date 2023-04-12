@@ -1,4 +1,4 @@
-def list_scoop_packages [] {
+export def list_scoop_packages [] {
     (
     scoop export 
         | from json             # convert raw input to json
@@ -8,9 +8,17 @@ def list_scoop_packages [] {
     )
 
     # save "current-scoop-pkgs.txt"  # save to txt file
-}
 
-list_scoop_packages
-
+# alternative
 #  open scoop-list.json | get 'apps' | select Name | to text | save "1.txt"
 # scoop export | from json | get apps | select Name | to text | save "2.txt"
+}
+
+export def editvimrc [] {
+    cd ~\AppData\Local\nvim\lua\custom
+    nvim .
+}
+
+export def user-profile-path [] {
+    [$env.USERPROFILE, "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"] | str join
+}
