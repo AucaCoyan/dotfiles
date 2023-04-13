@@ -5,3 +5,6 @@
 --   pattern = "*",
 --   command = "tabdo wincmd =",
 -- })
+
+vim.cmd.language('en_US')                      -- forces vim to have en_US interface language
+vim.opt.relativenumber = true                  -- set relative numbered lines
