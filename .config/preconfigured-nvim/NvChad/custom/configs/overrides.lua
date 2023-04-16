@@ -2,16 +2,25 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "lua",
-    "html",
+    "astro",
     "css",
+    "html",
+    "git_config",
+    "gitignore",
     "javascript",
-    "typescript",
-    "tsx",
-    "c",
+    "json",
+    "jsonc",
+    "lua",
     "markdown",
     "markdown_inline",
+    "python",
+    "rust",
+    "sql",
+    "toml",
+    "tsx",
+    "typescript",
+    "vim",
+    "yaml"
   },
   indent = {
     enable = true,
