@@ -594,10 +594,10 @@ let-env config = {
   ]
 }
 
-source ~/repos/dotfiles/nushell/my-aliases.nu
-source ~/repos/dotfiles/nushell/.oh-my-posh.nu
-source ~/repos/dotfiles/nushell/zoxide-config.nu
-source ~/repos/dotfiles/nushell/completions.nu
+source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
+source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
+source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
+source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts.nu
