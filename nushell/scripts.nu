@@ -19,6 +19,11 @@ export def editvimrc [] {
     nvim .
 }
 
+export def editdot [] {
+    cd ~\repos\dotfiles\
+    nvim .
+}
+
 export def user-profile-path [] {
     [$env.USERPROFILE, "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"] | str join
 }
