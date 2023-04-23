@@ -598,6 +598,7 @@ source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
+source ~/repos/dotfiles/nushell/cfg_files/atuin-init.nu
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts.nu
