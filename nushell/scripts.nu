@@ -27,3 +27,25 @@ export def editdot [] {
 export def user-profile-path [] {
     [$env.USERPROFILE, "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"] | str join
 }
+
+export def new-junction [
+    name: path               # origin, or folder you want to Symlink
+    target: path             # destination, or the folder you want to refer
+    ] {
+    let command = ([
+    "New-Item",
+    "-ItemType",
+    "Junction",
+    "-Path",
+    $name,
+    "-Target",
+    $target
+    ] |
+    str join 
+    ' '     # add this separator to join with spaces 
+    )
+    echo $command
+    pwsh -Command $command
+}
+# I need
+# func name 
