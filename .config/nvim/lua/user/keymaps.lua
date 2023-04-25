@@ -39,6 +39,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 -- remap leader explorer to <leader>+e
 keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
@@ -48,6 +49,12 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+
+-- Escape clears the highlights 
+keymap("n", "<Esc>", ":noh <CR>", opts)
+
+-- save
+keymap("n", "<C-s>", "<cmd> w <CR>", opts)
 
 -- Insert --
 --      empty
