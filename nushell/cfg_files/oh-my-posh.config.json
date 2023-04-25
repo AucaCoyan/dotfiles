@@ -6,12 +6,12 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#61AFEF",
-          "foreground": "#ffffff",
+          "background": "#0C212F",
+          "foreground": "#FFFFFF",
           "type": "os",
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
-          "leading_diamond": "\ue0b2",
+          "leading_diamond": "\ue0b6",
           "trailing_diamond": "\ue0b0",
           "properties": {
             "arch": "\uf303",
@@ -26,17 +26,27 @@
           }
         },
         {
+          "type": "root",
+          "style": "diamond",
+          "leading_diamond": "<transparent,#DE2121>\ue0b0</>",
+          "background": "#DE2121",
+          "foreground": "#FFFFFF",
+          "template": " \uf0e7 ",
+          "trailing_diamond": "\ue0b0"
+        },
+        {
           "type": "path",
-          "style": "powerline",
-          "leading_diamond": "\ue0b2",
-          "powerline_symbol": "\ue0b0",
-          "background": "#C678DD",
-          "foreground": "#ffffff",
+          "style": "diamond",
+          "leading_diamond": "<transparent,#26BDBB>\ue0b0</>",
+          "trailing_diamond": "\ue0b0",
+          "background": "#26BDBB",
+          "foreground": "#0C212F",
           "template": " {{ .Path }} ",
           "properties": {
-            "folder_icon": "...",
-            "home_icon": "~",
-            "style": "full"
+            "folder_icon": "\uf6d7",
+            "home_icon": "\uf7db",
+            "style": "full",
+            "folder_separator_icon": "<transparent> \ue0b1 </>"
           }
         },
         {
@@ -50,9 +60,8 @@
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
           ],
           "style": "powerline",
-          "leading_diamond": "\ue0b2",
           "powerline_symbol": "\ue0b0",
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uF692 {{ .StashCount }}{{ end }} ",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
@@ -71,8 +80,7 @@
       ]
     }
   ],
+  "console_title_template": "{{if .Root}} \u26a1 {{end}}{{.Folder | replace \"~\" \"🏠\"}} @ {{.HostName}}",
   "final_space": true,
-  "version": 2,
-  // "console_title_template": "{{ .Shell }} - {{ .Folder }}",
-  "osc99": true
+  "version": 2
 }
