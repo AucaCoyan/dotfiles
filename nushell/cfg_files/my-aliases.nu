@@ -21,7 +21,7 @@ alias nv = nvim -u ~\repos\dotfiles\.config\nvim\init.lua
 
 # sqlite
 alias sqlite = sqlite3
-
+alias "sqlite -h" = sqlite3 -help
 # z autojump
 # to make it easier to jump between directories, I strictly go to aliases, which is faster
 # alias zd = (z dotfiles)  # it doesn't work
