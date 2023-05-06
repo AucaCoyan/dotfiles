@@ -76,3 +76,16 @@ let-env NU_PLUGIN_DIRS = [
 
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
+
+if $nu.os-info.name == "linux" {
+    # Documentation for nvim
+    # alias nvim = "~/bin/nvim"
+    let-env PYENV_ROOT = "$HOME/bin/.pyenv"
+    let-env BUN_INSTALL = "$HOME/.bun"
+    let-env PNPM_HOME = "$HOME/.local/share/pnpm"
+    let-env PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
+    let-env PATH = ($env.PATH | split row (char esep) | prepend '~/bin' | uniq )
+    let-env PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
+    let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/pnpm')
+    let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/fnm')
+} 

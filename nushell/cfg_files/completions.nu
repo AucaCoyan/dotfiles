@@ -126,7 +126,7 @@ module completions {
 use completions *
 
 # use carapace-bin
-let-env PATH = ($env.Path | prepend "C:/Users/aucac/AppData/Roaming/carapace/bin")
+let-env PATH = ($env.PATH | prepend "C:/Users/aucac/AppData/Roaming/carapace/bin")
 
 let carapace_completer = {|spans|
   carapace $spans.0 nushell $spans | from json
