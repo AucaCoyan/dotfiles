@@ -2,19 +2,17 @@
 #
 # version = 0.78.0
 
-def create_left_prompt [] {
-    mut home = ""
-    try {
-        if $nu.os-info.name == "windows" {
-            $home = $env.USERPROFILE
+let-env home = if $nu.os-info.name == "windows" {
+            $env.USERPROFILE
         } else {
-            $home = $env.HOME
+            $env.HOME
         }
-    }
+
+def create_left_prompt [] {
 
     let dir = ([
-        ($env.PWD | str substring 0..($home | str length) | str replace -s $home "~"),
-        ($env.PWD | str substring ($home | str length)..)
+        ($env.PWD | str substring 0..($env.home | str length) | str replace -s $env.home "~"),
+        ($env.PWD | str substring ($env.home | str length)..)
     ] | str join)
 
     let path_segment = if (is-admin) {
@@ -77,6 +75,7 @@ let-env NU_PLUGIN_DIRS = [
 # To add entries to PATH (on Windows you might use Path), you can use the following pattern:
 # let-env PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
+
 if $nu.os-info.name == "linux" {
     # Documentation for nvim
     # alias nvim = "~/bin/nvim"
@@ -88,4 +87,5 @@ if $nu.os-info.name == "linux" {
     let-env PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
     let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/pnpm')
     let-env PATH = ($env.PATH | split row (char esep) | append '~/.local/share/fnm')
+    let-env PATH = ($env.PATH | split row (char esep) | prepend '~/.local/carapace/something/something')
 } 
