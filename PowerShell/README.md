@@ -2,7 +2,7 @@
 
 - Install `Windows Terminal` from Windows App Store
 
-- Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision)
+- Update [Powershell to the latest version](https://stackoverflow.com/questions/60524714/update-powershell-to-the-latest-revision) with:
 
 ```powershell
 winget install Microsoft.PowerShell
@@ -11,12 +11,12 @@ winget install Microsoft.PowerShell
 ⚠️ make sure you select the new `PowerShell` as the default shell!. It has a black icon
 
 - Make a `Junction` from this `PowerShell` folder into `echo $PROFILE`
-- install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/CascadiaCode/Regular/complete)
+- install [Caskaydia Cove NF for windows](https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/CascadiaCode/)
 - Go to Windows Terminal Settings / Windows Powershell / Appearence / Font face = `CaskaydiaCove NF`
 
 - Install a package manager (`scoop`, `chocolatey` or `winget`)
 
-# Option A: `scoop`
+# Install the package manager `scoop`
 
 I find scoop easy to use, because it install portable apps from the command line. This way the registry it's less modified and cluttered, so in the end you have less install pollution.
 
@@ -27,29 +27,25 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 irm get.scoop.sh | iex
 ```
 
+install `git`
+
+```powershell
+scoop install git
+```
+
+clone `dotfiles`
+
+```powershell
+mkdir ~/repos/
+cd ./repos/
+git clone https://github.com/AucaCoyan/dotfiles
+```
+
 Then, you can import the packages in `scoop-list.json` found in this folder like this:
 
 ```powershell
 scoop export > .\scoop-list.json
 ```
-
-# Option B: `chocolatey`
-
-Chocolatey is the first package manager made for windows. It has wide support for a lot of applications.
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
-
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-```
-
-For upgrading run
-
-```
-choco upgrade chocolatey
-```
-
-You can also import and install the packages on the `packages.config` file with `choco install packages.config`
 
 # used modules
 
@@ -61,7 +57,6 @@ Below you will find the modules I use most of the time.
 | dart-sdk    | dart language                                   |
 | delta       | `git diff` made right in rust                   |
 | deno        | A modern runtime for JavaScript and TypeScript  |
-| eartrumpet  | Volume control for Windows                      |
 | fd          | better `fd` in rust                             |
 | fnm         | fast NodeJS Manager in rust                     |
 | gh          | github CLI                                      |
@@ -74,7 +69,6 @@ Below you will find the modules I use most of the time.
 | QuickLook   | Bring macOS "Quick Look" feature to Windows     |
 | ripgrep     | better `grep` in rust                           |
 | ripgrep-all | better `ripgrep` in rust                        |
-| sass        | official `sass` library                         |
 
 ### Install flutter with
 
@@ -104,17 +98,6 @@ fvm install stable # to install flutter channel stable
 
   > winget install oh-my-posh
 
-- Copy `jandedobbeleer.omp.json` into `~/jandedobbeleer.omp.json`
-
-  > cd ~/Code/dotfiles/Powershell/
-  > cp jandedobbeler.omp.json ~/
-
-- Install `TerminalIcons`
-
-https://github.com/devblackops/Terminal-Icons
-
-> Install-Module -Name Terminal-Icons -Repository PSGallery
-
 - If you didn't upgrade Powershell, PSReadLineOption won't be available
   > Set-PSReadLineOption : The prediction plugin source is not supported in this version of PowerShell. The 7.2 or a higher version of PowerShell is required to use this source.
 
@@ -124,10 +107,10 @@ upgrade it via
 
 ## Check your installed packages
 
-For `chocolatey` you can run
+For `scoop` you can run
 
 ```sh
-choco list --local-only
+scoop list
 ```
 
 And for PowerShell Modules, run:
@@ -175,35 +158,6 @@ Some nice to have symlinks:
 - `~\.gitconfig  ~\repos\dotfiles\.gitconfig`
 
 - `~\Downloads  ~\OneDrive\Downloads`
-
-## Extra! - Install all the packages of chocolatey
-
-There are some other pkgs that you could install with choco, like:
-
-- git-lfs
-- nodejs.install (18)
-- nodejs-lts (16.15.1)
-- vscode
-- sumatrapdf.install
-- microsoft-windows-terminal
-- slack
-- spotify
-- virtualbox
-- golang
-- postman (or whatever)
-- autohotkey.install
-- everything
-- calibre
-- mailspring
-- windirstat
-- qbittorrent
-- whatsapp
-- telegram.install
-- poshgit
-- discord.install
-- obs-studio.install
-- keepassxc
-- steam-client
 
 ## possible errors
 
