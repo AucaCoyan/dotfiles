@@ -7,10 +7,12 @@
 # side by side comparision
 alias diff = delta
 
-# misspellings for clear
+# misspellings for clear, cd
 alias cler =  clear
 alias clar =  clear
 alias claer =  clear
+alias CD = cd
+alias .. = cd ..
 
 # misspellings for scoop
 alias scoo = scoop
