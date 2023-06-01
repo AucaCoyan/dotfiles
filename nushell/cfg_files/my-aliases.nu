@@ -30,4 +30,10 @@ alias "sqlite -h" = sqlite3 -help
 
 # quit the terminal faster
 alias :q = exit
+alias "git_log1" = git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all
+alias "git_log2" = git log --all --decorate --oneline
 
+# show installed packages in cargo
+# TODO: print "running `cargo install --list`"
+alias "cargo list" = cargo install --list
+alias "cargo --list" = cargo install --list
