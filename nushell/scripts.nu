@@ -47,5 +47,14 @@ export def new-junction [
     echo $command
     pwsh -Command $command
 }
-# I need
-# func name 
+
+export def git-gone [] {
+    git branch --merged 
+    | lines 
+    | where $it !~ '\*' 
+    | str trim 
+    | where $it != 'master' and $it != 'main' 
+    | each {
+         |it| git branch -d $it 
+         }
+}
