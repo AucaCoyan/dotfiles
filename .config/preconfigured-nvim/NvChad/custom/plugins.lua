@@ -25,7 +25,11 @@ local plugins = {
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = {
+      ensure_installed = {
+        "rust-analyzer",
+      }
+    }
   },
 
   {
@@ -46,6 +50,25 @@ local plugins = {
       require("better_escape").setup()
     end,
   },
+  {
+    "rust-lang/rust.vim",
+    ft = "rust",
+    init = function ()
+      vim.g.rustfmt_autosave = 1
+    end
+  },
+
+  -- {
+  -- -- cargo.toml completion
+  --   "saecki/crates.nvim",
+  --   ft = {"rust", "toml"},
+  --   config = function(_, opts)
+  --     local crates = require('crates')
+  --     crates.setup(opts)
+  --     crates.show()
+  --   end
+  -- },
+
 
   -- To make a plugin not be loaded
   -- {
