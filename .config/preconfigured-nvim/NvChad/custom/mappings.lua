@@ -7,6 +7,13 @@ M.general = {
   },
 }
 
+M.telescope = {
+  plugin = true,
+
+  n = {
+    ["<leader>fg"] = { "<cmd> Telescope live_grep <CR>", "Live grep" },
+  },
+}
 -- more keybinds!
 
 return M
