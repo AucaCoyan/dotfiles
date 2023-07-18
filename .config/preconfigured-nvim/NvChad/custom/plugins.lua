@@ -60,7 +60,7 @@ local plugins = {
   {
     'wakatime/vim-wakatime',
     lazy = false,
-  }
+  },
 
   -- {
   -- -- cargo.toml completion
@@ -72,7 +72,28 @@ local plugins = {
   --     crates.show()
   --   end
   -- },
-
+  -- {
+    -- este auto-session me está fallando,
+    -- algo de los comandos pre_save_cmds o post_restore_cmds
+    -- me hace fallar todo en nvim
+    -- "rmagatti/auto-session",
+    -- lazy = false,
+    --  cmd = { "SessionSave", "SessionRestore" },
+    --  config = function()
+    --      require("auto-session").setup {
+    --        log_level = "info",
+    --        auto_session_enable_last_session = false,
+    --        auto_session_root_dir = vim.fn.stdpath('data').."/sessions/",
+    --        auto_session_enabled = true,
+    --        auto_save_enabled = true,
+    --        auto_restore_enabled = true,
+    --        pre_save_cmds = { "tabdo NvimTreeClose" },
+    --        -- commands after loading
+    --        post_restore_cmds = { "tabdo NvimTreeFocus" },
+    --        -- this fails beacuse nvimtree is lazy loaded
+    --     }
+    --  end,
+  -- }
 
   -- To make a plugin not be loaded
   -- {
