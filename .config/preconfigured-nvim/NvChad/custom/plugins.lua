@@ -61,6 +61,10 @@ local plugins = {
     'wakatime/vim-wakatime',
     lazy = false,
   },
+  {
+    'sindrets/diffview.nvim',
+    lazy = false,
+  }
 
   -- {
   -- -- cargo.toml completion
