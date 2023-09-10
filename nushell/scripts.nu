@@ -25,7 +25,11 @@ export def editdot [] {
 }
 
 export def user-profile-path [] {
-    [$env.USERPROFILE, "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"] | str join
+    [
+        $env.USERPROFILE,
+        "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"
+    ] 
+    | str join
 }
 
 export def new-junction [

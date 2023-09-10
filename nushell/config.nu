@@ -176,14 +176,14 @@ let light_theme = {
 # }
 
 # use carapace-bin
-let-env PATH = ($env.Path | prepend ([$env.home, "/AppData/Roaming/carapace/bin"] | str join))
+$env.Path = ($env.Path | prepend ([$env.home, "/AppData/Roaming/carapace/bin"] | str join))
 
 let carapace_completer = {|spans|
   carapace $spans.0 nushell $spans | from json
 }
 
 # The default config record. This is where much of your global configuration is setup.
-let-env config = {
+$env.config = {
   # true or false to enable or disable the welcome banner at startup
   show_banner: false
   ls: {
@@ -546,9 +546,8 @@ source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/atuin-init.nu
+source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/modules/docker/docker.nu
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts.nu
-
-source C:\Users\aucac\AppData\Roaming\dystroy\broot\config\launcher\nushell\br
