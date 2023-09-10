@@ -42,8 +42,8 @@ packer.init {
 return packer.startup(function(use)
   -- my plugins
   use "wbthomason/packer.nvim" -- Have packer manage itself
-  use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
-  use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
+  use "nvim-lua/popup.nvim"    -- An implementation of the Popup API from vim in Neovim
+  use "nvim-lua/plenary.nvim"  -- Useful lua functions used ny lots of plugins
 
   -- colorschemes
   use "Rigellute/shades-of-purple.vim" -- based on shades-of-purple-vscode
@@ -54,29 +54,29 @@ return packer.startup(function(use)
   use "wuelnerdotexe/vim-enfocado"
 
   -- cmp plugins
-  use "hrsh7th/nvim-cmp" -- The completion plugin
-  use "hrsh7th/cmp-buffer" -- buffer completions
-  use "hrsh7th/cmp-path" -- path completions
-  use "hrsh7th/cmp-cmdline" -- cmdline completions
+  use "hrsh7th/nvim-cmp"         -- The completion plugin
+  use "hrsh7th/cmp-buffer"       -- buffer completions
+  use "hrsh7th/cmp-path"         -- path completions
+  use "hrsh7th/cmp-cmdline"      -- cmdline completions
   use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
-  use "hrsh7th/cmp-nvim-lua" -- autocompletion for `vim.lsp.*`
+  use "hrsh7th/cmp-nvim-lua"     -- autocompletion for `vim.lsp.*`
 
   -- npm pgk completions on package.json files
-  use {'David-Kunz/cmp-npm', requires = {
+  use { 'David-Kunz/cmp-npm', requires = {
     'nvim-lua/plenary.nvim'
-    }
+  }
   }
 
   -- snippets
-  use "L3MON4D3/LuaSnip" --snippet engine
+  use "L3MON4D3/LuaSnip"             --snippet engine
   use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
 
   -- LSP
-  use "williamboman/mason.nvim" -- simple to use language server installer
+  use "williamboman/mason.nvim"           -- simple to use language server installer
   use "williamboman/mason-lspconfig.nvim" -- simple to use language server installer
-  use "neovim/nvim-lspconfig" -- enable LSP
-  use "jose-elias-alvarez/null-ls.nvim" -- for formartters and linters
+  use "neovim/nvim-lspconfig"             -- enable LSP
+  use "jose-elias-alvarez/null-ls.nvim"   -- for formartters and linters
   -- use "RRethy/vim-illuminate" -- highlight the current word on the cursor in the screen
 
   -- breadcrups
@@ -88,15 +88,15 @@ return packer.startup(function(use)
   --]]
 
   -- Telescope
-   use "nvim-telescope/telescope.nvim"
-   use 'nvim-telescope/telescope-media-files.nvim'
+  use { 'nvim-telescope/telescope.nvim', module = "telescope" }
+  use 'nvim-telescope/telescope-media-files.nvim'
 
   -- Treesitter
-  use {"nvim-treesitter/nvim-treesitter", run = "TSUpdate",  }
+  use { "nvim-treesitter/nvim-treesitter", run = "TSUpdate", }
 
   -- other plugins
-  use {"ellisonleao/glow.nvim"} -- glow previewer
-  use {'LhKipp/nvim-nu', run = "TSInstall nu", }
+  use { "ellisonleao/glow.nvim" }         -- glow previewer
+  use { 'LhKipp/nvim-nu', run = "TSInstall nu", }
   use { "yuttie/comfortable-motion.vim" } -- cursed scrolling
 
   -- Automatically set up your configuration after cloning packer.nvim

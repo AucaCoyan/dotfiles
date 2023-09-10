@@ -18,4 +18,3 @@ require "user.neovide"
 
 -- treesitter
 require "user.treesitter"
-
