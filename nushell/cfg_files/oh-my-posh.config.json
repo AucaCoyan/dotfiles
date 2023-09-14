@@ -61,7 +61,7 @@
           ],
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "template": " {{ .UpstreamIcon}} {{ .HEAD }} branch |{{ if .BranchStatus }} {{ .BranchStatus }} |{{ end }}{{ if .Working.Changed }}{{ if gt .Working.Unmerged 0}} unmerged: {{ .Working.Unmerged }} |{{ end }}{{ if gt .Working.Added 0}} added: {{ .Working.Added }} |{{ end }}{{ if gt .Working.Deleted 0}} deleted: {{ .Working.Deleted }} |{{ end }}{{ if gt .Working.Modified 0}} modified: {{ .Working.Modified }} |{{ end }}{{ if gt .Working.Untracked 0}} untracked: {{ .Working.Untracked }}{{ end }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}{{ end }}{{ if .Staging.Changed }} | staging: \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} | saved stashes \uF692 {{ .StashCount }}{{ end }}",
+          "template": " {{ .UpstreamIcon}} {{ .HEAD }} branch |{{ if .BranchStatus }} {{ .BranchStatus }} |{{ end }}{{ if .Working.Changed }}{{ if gt .Working.Unmerged 0}} unmerged: {{ .Working.Unmerged }} |{{ end }}{{ if gt .Working.Added 0}} added: {{ .Working.Added }} |{{ end }}{{ if gt .Working.Deleted 0}} deleted: {{ .Working.Deleted }} |{{ end }}{{ if gt .Working.Modified 0}} modified: {{ .Working.Modified }}{{ end }}{{ if gt .Working.Untracked 0}}| untracked: {{ .Working.Untracked }}{{ end }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }}{{ end }}{{ if .Staging.Changed }} staging: \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  saved stashes \uF692 {{ .StashCount }}{{ end }}",
           "properties": {
             "fetch_stash_count": true,
             "fetch_status": true,
