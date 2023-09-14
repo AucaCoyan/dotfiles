@@ -1,13 +1,6 @@
 
 let repos_list = (ls ~/repos/ )
 let other_repos_list = (ls ~/other-repos/)
-let workspace_list = (ls ~/workspace/)
-
-$workspace_list.name | each { |repo| 
-    print -n $"fetching ($repo)\n"
-    cd $repo
-    git fetch
-}
 
 $repos_list.name | each { |repo| 
     print -n $"fetching ($repo)\n"
