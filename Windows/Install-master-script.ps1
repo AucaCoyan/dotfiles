@@ -27,10 +27,6 @@ else {
     Write-Error "unknown powershell version"
 }
 
-# using PS 7.0
-# Import-Module -Name Appx -UseWindowsPowershell
-
-
 # clear screen
 Clear-Host
 
@@ -121,19 +117,21 @@ try {
     scoop bucket add extras
 
     # core
-    scoop install 7zip autohotkey azuredatastudio bat
-    scoop install broot delta difftastic discord draw.io 
+    scoop install 7zip autohotkey bat
+    scoop install broot delta difftastic draw.io 
     scoop install dust everything fd ffmpeg fzf gh git gitui glab glow googlechrome jpegview-fork
     scoop install keepassxc neovide neovim
     scoop install nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 
     scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat windows-terminal zoxide
 
-    # opciotional apps
-    # scoop install audacity calibre gcc insomnia mongodb mongodb-compass mongosh nomino
+    # optional apps
+    # scoop install audacity azuredatastudio calibre discord gcc insomnia mongodb mongodb-compass mongosh nomino
 
     # programming languages
-    scoop install deno flutter fnm python rustup surrealdb
+    scoop install deno fnm python rustup
+    # optional langs
+    # scoop install flutter surrealdb
 
     # local github actions runner
     scoop install main/act
@@ -176,7 +174,7 @@ try {
 
     # download the font
     # it doesnt work with .tar.xz. Only with .zip
-    curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$Font.zip"
+    Invoke-WebRequest -Uri "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$Font.zip" -OutFile "./$Font.zip"
 
     # expand the zip
     # (you don't need to create the directory)
@@ -210,6 +208,10 @@ try {
     Remove-Item "$fontsToInstallDirectory\" -Recurse -Force
 }
 catch { Write-Warning $_ }
+
+# Install NuGet
+Write-Host "`nInstalling NuGet" -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
+scoop install nuget
 
 # Set PSGallery as trusted
 Write-Host "`nSetting PSGallery as trusted repo - " -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
@@ -256,7 +258,6 @@ try {
     New-Item -ItemType Junction -Path $originPath -Target $destinationPath
 }
 catch { Write-Warning $_ }
-
 
 # Set WT settings.json
 Write-Host "`nApplying Windows Terminal default settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[9-10]" -ForegroundColor Green -BackgroundColor Black
