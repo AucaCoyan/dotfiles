@@ -1,6 +1,21 @@
+# ------------------ copy section ------------------
+# PS support base script
+# https://stackoverflow.com/a/44810914/8552476
 
-$ErrorActionPreference = "Stop"
-. "$PSScriptRoot\scripts\ps_support.ps1"
+# 1. Catch bugs before run
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/set-strictmode
+Set-StrictMode -Version Latest
+
+# 2. Stop if an error occurs
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables#erroractionpreference
+$ErrorActionPreference = 'Stop'
+
+$PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
+function ThrowOnNativeFailure {
+    if (-not $?) {
+        throw 'Native Failure'
+    }
+}
 
 # import Appx or this wont work
 # https://superuser.com/questions/1456837/powershell-get-appxpackage-not-working
@@ -45,10 +60,89 @@ try {
     }
     else {
         Write-Host "Windows Terminal found. Skipping`n" -ForegroundColor Yellow
-
     }
 }
 catch { Write-Warning $_ }
+
+# make ~/all-repos/ ~/repos/ and ~/other-repos/ folders
+Write-Host "`ncreating `\*repos` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+
+$allReposFolderExists = Test-Path "C:\Users\$env:Username\all-repos\"
+$reposFolderExists = Test-Path "C:\Users\$env:Username\repos\"
+$otherReposFolderExists = Test-Path "C:\Users\$env:Username\other-repos\"
+
+if (!$allReposFolderExists) {
+    New-Item -ItemType Directory "C:\Users\$env:Username\all-repos\"
+}
+else {
+    Write-Host "~/all-repos/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+if (!$reposFolderExists) {
+    New-Item -ItemType Directory "C:\Users\$env:Username\repos\"
+}
+else {
+    Write-Host "~/repos/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+if (!$otherReposFolderExists) {
+    New-Item -ItemType Directory "C:\Users\$env:Username\other-repos\"
+}
+else {
+    Write-Host "~/other-repos/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+
+# scoop install
+Write-Host "`nInstalling scoop & apps - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[6-10]" -ForegroundColor Green -BackgroundColor Black
+try {
+    $scoopIsInstalled = [Boolean](Get-Command 'scoop' -ErrorAction SilentlyContinue)
+    if (!$scoopIsInstalled) {
+        # Set policy to avoid errors
+        Set-ExecutionPolicy RemoteSigned -scope CurrentUser
+
+        # Install scoop
+        Invoke-WebRequest -UseBasicParsing get.scoop.sh | Invoke-Expression
+    }
+
+    # Scoop can utilize aria2 to use multi-connection downloads
+    scoop install aria2
+    # disable the warning
+    scoop config aria2-warning-enabled false
+
+    # buckets
+    scoop bucket add extras
+
+    # core
+    scoop install 7zip audacity autohotkey azuredatastudio bat
+    scoop install broot calibre delta difftastic discord draw.io 
+    scoop install dust fd ffmpeg fzf gcc gh git gitui glab glow googlechrome jpegview-fork
+    scoop install inkscape insomnia keepassxc mongodb mongodb-compass mongosh neovide neovim
+    scoop install nomino nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
+    scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 
+    scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat zoxide
+
+    # programming languages
+    scoop install deno flutter fnm python rustup surrealdb
+
+    # local github actions runner
+    scoop install main/act
+
+    # add rust-analyzer for nvim
+    rustup component add rust-analyzer
+
+}
+catch { Write-Warning $_ }
+
+# clone `dotfiles
+Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+
+$dotfilesFolderExists = Test-Path "C:\Users\$env:Username\repos\dotfiles\"
+
+if (!$dotfilesFolderExists) {
+    git clone https://github.com/AucaCoyan/dotfiles "$HOME\repos\dotfiles"
+}
+else {
+    throw "~\repos\dotfiles\ folder found. Stopping excecution.`n" 
+
+}
 
 # Install glyphed fonts
 Write-Host "`nInstalling glyphed fonts for OMP [Caskaydia Cove Nerd] - " -ForegroundColor Yellow -NoNewline ; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
@@ -72,33 +166,14 @@ try {
 catch { Write-Warning $_ }
 
 
+
+
 # Set PSGallery as trusted
-Write-Host "`nSetting PSGallery as trusted repo - " -ForegroundColor Yellow -NoNewline ; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nSetting PSGallery as trusted repo - " -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
 Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
 
-# scoop install
-Write-Host "`nInstalling scoop & apps - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
-try {
-    $scoopIsInstalled = [Boolean](Get-Command 'scoop' -ErrorAction SilentlyContinue)
-    if (!$scoopIsInstalled) {
-        # Set policy to avoid errors
-        Set-ExecutionPolicy RemoteSigned -scope CurrentUser
-
-        # Install scoop
-        Invoke-WebRequest -UseBasicParsing get.scoop.sh | Invoke-Expression
-    }
-    # install apps
-    .\scripts\scoop.ps1
-    throw exepcion
-
-    $dest = "C:\Users\$env:Username\AppData\Local\Programs\oh-my-posh\themes"
-    if (!(Test-Path -Path $dest)) { New-Item $dest -Type Directory }
-    Copy-Item ".\src\wylde.omp.json" -Destination $dest
-}
-catch { Write-Warning $_ }
-
 # Install ps modules in PS7
-Write-Host "`nInstalling Z,PsReadLine,Terminal-Icons modules - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[9-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nInstalling Z,PsReadLine,Terminal-Icons modules - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[7-10]" -ForegroundColor Green -BackgroundColor Black
 
 if ($PSVersionTable.PSVersion.Major -eq 7) {
     try {
@@ -138,16 +213,10 @@ try {
     New-Item -ItemType Junction -Path $originPath -Target $destinationPath
 }
 catch { Write-Warning $_ }
-try {
-    $dest2 = "C:\Users\$env:Username\Documents\PowerShell"
-    [System.IO.Directory]::CreateDirectory($dest2) > $null
-    Copy-Item ".\src\Microsoft.PowerShell_profile.ps1" -Destination $dest2 -Force
-}
-catch { Write-Warning $_ }
 
 
 # Set WT settings.json
-Write-Host "`nApplying Windows Terminal default settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[10-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nApplying Windows Terminal default settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[9-10]" -ForegroundColor Green -BackgroundColor Black
 try {
     $originPath = "$HOME\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState"
     $destinationPath = "$HOME\repos\dotfiles\Windows\windows-terminal"
@@ -164,3 +233,6 @@ try {
 catch { Write-Warning $_ }
 
 # Oh-My-Posh install, add to default prompt, add theme
+# pipx
+# cargo install
+# npm -g install
