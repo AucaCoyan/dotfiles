@@ -548,6 +548,11 @@ source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/atuin-init.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/modules/docker/docker.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts.nu

@@ -11,7 +11,7 @@ $env.home = if $nu.os-info.name == "windows" {
 def create_left_prompt [] {
 
     let dir = ([
-        ($env.PWD | str substring 0..($env.home | str length) | str replace -s $env.home "~"),
+        ($env.PWD | str substring 0..($env.home | str length) | str replace $env.home "~"),
         ($env.PWD | str substring ($env.home | str length)..)
     ] | str join)
 
@@ -26,7 +26,7 @@ def create_left_prompt [] {
 
 def create_right_prompt [] {
     let time_segment = ([
-        (date now | date format '%m/%d/%Y %r')
+        (date now | format date '%m/%d/%Y %r')
     ] | str join)
 
     $time_segment
