@@ -1,4 +1,3 @@
-# ------------------ copy section ------------------
 # PS support base script
 # https://stackoverflow.com/a/44810914/8552476
 
@@ -11,16 +10,12 @@ Set-StrictMode -Version Latest
 $ErrorActionPreference = 'Stop'
 
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
-function ThrowOnNativeFailure {
-    if (-not $?) {
-        throw 'Native Failure'
-    }
-}
+
+# --------------------- Install-master-script.ps1 --------------------- 
 
 # import Appx or this wont work
 # https://superuser.com/questions/1456837/powershell-get-appxpackage-not-working
 Import-Module -Name Appx -UseWindowsPowershell
-
 
 # clear screen
 Clear-Host
@@ -131,7 +126,7 @@ try {
 }
 catch { Write-Warning $_ }
 
-# clone `dotfiles
+# clone `dotfiles`
 Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 
 $dotfilesFolderExists = Test-Path "C:\Users\$env:Username\repos\dotfiles\"
@@ -140,33 +135,64 @@ if (!$dotfilesFolderExists) {
     git clone https://github.com/AucaCoyan/dotfiles "$HOME\repos\dotfiles"
 }
 else {
-    throw "~\repos\dotfiles\ folder found. Stopping excecution.`n" 
-
+    Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
 }
 
 # Install glyphed fonts
-Write-Host "`nInstalling glyphed fonts for OMP [Caskaydia Cove Nerd] - " -ForegroundColor Yellow -NoNewline ; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+$Font = "FiraCode"
+Write-Host "`nInstalling glyphed fonts for OMP [$Font] - " -ForegroundColor Yellow -NoNewline ; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 try {
-    $shellObject = New-Object -ComObject shell.application
-    $fonts = $ShellObject.NameSpace(0x14)
-    $fontsToInstallDirectory = ".\fonts\*.ttf"
+    $fontsToInstallDirectory = "$Font-temp"
+
+    # clean the folder if the font or directory exists
+    $zipFileExists = Test-Path ".\$Font.zip"
+    $fontsToInstallDirectoryExists = Test-Path "$fontsToInstallDirectory\"
+
+    if ($zipFileExists) {
+        Write-Host "$Font.zip found! Removing..." -ForegroundColor Yellow
+        Remove-Item "$Font.zip"
+    }
+    if ($fontsToInstallDirectoryExists) {
+        Write-Host "$fontsToInstallDirectory dir found! Removing..." -ForegroundColor Yellow
+        Remove-Item "$fontsToInstallDirectory\" -Recurse -Force
+    }
+
+    # download the font
+    # it doesnt work with .tar.xz. Only with .zip
+    curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$Font.zip"
+
+    # expand the zip
+    # (you don't need to create the directory)
+    Expand-Archive ".\$Font.zip" -DestinationPath $fontsToInstallDirectory
+
+    
+    # install the fonts
     $fontsToInstall = Get-ChildItem $fontsToInstallDirectory -Recurse -Include '*.ttf'
+
+    $shellObejct = New-Object -ComObject shell.application
+    $Fonts = $shellObejct.NameSpace(0x14)
+
     foreach ($f in $fontsToInstall) {
         $fullPath = $f.FullName
         $name = $f.Name
         $userInstalledFonts = "$env:USERPROFILE\AppData\Local\Microsoft\Windows\Fonts"
         if (!(Test-Path "$UserInstalledFonts\$Name")) {
+            Write-Host "Installing $name... " -ForegroundColor Green
             $Fonts.CopyHere($FullPath)
         }
         else {
-            Write-Host "$f found!. Skipping`n" -ForegroundColor Yellow
+            $name = $f.Name
+            Write-Host "$name found!. Skipping" -ForegroundColor Yellow
         }
     }
+    Write-Host "Finished! $name... " -ForegroundColor Green
+
+    Write-Host "Removing $Font.zip" -ForegroundColor Yellow
+    Remove-Item "$Font.zip"
+    Write-Host "Removing $fontsToInstallDirectory\ dir" -ForegroundColor Yellow
+    Remove-Item "$fontsToInstallDirectory\" -Recurse -Force
 }
 catch { Write-Warning $_ }
-
-
-
 
 # Set PSGallery as trusted
 Write-Host "`nSetting PSGallery as trusted repo - " -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
@@ -232,6 +258,7 @@ try {
 }
 catch { Write-Warning $_ }
 
+# todo:
 # Oh-My-Posh install, add to default prompt, add theme
 # pipx
 # cargo install
