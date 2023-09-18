@@ -304,7 +304,7 @@ catch { Write-Warning $_ }
 Write-Host "`nApplying bat settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
 try {
     $originPath = "$HOME\AppData\Roaming\bat"
-    $destinationPath = "$HOME\repos\.config\bat"
+    $destinationPath = "$HOME\repos\dotfiles\.config\bat"
 
     # delete the folder if it exists
     $LocalStateExits = Test-Path $originPath
