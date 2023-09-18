@@ -1,6 +1,9 @@
 .config/nvim/plugin/
-PowerShell/Help/
-PowerShell/Modules/
-PowerShell/Scripts
+Windows/PowerShell/Help/
+Windows/PowerShell/Modules/
+Windows/PowerShell/Scripts
 nushell/history.txt
 OME/
+Windows/windows-terminal/elevated-state.json
+Windows/windows-terminal/state.json
+Windows/powershell.config.json
