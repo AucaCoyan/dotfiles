@@ -106,13 +106,16 @@ try {
     scoop bucket add extras
 
     # core
-    scoop install 7zip audacity autohotkey azuredatastudio bat
-    scoop install broot calibre delta difftastic discord draw.io 
-    scoop install dust everything fd ffmpeg fzf gcc gh git gitui glab glow googlechrome jpegview-fork
-    scoop install inkscape insomnia keepassxc mongodb mongodb-compass mongosh neovide neovim
-    scoop install nomino nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
+    scoop install 7zip autohotkey azuredatastudio bat
+    scoop install broot delta difftastic discord draw.io 
+    scoop install dust everything fd ffmpeg fzf gh git gitui glab glow googlechrome jpegview-fork
+    scoop install keepassxc neovide neovim
+    scoop install nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 
     scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat zoxide
+
+    # opciotional apps
+    # scoop install audacity calibre gcc insomnia mongodb mongodb-compass mongosh nomino
 
     # programming languages
     scoop install deno flutter fnm python rustup surrealdb
