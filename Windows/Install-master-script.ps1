@@ -210,6 +210,7 @@ try {
 catch { Write-Warning $_ }
 
 # Install NuGet
+# it doesn't work either :shrug:
 Write-Host "`nInstalling NuGet" -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
 scoop install nuget
 
@@ -281,3 +282,37 @@ catch { Write-Warning $_ }
 # pipx
 # cargo install
 # npm -g install
+
+# Set nushell symlink
+Write-Host "`nApplying nushell settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[10-10]" -ForegroundColor Green -BackgroundColor Black
+try {
+    $originPath = "$HOME\AppData\Roaming\nushell"
+    $destinationPath = "$HOME\repos\dotfiles\nushell"
+
+    # delete the folder if it exists
+    $LocalStateExits = Test-Path $originPath
+    if ($LocalStateExits) {
+        Remove-Item $originPath -Recurse -Force
+    }
+
+    # symlink the settings.json
+    New-Item -ItemType Junction -Path $originPath -Target $destinationPath
+}
+catch { Write-Warning $_ }
+
+# Set bat symlink
+Write-Host "`nApplying bat settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
+try {
+    $originPath = "$HOME\AppData\Roaming\bat"
+    $destinationPath = "$HOME\repos\.config\bat"
+
+    # delete the folder if it exists
+    $LocalStateExits = Test-Path $originPath
+    if ($LocalStateExits) {
+        Remove-Item $originPath -Recurse -Force
+    }
+
+    # symlink the settings.json
+    New-Item -ItemType Junction -Path $originPath -Target $destinationPath
+}
+catch { Write-Warning $_ }
