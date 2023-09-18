@@ -300,6 +300,19 @@ try {
 }
 catch { Write-Warning $_ }
 
+# clone nu_scripts
+Write-Host "`ncloning `\nu_scripts\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+
+$nu_scriptsFolderExists = Test-Path "C:\Users\$env:Username\other-repos\nu\nu_scripts"
+
+if (!$nu_scriptsFolderExists) {
+    git clone https://github.com/nushell/nu_scripts "$HOME\other-repos\nu\nu_scripts"
+}
+else {
+    Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
+}
+
+
 # Set bat symlink
 Write-Host "`nApplying bat settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
 try {
