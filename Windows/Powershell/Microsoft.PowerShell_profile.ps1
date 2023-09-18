@@ -8,17 +8,18 @@ Import-Module scoop-completion
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
 
+# Full path of scripting directory 
+# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2#psscriptroot
+$profileDir = $PSScriptRoot;
+
 # autocompletions
-.\autocompletions\deno.ps1
-.\autocompletions\fnm.ps1
+& "$profileDir\autocompletions\deno.ps1"
+& "$profileDir\autocompletions\fnm.ps1"
 
 # Produce UTF-8 by default
 # https://news.ycombinator.com/item?id=12991690
 $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
-# Full path of scripting directory 
-# https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2#psscriptroot
-$profileDir = $PSScriptRoot;
 
 # zoxide v0.8.0+
 Invoke-Expression (& {
@@ -72,9 +73,6 @@ Set-PSReadLineKeyHandler -Chord '"', "'" `
         [Microsoft.PowerShell.PSConsoleReadLine]::SetCursorPosition($cursor - 1)
     }
 }
-
-# colored man-pages
-Import-Module man-highlighting
 
 # `fnm`:
 # load the `.node-version` or `.nvmrc` file on cd and load the NodeJS version correctly

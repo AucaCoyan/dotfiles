@@ -98,14 +98,13 @@ try {
 catch { Write-Warning $_ }
 
 # Install ps modules in PS7
-Write-Host "`nInstalling Z,PsReadLine,Terminal-Icons, man-highlighting modules - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[9-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nInstalling Z,PsReadLine,Terminal-Icons modules - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[9-10]" -ForegroundColor Green -BackgroundColor Black
 
 if ($PSVersionTable.PSVersion.Major -eq 7) {
     try {
         Install-Module -Name z -RequiredVersion 1.1.3 -Force -Scope CurrentUser -AllowClobber -confirm:$false
         Install-Module -Name Terminal-Icons -RequiredVersion 0.8.0 -Force -Scope CurrentUser -confirm:$false
         Install-Module -Name PSReadLine -RequiredVersion 2.2.6 -Force -AllowPrerelease -Scope CurrentUser -SkipPublisherCheck
-        Install-Module -Name man-highlighting 
     }
     catch { Write-Warning $_ }
 }
