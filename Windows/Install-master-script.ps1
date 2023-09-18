@@ -15,7 +15,21 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 # import Appx or this wont work
 # https://superuser.com/questions/1456837/powershell-get-appxpackage-not-working
-Import-Module -Name Appx -UseWindowsPowershell
+if ($PSVersionTable.PSVersion.Major -eq 5) {
+    # -UseWindowsPowershell it doesn't work on PS 5.0, only in 7.0
+    Import-Module -Name Appx 
+}
+elseif ($PSVersionTable.PSVersion.Major -eq 7) {
+    # -UseWindowsPowershell it doesn't work on PS 5.0, only in 7.0
+    Import-Module -Name Appx -UseWindowsPowerShell
+}
+else {
+    Write-Error "unknown powershell version"
+}
+
+# using PS 7.0
+# Import-Module -Name Appx -UseWindowsPowershell
+
 
 # clear screen
 Clear-Host
@@ -33,13 +47,12 @@ if (!$hasPackageManager -or !$hasWingetexe) {
 }
 else {
     Write-Host "Winget found. Skipping`n" -ForegroundColor Yellow
-
 }
 
 # Install PS7 
 Write-Host "Installing Powershell 7 - " -ForegroundColor Yellow -NoNewline; Write-Host "[2-10]" -ForegroundColor Green -BackgroundColor Black
 If (!(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe")) {
-    winget install --id Microsoft.Powershell --source winget --accept-package-agreements --accept-source-agreements
+    winget install --id Microsoft.Powershell --source winget #  --accept-package-agreements --accept-source-agreements doesnt work on PS 5.0
 }
 else {
     Write-Host "pwsh.exe found. Skipping`n" -ForegroundColor Yellow
@@ -47,17 +60,17 @@ else {
 
 
 # Install Windows Terminal
-Write-Host "`nInstalling Windows Terminal - " -ForegroundColor Yellow -NoNewline ; Write-Host "[3-10]" -ForegroundColor Green -BackgroundColor Black
-$hasWindowsTerminal = Get-AppPackage -Name "Microsoft.WindowsTerminal"
-try {
-    if (!$env:WT_SESSION -eq $true -or !$hasWindowsTerminal) {
-        winget install --id=Microsoft.WindowsTerminal -e --accept-package-agreements --accept-source-agreements
-    }
-    else {
-        Write-Host "Windows Terminal found. Skipping`n" -ForegroundColor Yellow
-    }
-}
-catch { Write-Warning $_ }
+# Write-Host "`nInstalling Windows Terminal - " -ForegroundColor Yellow -NoNewline ; Write-Host "[3-10]" -ForegroundColor Green -BackgroundColor Black
+# $hasWindowsTerminal = Get-AppPackage -Name "Microsoft.WindowsTerminal"
+# try {
+#     if (!$env:WT_SESSION -eq $true -or !$hasWindowsTerminal) {
+#         winget install --id=Microsoft.WindowsTerminal -e # --accept-package-agreements --accept-source-agreements doesnt work on PS 5.0
+#     }
+#    else {
+#       Write-Host "Windows Terminal found. Skipping`n" -ForegroundColor Yellow
+#    }
+#}
+#catch { Write-Warning $_ }
 
 # make ~/all-repos/ ~/repos/ and ~/other-repos/ folders
 Write-Host "`ncreating `\*repos` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
@@ -103,6 +116,8 @@ try {
     scoop config aria2-warning-enabled false
 
     # buckets
+    # git is required for buckets
+    scoop install git
     scoop bucket add extras
 
     # core
@@ -112,7 +127,7 @@ try {
     scoop install keepassxc neovide neovim
     scoop install nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 
-    scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat zoxide
+    scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat windows-terminal zoxide
 
     # opciotional apps
     # scoop install audacity calibre gcc insomnia mongodb mongodb-compass mongosh nomino
@@ -125,7 +140,6 @@ try {
 
     # add rust-analyzer for nvim
     rustup component add rust-analyzer
-
 }
 catch { Write-Warning $_ }
 
