@@ -1,4 +1,18 @@
-# How to config Powershell in windows
+# new installation mode!
+
+run this script
+```powershell
+$InstallMasterScriptURI = "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Windows/Install-master-script.ps1"
+Invoke-WebRequest -Uri $InstallMasterScriptURI -OutFile .\Install-master-script.ps1
+```
+
+and run it with
+```
+& .\Install-master-script.ps1
+```
+
+---
+# Old installation - How to config Powershell in windows
 
 - Install `Windows Terminal` from Windows App Store
 
