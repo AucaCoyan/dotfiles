@@ -164,14 +164,4 @@ try {
 }
 catch { Write-Warning $_ }
 
-# Wrap up time for PS7 module install jobs
-[int]$time = 30
-$length = $time / 100
-for ($time; $time -gt 0; $time--) {
-    $min = [int](([string]($time / 60)).split('.')[0])
-    $text = " " + $min + " minutes " + ($time % 60) + " seconds left."
-    Write-Progress -Activity "Finishing up PS7 module installs in background job" -Status $text -PercentComplete ($time / $length)
-    Start-Sleep 1
-}
-
 # Oh-My-Posh install, add to default prompt, add theme

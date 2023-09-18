@@ -5,4 +5,6 @@ scoop bucket add games
 scoop install bizhawk duckstation epic-games-launcher
 
 # scoop install jacket
-scoop install plex-server qbittorrent
+scoop install plex-server qbittorrent stremio
+
+scoop install cyberduck
