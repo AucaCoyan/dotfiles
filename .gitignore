@@ -8,3 +8,4 @@ Windows/windows-terminal/elevated-state.json
 Windows/windows-terminal/state.json
 Windows/powershell.config.json
 .config/helix/helix.log
+PowerShell/
