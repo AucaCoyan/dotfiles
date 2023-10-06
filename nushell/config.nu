@@ -555,4 +555,5 @@ source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 
 # import the module scripts
-use ~/repos/dotfiles/nushell/scripts.nu
+use ~/repos/dotfiles/nushell/scripts.nu *
+use ~/repos/dotfiles/nushell/scripts/ 

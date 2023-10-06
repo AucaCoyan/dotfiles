@@ -14,11 +14,13 @@ export def list_scoop_packages [] {
 # scoop export | from json | get apps | select Name | to text | save "2.txt"
 }
 
+# cd into appdata/local/nvim/lua/custom && nvim .
 export def editvimrc [] {
     cd ~\AppData\Local\nvim\lua\custom
     nvim .
 }
 
+# cd into repos/dotfiles && nvim .
 export def editdot [] {
     cd ~\repos\dotfiles\
     nvim .
@@ -52,13 +54,13 @@ export def new-junction [
     pwsh -Command $command
 }
 
-export def git-gone [] {
-    git branch --merged 
-    | lines 
-    | where $it !~ '\*' 
-    | str trim 
-    | where $it != 'master' and $it != 'main' 
-    | each {
-         |it| git branch -d $it 
-         }
-}
+# export def git-gone [] {
+#     git branch --merged 
+#     | lines 
+#     | where $it !~ '\*' 
+#     | str trim 
+#     | where $it != 'master' and $it != 'main' 
+#     | each {
+#          |it| git branch -d $it 
+#          }
+# }
