@@ -20,10 +20,10 @@ export def editvimrc [] {
     nvim .
 }
 
-# cd into repos/dotfiles && nvim .
+# cd into repos/dotfiles && code .
 export def editdot [] {
     cd ~\repos\dotfiles\
-    nvim .
+    code .
 }
 
 export def user-profile-path [] {
