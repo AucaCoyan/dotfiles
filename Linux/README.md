@@ -2,7 +2,7 @@
 
 run this script
 ```bash
-curl "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Install-master-script.sh"
+curl "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Install-master-script.sh" | bash
 ```
 
 and run it with
