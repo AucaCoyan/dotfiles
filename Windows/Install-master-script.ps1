@@ -131,7 +131,7 @@ try {
     # programming languages
     scoop install deno fnm python rustup
     # optional langs
-    # scoop install flutter surrealdb
+    # scoop install flutter surrealdb dotnet-sdk
 
     # local github actions runner
     scoop install main/act
