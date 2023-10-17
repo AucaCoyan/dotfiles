@@ -553,6 +553,8 @@ source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/rustup.nu
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts.nu *
