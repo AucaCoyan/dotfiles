@@ -1,3 +1,6 @@
+-- file was commited but git skips tracking the changes with:
+-- git update-index --skip-worktree .config\preconfigured-nvim\NvChad\custom\chadrc.lua
+
 ---@type ChadrcConfig
 local M = {}
 
