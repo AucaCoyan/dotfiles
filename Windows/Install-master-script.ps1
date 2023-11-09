@@ -119,7 +119,7 @@ try {
     # core
     scoop install 7zip autohotkey bat
     scoop install broot czkawka-gui delta difftastic draw.io 
-    scoop install dust everything fd ffmpeg fzf gh git gitui glab glow googlechrome jpegview-fork
+    scoop install dust everything espanso fd ffmpeg fzf gh git gitui glab glow googlechrome jpegview-fork
     scoop install keepassxc neovide neovim
     scoop install nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 

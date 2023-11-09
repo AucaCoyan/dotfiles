@@ -1,0 +1,60 @@
+# espanso match file
+
+# For a complete introduction, visit the official docs at: https://espanso.org/docs/
+
+# You can use this file to define the base matches (aka snippets)
+# that will be available in every application when using espanso.
+
+# Matches are substitution rules: when you type the "trigger" string
+# it gets replaced by the "replace" string.
+matches:
+  # Simple text replacement
+  - trigger: ":espanso"
+    replace: "Hi there!"
+
+  - trigger: "ag."
+    replace: "aucacoyan@gmail.com"
+  - trigger: "ah."
+    replace: "aucacoyan@hotmail.com"
+  - trigger: "fp."
+    replace: "forosypaginas@gmail.com"
+
+  - trigger: "ghpro"
+    replace: "https://github.com/AucaCoyan"
+  - trigger: "aucacv"
+    replace: "http://tiny.cc/AucaCV"
+  - trigger: "linp"
+    replace: "https://www.linkedin.com/in/auca-coyan-maillot/"
+
+  - trigger: "a;o"
+    replace: "año"
+  - trigger: "mas"
+    replace: "más"
+  - trigger: "d[ia"
+    replace: "día"
+  - trigger: "todav[ia"
+    replace: "todavía"
+  - trigger: "empez[o"
+    replace: "empezó"
+  - trigger: "ma;ana"
+    replace: "mañana"
+
+  # Print the current date
+  - trigger: ":date"
+    replace: "{{mydate}}"
+    vars:
+      - name: mydate
+        type: date
+        params:
+          format: "%d/%m/%Y"
+
+  # Print the output of a shell command
+  - trigger: ":shell"
+    replace: "{{output}}"
+    vars:
+      - name: output
+        type: shell
+        params:
+          cmd: "echo 'Hello from your shell'"
+
+  # And much more! For more information, visit the docs: https://espanso.org/docs/

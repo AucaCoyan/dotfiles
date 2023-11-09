@@ -12,3 +12,6 @@ PowerShell/
 
 # chadrc is tracked, do not look up for changes
 .config/preconfigured-nvim/NvChad/custom/chadrc.lua
+
+# espanso
+.config/.espanso/match/packages/
