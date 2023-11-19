@@ -28,8 +28,8 @@ matches:
 
   - trigger: "a;o"
     replace: "año"
-  - trigger: "mas"
-    replace: "más"
+  - trigger: " mas "
+    replace: " más "
   - trigger: "d[ia"
     replace: "día"
   - trigger: "todav[ia"
