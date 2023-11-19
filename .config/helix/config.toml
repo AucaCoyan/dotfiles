@@ -1,4 +1,4 @@
-theme = "onedark"
+theme = "catppuccin_mocha"
 
 [editor]
 line-number = "relative"
@@ -11,4 +11,7 @@ normal = "block"
 select = "underline"
 
 [editor.file-picker]
-hidden = true
+# disable filter hidden files (dotfiles)
+hidden = false
+# read git-ignored files
+git-ignore = true

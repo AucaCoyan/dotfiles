@@ -1,13 +1,21 @@
 {
   "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "palette": {
+    "os": "#ACB0BE",
+    "pink": "#F5BDE6",
+    "lavender": "#B7BDF8",
+    "blue": "#8AADF4",
+    "wight": "#FFFFFF",
+    "text": "#494D64"
+  },
   "blocks": [
     {
       "type": "prompt",
       "alignment": "left",
       "segments": [
         {
-          "background": "#0C212F",
-          "foreground": "#FFFFFF",
+          "background": "p:blue",
+          "foreground": "p:wight",
           "type": "os",
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}} ",
@@ -37,10 +45,9 @@
         {
           "type": "path",
           "style": "diamond",
-          "leading_diamond": "<transparent,#26BDBB>\ue0b0</>",
           "trailing_diamond": "\ue0b0",
-          "background": "#26BDBB",
-          "foreground": "#0C212F",
+          "background": "p:pink",
+          "foreground": "p:text",
           "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\uf6d7",
@@ -51,13 +58,13 @@
         },
         {
           "type": "git",
-          "background": "#99ff66",
-          "foreground": "#193549",
+          "background": "p:lavender",
+          "foreground": "p:text",
           "background_templates": [
-            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
-            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
-            "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
-            "{{ if gt .Behind 0 }}#B388FF{{ end }}"
+            "{{ if or (.Working.Changed) (.Staging.Changed) }}#FAB387{{ end }}",
+            "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#a6e3a1{{ end }}",
+            "{{ if gt .Ahead 0 }}#89b4fa{{ end }}",
+            "{{ if gt .Behind 0 }}#89b4fa{{ end }}"
           ],
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
@@ -70,12 +77,11 @@
         },
         {
           "type": "python",
-          "background": "#FF6471",
-          "foreground": "#ffffff",
+          "foreground": "#a6e3a1",
           "leading_diamond": "<transparent,background>\ue0b0</>",
           "style": "diamond",
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "\ue0b4"
+          "trailing_diamond": "<transparent> \ue0b1 </>"
         }
       ]
     }
