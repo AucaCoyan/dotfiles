@@ -9,6 +9,9 @@ Windows/windows-terminal/state.json
 Windows/powershell.config.json
 .config/helix/helix.log
 
+# lazy.nvim commit hashes
+.config/nvim/lazy-lock.json
+
 # chadrc is tracked, do not look up for changes
 .config/preconfigured-nvim/NvChad/custom/chadrc.lua
 
