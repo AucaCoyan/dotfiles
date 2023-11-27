@@ -126,7 +126,8 @@ try {
     scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat windows-terminal zoxide
 
     # optional apps
-    # scoop install audacity authy azuredatastudio calibre discord gcc insomnia mongodb mongodb-compass mongosh nomino
+    # scoop install audacity authy azuredatastudio calibre discord gcc 
+    # scoop install insomnia mongodb mongodb-compass mongosh nomino
 
     # programming languages
     scoop install deno fnm python rustup
