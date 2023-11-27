@@ -8,3 +8,6 @@ local opts = { noremap = true, silent = true }
 -- keymap.set("n", "te", "tabedit") -- new tab
 keymap.set("n", "<tab>", ":bnext<Return>", opts)
 keymap.set("n", "<s-tab>", ":bprev<Return>", opts)
+
+-- vs code classic Ctrl-P
+keymap.set("n", "<C-P>", "<leader>ff")
