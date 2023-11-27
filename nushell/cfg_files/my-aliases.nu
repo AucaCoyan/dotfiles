@@ -19,7 +19,10 @@ alias scoo = scoop
 
 # nvim configurations
 # my vim
-alias nv = nvim -u ~\repos\dotfiles\.config\nvim\init.lua
+# alias nv = nvim -u ~\repos\dotfiles\.config\nvim\init.lua
+alias nvim = code
+alias vim = code
+alias vi = code
 
 # sqlite
 alias sqlite = sqlite3
