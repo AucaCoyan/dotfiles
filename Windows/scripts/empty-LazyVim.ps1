@@ -26,3 +26,16 @@ git clone https://github.com/LazyVim/starter $env:LOCALAPPDATA\nvim
 
 Write-Host "`nRemoving .git folder" -ForegroundColor White
 Remove-Item $env:LOCALAPPDATA\nvim\.git -Recurse -Force
+
+Write-Host "`nMaking symlink ~/AppData/Local/nvim/lua/ to ~/repos/dotfiles/.config/preconfigured-nvim/lazyvim/" -ForegroundColor White
+$hasNvimConfigDirectory = Test-Path "$HOME\AppData\Local\nvim\lua\"
+if ($hasNvimConfigDirectory) {
+    Write-Host "`nRemoving ~/AppData/Local/nvim/lua/" -ForegroundColor White
+    Remove-Item "$HOME\AppData\Local\nvim\lua\" -Recurse -Force
+}
+New-Item -ItemType Junction -Path "$HOME/AppData/Local/nvim/lua/" -Target "C:\Users\aucac\repos\dotfiles\.config\preconfigured-nvim\lazyvim\"
+
+Write-Host "Done! ✅" -ForegroundColor Green
+
+# run nvim to install all the plugins
+nvim
