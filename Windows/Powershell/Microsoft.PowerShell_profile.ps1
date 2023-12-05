@@ -5,6 +5,10 @@ using namespace System.Management.Automation.Language
 # scoop autocompletion
 Import-Module scoop-completion
 
+# import module Recycle to to delete to trash
+Import-Module Recycle
+New-Alias trash Remove-ItemSafely
+
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
 
@@ -79,6 +83,13 @@ Set-PSReadLineKeyHandler -Chord '"', "'" `
 fnm env --use-on-cd | Out-String | Invoke-Expression
 # more on `fnm` autocompletion below!
 
+
+# catppuccin theme for FZF
+$ENV:FZF_DEFAULT_OPTS=@"
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
+--color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
+"@
 
 # -------------------------------------------------------------------------------------
 # chocolatey autocompletion
