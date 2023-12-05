@@ -41,3 +41,7 @@ alias "git_log2" = git log --all --decorate --oneline
 # TODO: print "running `cargo install --list`"
 alias "cargo list" = cargo install --list
 alias "cargo --list" = cargo install --list
+
+# set the theme for `gitui` and `bat
+alias gitui = gitui -t mocha.ron
+alias bat = bat --theme="Catppuccin-mocha"
