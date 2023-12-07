@@ -548,7 +548,6 @@ source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
-# source ~/repos/dotfiles/nushell/cfg_files/atuin-init.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/modules/docker/docker.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
