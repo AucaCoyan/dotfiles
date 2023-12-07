@@ -130,7 +130,7 @@ try {
     # scoop install insomnia mongodb mongodb-compass mongosh nomino
 
     # programming languages
-    scoop install deno fnm python rustup
+    scoop install deno fnm python
     # optional langs
     # scoop install flutter surrealdb dotnet-sdk
 
