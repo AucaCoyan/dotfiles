@@ -162,4 +162,7 @@ $PSStyle.Formatting.TableHeader = $Flavor.Rosewater.Foreground()
 $PSStyle.Formatting.Verbose = $Flavor.Yellow.Foreground()
 $PSStyle.Formatting.Warning = $Flavor.Peach.Foreground()
 
-Invoke-Expression nu
+# Invoke-Expression nu
+# unnecesary
+# install the shell in windows terminal here:
+# https://www.nushell.sh/book/default_shell.html
