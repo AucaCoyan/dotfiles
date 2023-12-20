@@ -31,7 +31,7 @@
     ],
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
+    "defaultProfile": "{b4fd346a-4800-4e89-82b7-ea3d622627ad}",
     "launchMode": "maximized",
     "newTabMenu": 
     [
@@ -73,7 +73,7 @@
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
-                "opacity": 80,
+                "opacity": 70,
                 "source": "Windows.Terminal.PowershellCore"
             },
             {
@@ -105,6 +105,14 @@
                 "hidden": true,
                 "name": "Developer PowerShell for VS 2022",
                 "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "commandline": "C:\\Users\\aucac\\scoop\\shims\\nu.exe",
+                "guid": "{b4fd346a-4800-4e89-82b7-ea3d622627ad}",
+                "hidden": false,
+                "icon": "D:\\OneDrive\\Downloads\\nushell icon.png",
+                "name": "nushell",
+                "startingDirectory": "%USERPROFILE%"
             }
         ]
     },
