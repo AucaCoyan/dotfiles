@@ -45,3 +45,6 @@ alias "cargo --list" = cargo install --list
 # set the theme for `gitui` and `bat
 alias gitui = gitui -t mocha.ron
 alias bat = bat --theme="Catppuccin-mocha"
+
+# toolkit
+alias "check pr" = toolkit check pr

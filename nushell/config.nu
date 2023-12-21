@@ -544,20 +544,38 @@ $env.config = {
 use ~/other-repos/nu/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
 $env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
 
+# use nupm
+use ~/other-repos/nupm/nupm/
+
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
-source ~/other-repos/nu/nu_scripts/modules/docker/docker.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/make/make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/pdm/pdm-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-completion.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/rustup.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
+# only works for organization repos
+# source ~/other-repos/nu/nu_scripts/sourced/github/merged-branches/merged-branches.nu
+
+# docker breaks the nu config
+# source ~/other-repos/nu/nu_scripts/modules/docker/docker.nu
 
 # import the module scripts
-use ~/repos/dotfiles/nushell/scripts.nu *
-use ~/repos/dotfiles/nushell/scripts/ 
+use ~/repos/dotfiles/nushell/scripts/ *
+
+# re export with `scripts` to list every custom fn I wrote
+# use ~/repos/dotfiles/nushell/scripts.nu
