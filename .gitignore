@@ -3,6 +3,7 @@ Windows/PowerShell/Help/
 Windows/PowerShell/Modules/
 Windows/PowerShell/Scripts
 nushell/history.txt
+nushell/unused/
 OME/
 Windows/windows-terminal/elevated-state.json
 Windows/windows-terminal/state.json
