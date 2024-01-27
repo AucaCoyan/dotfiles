@@ -1,10 +1,10 @@
 # cd into repos/dotfiles && code .
-export def dotfiles [] {
+export def --env dotfiles [] {
     cd ~\repos\dotfiles\
     code .
 }
 
-# cd into AppData/local/nvim/lua/custom && nvim .
+# cd into ~\other-repos\nu\nu_scripts\ && code .
 export def nu_scripts [] {
     cd ~\other-repos\nu\nu_scripts\
     code .

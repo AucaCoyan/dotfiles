@@ -1,18 +1,19 @@
 export use git-multi.nu
 export use edit.nu 
+export use oil.nu
+export use copy_subs.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
-export def update-the-fork [] {
+export def update-the-fork [branch?: string = "main"] {
     print "⏬ fething upstream"
     #TODO check if `upstream` is in the list of remotes
     # ^git remote
     # | lines
     ^git fetch upstream
-    print "\n✔ checking out main"
-    ^git checkout main
-    # ^git checkout master
-    print "\n💫 rebasing from upstream/main"
-    git rebase upstream/main
+    print $"\n✔  done\n🏁 checking out ($branch)"
+    ^git checkout $branch
+    print $"\n✔  done\n💫 rebasing from upstream/($branch)"
+    git rebase $"upstream/($branch)"
 }
 
 # <repo: > fork the repo and clones it on ~/repos/
@@ -20,7 +21,6 @@ export def "fork this" [repo:string] {
     cd ~/repos
     print "⏬ fork + clone the repo"
     ^gh repo fork $repo --clone --default-branch-only
-    
 }
 
 export def list_scoop_packages [] {
