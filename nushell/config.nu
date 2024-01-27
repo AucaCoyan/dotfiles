@@ -170,18 +170,6 @@ let light_theme = {
     shape_variable: purple
 }
 
-# External completer example
-# let carapace_completer = {|spans|
-#     carapace $spans.0 nushell $spans | from json
-# }
-
-# use carapace-bin
-$env.Path = ($env.Path | prepend ([$env.home, "/AppData/Roaming/carapace/bin"] | str join))
-
-let carapace_completer = {|spans|
-  carapace $spans.0 nushell $spans | from json
-}
-
 # The default config record. This is where much of your global configuration is setup.
 $env.config = {
   show_banner: false # disable the welcome banner at startup
@@ -552,7 +540,6 @@ use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
 
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
-source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
