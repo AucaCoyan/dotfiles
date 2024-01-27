@@ -547,6 +547,9 @@ $env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
 # use nupm
 use ~/other-repos/nupm/nupm/
 
+# make `fnm` nushell compatible
+use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
+
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
 source ~/repos/dotfiles/nushell/cfg_files/zoxide-config.nu
@@ -554,6 +557,7 @@ source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/make/make-completions.nu
@@ -564,10 +568,12 @@ source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-completion.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
+source ~/other-repos/me.nu/me.nu
+source ~/other-repos/me.nu/menu_config.nu
 # only works for organization repos
 # source ~/other-repos/nu/nu_scripts/sourced/github/merged-branches/merged-branches.nu
 
