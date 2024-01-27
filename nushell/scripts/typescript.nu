@@ -19,10 +19,12 @@ export def --env new [folder: string] {
     # to make imports the `import fs from "fs";` way
     # add scripts
     upsert type "module" |
+    upsert main "dist/index.js" |
     # add scripts
     upsert scripts.dev "tsc" |
-    upsert scripts.build "tsc" |
+    upsert scripts.build "tsc && node ." |
     upsert scripts.test "vitest" |
+    upsert scripts.coverage "vitest run --coverage" |
     upsert scripts.fmt "prettier . --write" |
     save package.json --force
 
@@ -38,6 +40,7 @@ export def --env new [folder: string] {
     config_tsconfig
 
     yarn add vitest --dev
+    yarn add @vitest/coverage-v8 --dev
 
     add_prettier
 
@@ -50,7 +53,7 @@ export def --env new [folder: string] {
 }
 
 def create_gitignore [] {
-    "node_modules/" | save .gitignore
+    "node_modules/\ncoverage/\n" | save .gitignore
 }
 
 def config_tsconfig [] {
