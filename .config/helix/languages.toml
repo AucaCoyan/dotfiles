@@ -7,5 +7,18 @@ formatter = { command = "black", args = ["--quiet", "-"] }
 
 [language-server.pyright]
 config = {}
-timeout = 60
+timeout = 600000
 
+[[language]]
+name = "nu"
+scope = "source.nu"
+injection-regex = "nu"
+file-types = ["nu"]
+shebangs = ["nu"]
+comment-token = "#"
+indent = { tab-width = 2, unit = "  " }
+language-servers = ["nu-lsp"]
+
+[language-server.nu-lsp]
+command = "nu"
+args = ["--lsp"]
