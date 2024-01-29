@@ -1,6 +1,5 @@
 export-env {
     $env.POWERLINE_COMMAND = 'oh-my-posh'
-    # $env.POSH_THEME = "C:\\Users\\a_maillot\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"
     $env.POSH_THEME = ([$env.home, "\\repos\\dotfiles\\nushell\\cfg_files\\oh-my-posh.config.json"] | str join)
     $env.PROMPT_INDICATOR = ""
     $env.POSH_PID = (random uuid)
