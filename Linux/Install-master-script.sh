@@ -7,6 +7,9 @@
 
 set -eu -o pipefail # fail on error and report it, debug all lines
 
+# setup dark theme in Debian
+gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+
 echo -e "###### Linux installation script ######"
 
 ## Update packages and Upgrade system
@@ -14,11 +17,11 @@ echo -e "\n### Updating the system"
 sudo apt-get update -y
 
 # `git`
-echo -e '\n### Installing Git..'
+echo -e '\n### `git`'
 sudo apt-get install git -y
 
 # Git Configuration
-echo -e '\n### Configure Git..'
+echo -e '\n### Configure git'
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 echo -e 'Git has been configured!'
@@ -40,17 +43,26 @@ echo -e '\n### Adding `brew` to PATH'
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # `nushell`
+echo -e '\n### Install nushell'
 brew install nushell
 
+# repos and other-repos folders
+echo -e '\n### create ~/repos/'
 mkdir ~/repos
+echo -e '\n### cloning dotfiles'
 git clone https://github.com/AucaCoyan/dotfiles ~/repos/dotfiles
 
+echo -e '\n### create ~/other-repos/'
 mkdir ~/other-repos
-git clone https://github.com/nushell/nupm ~/other-repos/nupm
+echo -e '\n### cloning nu_scripts'
 git clone https://github.com/nushell/nu_scripts ~/other-repos/nu/nu_scripts
+echo -e '\n### cloning nupm'
+git clone https://github.com/nushell/nupm ~/other-repos/nupm
 
+echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s ~/repos/dotfiles/nushell ~/.config/nushell
 
+echo -e '\n### Install `ripgrep`'
 brew install ripgrep
 
 ## install oh-my-posh
