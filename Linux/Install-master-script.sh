@@ -120,7 +120,7 @@ curl -fsSL https://fnm.vercel.app/install | bash
 
 # VS Code
 echo -e '\n### VS Code'
-wget https://code.visu lstudio.com/sha/download?build=stable&os=linux-deb-x64 --output-document=vscode-stable-x64-linux.deb
+wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 --output-document=vscode-stable-x64-linux.deb
 sudo apt install ./vscode-stable-x64-linux.deb
 
 # Clean up
