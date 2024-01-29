@@ -31,6 +31,13 @@ echo -e 'Git has been configured!'
 echo -e '\n### `curl`'
 sudo apt install curl -y
 
+# `gh` CLI
+echo -e '\n### `gh`'
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt install gh -y
+
 # Brew
 echo -e '\n### `brew`'
 # forward to /dev/null to bypass the "Press enter to continue" step
@@ -48,12 +55,12 @@ brew install nushell
 
 # repos and other-repos folders
 echo -e '\n### create ~/repos/'
-mkdir ~/repos
+mkdir --parents ~/repos
 echo -e '\n### cloning dotfiles'
 git clone https://github.com/AucaCoyan/dotfiles ~/repos/dotfiles
 
 echo -e '\n### create ~/other-repos/'
-mkdir ~/other-repos
+mkdir --parents ~/other-repos
 echo -e '\n### cloning nu_scripts'
 git clone https://github.com/nushell/nu_scripts ~/other-repos/nu/nu_scripts
 echo -e '\n### cloning nupm'
@@ -62,7 +69,13 @@ git clone https://github.com/nushell/nupm ~/other-repos/nupm
 echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s ~/repos/dotfiles/nushell ~/.config/nushell
 
-echo -e '\n### Install `ripgrep`'
+echo -e '\n### `bat`'
+sudo apt install bat
+echo -e '\n### symlinking batcat to bat because of the name collition'
+mkdir --parents ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
+
+echo -e '\n### `ripgrep`'
 brew install ripgrep
 
 ## install oh-my-posh
@@ -71,7 +84,7 @@ brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # install `FiraCode`
 echo -e '\nInstalling Font FiraCode'
-mkdir -p ~/.local/share/fonts
+mkdir --parents ~/.local/share/fonts
 cd ~/.local/share/fonts
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
 # unzip
@@ -90,3 +103,12 @@ source "$HOME/.cargo/env"
 # fnm (node & npm)
 echo -e '\n### `fnm`'
 curl -fsSL https://fnm.vercel.app/install | bash
+
+# VS Code
+echo -e '\n### VS Code'
+wget https://code.visu lstudio.com/sha/download?build=stable&os=linux-deb-x64 --output-document=vscode-stable-x64-linux.deb
+sudo apt install ./vscode-stable-x64-linux.deb
+
+# Clean up
+echo -e '\n### Clean up'
+apt autoremove -y
