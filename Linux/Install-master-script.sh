@@ -24,5 +24,26 @@ echo 'Git has been configured!'
 # git config --list
 
 ## Brew ##
+echo '###Installing Brew'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+# add brew to path
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+## install oh-my-posh
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+
+# install `FiraCode`
+mkdir -p ~/.local/share/fonts
+cd ~/.local/share/fonts
+curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
+# unzip
+tar xf FiraCode.tar.xz
+
+#reload the fonts
+fc-cache
+
+# Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# fnm (node & npm)
+curl -fsSL https://fnm.vercel.app/install | bash
