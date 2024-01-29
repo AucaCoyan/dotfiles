@@ -2,6 +2,7 @@
 
 run this script
 ```bash
+# you don't have `curl` when you install Debian
 curl "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Install-master-script.sh" | bash
 ```
 
