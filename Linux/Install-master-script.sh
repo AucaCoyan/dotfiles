@@ -40,8 +40,9 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 
 # Brew
 echo -e '\n### `brew`'
+# || is an OR operator. Sends the command only if the first part gave an error
 # forward to /dev/null to bypass the "Press enter to continue" step
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
+type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
 ## some brew dependencies / recommended pkgs
 sudo apt-get install build-essential
 brew install gcc
@@ -57,14 +58,27 @@ brew install nushell
 echo -e '\n### create ~/repos/'
 mkdir --parents ~/repos
 echo -e '\n### cloning dotfiles'
-git clone https://github.com/AucaCoyan/dotfiles ~/repos/dotfiles
+if [ ! -d ~/repos/dotfiles ]; then
+    git clone https://github.com/AucaCoyan/dotfiles ~/repos/dotfiles
+else
+    echo -e '\n ~/repos/doftiles found. Skipping!'
+fi
 
 echo -e '\n### create ~/other-repos/'
 mkdir --parents ~/other-repos
 echo -e '\n### cloning nu_scripts'
-git clone https://github.com/nushell/nu_scripts ~/other-repos/nu/nu_scripts
+if [ ! -d ~/other-repos/nu/nu_scripts ]; then
+    git clone https://github.com/nushell/nu_scripts ~/other-repos/nu/nu_scripts
+else
+    echo -e '\n ~/other-repos/nu/nu_scripts found. Skipping!'
+fi
+
 echo -e '\n### cloning nupm'
-git clone https://github.com/nushell/nupm ~/other-repos/nupm
+if [ ! -d ~/other-repos/nu/nupm ]; then
+    git clone https://github.com/nushell/nupm ~/other-repos/nupm
+else
+    echo -e '\n ~/other-repos/nu/nupm found. Skipping!'
+fi
 
 echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s ~/repos/dotfiles/nushell ~/.config/nushell

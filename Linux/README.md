@@ -10,3 +10,8 @@ and run it with
 chmod +x Install-master-script.sh
 ./Install-master-script.sh
 ```
+
+Pending:
+- add a nice wallpaper
+- change login shell to `nushell`
+- `gh auth login` and select browser
