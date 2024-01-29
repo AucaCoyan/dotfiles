@@ -10,37 +10,37 @@ set -eu -o pipefail # fail on error and report it, debug all lines
 echo -e "###### Linux installation script ######"
 
 ## Update packages and Upgrade system
-echo -e "\nUpdating the system"
+echo -e "\n### Updating the system"
 sudo apt-get update -y
 
 ## `git` ##
-echo -e '\n###Installing Git..'
+echo -e '\n### Installing Git..'
 sudo apt-get install git -y
 
 # Git Configuration
-echo -e '\n ###Congigure Git..'
+echo -e '\n### Configure Git..'
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 echo -e 'Git has been configured!'
 # git config --list
 
 # `curl`
-echo -e '\n Installing `curl`'
+echo -e '\n### `curl`'
 sudo apt install curl -y
 
 ## Brew ##
-echo -e '\n ###Installing Brew'
+echo -e '\n### `brew`'
 # forward to /dev/null to bypass the "Press enter to continue" step
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
 # add brew to path
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 ## install oh-my-posh
-echo -e '\n Installing `oh-my-posh`'
+echo -e '\n### `oh-my-posh`'
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # install `FiraCode`
-echo -e '\n Installing Font FiraCode'
+echo -e '\nInstalling Font FiraCode'
 mkdir -p ~/.local/share/fonts
 cd ~/.local/share/fonts
 curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
@@ -52,9 +52,9 @@ echo -e '...reloading the fonts cache'
 fc-cache
 
 # Rust
-echo -e '\n ### Installing Rust'
+echo -e '\n### Rust'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # fnm (node & npm)
-echo -e '\n Installing `fnm`'
+echo -e '\n### `fnm`'
 curl -fsSL https://fnm.vercel.app/install | bash
