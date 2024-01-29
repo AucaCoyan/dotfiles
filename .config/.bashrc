@@ -127,3 +127,6 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 source /usr/share/doc/fzf/examples/key-bindings.bash
 
 . "$HOME/.cargo/env"
+
+# fnm: use node version on cd
+eval "$(fnm env --use-on-cd)"
