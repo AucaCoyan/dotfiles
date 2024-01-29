@@ -12,7 +12,7 @@ echo "###### Linux installation script ######"
 ## Update packages and Upgrade system
 sudo apt-get update -y
 
-## Git ##
+## `git` ##
 echo '###Installing Git..'
 sudo apt-get install git -y
 
@@ -22,6 +22,9 @@ git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 echo 'Git has been configured!'
 # git config --list
+
+# `curl`
+sudo apt install curl -y
 
 ## Brew ##
 echo '###Installing Brew'
