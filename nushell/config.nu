@@ -554,8 +554,11 @@ source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
-source ~/other-repos/me.nu/me.nu
-source ~/other-repos/me.nu/menu_config.nu
+
+# broken for nu version 0.89
+# source ~/other-repos/me.nu/me.nu
+# source ~/other-repos/me.nu/menu_config.nu
+
 # only works for organization repos
 # source ~/other-repos/nu/nu_scripts/sourced/github/merged-branches/merged-branches.nu
 
