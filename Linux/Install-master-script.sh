@@ -84,13 +84,18 @@ echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s ~/repos/dotfiles/nushell ~/.config/nushell
 
 echo -e '\n### `bat`'
-sudo apt install bat
+sudo apt install bat -y
 echo -e '\n### symlinking batcat to bat because of the name collition'
 mkdir --parents ~/.local/bin
 ln -s /usr/bin/batcat ~/.local/bin/bat
 
 echo -e '\n### `ripgrep`'
 brew install ripgrep
+
+echo -e '\n### `fd`'
+sudo apt-get install fd-find -y
+echo -e '\n### symlinking fd-find to bat because of the name collition'
+ln -s $(which fdfind) ~/.local/bin/fd
 
 ## install oh-my-posh
 echo -e '\n### `oh-my-posh`'
@@ -120,8 +125,21 @@ curl -fsSL https://fnm.vercel.app/install | bash
 
 # VS Code
 echo -e '\n### VS Code'
-wget https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 --output-document=vscode-stable-x64-linux.deb
+wget --output-document=vscode-stable-x64-linux.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
 sudo apt install ./vscode-stable-x64-linux.deb
+
+# rust tools
+echo -e '\n### gitmoji-rs'
+cargo install gitmoji-rs
+
+echo -e '\n### bacon'
+cargo install bacon
+
+echo -e '\n### cargo-update'
+cargo install cargo-update
+
+echo -e '\n### tokei'
+cargo install tokei
 
 # Clean up
 echo -e '\n### Clean up'
