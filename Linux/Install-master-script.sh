@@ -74,7 +74,7 @@ else
 fi
 
 echo -e '\n### cloning nupm'
-if [ ! -d ~/other-repos/nu/nupm ]; then
+if [ ! -d ~/other-repos/nupm ]; then
     git clone https://github.com/nushell/nupm ~/other-repos/nupm
 else
     echo -e '\n ~/other-repos/nu/nupm found. Skipping!'
