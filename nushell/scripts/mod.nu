@@ -2,6 +2,7 @@ export use git-multi.nu
 export use edit.nu 
 export use oil.nu
 export use copy_subs.nu
+export use typescript.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
 export def update-the-fork [branch?: string = "main"] {

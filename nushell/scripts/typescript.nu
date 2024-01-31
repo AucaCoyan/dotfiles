@@ -4,20 +4,35 @@
 
 export def --env new [folder: string] {
     print " 📁 creating folder"
-
+    if ($folder | path exists) {
+        error make {msg: $" 📂 ($folder) folder exists"
+        help: "I can only create new project on non-existing folders"
+        }
+    } 
     mkdir $folder
+
     print " 📂 cd into it..."
     cd $folder
 
     print "\n 🏢 initializing git"
-    git init
-    print $"\n ✔  done\n 📦 creating a npm package with yarn"
+    # inizialize the repository only if git status fails
+    do --ignore-errors { git pull --quiet }
+    # TODO: this works only in a git folder.
+    # if git fails, `typescript new` aborts
+    #
+    # print $env.LAST_EXIT_CODE
+    if $env.LAST_EXIT_CODE != 0 {
+        git init
+        print $"\n ✔  done\n 📦 creating a npm package with yarn"
+    } else {
+        print $"\n ✔  git found\n 📦 creating a npm package with yarn"
+    }
+
     ^yarn init --yes
 
     open package.json |
     # add the "type": "module"
     # to make imports the `import fs from "fs";` way
-    # add scripts
     upsert type "module" |
     upsert main "dist/index.js" |
     # add scripts
@@ -47,7 +62,6 @@ export def --env new [folder: string] {
     print "\n ✔  done\n making dir structure"
     mkdir src
     create_index_ts
-    # touch src/index.test.ts
     create_tests_file
     print "\n ✔  done"
 }
