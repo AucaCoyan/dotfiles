@@ -119,7 +119,4 @@ if $nu.os-info.name == "linux" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/fnm')
     # hombrew
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
-
-    # oh-my-posh
-    source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh.nu
 } 
