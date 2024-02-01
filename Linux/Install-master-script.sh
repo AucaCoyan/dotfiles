@@ -81,13 +81,27 @@ else
 fi
 
 echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
-ln -s ~/repos/dotfiles/nushell ~/.config/nushell
+ln --symbolic --force --no-dereference ~/repos/dotfiles/nushell ~/.config/nushell
 
 echo -e '\n### `bat`'
 sudo apt install bat -y
 echo -e '\n### symlinking batcat to bat because of the name collition'
 mkdir --parents ~/.local/bin
-ln -s /usr/bin/batcat ~/.local/bin/bat
+ln --symbolic --force --no-dereference /usr/bin/batcat ~/.local/bin/bat
+# install the catppuccin theme
+echo -e '\n### cloning catppuccin/bat'
+if [ ! -d ~/other-repos/catppuccin ]; then
+    git clone https://github.com/catppuccin/bat ~/other-repos/catppuccin/bat
+else
+    echo -e '\n ~/other-repos/catppuccin/bat found. Skipping!'
+fi
+# make a themes dir
+mkdir -p "$(bat --config-dir)/themes"
+# copy the themes
+cp *.tmTheme "$(bat --config-dir)/themes"
+# rebuild the cache
+bat cache --build
+# bat theme is assigned in my-aliases.nu
 
 echo -e '\n### `ripgrep`'
 brew install ripgrep
@@ -95,7 +109,7 @@ brew install ripgrep
 echo -e '\n### `fd`'
 sudo apt-get install fd-find -y
 echo -e '\n### symlinking fd-find to bat because of the name collition'
-ln -s $(which fdfind) ~/.local/bin/fd
+ln --symbolic --force --no-dereference $(which fdfind) ~/.local/bin/fd
 
 ## install oh-my-posh
 echo -e '\n### `oh-my-posh`'
