@@ -534,7 +534,7 @@ use ~/other-repos/nupm/nupm/
 use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
 
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
-source ~/repos/dotfiles/nushell/cfg_files/.oh-my-posh.nu
+source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
