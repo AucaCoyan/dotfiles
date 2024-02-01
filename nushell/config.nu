@@ -555,6 +555,12 @@ source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
 
+if $nu.os-info.name == "linux" {
+  source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
+} else if $nu.os-info.name == "windows" {
+  source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
+}
+
 # broken for nu version 0.89
 # source ~/other-repos/me.nu/me.nu
 # source ~/other-repos/me.nu/menu_config.nu
