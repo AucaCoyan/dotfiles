@@ -14,9 +14,10 @@ export def --env new [folder: string] {
     print " 📂 cd into it..."
     cd $folder
 
+    # <-- git is added with the new yarn v4 -->
     print "\n 🏢 initializing git"
     # inizialize the repository only if git status fails
-    do --ignore-errors { git pull --quiet }
+    # do --ignore-errors { git pull --quiet }
     # TODO: this works only in a git folder.
     # if git fails, `typescript new` aborts
     #
@@ -27,8 +28,10 @@ export def --env new [folder: string] {
     } else {
         print $"\n ✔  git found\n 📦 creating a npm package with yarn"
     }
+    # <-- leaving the print messages to confort -->
 
-    ^yarn init --yes
+    # use yarn v4
+    ^yarn init -2
 
     open package.json |
     # add the "type": "module"
