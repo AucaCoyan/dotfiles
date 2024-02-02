@@ -139,6 +139,7 @@ source "$HOME/.cargo/env"
 # fnm (node & npm)
 echo -e '\n### `fnm`'
 curl -fsSL https://fnm.vercel.app/install | bash
+fnm install --latest
 
 # VS Code
 echo -e '\n### VS Code'
