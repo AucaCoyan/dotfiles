@@ -144,10 +144,12 @@ sudo apt install ./vscode-stable-x64-linux.deb
 
 # rust tools
 echo -e '\n### gitmoji-rs'
+# add the `openssl` dependencies https://docs.rs/openssl/latest/openssl/
+sudo apt-get install pkg-config libssl-dev -y
 cargo install gitmoji-rs
 
 echo -e '\n### bacon'
-cargo install bacon
+cargo install --locked bacon
 
 echo -e '\n### cargo-update'
 cargo install cargo-update
