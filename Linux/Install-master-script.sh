@@ -157,6 +157,9 @@ cargo install cargo-update
 echo -e '\n### tokei'
 cargo install tokei
 
+echo -e '\n### gfold'
+cargo install --locked gfold
+
 # Clean up
 echo -e '\n### Clean up'
 apt autoremove -y
