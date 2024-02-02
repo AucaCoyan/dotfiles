@@ -147,6 +147,7 @@ echo -e '\n### gitmoji-rs'
 # add the `openssl` dependencies https://docs.rs/openssl/latest/openssl/
 sudo apt-get install pkg-config libssl-dev -y
 cargo install gitmoji-rs
+gitmoji init --default
 
 echo -e '\n### bacon'
 cargo install --locked bacon
