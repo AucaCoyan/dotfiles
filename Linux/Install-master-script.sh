@@ -98,7 +98,7 @@ fi
 # make a themes dir
 mkdir -p "$(bat --config-dir)/themes"
 # copy the themes
-cp *.tmTheme "$(bat --config-dir)/themes"
+cp ~/other-repos/catppuccin/bat/*.tmTheme "$(bat --config-dir)/themes"
 # rebuild the cache
 bat cache --build
 # bat theme is assigned in my-aliases.nu
