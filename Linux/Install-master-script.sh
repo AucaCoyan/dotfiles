@@ -139,7 +139,7 @@ curl -fsSL https://fnm.vercel.app/install | bash
 
 # VS Code
 echo -e '\n### VS Code'
-wget --output-document=vscode-stable-x64-linux.deb https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64
+wget --output-document=vscode-stable-x64-linux.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
 sudo apt install ./vscode-stable-x64-linux.deb
 
 # rust tools
