@@ -13,5 +13,6 @@ chmod +x Install-master-script.sh
 
 Pending:
 - add a nice wallpaper
+- change the theme of Gnome Terminal to Catppuccin Mocha
 - change login shell to `nushell`
 - `gh auth login` and select browser

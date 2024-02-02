@@ -31,6 +31,9 @@ echo -e 'Git has been configured!'
 echo -e '\n### `curl`'
 sudo apt install curl -y
 
+# Install catppuccin themes in Gnome Terminal
+curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.2.0/install.py | python3 -
+
 # `gh` CLI
 echo -e '\n### `gh`'
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -163,4 +166,4 @@ cargo install --locked gfold
 
 # Clean up
 echo -e '\n### Clean up'
-apt autoremove -y
+sudo apt autoremove -y
