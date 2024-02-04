@@ -115,30 +115,30 @@ try {
     # git is required for buckets
     scoop install git
     scoop bucket add extras
+    scoop bucket add anderlli0053_DEV-tools https://github.com/anderlli0053/DEV-tools
 
     # core
-    scoop install 7zip autohotkey bat
-    scoop install broot czkawka-gui delta difftastic draw.io 
-    scoop install dust everything espanso fd ffmpeg fzf gh git gitui glab glow googlechrome jpegview-fork
-    scoop install keepassxc neovide neovim
-    scoop install nu obsidian oh-my-posh obs-studio peazip postman powertoys psreadline rga 
-    scoop install ripgrep rustdesk scoop-completion sublime-merge sumatrapdf teamviewer 
-    scoop install telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode windirstat windows-terminal zoxide
+    scoop install 7zip anydesk audacity autohotkey bat
+    scoop install broot czkawka-gui dbeaver delta difftastic draw.io 
+    scoop install dust everything espanso fd ffmpeg fzf gh git gitui glab glow googlechrome httrack jpegview-fork
+    scoop install keepassxc mailspring neovide neovim
+    scoop install nu obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
+    scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
+    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode watchexec 
+    scoop install windirstat windows-terminal zoxide
 
     # optional apps
-    # scoop install audacity authy azuredatastudio calibre discord gcc 
-    # scoop install insomnia mongodb mongodb-compass mongosh nomino
+    scoop install brave calibre digikam gimp insomnia tradingview
+    scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb 
+    # scoop install authy azuredatastudio calibre gcc nomino
 
     # programming languages
     scoop install deno fnm python
     # optional langs
-    # scoop install flutter surrealdb dotnet-sdk
-
-    # local github actions runner
-    scoop install main/act
+    # scoop install flutter dotnet-sdk
 
     # add rust-analyzer for nvim
-    rustup component add rust-analyzer
+    # rustup component add rust-analyzer
 }
 catch { Write-Warning $_ }
 

@@ -9,4 +9,6 @@ scoop install prismlauncher # minecraft
 scoop install plex-server qbittorrent stremio
 scoop install jdownloader yt-dlp
 
+scoop install games/veloren-weekly
+
 scoop install cyberduck
