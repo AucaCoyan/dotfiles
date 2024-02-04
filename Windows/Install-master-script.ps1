@@ -142,6 +142,11 @@ try {
 }
 catch { Write-Warning $_ }
 
+# configure `git
+Write-Host "`nconfiguring git" -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+git config --global user.name "Auca Maillot"
+git config --global user.email "aucacoyan@gmail.com"
+
 # clone `dotfiles`
 Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 
@@ -151,7 +156,8 @@ if (!$dotfilesFolderExists) {
     git clone https://github.com/AucaCoyan/dotfiles "$HOME\repos\dotfiles"
 }
 else {
-    Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
+    Write-Host "~/repos/dotfiles/ folder found. Skipping`n" -ForegroundColor Yellow
+    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
 }
 
 # Install glyphed fonts
@@ -305,13 +311,23 @@ catch { Write-Warning $_ }
 Write-Host "`ncloning `\nu_scripts\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 
 $nu_scriptsFolderExists = Test-Path "C:\Users\$env:Username\other-repos\nu\nu_scripts"
+$nupmFolderExists = Test-Path "C:\Users\$env:Username\other-repos\nu\nupm"
 
 if (!$nu_scriptsFolderExists) {
     git clone https://github.com/nushell/nu_scripts "$HOME\other-repos\nu\nu_scripts"
 }
 else {
-    Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
+    Write-Host "~/other-repos/nu/nu_scripts/ folder found. Skipping`n" -ForegroundColor Yellow
+    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
 }
+if (!$nupmFolderExists) {
+    git clone https://github.com/nushell/nupm "$HOME\other-repos\nupm"
+}
+else {
+    Write-Host "~/other-repos/nupm/ folder found. Skipping`n" -ForegroundColor Yellow
+    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
+}
+
 
 
 # Set bat symlink
