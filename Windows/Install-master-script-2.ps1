@@ -10,3 +10,6 @@ Write-Host "`nInstalling tokei" -ForegroundColor Yellow
 cargo install tokei
 Write-Host "`nInstalling gfold" -ForegroundColor Yellow
 cargo install --locked gfold
+
+# authenticate to github
+gh auth login
