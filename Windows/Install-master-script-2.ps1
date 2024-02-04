@@ -1,3 +1,10 @@
+Write-Host "`nInstalling cargo-nextest" -ForegroundColor Yellow
+$tmp = New-TemporaryFile | Rename-Item -NewName { $_ -replace 'tmp$', 'zip' } -PassThru
+Invoke-WebRequest -OutFile $tmp https://get.nexte.st/latest/windows
+$outputDir = if ($Env:CARGO_HOME) { Join-Path $Env:CARGO_HOME "bin" } else { "~/.cargo/bin" }
+$tmp | Expand-Archive -DestinationPath $outputDir -Force
+$tmp | Remove-Item
+
 Write-Host "`nInstalling gitmoji-rs" -ForegroundColor Yellow
 cargo install gitmoji-rs
 Write-Host "`nInitializing gitmoji-rs" -ForegroundColor Yellow
