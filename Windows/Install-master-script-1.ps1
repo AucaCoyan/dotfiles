@@ -328,7 +328,35 @@ else {
     # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
 }
 
+# Catppuccin
+Write-Host "`nCloning Catppuccin repos - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
 
+$catp_bat = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\bat"
+$catp_mailspring = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\mailspring"
+$catp_powershell = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\powershell"
+
+if (!$catp_bat) {
+    git clone https://github.com/catppuccin/bat "$HOME\other-repos\catppuccin\bat"
+}
+else {
+    Write-Host "~/other-repos/catppuccin/bat/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+if (!$catp_mailspring) {
+    git clone https://github.com/catppuccin/mailspring "$HOME\other-repos\mailspring"
+}
+else {
+    Write-Host "~/other-repos/catppuccin/mailspring/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+if (!$catp_powershell) {
+    git clone https://github.com/catppuccin/powershell "$HOME\other-repos\powershell"
+}
+else {
+    Write-Host "~/other-repos/catppuccin/powershell/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+
+# Install node and npm
+Write-Host "`nInstalling node with fnm - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
+fnm install --latest
 
 # Set bat symlink
 Write-Host "`nApplying bat settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
