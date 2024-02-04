@@ -1,23 +1,27 @@
-# new installation mode!
+# Installation via script
 
 Allow to run external sripts
+
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
 
 run this script
+
 ```powershell
 $InstallMasterScriptURI = "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Windows/Install-master-script.ps1"
 Invoke-WebRequest -Uri $InstallMasterScriptURI -OutFile .\Install-master-script.ps1
 ```
 
 and run it with
-```
+
+```powershell
 & .\Install-master-script.ps1
 ```
 
 ---
-# Old installation - How to config Powershell in windows
+
+## Old installation - How to config Powershell in windows
 
 - Install `Windows Terminal` from Windows App Store
 
