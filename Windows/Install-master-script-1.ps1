@@ -120,11 +120,11 @@ try {
     # core
     scoop install 7zip anydesk audacity autohotkey bat
     scoop install broot czkawka-gui dbeaver delta difftastic draw.io 
-    scoop install dust everything espanso fd ffmpeg fzf gh git gitui glab glow googlechrome httrack jpegview-fork
+    scoop install dust everything espanso fd firefox ffmpeg fzf gh git gitui glab glow googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
     scoop install nu obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
-    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist2022 vlc vscode watchexec 
+    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist vlc vscode watchexec 
     scoop install windirstat windows-terminal zoxide
 
     # optional apps
