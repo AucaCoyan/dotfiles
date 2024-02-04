@@ -1,5 +1,10 @@
 # new installation mode!
 
+Allow to run external sripts
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+```
+
 run this script
 ```powershell
 $InstallMasterScriptURI = "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Windows/Install-master-script.ps1"
