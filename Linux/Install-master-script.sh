@@ -48,10 +48,15 @@ echo -e '\n### `brew`'
 type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
 ## some brew dependencies / recommended pkgs
 sudo apt-get install build-essential
-brew install gcc
+
 ## add brew to path
 echo -e '\n### Adding `brew` to PATH'
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+echo -e '\n### reload .bashrc'
+source .bashrc
+# brew recommends to install gcc, but I prefer to have it just on apt-get
+# brew install gcc
 
 # `nushell`
 echo -e '\n### Install nushell'
