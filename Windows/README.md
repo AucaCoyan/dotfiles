@@ -19,6 +19,24 @@ and run it with
 & .\Install-master-script.ps1
 ```
 
+## Follow up
+
+After the installation you do the normal stuff:
+
+- adjust the monitors order
+- change the wallpaper
+- configure the taskbar
+- set default apps like browser, img viewer, pdf viewer and so on.
+
+And probably you'll need some symlinks
+
+```powershell
+# Delete the contents first
+rm $HOME\Downloads -Recurse -Force
+# and create the symlink
+New-Item -ItemType Junction -Path $HOME\Downloads -Target $HOME\OneDrive\Downloads\
+```
+
 ---
 
 ## Old installation - How to config Powershell in windows
