@@ -54,7 +54,7 @@ echo -e '\n### Adding `brew` to PATH'
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo -e '\n### reload .bashrc'
-source .bashrc
+source ~/.bashrc
 # brew recommends to install gcc, but I prefer to have it just on apt-get
 # brew install gcc
 
@@ -95,7 +95,7 @@ echo -e '\n### `bat`'
 sudo apt install bat -y
 echo -e '\n### symlinking batcat to bat because of the name collition'
 mkdir --parents ~/.local/bin
-ln --symbolic --force --no-dereference /usr/bin/batcat ~/.local/bin/bat
+sudo ln --symbolic --force --no-dereference /usr/bin/batcat /usr/local/bin/bat
 # install the catppuccin theme
 echo -e '\n### cloning catppuccin/bat'
 if [ ! -d ~/other-repos/catppuccin ]; then
