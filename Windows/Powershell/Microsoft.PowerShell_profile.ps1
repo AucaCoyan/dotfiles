@@ -5,10 +5,6 @@ using namespace System.Management.Automation.Language
 # scoop autocompletion
 Import-Module scoop-completion
 
-# import module Recycle to to delete to trash
-Import-Module Recycle
-New-Alias trash Remove-ItemSafely
-
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
 
