@@ -144,6 +144,8 @@ source "$HOME/.cargo/env"
 # fnm (node & npm)
 echo -e '\n### `fnm`'
 curl -fsSL https://fnm.vercel.app/install | bash
+export PATH="$HOME/.local/share/fnm:$PATH"
+eval "`fnm env`"
 fnm install --latest
 
 # VS Code
