@@ -18,7 +18,7 @@ def posh_width [] {
 }
 
 # PROMPTS
-$env.PROMPT_MULTILINE_INDICATOR = (^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh print secondary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)")
+$env.PROMPT_MULTILINE_INDICATOR = (^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print secondary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)")
 
 $env.PROMPT_COMMAND = { ||
     # hack to set the cursor line to 1 when the user clears the screen
