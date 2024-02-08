@@ -1,10 +1,5 @@
 #! /bin/bash
 
-#######################################
-# Bash script to install apps on a new system (Ubuntu)
-# Written by @AamnahAkram from http://aamnah.com
-#######################################
-
 set -eu -o pipefail # fail on error and report it, debug all lines
 
 # setup dark theme in Debian
@@ -51,6 +46,8 @@ sudo apt-get install build-essential
 
 ## add brew to path
 echo -e '\n### Adding `brew` to PATH'
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/acoyan/.bashrc
+## add the env variables
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo -e '\n### reload .bashrc'
