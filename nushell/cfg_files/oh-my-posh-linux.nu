@@ -25,16 +25,16 @@ $env.PROMPT_COMMAND = { ||
     # this obviously isn't bulletproof, but it's a start
     let clear = (history | last 1 | get 0.command) == "clear"
 
-    ^"/home/linuxbrew/.linuxbrew/Cellar/oh-my-posh/19.8.2/bin/oh-my-posh" print primary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)" $"--cleared=($clear)"
+    ^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print primary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)" $"--cleared=($clear)"
 }
 
 $env.PROMPT_COMMAND_RIGHT = { ||    
-    ^"/home/linuxbrew/.linuxbrew/Cellar/oh-my-posh/19.8.2/bin/oh-my-posh" print right $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
+    ^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print right $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
 }
 
 if "true" == "true" {
     $env.TRANSIENT_PROMPT_COMMAND = { ||
-        ^"/home/linuxbrew/.linuxbrew/Cellar/oh-my-posh/19.8.2/bin/oh-my-posh" print transient $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
+        ^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print transient $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
     }
 }
 
