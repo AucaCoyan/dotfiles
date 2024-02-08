@@ -342,13 +342,15 @@ else {
     Write-Host "~/other-repos/catppuccin/bat/ folder found. Skipping`n" -ForegroundColor Yellow
 }
 if (!$catp_mailspring) {
-    git clone https://github.com/catppuccin/mailspring "$HOME\other-repos\mailspring"
+    git clone https://github.com/catppuccin/mailspring "$HOME\other-repos\catppuccin\mailspring"
 }
 else {
     Write-Host "~/other-repos/catppuccin/mailspring/ folder found. Skipping`n" -ForegroundColor Yellow
 }
 if (!$catp_powershell) {
-    git clone https://github.com/catppuccin/powershell "$HOME\other-repos\powershell"
+    git clone https://github.com/catppuccin/powershell "$HOME\other-repos\catppuccin\powershell"
+    mkdir "$HOME\repos\dotfiles\Windows\Powershell\Modules\Catppuccin"
+    cp "$HOME\other-repos\catppuccin\powershell\*" "$HOME\repos\dotfiles\Windows\Powershell\Modules\Catppuccin\" -Recurse -Force
 }
 else {
     Write-Host "~/other-repos/catppuccin/powershell/ folder found. Skipping`n" -ForegroundColor Yellow
