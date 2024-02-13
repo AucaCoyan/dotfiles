@@ -1,6 +1,12 @@
 # cd into repos/dotfiles && code .
 export def --env dotfiles [] {
-    cd ~\repos\dotfiles\
+    if $nu.os-info.name == "windows" {
+        cd ~\repos\dotfiles\
+    } else if $nu.os-info.name == "linux" {
+        cd ~/repos/dotfiles/
+    } else {
+        throw "Could not find the OS name :("
+    }
     code .
 }
 
