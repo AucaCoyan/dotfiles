@@ -1,6 +1,10 @@
+# returns the top lines of `git status`
+export def summary [] {
+    git status | str replace --regex --multiline '\n\n[\s\S]*' ''
+}
 
 # pulls every repo on ~/workspace/
-export def pull-workspace-repos [] {
+export def "multi pull-workspace-repos" [] {
     let workspace_list = (ls ~/workspace/)
 
     $workspace_list.name | each { |repo| 
@@ -11,7 +15,7 @@ export def pull-workspace-repos [] {
 }
 
 # pulls every repo on ~/repos/ and ~/other-repos/
-export def pull [] {
+export def "multi pull" [] {
     let repos_list = (ls ~/repos/ )
     let other_repos_list = (ls ~/other-repos/)
 
@@ -29,7 +33,7 @@ export def pull [] {
 }
 
 # pulls every repo on ~/workspace/digital*
-export def pull-mule-repos [] {
+export def "multi pull-mule-repos" [] {
     let workspace_list = (ls ~/workspace/digital*)
 
     $workspace_list.name | each { |repo| 

@@ -1,7 +1,7 @@
-export use git-multi.nu
-export use edit.nu 
-export use oil.nu
 export use copy_subs.nu
+export use edit.nu 
+export use git.nu
+export use oil.nu
 export use typescript.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
