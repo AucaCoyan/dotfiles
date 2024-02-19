@@ -3,6 +3,7 @@ export use edit.nu
 export use git.nu
 export use oil.nu
 export use typescript.nu
+export use oss.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
 export def update-the-fork [branch?: string = "main"] {
