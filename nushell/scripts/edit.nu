@@ -11,7 +11,7 @@ export def --env dotfiles [] {
 }
 
 # cd into ~\other-repos\nu\nu_scripts\ && code .
-export def nu_scripts [] {
+export def --env nu_scripts [] {
     if $nu.os-info.name == "windows" {
         cd ~\other-repos\nu\nu_scripts\
     } else if $nu.os-info.name == "linux" {
@@ -23,7 +23,7 @@ export def nu_scripts [] {
 }
 
 # cd into AppData/local/nvim/lua/custom && nvim .
-export def vimrc [] {
+export def --env vimrc [] {
     if $nu.os-info.name == "windows" {
         cd ~\AppData\Local\nvim\lua\custom
         nvim .
