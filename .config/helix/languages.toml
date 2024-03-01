@@ -17,8 +17,11 @@ file-types = ["nu"]
 shebangs = ["nu"]
 comment-token = "#"
 indent = { tab-width = 2, unit = "  " }
-language-servers = ["nu-lsp"]
+language-servers = [ "nu-lsp" ]
 
-[language-server.nu-lsp]
-command = "nu"
-args = ["--lsp"]
+[language-server]
+nu-lsp = { command = "nu", args = [ "--lsp" ] }
+
+[[grammar]]
+name = "nu"
+source = { git = "https://github.com/nushell/tree-sitter-nu", rev = "7dd29f9616822e5fc259f5b4ae6c4ded9a71a132" } # latest
