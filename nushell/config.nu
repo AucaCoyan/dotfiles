@@ -536,7 +536,9 @@ use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
@@ -546,6 +548,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/pdm/pdm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/rg/rg-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
