@@ -48,3 +48,11 @@ alias bat = bat --theme="Catppuccin-mocha"
 
 # toolkit
 alias "check pr" = toolkit check pr
+
+# espanso
+if $nu.os-info.name == "linux" {
+    null
+} else if $nu.os-info.name == "windows" {
+    alias espanso = espansod
+}
+
