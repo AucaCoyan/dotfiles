@@ -19,10 +19,12 @@ export def update-the-fork [branch?: string = "main"] {
 }
 
 # <repo: > fork the repo and clones it on ~/repos/
-export def "fork this" [repo:string] {
+export def --env "fork this" [ghrepo:string] {
     cd ~/repos
     print "⏬ fork + clone the repo"
-    ^gh repo fork $repo --clone --default-branch-only
+    ^gh repo fork $ghrepo --clone --default-branch-only
+    let folder = gh repo view https://github.com/Pebkac03/espanso_gui --json name | from json | get name
+    cd $"~/repos/($folder)"
 }
 
 export def list_scoop_packages [] {
