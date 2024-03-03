@@ -23,7 +23,7 @@ export def --env "fork this" [ghrepo:string] {
     cd ~/repos
     print "⏬ fork + clone the repo"
     ^gh repo fork $ghrepo --clone --default-branch-only
-    let folder = gh repo view https://github.com/Pebkac03/espanso_gui --json name | from json | get name
+    let folder = gh repo view $ghrepo --json name | from json | get name
     cd $"~/repos/($folder)"
 }
 
