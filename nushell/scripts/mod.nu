@@ -81,3 +81,12 @@ export def git-gone [] {
          |it| git branch -d $it 
          }
 }
+
+export def "update broot" [] {
+    print "💫 updating broot"
+
+    broot --print-shell-function nushell
+    | save $"($env.home)/repos/dotfiles/nushell/cfg_files/broot.nu" --force
+
+    print "✅ done!"
+}
