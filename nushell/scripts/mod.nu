@@ -2,8 +2,9 @@ export use copy_subs.nu
 export use edit.nu 
 export use git.nu
 export use oil.nu
-export use typescript.nu
 export use oss.nu
+export use typescript.nu
+export use ven-fu.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
 export def update-the-fork [branch?: string = "main"] {
