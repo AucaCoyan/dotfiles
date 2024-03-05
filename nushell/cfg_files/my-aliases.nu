@@ -56,3 +56,6 @@ if $nu.os-info.name == "linux" {
     alias espanso = espansod
 }
 
+# python
+# doesn't work
+# alias "venv activate" = (overlay use .venv\Scripts\activate.nu)
