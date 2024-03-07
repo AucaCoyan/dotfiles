@@ -1,9 +1,16 @@
+Write-Host "`nInstalling cargo-binstall" -ForegroundColor Yellow
+iex (
+    iwr "https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.ps1"
+    ).Content
+
 Write-Host "`nInstalling cargo-nextest" -ForegroundColor Yellow
-$tmp = New-TemporaryFile | Rename-Item -NewName { $_ -replace 'tmp$', 'zip' } -PassThru
-Invoke-WebRequest -OutFile $tmp https://get.nexte.st/latest/windows
-$outputDir = if ($Env:CARGO_HOME) { Join-Path $Env:CARGO_HOME "bin" } else { "~/.cargo/bin" }
-$tmp | Expand-Archive -DestinationPath $outputDir -Force
-$tmp | Remove-Item
+cargo binstall cargo-nextest --secure
+
+# $tmp = New-TemporaryFile | Rename-Item -NewName { $_ -replace 'tmp$', 'zip' } -PassThru
+# Invoke-WebRequest -OutFile $tmp https://get.nexte.st/latest/windows
+# $outputDir = if ($Env:CARGO_HOME) { Join-Path $Env:CARGO_HOME "bin" } else { "~/.cargo/bin" }
+# $tmp | Expand-Archive -DestinationPath $outputDir -Force
+# $tmp | Remove-Item
 
 Write-Host "`nInstalling gitmoji-rs" -ForegroundColor Yellow
 cargo install gitmoji-rs
