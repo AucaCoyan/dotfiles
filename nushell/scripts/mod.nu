@@ -1,6 +1,7 @@
 export use copy_subs.nu
 export use edit.nu 
 export use git.nu
+export use lint.nu
 export use oil.nu
 export use oss.nu
 export use typescript.nu
