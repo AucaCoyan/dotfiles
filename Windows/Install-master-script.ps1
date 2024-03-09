@@ -137,7 +137,10 @@ try {
     # scoop install authy azuredatastudio calibre gcc nomino
 
     # programming languages
-    scoop install deno fnm python
+    scoop install deno fnm 
+    # scoop install python # installed via rye
+    scoop install main/rye
+
     # optional langs
     # scoop install flutter dotnet-sdk
 
