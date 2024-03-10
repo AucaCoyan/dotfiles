@@ -80,58 +80,31 @@ export module "clone all" {
             "hub"
             "hub-frontend"
         ]
-        for $repo in $list_of_repos {
-            let single_repo_dir = $"($repos_dir)/($repo)"
-            if ($single_repo_dir | path exists) {
-                print $"\n repo ($single_repo_dir) exists, skipping"
-                continue
-            } else {
-                print $"\n cloning AucaCoyan/($repo)"
-                gh repo clone $"AucaCoyan/($repo)" $single_repo_dir
-            }
-        }
+
+        clone all $list_of_repos $repos_dir
     }
 
     export def --env "nushell repos" [] {
-        print " creating ~/other-repos/nu folder"
         let nu_dir = $"($env.home)/other-repos/nu"
-        mkdir $nu_dir
 
         let list_of_repos = [
             "nushell"
             "nu_scripts"
             "vscode-nushell-lang"
         ]
-        for $repo in $list_of_repos {
-            let single_repo_dir = $"($nu_dir)/($repo)"
-            if ($single_repo_dir | path exists) {
-                print $"\n repo ($single_repo_dir) exists, skipping"
-                continue
-            } else {
-                print $"\n cloning nushell/($repo)"
-                gh repo clone $"nushell/($repo)" $single_repo_dir
-            }
-        }
+
+        clone all $list_of_repos $nu_dir
     }
 
     export def --env "nushell forks" [] {
         let repos_dir = $"($env.home)/repos"
         
         let list_of_repos = [
-
             "nushell"
             "nu_scripts"
             "vscode-nushell-lang"
         ]
-        for $repo in $list_of_repos {
-            let single_repo_dir = $"($repos_dir)/($repo)"
-            if ($single_repo_dir | path exists) {
-                print $"\n repo ($single_repo_dir) exists, skipping"
-                continue
-            } else {
-                print $"\n cloning AucaCoyan/($repo)"
-                gh repo clone $"AucaCoyan/($repo)" $single_repo_dir
-            }
-        }
+
+        clone all $list_of_repos $repos_dir
     }
 }
