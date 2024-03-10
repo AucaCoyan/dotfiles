@@ -61,26 +61,14 @@ export def "clone all" [list_of_repos: list<string>, destination: path] {
 # clone repos
 export module "clone all" {
     export def --env "espanso repos" [] {
-        print " creating ~/other-repos/espanso folder"
-        let espanso_dir = $"($env.home)/other-repos/espanso"
-        mkdir $espanso_dir
-        
         let list_of_repos = [
-            "espanso"
-            "website"
-            "hub"
-            "hub-frontend"
+            "espanso/espanso"
+            "espanso/website"
+            "espanso/hub"
+            "espanso/hub-frontend"
         ]
-        for $repo in $list_of_repos {
-            let single_repo_dir = $"($espanso_dir)/($repo)"
-            if ($single_repo_dir | path exists) {
-                print $"\n repo ($single_repo_dir) exists, skipping"
-                continue
-            } else {
-                print $"\n cloning espanso/($repo)"
-                gh repo clone $"espanso/($repo)" $single_repo_dir
-            }
-        }
+
+        clone all $list_of_repos $"($env.home)/other-repos/espanso"
     }
 
     export def --env "espanso forks" [] {
