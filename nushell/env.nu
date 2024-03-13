@@ -120,3 +120,7 @@ if $nu.os-info.name == "linux" {
     # hombrew
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
 } 
+
+# https://github.com/Schniz/fnm/issues/87
+# $env.YARN_GLOBAL_FOLDER="$FNM_MULTISHELL_PATH/yarn-global"
+# $env.YARN_PREFIX="$FNM_MULTISHELL_PATH"

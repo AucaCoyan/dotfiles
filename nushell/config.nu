@@ -540,6 +540,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
