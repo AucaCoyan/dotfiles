@@ -33,7 +33,7 @@ if ($hasNvimConfigDirectory) {
     Write-Host "`nRemoving ~/AppData/Local/nvim/lua/" -ForegroundColor White
     Remove-Item "$HOME\AppData\Local\nvim\lua\" -Recurse -Force
 }
-New-Item -ItemType Junction -Path "$HOME/AppData/Local/nvim/lua/" -Target "C:\Users\aucac\repos\dotfiles\.config\preconfigured-nvim\lazyvim\"
+New-Item -ItemType Junction -Path "$HOME/AppData/Local/nvim/lua/" -Target "$HOME\repos\dotfiles\.config\preconfigured-nvim\lazyvim\"
 
 Write-Host "Done! ✅" -ForegroundColor Green
 
