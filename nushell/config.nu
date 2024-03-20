@@ -525,7 +525,8 @@ $env.config = {
 # theme
 # https://github.com/nushell/nu_scripts/tree/main/themes
 use ~/other-repos/nu/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
-$env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
+use ~/other-repos/nu/nu_scripts/themes/nu-themes/gruvbox-dark-medium.nu
+$env.config = ($env.config | merge {color_config: (gruvbox-dark-medium)})
 
 # use nupm
 use ~/other-repos/nupm/nupm/
@@ -540,6 +541,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/flutter/flutter-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu

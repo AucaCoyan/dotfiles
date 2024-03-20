@@ -6,7 +6,11 @@
     "lavender": "#B7BDF8",
     "blue": "#8AADF4",
     "wight": "#FFFFFF",
-    "text": "#494D64"
+    "text": "#494D64",
+    "gruvbox-background": "#282828",
+    "gruvbox-gray": "#3A3A3A",
+    "gruvbox-petrol": "#458588",
+    "gruvbox-black": "#000000"
   },
   "blocks": [
     {
@@ -14,7 +18,7 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "p:blue",
+          "background": "p:gruvbox-gray",
           "foreground": "p:wight",
           "type": "os",
           "style": "diamond",
@@ -46,8 +50,8 @@
           "type": "path",
           "style": "diamond",
           "trailing_diamond": "\ue0b0",
-          "background": "p:pink",
-          "foreground": "p:text",
+          "background": "p:gruvbox-petrol",
+          "foreground": "p:gruvbox-black",
           "template": " {{ .Path }} ",
           "properties": {
             "folder_icon": "\uf6d7",
