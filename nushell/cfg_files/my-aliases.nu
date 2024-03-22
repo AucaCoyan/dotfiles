@@ -59,3 +59,6 @@ if $nu.os-info.name == "linux" {
 # python
 # doesn't work
 # alias "venv activate" = (overlay use .venv\Scripts\activate.nu)
+
+# gitmoji
+alias "gimtoji commit" = gitmoji commit
