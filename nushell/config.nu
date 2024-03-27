@@ -552,6 +552,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/pdm/pdm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rg/rg-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/rye/rye-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
