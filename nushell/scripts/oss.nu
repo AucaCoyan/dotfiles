@@ -1,9 +1,25 @@
 export module "check pr" {
     export def "espanso" [] {
-        print " running cargo check"
-        cargo check
+        print " checking format"
+        cargo fmt --all -- --check
         print " running cargo build"
-        cargo build
+        if $nu.os-info.name == "windows" {
+            cargo make -- build-binary
+        } else if $nu.os-info.name = "linux" {
+            print " building for wayland"
+            cargo make --env NO_X11=true --profile release -- build-binary
+        } else {
+            error make {msg: "cargo build not configured!" }
+        }
+        print " running cargo clippy"
+        if $nu.os-info.name == "windows" {
+            cargo clippy -- -D warnings
+        } else if $nu.os-info.name = "linux" {
+            cargo clippy -p espanso --features wayland -- -D warnings
+        } else {
+            error make {msg: "cargo build not configured!" }
+        }
+
         print " running cargo test"
         cargo test
     }
