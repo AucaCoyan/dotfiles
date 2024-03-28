@@ -5,7 +5,7 @@ export module "check pr" {
         print " running cargo build"
         if $nu.os-info.name == "windows" {
             cargo make -- build-binary
-        } else if $nu.os-info.name = "linux" {
+        } else if $nu.os-info.name == "linux" {
             print " building for wayland"
             cargo make --env NO_X11=true --profile release -- build-binary
         } else {
