@@ -153,6 +153,8 @@ catch { Write-Warning $_ }
 Write-Host "`nconfiguring git" -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
+# set `git push` to automatically setup the remote branch (no need to --set-upstream-to=)
+git config --global --add --bool push.autoSetupRemote true
 
 # clone `dotfiles`
 Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
