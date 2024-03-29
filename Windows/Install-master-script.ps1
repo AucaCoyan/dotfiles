@@ -125,7 +125,7 @@ try {
     scoop install keepassxc mailspring neovide neovim
     scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
-    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist vlc vscode watchexec 
+    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist vlc extras/vscode watchexec 
     scoop install windirstat windows-terminal zoxide
 
     # nushell
