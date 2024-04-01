@@ -31,3 +31,15 @@ export def --env vimrc [] {
         error make {msg: "Not implemented other OS other than Windows", } 
     }
 }
+
+# cd into repos/dotfiles/.config/.espanso && code .
+export def --env espanso [] {
+    if $nu.os-info.name == "windows" {
+        cd ~\repos\dotfiles\.config\.espanso
+    } else if $nu.os-info.name == "linux" {
+        cd ~/repos/dotfiles/.config/.espanso
+    } else {
+        error make {msg: "Could not find the OS name :(", }
+    }
+    code .
+}
