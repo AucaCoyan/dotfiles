@@ -62,3 +62,7 @@ if $nu.os-info.name == "linux" {
 
 # gitmoji
 alias "gimtoji commit" = gitmoji commit
+
+# riggrep
+# doesn't grab the search pattern after `rg`
+# alias "rg" = rg --hidden
