@@ -117,3 +117,7 @@ def add_prettier [] {
     \"tabWidth\": 4,
 }" | save .prettierrc
 }
+
+export def "clean" [] {
+    glob --no-file --no-symlink **/*node_modules* | sort --reverse | each { rm $in --recursive}
+}
