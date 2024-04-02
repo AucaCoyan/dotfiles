@@ -37,5 +37,7 @@
 # uses the clipboard if the text is longer than 'clipboard_threshold' characters.
 # clipboard_threshold: 100
 
+# yaml-language-server: $schema=https://raw.githubusercontent.com/AucaCoyan/espanso/add-yaml-schemas/schemas/config.schema.json
+#
 # Customizing the search shortcut
 search_shortcut: ALT+SHIFT+SPACE
