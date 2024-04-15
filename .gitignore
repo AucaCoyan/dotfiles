@@ -18,3 +18,4 @@ Windows/powershell.config.json
 
 # espanso
 .config/.espanso/match/packages/
+.vscode/settings.json
