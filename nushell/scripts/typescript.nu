@@ -70,7 +70,11 @@ export def --env new [folder: string] {
 }
 
 def create_gitignore [] {
-    "node_modules/\ncoverage/\n" | save .gitignore
+    if (".gitignore" | path exists) {
+        print "\n ✔  .gitignore exists\n skipping"
+    } else {
+        "node_modules/\ncoverage/\n" | save .gitignore
+    }
 }
 
 def config_tsconfig [] {
