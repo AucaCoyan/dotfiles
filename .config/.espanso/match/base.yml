@@ -7,13 +7,14 @@
 
 # Matches are substitution rules: when you type the "trigger" string
 # it gets replaced by the "replace" string.
-# yaml-language-server: $schema=https://raw.githubusercontent.com/AucaCoyan/espanso/add-yaml-schemas/schemas/match.schema.json
+# yaml-language-server: $schema=https://raw.githubusercontent.com/espanso/espanso/dev/schemas/match.schema.json
 
 matches:
   # espanso
   - trigger: ":espansodiscord"
     replace: "https://discord.gg/DFcCNDg7bB"
 
+# yaml-language-server: $schema=https://gist.githubusercontent.com/AucaCoyan/6bee7ef5eac923eb74adee73bdbf6818/raw/e826b3ce430d4e2d3c41cbbdcbeb979556d17832/espanso-schema.json
 # personal
   - trigger: "ag."
     replace: "aucacoyan@gmail.com"
