@@ -78,14 +78,6 @@
             "fetch_status": true,
             "fetch_upstream_icon": true
           }
-        },
-        {
-          "type": "python",
-          "foreground": "#a6e3a1",
-          "leading_diamond": "<transparent,background>\ue0b0</>",
-          "style": "diamond",
-          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "trailing_diamond": "<transparent> \ue0b1 </>"
         }
       ]
     }
