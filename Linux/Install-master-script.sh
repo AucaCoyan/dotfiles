@@ -48,7 +48,7 @@ sudo apt-get install build-essential
 
 ## add brew to path
 echo -e '\n### Adding `brew` to PATH'
-(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/acoyan/.bashrc
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> "/home/$(whoami)/.bashrc"
 ## add the env variables
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
