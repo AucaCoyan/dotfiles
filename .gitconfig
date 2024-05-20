@@ -1,6 +1,6 @@
 [user]
+	name = Auca Coyan
 	email = aucacoyan@gmail.com
-	name = Auca Maillot
 [init]
 	defaultBranch = main
 
@@ -17,12 +17,23 @@
 [diff]
    colorMoved = default
 
+[filter "lfs"]
+        required = true
+        clean = git-lfs clean -- %f
+        smudge = git-lfs smudge -- %f
+        process = git-lfs filter-process
+
 [delta]
   navigate = true
   line-numbers = true
   side-by-side = true
   features = collared-trogon
 
+[includeIf "gitdir:~/workspace/"]
+    path = ~/workspace/private/.gitconfig
+[push]
+    autoSetupRemote = true
+    autoSetupRemote = true
 
 # To use these themes, first include this file in your own gitconfig file:
 #
