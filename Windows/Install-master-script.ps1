@@ -121,7 +121,7 @@ try {
     # core
     scoop install 7zip anydesk audacity autohotkey bat
     scoop install broot czkawka-gui dbeaver delta difftastic draw.io 
-    scoop install dust everything espanso fd firefox ffmpeg fzf gh git gitui glab glow googlechrome httrack jpegview-fork
+    scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui glab glow googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
     scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
@@ -154,7 +154,7 @@ Write-Host "`nconfiguring git" -ForegroundColor Yellow -NoNewline; Write-Host "[
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 # set `git push` to automatically setup the remote branch (no need to --set-upstream-to=)
-git config --global --add --bool push.autoSetupRemote true
+# git config --global --add --bool push.autoSetupRemote true
 
 # clone `dotfiles`
 Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
@@ -166,6 +166,19 @@ if (!$dotfilesFolderExists) {
 }
 else {
     Write-Host "~/repos/dotfiles/ folder found. Skipping`n" -ForegroundColor Yellow
+    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
+}
+
+# hardlink the .gitconfig
+Write-Host "`nSymlinking `~\.gitconfig` - " -ForegroundColor Yellow -NoNewline; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
+
+$dotgitconfigExists = Test-Path "C:\Users\$env:Username\.gitconfig"
+
+if (!$dotgitconfigExists) {
+    New-Item -Type HardLink -path ~/.gitconfig -Target ~\repos\dotfiles\.gitconfig
+}
+else {
+    Write-Host "~/.gitconfig found. Skipping`n" -ForegroundColor Yellow
     # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
 }
 
