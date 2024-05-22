@@ -88,16 +88,6 @@ $ENV:FZF_DEFAULT_OPTS=@"
 "@
 
 # -------------------------------------------------------------------------------------
-# chocolatey autocompletion
-# Be aware that if you are missing these line from your profile, tab completion
-# for `choco` will not function.
-# See https://ch0.co/tab-completion for details.
-$ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
-if (Test-Path($ChocolateyProfile)) {
-    Import-Module "$ChocolateyProfile"
-}
-
-# -------------------------------------------------------------------------------------
 # Catppuccin
 # Import the module
 Import-Module Catppuccin
