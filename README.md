@@ -19,35 +19,26 @@ My config files
 
 </div>
 
-# Contents
-
-- [x] vim `init.lua`
-- [x] .zshrc
-- [x] .bashrc
-- [x] .gitconfig
-- [x] `nushell` config
-- [x] PowerShell `$PROFILE`
-- [x] `chocolatey` packages
-- [x] `scoop` packages
-- [x] `Winget` packages
-- [x] Rust `cargo install` packages
-- [x] PowerShell modules
-
 # Why is this on version control?
 
-It takes a bunch of time to config everything (and I change it pretty often), so I versioned the config files to `git clone` and get up and running easily.
+It takes a bunch of time to config everything (and I change it pretty often), so
+I versioned the config files to `git clone` and get up and running easily.
+In addition, I developed a series of scritps to install in a barebones OS
+(Windows and Debian Linux) so I can break everything that the worse case scenario
+is to run a script and have a new machine in less than half an hour.
 
 Copy and paste any content as much as you like!
 
 # General rundown
 
-For Windows, you have everything in the `PowerShell` folder.
-
-In Linux... well, I couldn't do it simpler as to date. You can get a hint in `.config` folder.
+`Windows` and `Linux` are for exclusive scripts (installation and some apps). I
+generally want to develop as much as I can in the `.config` and `nushell`
+folders. Those can be symlinked into every OS and usually are crossplatform apps.
 
 # Cross platform packages
 
-In windows almost everything is managed by `scoop`, but I still have some CLI apps that are isolated in its own managers:
+In windows almost everything is managed by `scoop`, but I still have some CLI
+apps that are isolated in its own managers:
 
 - For npm packages, list all the globals with:
 
@@ -72,17 +63,12 @@ In windows almost everything is managed by `scoop`, but I still have some CLI ap
 
 # Enviromnent apps
 
-I like to have everything in its own little isolated box. So the boys don't play hard on each other. I use [`pyenv`](https://github.com/pyenv/pyenv) and [`pyenv-win`](https://github.com/pyenv-win/pyenv-win) to manage Python. [`fnm`](https://github.com/Schniz/fnm) to manage NodeJS.
+I like to have everything in its own little isolated box. So the boys don't play
+hard on each other. I use [`pyenv`](https://github.com/pyenv/pyenv) and
+[`pyenv-win`](https://github.com/pyenv-win/pyenv-win) to manage Python.
+[`fnm`](https://github.com/Schniz/fnm) to manage NodeJS.
 
 # Walkthrough
 
-Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to start backing up your dotfiles and to install them on a new system
-
-# Shell preferences
-
-Here is a list of what I would like to have in any shell, and checkmarks indicate if they are currently working with this config.
-
-- [x] tab autocompletion in all or most commands
-- [x] quotes (`'` and `"`) smart autocompletion (like VS Code)
-- [ ] installation script
-- [ ] aliases in a separated file
+Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to start
+backing up your dotfiles and to install them on a new system
