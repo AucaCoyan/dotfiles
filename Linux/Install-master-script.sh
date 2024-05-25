@@ -166,6 +166,9 @@ sudo apt-get install pkg-config libssl-dev -y
 cargo binstall gitmoji-rs
 gitmoji init --default
 
+echo -e '\n### gitui'
+cargo binstall gitui
+
 echo -e '\n### bacon'
 cargo binstall --locked bacon
 
