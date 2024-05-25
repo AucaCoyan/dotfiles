@@ -147,29 +147,36 @@ export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 fnm install --latest
 
+# rye
+# Accept all the defaults
+curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
+
 # VS Code
 echo -e '\n### VS Code'
 wget --output-document=vscode-stable-x64-linux.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
 sudo apt install ./vscode-stable-x64-linux.deb
 
 # rust tools
+echo -e '\n### cargo-binstall'
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+
 echo -e '\n### gitmoji-rs'
 # add the `openssl` dependencies https://docs.rs/openssl/latest/openssl/
 sudo apt-get install pkg-config libssl-dev -y
-cargo install gitmoji-rs
+cargo binstall gitmoji-rs
 gitmoji init --default
 
 echo -e '\n### bacon'
-cargo install --locked bacon
+cargo binstall --locked bacon
 
 echo -e '\n### cargo-update'
-cargo install cargo-update
+cargo binstall cargo-update
 
 echo -e '\n### tokei'
-cargo install tokei
+cargo binstall tokei
 
 echo -e '\n### gfold'
-cargo install --locked gfold
+cargo binstall --locked gfold
 
 # Clean up
 echo -e '\n### Clean up'

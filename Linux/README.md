@@ -47,6 +47,13 @@ After the installation it's only pending:
 - change login shell to `nushell`
 - `gh auth login` and select browser
 
+## Possible problems:
+
+nvim `:checkhealth` clipboard not found
+In debian you can install `xclip` with:
+
+sudo apt-get install xclip
+
 ## If you are in a VirtuaBox
 
 You'll probably need clipboard sync, to copy and paste easily between machines
