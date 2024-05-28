@@ -181,6 +181,9 @@ cargo binstall tokei
 echo -e '\n### gfold'
 cargo binstall --locked gfold
 
+echo -e '\n### Making Applications folder'
+mkdir ~/Applications
+
 # Clean up
 echo -e '\n### Clean up'
 sudo apt autoremove -y
