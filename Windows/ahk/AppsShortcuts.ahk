@@ -48,3 +48,8 @@
 ; if it doesn't work, try this regedit
 ; https://superuser.com/a/1097169
 #+g:: Send "#^{Right}"
+
+; -------------------------------------------------------------------------------
+; Maximize Window
+; Win + M is "maximize the current window"
+#m:: Send "#{Up}"
