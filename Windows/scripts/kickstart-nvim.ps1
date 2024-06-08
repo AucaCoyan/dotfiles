@@ -26,15 +26,15 @@ Write-Host "`nCloning kickstart.nvim (upstream)" -ForegroundColor White
 git clone https://github.com/nvim-lua/kickstart.nvim $HOME\AppData\Local\nvim --depth 1
 
 
-# Write-Host "`nMaking the symlinks" -ForegroundColor White
-# Write-Output "2. Making the symlinks"
+Write-Host "`nMaking the symlinks" -ForegroundColor White
+Write-Output "2. Making the symlinks"
 
-# $originPath = "$HOME\AppData\Local\nvim\lua\custom"
-# $destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\NvChad\custom\"
+$originPath = "$HOME\AppData\Local\nvim\"
+$destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\kickstart.nvim\"
 
-# New-Item -ItemType Junction `
-#     -Path $originPath `
-#     -Target $destinationPath
+New-Item -ItemType Junction `
+    -Path $originPath `
+    -Target $destinationPath
 
 Write-Output "Job's done!"
 
