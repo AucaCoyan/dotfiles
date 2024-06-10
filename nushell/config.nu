@@ -540,6 +540,7 @@ source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/bat/bat-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/curl/curl-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/flutter/flutter-completions.nu
 #source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
