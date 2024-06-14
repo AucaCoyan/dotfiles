@@ -26,15 +26,24 @@ Write-Host "`nCloning kickstart.nvim (upstream)" -ForegroundColor White
 git clone https://github.com/nvim-lua/kickstart.nvim $HOME\AppData\Local\nvim --depth 1
 
 
-Write-Host "`nMaking the symlinks" -ForegroundColor White
 Write-Output "2. Making the symlinks"
 
-$originPath = "$HOME\AppData\Local\nvim\"
-$destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\kickstart.nvim\"
+try {
+    $originPath = "$HOME\AppData\Local\nvim\"
+    $destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\kickstart.nvim\"
 
-New-Item -ItemType Junction `
-    -Path $originPath `
-    -Target $destinationPath
+    # delete the folder if it exists
+    $LocalStateExits = Test-Path $originPath
+    if ($LocalStateExits) {
+        Write-Host "$LocalStateExits dir found! Removing..." -ForegroundColor Yellow
+        Remove-Item $originPath -Recurse -Force
+    }
+
+    # symlink the nvim folder
+    New-Item -ItemType Junction -Path $originPath -Target $destinationPath
+}
+catch { Write-Warning $_ }
+
 
 Write-Output "Job's done!"
 
