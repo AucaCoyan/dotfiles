@@ -11,9 +11,12 @@ echo -e "###### Linux installation script ######"
 echo -e "\n### Updating the system"
 sudo apt-get update -y
 
+echo -e "\n### Install nala"
+sudo apt-get install nala
+
 # `git`
 echo -e '\n### `git`'
-sudo apt-get install git -y
+sudo nala install git -y
 
 # Git Configuration
 echo -e '\n### Configure git'
@@ -44,7 +47,7 @@ echo -e '\n### `brew`'
 # forward to /dev/null to bypass the "Press enter to continue" step
 type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
 ## some brew dependencies / recommended pkgs
-sudo apt-get install build-essential
+sudo nala install build-essential
 
 ## add brew to path
 echo -e '\n### Adding `brew` to PATH'
@@ -54,7 +57,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 echo -e '\n### reload .bashrc'
 source ~/.bashrc
-# brew recommends to install gcc, but I prefer to have it just on apt-get
+# brew recommends to install gcc, but I prefer to have it just on nala or apt-get
 # brew install gcc
 
 # `nushell`
@@ -114,7 +117,7 @@ echo -e '\n### `ripgrep`'
 brew install ripgrep
 
 echo -e '\n### `fd`'
-sudo apt-get install fd-find -y
+sudo nala install fd-find -y
 echo -e '\n### symlinking fd-find to bat because of the name collition'
 ln --symbolic --force --no-dereference $(which fdfind) ~/.local/bin/fd
 
@@ -162,7 +165,7 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 
 echo -e '\n### gitmoji-rs'
 # add the `openssl` dependencies https://docs.rs/openssl/latest/openssl/
-sudo apt-get install pkg-config libssl-dev -y
+sudo nala install pkg-config libssl-dev -y
 cargo binstall gitmoji-rs
 gitmoji init --default
 
