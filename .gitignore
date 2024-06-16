@@ -1,14 +1,16 @@
 .config/nvim/plugin/
+OME/
 Windows/PowerShell/Help/
 Windows/PowerShell/Modules/
 Windows/PowerShell/Scripts
-nushell/history.txt
-nushell/unused/
-OME/
+Windows/powershell.config.json
 Windows/windows-terminal/elevated-state.json
 Windows/windows-terminal/state.json
-Windows/powershell.config.json
+nushell/history.txt
+nushell/unused/
+nushell/nu/*
 .config/helix/helix.log
+.vscode/settings.json
 
 # lazy.nvim commit hashes
 .config/nvim/lazy-lock.json
@@ -18,4 +20,3 @@ Windows/powershell.config.json
 
 # espanso
 .config/.espanso/match/packages/
-.vscode/settings.json
