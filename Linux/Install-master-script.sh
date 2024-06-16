@@ -187,6 +187,10 @@ cargo binstall --locked gfold
 echo -e '\n### qdirstat'
 sudo nala install qdirstat -y
 
+echo -e '\n### delta'
+gh release download --repo dandavison/delta --pattern 'git-delta_*amd64.deb'
+sudo dpkg -i git-delta*.deb
+
 echo -e '\n### Making Applications folder'
 mkdir ~/Applications
 
