@@ -184,6 +184,9 @@ cargo binstall tokei
 echo -e '\n### gfold'
 cargo binstall --locked gfold
 
+echo -e '\n### qdirstat'
+sudo nala install qdirstat -y
+
 echo -e '\n### Making Applications folder'
 mkdir ~/Applications
 
