@@ -150,6 +150,10 @@ export PATH="$HOME/.local/share/fnm:$PATH"
 eval "`fnm env`"
 fnm install --latest
 
+# fnm (node & npm)
+echo -e '\n### `bun`'
+curl -fsSL https://bun.sh/install | bash
+
 # rye
 # Accept all the defaults
 curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
