@@ -194,6 +194,9 @@ sudo dpkg -i git-delta*.deb
 echo -e '\n### Making Applications folder'
 mkdir ~/Applications
 
+echo -e '\n### glab'
+brew install glab
+
 # Clean up
 echo -e '\n### Clean up'
 sudo apt autoremove -y
