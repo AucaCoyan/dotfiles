@@ -121,7 +121,7 @@ try {
     # core
     scoop install 7zip anydesk audacity autohotkey bat
     scoop install broot czkawka-gui dbeaver delta difftastic draw.io 
-    scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui glab glow googlechrome httrack jpegview-fork
+    scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui main/glab glow googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
     scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
     scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
