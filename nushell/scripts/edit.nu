@@ -1,4 +1,4 @@
-# cd into repos/dotfiles && code .
+# cd into repos/dotfiles && $EDITOR .
 export def --env dotfiles [] {
     if $nu.os-info.name == "windows" {
         cd ~\repos\dotfiles\
@@ -7,7 +7,7 @@ export def --env dotfiles [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    code .
+    nvim .
 }
 
 # cd into ~\other-repos\nu\nu_scripts\ && code .
@@ -19,7 +19,7 @@ export def --env nu_scripts [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    code .
+    nvim .
 }
 
 # cd into AppData/local/nvim/lua/custom && nvim .
@@ -28,7 +28,8 @@ export def --env vimrc [] {
         cd ~\AppData\Local\nvim\lua\custom
         nvim .
     } else {
-        error make {msg: "Not implemented other OS other than Windows", } 
+        cd ~/repos/dotfiles/.config/preconfigured-nvim/kickstart.nvim/
+        nvim init.lua
     }
 }
 
@@ -41,5 +42,5 @@ export def --env espanso [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    code .
+    nvim .
 }
