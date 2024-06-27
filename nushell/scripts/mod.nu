@@ -6,6 +6,7 @@ export use oss.nu
 export use python.nu
 export use typescript.nu
 export use ven-fu.nu
+export use yazi.nu
 
 # updates the fork based on `main` branch of the remote `upstream`
 export def update-the-fork [branch?: string = "main"] {
