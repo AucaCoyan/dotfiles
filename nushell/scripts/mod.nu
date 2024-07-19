@@ -58,20 +58,27 @@ export def new-junction [
     --name: path               # origin, or folder you want to Symlink
     --target: path             # destination, or the folder you want to refer
     ] {
-    let command = ([
-    "New-Item",
-    "-ItemType",
-    "Junction",
-    "-Path",
-    $name,
-    "-Target",
-    $target
-    ] |
-    str join 
-    ' '     # add this separator to join with spaces 
-    )
-    echo $command
-    pwsh -Command $command
+
+    if $nu.os-info.name == "windows" {
+        let command = ([
+        "New-Item",
+        "-ItemType",
+        "Junction",
+        "-Path",
+        $name,
+        "-Target",
+        $target
+        ] |
+        str join 
+        ' '     # add this separator to join with spaces 
+        )
+        echo $command
+        pwsh -Command $command
+    } else if $nu.os-info.name == "linux" {
+        error make {msg: "not implemented" }
+    } else {
+        error make {msg: "Could not find the OS name :(", }
+    }
 }
 
 export def git-gone [] {
@@ -92,4 +99,21 @@ export def "update broot" [] {
     | save $"($env.home)/repos/dotfiles/nushell/cfg_files/broot.nu" --force
 
     print "✅ done!"
+}
+
+# cleans the cache and others temp files in the system 
+export def "system clean" [] {
+    if $nu.os-info.name == "windows" {
+        error make {msg: "not implemented" }
+    } else if $nu.os-info.name == "linux" {
+        print "cleaning apt cache..."
+        sudo nala clean
+
+        print "nala autoremove"
+        sudo nala autoremove
+        print "nala autopurge"
+        sudo nala autopurge
+    } else {
+        error make {msg: "Could not find the OS name :(", }
+    }
 }
