@@ -14,11 +14,12 @@ export def --env f [] {
     --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
     -- . # any name
     ~/repos #all these dirs
-    ~/workspace 
+    ~/other-repos
+    ~/workspace
     ~/workspace/private
     ~/workspace/botmaker
     ~/workspace/dataflow
-    ~/all-repos  
+    ~/all-repos
     | fzf) # pipe it to fzf
     cd $destination
 }
