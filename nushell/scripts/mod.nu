@@ -8,6 +8,21 @@ export use typescript.nu
 export use ven-fu.nu
 export use yazi.nu
 
+export def --env f [] {
+    # Usage: fd.exe [OPTIONS] [pattern] [path]...
+    let destination = (fd --max-depth 1 --min-depth 1
+    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
+    -- . # any name
+    ~/repos #all these dirs
+    ~/workspace 
+    ~/workspace/private
+    ~/workspace/botmaker
+    ~/workspace/dataflow
+    ~/all-repos  
+    | fzf) # pipe it to fzf
+    cd $destination
+}
+
 # updates the fork based on `main` branch of the remote `upstream`
 export def update-the-fork [branch?: string = "main"] {
     print "⏬ fething upstream"
