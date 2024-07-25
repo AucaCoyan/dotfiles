@@ -204,6 +204,9 @@ mkdir ~/Applications
 echo -e '\n### glab'
 brew install glab
 
+echo -e '\n### fzf'
+brew install fzf
+
 # Clean up
 echo -e '\n### Clean up'
 sudo apt autoremove -y
