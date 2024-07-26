@@ -66,3 +66,7 @@ alias "gimtoji commit" = gitmoji commit
 # riggrep
 # doesn't grab the search pattern after `rg`
 # alias "rg" = rg --hidden
+
+# fzf
+alias hi = fuzzy-history-search
+alias hf = fuzzy-command-search
