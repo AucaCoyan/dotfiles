@@ -496,14 +496,6 @@ $env.config = {
         ]
       }
     }
-    # Keybindings used to trigger the user defined menus
-    {
-      name: commands_menu
-      modifier: control
-      keycode: char_t
-      mode: [emacs, vi_normal, vi_insert]
-      event: { send: menu name: commands_menu }
-    }
     {
       name: vars_menu
       modifier: alt
@@ -560,6 +552,9 @@ source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
+# fzf searches
+source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_history_search.nu
+source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_command_search.nu
 
 if $nu.os-info.name == "linux" {
   source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
