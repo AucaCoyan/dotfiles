@@ -26,3 +26,12 @@ export def fuzzy-command-search [] {
     }
 }
 
+export def fuzzy-log-unit-search [] {
+    if $nu.os-info.name == "windows" {
+        error make {msg: "Not implemented", }
+    } else if $nu.os-info.name == "linux" {
+        systemctl list-unit-files --all
+    } else {
+        error make {msg: "Could not find the OS name :(", }
+    }
+}
