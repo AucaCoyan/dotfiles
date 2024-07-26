@@ -10,6 +10,20 @@ export def --env dotfiles [] {
     nvim .
 }
 
+
+# cd into repos/dotfiles && $EDITOR .
+export def --env nushell [] {
+    if $nu.os-info.name == "windows" {
+        cd ~\repos\dotfiles\nushell\
+    } else if $nu.os-info.name == "linux" {
+        cd ~/repos/dotfiles/nushell/
+    } else {
+        error make {msg: "Could not find the OS name :(", }
+    }
+    code .
+}
+
+
 # cd into ~\other-repos\nu\nu_scripts\ && code .
 export def --env nu_scripts [] {
     if $nu.os-info.name == "windows" {
