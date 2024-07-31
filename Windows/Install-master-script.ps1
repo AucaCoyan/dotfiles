@@ -120,7 +120,7 @@ try {
 
     # core
     scoop install 7zip extras/anydesk audacity autohotkey bat
-    scoop install broot czkawka-gui dbeaver delta difftastic draw.io 
+    scoop install broot czkawka-gui clipboard dbeaver delta difftastic draw.io 
     scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui main/glab glow googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
     scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys psreadline rga 
