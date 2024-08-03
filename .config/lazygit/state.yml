@@ -1,9 +1,14 @@
 lastupdatecheck: 0
 recentrepos:
-- C:\Users\aucac\repos\dotfiles
-- C:\Users\aucac\other-repos\catppuccin\spicetify
+    - C:\Users\aucac\repos\dotfiles
 startuppopupversion: 5
-customcommandshistory:
-- q
+lastversion: 0.43.1
+customcommandshistory: []
 hidecommandlog: false
 ignorewhitespaceindiffview: false
+diffcontextsize: 3
+renamesimilaritythreshold: 50
+localbranchsortorder: recency
+remotebranchsortorder: alphabetical
+gitlogorder: topo-order
+gitlogshowgraph: always
