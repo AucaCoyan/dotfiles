@@ -15,6 +15,17 @@ export def "clean" [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
+    # cross platform commands
+
+    # TODO: This removes any stopped container
+    # so if you stopped your db just for some reason,
+    # it throws away the data
+    # docker system prune --all
+    # including
+    # - all stopped containers
+    # - all networks not used by at least one container
+    # - all dangling images
+    # - unused build cache
 }
 
 
