@@ -119,7 +119,7 @@ try {
     scoop bucket add AntonOks_scoop-aoks https://github.com/AntonOks/scoop-aoks
 
     # core
-    scoop install 7zip extras/anydesk audacity autohotkey bat
+        scoop install 7zip extras/anydesk audacity autohotkey bat
     scoop install broot czkawka-gui clipboard dbeaver delta difftastic draw.io 
     scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui main/glab glow googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
@@ -132,7 +132,7 @@ try {
     scoop install AntonOks_scoop-aoks/nushell-aoks
 
     # optional apps
-    scoop install brave calibre digikam gimp insomnia tradingview
+    scoop install brave calibre digikam extras/gimp insomnia tradingview
     scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb 
     # scoop install authy azuredatastudio calibre gcc nomino
 
