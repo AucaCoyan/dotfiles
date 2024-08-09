@@ -10,20 +10,36 @@ export use typescript.nu
 export use ven-fu.nu
 export use yazi.nu
 
-export def --env f [] {
+export def --env f [
+    --all # include ~/all-repos folder
+] {
     # Usage: fd.exe [OPTIONS] [pattern] [path]...
-    let destination = (fd --max-depth 1 --min-depth 1
-    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
-    -- . # any name
-    ~/repos #all these dirs
-    ~/other-repos
-    ~/workspace
-    ~/workspace/private
-    ~/workspace/botmaker
-    ~/workspace/dataflow
-    ~/all-repos
-    | fzf) # pipe it to fzf
-    cd $destination
+    if $all {
+        let destination = (fd --max-depth 1 --min-depth 1
+        --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
+        -- . # any name
+        ~/repos #all these dirs
+        ~/other-repos
+        ~/all-repos
+        ~/workspace
+        ~/workspace/private
+        ~/workspace/botmaker
+        ~/workspace/dataflow
+        | fzf) # pipe it to fzf
+        cd $destination
+    } else {
+        let destination = (fd --max-depth 1 --min-depth 1
+        --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
+        -- . # any name
+        ~/repos #all these dirs
+        ~/other-repos
+        ~/workspace
+        ~/workspace/private
+        ~/workspace/botmaker
+        ~/workspace/dataflow
+        | fzf) # pipe it to fzf
+        cd $destination
+    }
 }
 
 # updates the fork based on `main` branch of the remote `upstream`
