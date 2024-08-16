@@ -33,7 +33,7 @@ export def --env nu_scripts [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    nvim .
+    code .
 }
 
 # cd into AppData/local/nvim/lua/custom && nvim .
