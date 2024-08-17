@@ -44,3 +44,11 @@ export def "checkout recent branch" [] {
         | str trim 
     git checkout $branch
 }
+
+export def "fuzzy edit file" [] {
+        let destination = (fd --min-depth 1
+        --hidden --no-ignore --ignore-vcs --exclude node_modules --exclude .git
+        -- . # any name
+        | fzf) # pipe it to fzf
+        nvim $destination
+}
