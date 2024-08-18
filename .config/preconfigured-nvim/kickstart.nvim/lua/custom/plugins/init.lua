@@ -2,12 +2,4 @@
 --  I promise not to create any merge conflicts in this directory :)
 --
 -- See the kickstart.nvim README for more information
-return {
-
-  'stevearc/oil.nvim',
-  opts = {},
-  default_file_exporer = false,
-  -- Optional dependencies
-  dependencies = { { 'echasnovski/mini.icons', opts = {} } },
-  -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if prefer nvim-web-devicons
-}
+return {}
