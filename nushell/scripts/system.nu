@@ -39,4 +39,7 @@ export def "update" [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
+    print "rustup update..."
+    # cross platform commands
+    rustup update
 }
