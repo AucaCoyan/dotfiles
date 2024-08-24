@@ -4,6 +4,7 @@ export def "clean" [] {
     if $nu.os-info.name == "windows" {
         print "cleaning scoop cache..."
         scoop cleanup --all
+
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
         sudo nala clean
@@ -16,6 +17,10 @@ export def "clean" [] {
         error make {msg: "Could not find the OS name :(", }
     }
     # cross platform commands
+
+    # clean the Temp folder
+    print "cleaning TMP folder"
+    ls $env.TEMP | par-each {|item| rm $item.name --recursive}
 
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
