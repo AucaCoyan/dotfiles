@@ -11,7 +11,7 @@ export def --env dotfiles [] {
 }
 
 
-# cd into repos/dotfiles && $EDITOR .
+# cd into repos/dotfiles && code . --profile nushell
 export def --env nushell [] {
     if $nu.os-info.name == "windows" {
         cd ~\repos\dotfiles\nushell\
@@ -20,7 +20,7 @@ export def --env nushell [] {
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    code .
+    code . --profile nushell
 }
 
 
