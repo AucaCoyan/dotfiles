@@ -20,7 +20,8 @@ export def --env f [
         -- . # any name
         ~/repos #all these dirs
         ~/other-repos
-        ~/all-repos
+        ~/all-repos/botmaker
+        ~/all-repos/gcp-source
         ~/workspace
         ~/workspace/private
         ~/workspace/botmaker
