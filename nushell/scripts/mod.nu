@@ -135,3 +135,28 @@ export def "update broot" [] {
 
     print "✅ done!"
 }
+
+# (external) Parse text from a JWT and create a record.
+export def "from jwt" []: string -> record {
+    (split row .
+      | {
+        header:    ($in.0 | decode base64 -c url-safe-no-padding | from json )
+        payload:   ($in.1 | decode base64 -c url-safe-no-padding | from json )
+        signature: ($in.2 | decode base64 -c url-safe-no-padding -b )
+      } | convert-datetime 'exp' 
+      | convert-datetime 'iat'
+      | convert-datetime 'nbf'
+    )
+}
+
+def "convert-datetime" [field: string] {
+    if ($in.payload | columns | any { $in == $field }) {
+        $in | update payload { update $field { timestamp into datetime } }
+    } else {
+        $in
+    }
+}
+
+def "timestamp into datetime" [] {
+    $in * 1_000_000_000 | into datetime
+}
