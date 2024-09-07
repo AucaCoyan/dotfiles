@@ -30,3 +30,6 @@ New-Item -ItemType Junction `
     -Target $destinationPath
 
 Write-Output "Job's done!"
+
+# run nvim to install all the plugins
+nvim
