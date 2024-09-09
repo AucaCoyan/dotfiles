@@ -4,6 +4,9 @@ $ErrorActionPreference = "Stop"
 
 Write-Output "Install dotfiles-nvim in the machine"
 Write-Output "-----------------------------"
+Write-Output ""
+
+Write-Output "1. Removing `/nvim` and `/nvim-data` "
 
 # remove nvim-data
 $hasnNvimDataDirectory = Test-Path "$HOME\AppData\Local\nvim-data"
@@ -22,13 +25,21 @@ if ($hasNvimLuaCustomDirectory) {
 Write-Host "`nMaking the symlinks" -ForegroundColor White
 Write-Output "2. Making the symlinks"
 
-$originPath = "$HOME\AppData\Local\nvim"
-$destinationPath = "$HOME\repos\dotfiles\.config\nvim"
+try {
+    $originPath = "$HOME\AppData\Local\nvim"
+    $destinationPath = "$HOME\repos\dotfiles\.config\nvim"
 
-New-Item -ItemType Junction `
-    -Path $originPath `
-    -Target $destinationPath
+    # delete the folder if it exists
+    $LocalStateExits = Test-Path $originPath
+    if ($LocalStateExits) {
+        Write-Host "$LocalStateExits dir found! Removing..." -ForegroundColor Yellow
+        Remove-Item $originPath -Recurse -Force
+    }
 
+    # symlink the nvim folder
+    New-Item -ItemType Junction -Path $originPath -Target $destinationPath
+}
+catch { Write-Warning $_ }
 Write-Output "Job's done!"
 
 # run nvim to install all the plugins
