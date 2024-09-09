@@ -925,6 +925,9 @@ require("lazy").setup({
 	-- { import = 'custom.plugins' },
 	{
 		"stevearc/oil.nvim",
+		keys = {
+			{ "<leader>o", "<cmd>Oil<cr>", desc = "Oil" },
+		},
 		opts = {},
 		default_file_exporer = false,
 		-- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
