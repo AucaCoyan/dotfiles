@@ -40,7 +40,8 @@ export def "update" [] {
         print "updating scoop..."
         scoop update --all
     } else if $nu.os-info.name == "linux" {
-        error make {msg: "not implemented" }
+        print "updating apt"
+        sudo nala upgrade # updates the pkgs and then upgrades the system
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
