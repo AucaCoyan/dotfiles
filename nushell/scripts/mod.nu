@@ -2,6 +2,7 @@ export use copy_subs.nu
 export use edit.nu
 export use fzf.nu *
 export use git.nu
+export use helix.nu
 # export use oil.nu
 export use nvim.nu
 export use oss.nu
