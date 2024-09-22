@@ -117,8 +117,10 @@ if $nu.os-info.name == "linux" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/pnpm')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/fnm')
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/kitty.app')
     # hombrew
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.zig/')
 } 
 
 # https://github.com/Schniz/fnm/issues/87
