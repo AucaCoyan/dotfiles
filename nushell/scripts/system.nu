@@ -48,4 +48,8 @@ export def "update" [] {
     print "rustup update..."
     # cross platform commands
     rustup update
+
+    print "bun update..."
+    # cross platform commands
+    bun updgrade
 }
