@@ -11,6 +11,7 @@ nushell/unused/
 nushell/nu/*
 .config/helix/helix.log
 .vscode/settings.json
+**/history*
 
 # lazy.nvim commit hashes
 .config/nvim/lazy-lock.json
@@ -20,3 +21,4 @@ nushell/nu/*
 
 # espanso
 .config/.espanso/match/packages/
+
