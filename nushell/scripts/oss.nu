@@ -134,7 +134,7 @@ export def run_pr_counts [] {
 
     use ./list-merged-prs.nu
 
-    const LAST_RELEASE = v2.2.1
+    const LAST_RELEASE = "v2.2.1"
 
     let matching_releases = ^gh api /repos/espanso/espanso/releases
         | from json
