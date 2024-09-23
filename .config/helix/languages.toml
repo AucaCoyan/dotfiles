@@ -1,9 +1,7 @@
 [[language]]
 name = "python"
 roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
-language-servers = ["pyright"]
 auto-format = true
-formatter = { command = "black", args = ["--quiet", "-"] }
 
 [language-server.pyright]
 config = {}
