@@ -12,11 +12,11 @@ echo -e "\n### Updating the system"
 sudo apt-get update -y
 
 echo -e "\n### Install nala"
-sudo apt-get install nala
+sudo apt-get install nala -y
 
 # `git`
 echo -e '\n### `git`'
-sudo nala install git -y
+sudo apt-get install git -y
 
 # Git Configuration
 echo -e '\n### Configure git'
@@ -32,10 +32,10 @@ echo -e '\n### `curl`'
 sudo apt install curl -y
 
 # Install catppuccin themes in Gnome Terminal
-curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.2.0/install.py | python3 -
+# curl -L https://raw.githubusercontent.com/catppuccin/gnome-terminal/v0.2.0/install.py | python3 -
 ## Set Ctrl Tab to change tabs
-gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Primary>Tab'
-gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Primary><Shift>Tab'
+# gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ next-tab '<Primary>Tab'
+# gsettings set org.gnome.Terminal.Legacy.Keybindings:/org/gnome/terminal/legacy/keybindings/ prev-tab '<Primary><Shift>Tab'
 
 
 # `gh` CLI
@@ -51,7 +51,7 @@ echo -e '\n### `brew`'
 # forward to /dev/null to bypass the "Press enter to continue" step
 type -p brew >/dev/null || /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)" < /dev/null
 ## some brew dependencies / recommended pkgs
-sudo nala install build-essential
+sudo apt-get install build-essential
 
 ## add brew to path
 echo -e '\n### Adding `brew` to PATH'
@@ -121,7 +121,7 @@ echo -e '\n### `ripgrep`'
 brew install ripgrep
 
 echo -e '\n### `fd`'
-sudo nala install fd-find -y
+sudo apt-get install fd-find -y
 echo -e '\n### symlinking fd-find to bat because of the name collition'
 ln --symbolic --force --no-dereference $(which fdfind) ~/.local/bin/fd
 
@@ -165,28 +165,28 @@ curl -sSf https://rye.astral.sh/get | RYE_INSTALL_OPTION="--yes" bash
 # VS Code
 echo -e '\n### VS Code'
 wget --output-document=vscode-stable-x64-linux.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
-sudo apt install ./vscode-stable-x64-linux.deb
+sudo apt-get install ./vscode-stable-x64-linux.deb
 
 # Install Kitty Shell
-echo -e '\n### `Kitty shell`'
-curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n # do not launch kitty when finished
+# echo -e '\n### `Kitty shell`'
+# curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin launch=n # do not launch kitty when finished
 
-echo -e '\n### `Desktop icon`'
+# echo -e '\n### `Desktop icon`'
 # Create symbolic links to add kitty and kitten to PATH (assuming ~/.local/bin is in
 # your system-wide PATH)
-ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
+# ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten ~/.local/bin/
 # Place the kitty.desktop file somewhere it can be found by the OS
-cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+# cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 # If you want to open text files and images in kitty via your file manager also add the kitty-open.desktop file
-cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+# cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 # Update the paths to the kitty and its icon in the kitty desktop file(s)
-sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
-sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+# sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+# sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 # Make xdg-terminal-exec (and hence desktop environments that support it use kitty)
-echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+# echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
 # Symlink kitty
-ln -s ~/repos/dotfiles/.config/kitty ~/.config/kitty
+# ln -s ~/repos/dotfiles/.config/kitty ~/.config/kitty
 
 # rust tools
 echo -e '\n### cargo-binstall'
@@ -194,12 +194,9 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 
 echo -e '\n### gitmoji-rs'
 # add the `openssl` dependencies https://docs.rs/openssl/latest/openssl/
-sudo nala install pkg-config libssl-dev -y
+sudo apt-get install pkg-config libssl-dev -y
 cargo binstall gitmoji-rs
 gitmoji init --default
-
-echo -e '\n### gitui'
-cargo binstall gitui
 
 echo -e '\n### bacon'
 cargo binstall --locked bacon
@@ -214,7 +211,7 @@ echo -e '\n### gfold'
 cargo binstall --locked gfold
 
 echo -e '\n### qdirstat'
-sudo nala install qdirstat -y
+sudo apt-get install qdirstat -y
 
 echo -e '\n### delta'
 gh release download --repo dandavison/delta --pattern 'git-delta_*amd64.deb'
