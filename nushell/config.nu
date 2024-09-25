@@ -924,8 +924,7 @@ $env.config = {
 # theme
 # https://github.com/nushell/nu_scripts/tree/main/themes
 use ~/other-repos/nu/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
-use ~/other-repos/nu/nu_scripts/themes/nu-themes/gruvbox-dark-medium.nu
-$env.config = ($env.config | merge {color_config: (gruvbox-dark-medium)})
+$env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
 
 # use nupm
 use ~/other-repos/nupm/nupm/
@@ -969,9 +968,9 @@ source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_history_search.nu
 source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_command_search.nu
 
 if $nu.os-info.name == "linux" {
-  source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
+    source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
 } else if $nu.os-info.name == "windows" {
-  source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
+    source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 }
 
 # broken for nu version 0.89

@@ -105,7 +105,7 @@ $env.NU_PLUGIN_DIRS = [
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 # me abre una ventana de code cada vez que abro nu
-# $env.EDITOR = ^code
+#$env.EDITOR = code
 
 if $nu.os-info.name == "linux" {
     # Documentation for nvim
@@ -113,6 +113,7 @@ if $nu.os-info.name == "linux" {
     $env.PYENV_ROOT = "$HOME/bin/.pyenv"
     $env.BUN_INSTALL = "$HOME/.bun"
     $env.PNPM_HOME = "$HOME/.local/share/pnpm"
+    $env.DEBUGINFOD_URLS = "https://debuginfod.debian.net"
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
     $env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin' | uniq )
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
