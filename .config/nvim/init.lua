@@ -983,3 +983,5 @@ vim.opt.sidescrolloff = 8
 ---------------------
 
 -- vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
+-- nushell LSP
+require('lspconfig').nushell.setup {}
