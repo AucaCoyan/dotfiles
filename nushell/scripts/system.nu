@@ -39,9 +39,15 @@ export def "update" [] {
     if $nu.os-info.name == "windows" {
         print "updating scoop..."
         scoop update --all
+
     } else if $nu.os-info.name == "linux" {
         print "updating apt"
         sudo nala upgrade # updates the pkgs and then upgrades the system
+
+        print "updating brew"
+        brew update
+        brew upgrade
+
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
@@ -50,6 +56,14 @@ export def "update" [] {
     rustup update
 
     print "bun update..."
-    # cross platform commands
-    bun updgrade
+    bun upgrade
+
+    print "uv update..."
+    uv self update
+
+    print "rye update..."
+    rye self update
+
+    print "cargo-update..."
+    cargo install-update --all
 }
