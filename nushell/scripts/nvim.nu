@@ -1,4 +1,3 @@
-
 export def "install personal" [] {
     if $nu.os-info.name == "windows" {
         error make {msg: "not implemented!", }
