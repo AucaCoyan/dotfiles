@@ -218,7 +218,7 @@ gh release download --repo dandavison/delta --pattern 'git-delta_*amd64.deb'
 sudo dpkg -i git-delta*.deb
 
 echo -e '\n### Making Applications folder'
-mkdir ~/Applications
+mkdir --parents ~/Applications
 
 echo -e '\n### glab'
 brew install glab
