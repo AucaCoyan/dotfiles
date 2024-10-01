@@ -605,6 +605,7 @@ require('lazy').setup({
 
   { -- Autoformat
     'stevearc/conform.nvim',
+    log_level = vim.log.levels.DEBUG,
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
     keys = {
@@ -632,11 +633,19 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort', 'ruff_format' },
+        python = { 'isort' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'biome', 'prettierd', 'prettier', stop_after_first = true },
+        json = { 'biome' },
+      },
+      formatters = {
+        isort = {
+          inherit = false,
+          command = 'isort',
+          args = { '.', '--force-single-line-imports', '--stdout' },
+        },
       },
     },
   },
@@ -982,6 +991,6 @@ vim.opt.sidescrolloff = 8
 
 ---------------------
 
--- vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
 -- nushell LSP
 require('lspconfig').nushell.setup {}
+vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'

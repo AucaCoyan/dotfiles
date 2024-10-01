@@ -84,7 +84,7 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
--- vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
+vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
 
 vim.cmd.language = 'en_US' -- forces vim to have en_US interface language
 -- Set <space> as the leader key
