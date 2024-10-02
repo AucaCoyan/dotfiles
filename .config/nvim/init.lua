@@ -989,8 +989,6 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 --vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
----------------------
-
 -- nushell LSP
 require('lspconfig').nushell.setup {}
 vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
