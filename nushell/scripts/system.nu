@@ -22,6 +22,8 @@ export def "clean" [] {
     print "cleaning TMP folder"
     ls $env.TEMP | par-each {|item| rm $item.name --recursive}
 
+    print "cleaning uv"
+    uv cache prune
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
     # it throws away the data
