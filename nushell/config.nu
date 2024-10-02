@@ -961,6 +961,9 @@ source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
 
+# warden
+source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
+
 # use ~/other-repos/nu/nu_scripts/modules/with_externals/loc.nu
 
 # fzf searches
