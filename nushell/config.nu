@@ -936,7 +936,6 @@ source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
 source ~/repos/dotfiles/nushell/cfg_files/completions.nu
 source ~/repos/dotfiles/nushell/cfg_files/broot.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/bat/bat-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/bmc/bmc-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/curl/curl-completions.nu
@@ -945,10 +944,8 @@ source ~/other-repos/nu/nu_scripts/custom-completions/flutter/flutter-completion
 #source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/glow/glow-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/make/make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/pdm/pdm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rg/rg-completions.nu
@@ -957,12 +954,9 @@ source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/winget/winget-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
 
-# warden
-source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
 
 # use ~/other-repos/nu/nu_scripts/modules/with_externals/loc.nu
 
@@ -974,6 +968,10 @@ if $nu.os-info.name == "linux" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
 } else if $nu.os-info.name == "windows" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
+
+    # warden
+    source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
+    source ~/other-repos/nu/nu_scripts/custom-completions/bmc/bmc-completions.nu
 }
 
 # broken for nu version 0.89
