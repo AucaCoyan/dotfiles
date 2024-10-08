@@ -22,3 +22,7 @@ nushell/nu/*
 # espanso
 .config/.espanso/match/packages/
 
+# work config
+.config/.espanso/match/work.yml
+nushell/work-env.nu
+
