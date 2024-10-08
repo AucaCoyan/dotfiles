@@ -140,11 +140,10 @@ export def "update broot" [] {
 
 # (external) Parse text from a JWT and create a record.
 export def "from jwt" []: string -> record {
-    (split row .
-      | {
-        header:    ($in.0 | decode base64 -c url-safe-no-padding | from json )
-        payload:   ($in.1 | decode base64 -c url-safe-no-padding | from json )
-        signature: ($in.2 | decode base64 -c url-safe-no-padding -b )
+    (split row .  | {
+        header:    ($in.0 | decode new-base64 --url --nopad | decode )
+        payload:   ($in.1 | decode new-base64 --url --nopad | decode )
+        signature: ($in.2 | decode new-base64 --url --nopad | decode )
       } | convert-datetime 'exp' 
       | convert-datetime 'iat'
       | convert-datetime 'nbf'
