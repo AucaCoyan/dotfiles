@@ -889,7 +889,7 @@ require('lazy').setup({
 
   {
     'nvim-neo-tree/neo-tree.nvim',
-    lazy = true,
+    lazy = false,
     branch = 'v3.x',
     version = '*',
     dependencies = {
@@ -904,16 +904,28 @@ require('lazy').setup({
     opts = {
       filesystem = {
         window = {
+          position = 'right',
           mappings = {
             ['\\'] = 'close_window',
           },
         },
+        filtered_items = {
+          hide_dotfiles = false,
+          hide_by_name = {
+            'node_modules',
+            '.git',
+          },
+        },
       },
+      follow_current_file = {
+        enabled = true,
+      },
+      hijack_netrw_behavior = 'open_default',
     },
   },
   {
     'stevearc/oil.nvim',
-    lazy = false,
+    lazy = true,
     ---@module 'oil'
     ---@type oil.SetupOpts
     opts = {
