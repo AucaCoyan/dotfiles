@@ -957,6 +957,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
 
+source ~/other-repos/nu/nu_scripts/custom-completions/bmc/bmc-completions.nu
 
 # use ~/other-repos/nu/nu_scripts/modules/with_externals/loc.nu
 
@@ -971,7 +972,6 @@ if $nu.os-info.name == "linux" {
 
     # warden
     source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
-    source ~/other-repos/nu/nu_scripts/custom-completions/bmc/bmc-completions.nu
 }
 
 # broken for nu version 0.89
