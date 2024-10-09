@@ -633,20 +633,20 @@ require('lazy').setup({
       formatters_by_ft = {
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
-        python = { 'isort' },
+        python = { 'ruff_format', 'isort' },
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
-        javascript = { 'biome','prettier', stop_after_first = true },
-        typescript = { 'biome','prettier', stop_after_first = true },
+        javascript = { 'biome', 'prettier', stop_after_first = true },
+        typescript = { 'biome', 'prettier', stop_after_first = true },
         json = { 'biome' },
       },
-      formatters = {
-        isort = {
-          inherit = false,
-          command = 'isort',
-          args = { '.', '--force-single-line-imports', '--stdout' },
-        },
-      },
+      -- formatters = {
+      --   isort = {
+      --     inherit = false,
+      --     command = 'isort',
+      --     args = { '$FILENAME', '--force-single-line-imports', '--stdout' },
+      --   },
+      -- },
     },
   },
 
@@ -913,16 +913,22 @@ require('lazy').setup({
   },
   {
     'stevearc/oil.nvim',
-    opts = {},
     lazy = false,
-    default_file_exporer = false,
-    -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
-    delete_to_trash = true,
-    -- Show files and directories that start with "."
-    show_hidden = true,
-    -- is_always_hidden = function(name, bufnr)
-    -- 	return vim.startswith(name, ".git")
-    -- end,
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {
+      default_file_exporer = false,
+      -- Show files and directories that start with "."
+      -- Send deleted files to the trash instead of permanently deleting them (:help oil-trash)
+      delete_to_trash = true,
+      view_options = {
+        -- Show files and directories that start with "."
+        show_hidden = true,
+        is_always_hidden = function(name, bufnr)
+          return vim.startswith(name, '.git') or vim.startswith(name, '..')
+        end,
+      },
+    },
 
     -- Optional dependencies
     dependencies = { { 'echasnovski/mini.icons', opts = {} } },
