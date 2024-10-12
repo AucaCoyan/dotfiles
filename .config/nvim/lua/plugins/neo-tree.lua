@@ -1,3 +1,4 @@
+-- https://github.com/nvim-neo-tree/neo-tree.nvim
 return {
   'nvim-neo-tree/neo-tree.nvim',
   lazy = false,
@@ -13,6 +14,19 @@ return {
     { '\\', ':Neotree reveal right<CR>', { desc = 'NeoTree reveal' } },
   },
   opts = {
+    default_component_configs = {
+      git_status = {
+        symbols = {
+          -- change type
+          added = 'A',
+          deleted = 'D',
+          modified = 'M',
+          -- status type
+          untracked = 'U',
+          -- ignored, stated, unstaged & conflict
+        },
+      },
+    },
     filesystem = {
       window = {
         position = 'right',
