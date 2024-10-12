@@ -69,6 +69,15 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>fr', builtin.resume, { desc = '[F]ind [R]esume' })
     vim.keymap.set('n', '<leader>f.', builtin.oldfiles, { desc = '[F]ind Recent Files ("." for repeat)' })
     vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+    vim.keymap.set('n', '<leader>fo', builtin.treesitter, { desc = '[F]ind Treesitter [O]bjects' })
+    --
+    -- theme
+    vim.keymap.set('n', '<leader>fc', builtin.colorscheme, { desc = 'Change [c]olorscheme theme' })
+
+    -- git telescopes
+    vim.keymap.set('n', '<leader>gc', builtin.git_commits, { desc = 'git [c]ommits of the repo' })
+    vim.keymap.set('n', '<leader>gC', builtin.git_bcommits, { desc = 'git [C]ommits of this file' })
+    vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = 'git [b]ranches' })
 
     -- Slightly advanced example of overriding default behavior and theme
     vim.keymap.set('n', '<leader>/', function()

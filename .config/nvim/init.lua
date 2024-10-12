@@ -1,3 +1,6 @@
+-- [[ Setting options ]]
+-- See `:help vim.opt`
+--  For more options, you can see `:help option-list`
 vim.opt['tabstop'] = 4
 vim.opt['shiftwidth'] = 4
 
@@ -10,11 +13,6 @@ vim.g.have_nerd_font = true
 -- disable netrw
 vim.g.loaded_netrwPlugin = 1
 vim.g.loaded_netrw = 1
-
--- [[ Setting options ]]
--- See `:help vim.opt`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
 
 -- Make line numbers default
 vim.opt.number = true
@@ -85,6 +83,8 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', { desc = 'general save file' })
+
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
@@ -116,6 +116,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<tab>', '<cmd>tabNext<CR>')
 -- shift tab
 vim.keymap.set('n', '<S-tab>', '<cmd>tabprevious<CR>')
+-- new tab
+vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>')
+-- buffer delete
+vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'buffer delete' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -130,10 +134,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     vim.highlight.on_yank()
   end,
 })
-
--- strctured installation
--- https://lazy.folke.io/installation
-require 'config.lazy'
 
 -- inlay hints
 vim.lsp.inlay_hint.enable()
@@ -171,6 +171,8 @@ vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.sidescrolloff = 8
 --vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
--- nushell LSP
-require('lspconfig').nushell.setup {}
-vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
+--vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
+
+-- structured installation
+-- https://lazy.folke.io/installation
+require 'config.lazy'

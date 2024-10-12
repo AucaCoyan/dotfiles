@@ -972,7 +972,6 @@ if $nu.os-info.name == "linux" {
 
     # warden
     # source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
-    source ~/other-repos/nu/nu_scripts/custom-completions/bmc/bmc-completions.nu
 }
 
 # broken for nu version 0.89

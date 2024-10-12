@@ -20,4 +20,8 @@ return {
       --vim.cmd.hi 'Comment gui=none'
     end,
   },
+  {
+    'eldritch-theme/eldritch.nvim',
+    -- lazy = 'VeryLazy',
+  },
 }

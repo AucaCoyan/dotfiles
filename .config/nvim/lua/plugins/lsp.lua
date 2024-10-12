@@ -1,4 +1,7 @@
 -- LSP Plugins
+--
+-- -- nushell LSP
+-- require('lspconfig').nushell.setup {}
 return {
 
   {
@@ -13,6 +16,7 @@ return {
       },
     },
   },
+  -- Meta type definitions for the Lua platform Luvit.
   { 'Bilal2453/luvit-meta', lazy = true },
   {
     -- Main LSP Configuration
