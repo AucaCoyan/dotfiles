@@ -24,4 +24,11 @@ return {
     'eldritch-theme/eldritch.nvim',
     -- lazy = 'VeryLazy',
   },
+  {
+    'Mofiqul/vscode.nvim',
+    opts = {
+      transparent_background = true,
+    },
+  },
+  { 'ellisonleao/gruvbox.nvim', priority = 1000, opts = { transparent_background = true } },
 }
