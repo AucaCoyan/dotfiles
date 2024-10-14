@@ -13,6 +13,8 @@ return { -- Autoformat
       desc = '[F]ormat buffer',
     },
   },
+  --@module "conform"
+  --@type conform.setupOpts
   opts = {
     notify_on_error = false,
     format_on_save = function(bufnr)
@@ -35,12 +37,20 @@ return { -- Autoformat
       typescript = { 'biome', 'prettier', stop_after_first = true },
       json = { 'biome' },
     },
-    -- formatters = {
-    --   isort = {
-    --     inherit = false,
-    --     command = 'isort',
-    --     args = { '$FILENAME', '--force-single-line-imports', '--stdout' },
-    --   },
-    -- },
+    -- define any custom formatters here
+    --@type table<string,table>
+    formatters = {
+      prettier = {
+        -- When returns false, the formatter will not be used
+        condition = function(self, ctx)
+          return vim.fs.basename(ctx.FILENAME) ~= '.prettierrc.js'
+        end,
+      },
+      --   isort = {
+      --     inherit = false,
+      --     command = 'isort',
+      --     args = { '$FILENAME', '--force-single-line-imports', '--stdout' },
+      --   },
+    },
   },
 }
