@@ -143,6 +143,17 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+vim.api.nvim_create_autocmd('BufWinEnter', {
+  desc = 'Help page in a new tab',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  pattern = { '*.txt' },
+  callback = function()
+    if vim.o.filetype == 'help' then
+      vim.cmd.wincmd 'T'
+    end
+  end,
+})
+
 -- inlay hints
 vim.lsp.inlay_hint.enable()
 vim.cmd.language = 'en_US' -- forces vim to have en_US interface language
