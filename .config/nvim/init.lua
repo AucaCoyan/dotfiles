@@ -125,9 +125,9 @@ vim.keymap.set('n', '<tab>', '<cmd>tabNext<CR>')
 -- shift tab
 vim.keymap.set('n', '<S-tab>', '<cmd>tabprevious<CR>')
 -- new tab
-vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>')
+vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', { desc = 'new [b]uffer' })
 -- buffer delete
-vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = 'buffer delete' })
+vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = '[b]uffer [d]elete' })
 
 -- inlay hints
 vim.lsp.inlay_hint.enable()
@@ -166,6 +166,9 @@ vim.opt.sidescrolloff = 8
 --vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
 --vim.g.python3_host_prog = 'C:/Users/AucaMaillo/repos/dotfiles/.config/.venv/Scripts/python.exe'
+--
+-- Set the python3_host_prog variable
+vim.g.python3_host_prog = '~/repos/dotfiles/.config/venv/Scripts/python'
 
 require 'config.autocmd'
 -- structured installation
