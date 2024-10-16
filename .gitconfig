@@ -31,6 +31,10 @@
 
 [includeIf "gitdir:~/workspace/"]
     path = ~/workspace/private/.gitconfig
+
+[includeIf "gitdir:~/all-repos/"]
+    path = ~/workspace/private/.gitconfig
+
 [push]
     autoSetupRemote = true
     autoSetupRemote = true
