@@ -9,7 +9,6 @@ export use oss.nu
 export use python.nu
 export use system.nu
 export use typescript.nu
-export use ven-fu.nu
 export use yazi.nu
 
 export def --env f [
@@ -173,4 +172,9 @@ export def extract [file: path] {
         print "it's a tar.gz"
         tar -xvzf $file
     }
+}
+
+# recibe un json de log de botmaker y devuelve una tabla con el resultado
+export def "parse botmaker response" [json: record] {
+    $json | get result | from json
 }
