@@ -39,33 +39,40 @@ export def "clean" [] {
 # updates the system
 export def "update" [] {
     if $nu.os-info.name == "windows" {
-        print "updating scoop..."
+        print "💫 updating scoop..."
         scoop update --all
 
     } else if $nu.os-info.name == "linux" {
-        print "updating apt"
+        print "💫 updating apt"
         sudo nala upgrade # updates the pkgs and then upgrades the system
 
-        print "updating brew"
+        print "💫 updating brew"
         brew update
         brew upgrade
 
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
-    print "rustup update..."
+    print "💫 rustup update..."
     # cross platform commands
     rustup update
 
-    print "bun update..."
+    print "💫 bun update..."
     bun upgrade
 
-    print "uv update..."
+    print "💫 uv update..."
     uv self update
 
-    print "rye update..."
+    print "💫 rye update..."
     rye self update
 
-    print "cargo-update..."
+    print "💫 cargo-update..."
     cargo install-update --all
+
+    print "💫 updating broot"
+    broot --print-shell-function nushell
+    | save $"($env.home)/repos/dotfiles/nushell/cfg_files/broot.nu" --force
+
+    print "✅ done!"
 }
+

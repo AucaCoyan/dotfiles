@@ -42,3 +42,36 @@ export def "multi pull-mule-repos" [] {
         git pull origin HEAD
     }
 }
+
+export def gone [] {
+    git branch --merged 
+    | lines 
+    | where $it !~ '\*' 
+    | str trim 
+    | where $it != 'master' and $it != 'main' 
+    | each {
+         |it| git branch -d $it 
+         }
+}
+
+# updates the fork based on `main` branch of the remote `upstream`
+export def "update-the-fork" [branch?: string = "main"] {
+    print "⏬ fething upstream"
+    #TODO check if `upstream` is in the list of remotes
+    # ^git remote
+    # | lines
+    ^git fetch upstream
+    print $"\n✔  done\n🏁 checking out ($branch)"
+    ^git checkout $branch
+    print $"\n✔  done\n💫 rebasing from upstream/($branch)"
+    git rebase $"upstream/($branch)"
+}
+
+# <repo: > fork the repo and clones it on ~/repos/
+export def --env "fork this" [ghrepo:string] {
+    cd ~/repos
+    print "⏬ fork + clone the repo"
+    ^gh repo fork $ghrepo --clone --default-branch-only
+    let folder = gh repo view $ghrepo --json name | from json | get name
+    cd $"~/repos/($folder)"
+}

@@ -44,28 +44,6 @@ export def --env f [
     # }
 }
 
-# updates the fork based on `main` branch of the remote `upstream`
-export def update-the-fork [branch?: string = "main"] {
-    print "⏬ fething upstream"
-    #TODO check if `upstream` is in the list of remotes
-    # ^git remote
-    # | lines
-    ^git fetch upstream
-    print $"\n✔  done\n🏁 checking out ($branch)"
-    ^git checkout $branch
-    print $"\n✔  done\n💫 rebasing from upstream/($branch)"
-    git rebase $"upstream/($branch)"
-}
-
-# <repo: > fork the repo and clones it on ~/repos/
-export def --env "fork this" [ghrepo:string] {
-    cd ~/repos
-    print "⏬ fork + clone the repo"
-    ^gh repo fork $ghrepo --clone --default-branch-only
-    let folder = gh repo view $ghrepo --json name | from json | get name
-    cd $"~/repos/($folder)"
-}
-
 export def list_scoop_packages [] {
     (
     scoop export 
@@ -91,8 +69,8 @@ export def user-profile-path [] {
 }
 
 export def new-junction [
-    --name: path               # origin, or folder you want to Symlink
-    --target: path             # destination, or the folder you want to refer
+    name: path               # origin, or folder you want to Symlink
+    target: path             # destination, or the folder you want to refer
     ] {
 
     if $nu.os-info.name == "windows" {
@@ -111,31 +89,22 @@ export def new-junction [
         echo $command
         pwsh -Command $command
     } else if $nu.os-info.name == "linux" {
-        error make {msg: "not implemented" }
+        let command = ([
+        "ln",
+        "-s",
+        $target
+        $name,
+        ] |
+        str join 
+        ' '     # add this separator to join with spaces 
+        )
+        echo $command
+        bash -c $command
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
 }
 
-export def git-gone [] {
-    git branch --merged 
-    | lines 
-    | where $it !~ '\*' 
-    | str trim 
-    | where $it != 'master' and $it != 'main' 
-    | each {
-         |it| git branch -d $it 
-         }
-}
-
-export def "update broot" [] {
-    print "💫 updating broot"
-
-    broot --print-shell-function nushell
-    | save $"($env.home)/repos/dotfiles/nushell/cfg_files/broot.nu" --force
-
-    print "✅ done!"
-}
 
 # (external) Parse text from a JWT and create a record.
 export def "from jwt" []: string -> record {
@@ -178,3 +147,4 @@ export def extract [file: path] {
 export def "parse botmaker response" [json: record] {
     $json | get result | from json
 }
+
