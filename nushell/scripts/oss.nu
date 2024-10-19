@@ -4,7 +4,9 @@ export module "check pr" {
         cargo fmt --all -- --check
 
         print " running cargo clippy"
-        cargo clippy --workspace --all-targets --all-features --locked --no-deps
+        # --locked is for prevent updating the cargo.lock file
+        # is for any situation in which you don't want to update the deps.
+        cargo clippy --workspace --all-targets --all-features --no-deps # --locked 
         # if $nu.os-info.name == "windows" {
         #     cargo clippy -- -D warnings
         # } else if $nu.os-info.name = "linux" {
