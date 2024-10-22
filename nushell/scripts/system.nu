@@ -20,7 +20,8 @@ export def "clean" [] {
 
     # clean the Temp folder
     print "cleaning TMP folder"
-    ls $env.TEMP | par-each {|item| rm $item.name --recursive}
+    # needs admin access in windows
+    # ls $env.TEMP | par-each {|item| rm $item.name --recursive}
 
     print "cleaning uv"
     uv cache prune
