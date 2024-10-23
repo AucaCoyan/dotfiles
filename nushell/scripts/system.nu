@@ -38,6 +38,9 @@ export def "clean" [] {
     print "cleaning uv"
     uv cache prune
 
+    print "cleaning npm cache"
+    npm cache clean --force
+
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
     # it throws away the data
