@@ -41,6 +41,8 @@ export def "clean" [] {
     print "cleaning npm cache"
     npm cache clean --force
 
+    print "cleaning bun cache"
+    bun pm cache rm
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
     # it throws away the data
