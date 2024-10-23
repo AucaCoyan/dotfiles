@@ -21,6 +21,7 @@ export def --env f [
         -- . # any name
         ~/repos #all these dirs
         ~/other-repos
+        ~/other-repos/espanso
         ~/other-repos/nu
         ~/all-repos/botmaker
         ~/all-repos/gcp-source
