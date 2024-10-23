@@ -30,6 +30,9 @@ vim.opt.relativenumber = true
 -- disable highlighting the cursorline
 vim.opt.cursorline = false
 
+-- Line lenght marker at 80 columns
+vim.opt.colorcolumn = '80'
+
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
 
