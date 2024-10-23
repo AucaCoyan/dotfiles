@@ -5,6 +5,13 @@ export def "clean" [] {
         print "cleaning scoop cache..."
         scoop cleanup --all
 
+        # TODO: close spotify
+        print "cleaning Spotify cache"
+        let SPOTIFY_TEMP_FOLDER = $"($env.LOCALAPPDATA)/Spotify/Storage"
+        rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
+        # TODO: show how much mb were deleted
+        # TODO: open spotify again!
+
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
         sudo nala clean
@@ -13,7 +20,12 @@ export def "clean" [] {
         sudo nala autoremove
         print "nala autopurge"
         sudo nala autopurge
+
+        let SPOTIFY_TEMP_FOLDER = "~/.cache/spotify/Storage/"
+        # rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
+
     } else {
+        let SPOTIFY_TEMP_FOLDER = "OS X: /Users/USERNAME/Library/Caches/com.spotify.client/Storage/"
         error make {msg: "Could not find the OS name :(", }
     }
     # cross platform commands
@@ -25,6 +37,7 @@ export def "clean" [] {
 
     print "cleaning uv"
     uv cache prune
+
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
     # it throws away the data
