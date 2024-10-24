@@ -59,11 +59,12 @@ return {
       { '<leader>d', group = '[D]uck' },
       { '<leader>f', group = '[F]ind' },
       { '<leader>g', group = '[G]it' },
+      { '<leader>h', group = '[H]elper functions' },
+      { '<leader>gh', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]ettings' },
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
 }
