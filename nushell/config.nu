@@ -970,6 +970,8 @@ if $nu.os-info.name == "linux" {
 } else if $nu.os-info.name == "windows" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 
+    source ~/repos/dotfiles/nushell/work-env.nu
+
     # warden
     # source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
 }

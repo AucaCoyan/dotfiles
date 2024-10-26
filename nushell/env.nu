@@ -107,7 +107,8 @@ $env.NU_PLUGIN_DIRS = [
 # me abre una ventana de code cada vez que abro nu
 #$env.EDITOR = code
 
-if $nu.os-info.name == "linux" {
+if $nu.os-info.name == "windows" {
+} else if $nu.os-info.name == "linux" {
     # Documentation for nvim
     # alias nvim = "~/bin/nvim"
     $env.PYENV_ROOT = "$HOME/bin/.pyenv"
