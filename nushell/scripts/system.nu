@@ -88,10 +88,6 @@ export def "update" [] {
     print "💫 cargo-update..."
     cargo install-update --all
 
-    print "💫 updating broot"
-    broot --print-shell-function nushell
-    | save $"($env.home)/repos/dotfiles/nushell/cfg_files/broot.nu" --force
-
     print "✅ done!"
 }
 
