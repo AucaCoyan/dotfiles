@@ -88,6 +88,8 @@ export def "update" [] {
     print "💫 cargo-update..."
     cargo install-update --all
 
+    # print "💫 flutter upgrade..."
+    # flutter upgrade
     print "✅ done!"
 }
 
