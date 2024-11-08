@@ -116,14 +116,17 @@ if $nu.os-info.name == "windows" {
     $env.PNPM_HOME = "$HOME/.local/share/pnpm"
     $env.DEBUGINFOD_URLS = "https://debuginfod.debian.net"
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
-    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin' | uniq )
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/pnpm')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/fnm')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/kitty.app')
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.zig/')
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/Applications')
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/bin' | uniq )
     # hombrew
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
-    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.zig/')
+    # nix-shell
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '/nix/var/nix/profiles/default/bin')
 } 
 
 # https://github.com/Schniz/fnm/issues/87
