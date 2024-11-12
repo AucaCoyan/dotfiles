@@ -136,7 +136,7 @@ export def extract [file: path] {
     let file_extension =  $file | path parse | get extension
     if $file_extension == 'zip' {
         print "it's a zip"
-        print 'not implemented!'
+        unzip $file
     }
 
     if $file_extension == 'gz' and ($file | path parse | get stem | str ends-with 'tar') {
