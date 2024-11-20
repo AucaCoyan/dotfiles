@@ -24,11 +24,11 @@ export def --env f [
         ~/other-repos/espanso
         ~/other-repos/nu
         ~/all-repos/botmaker
-        ~/all-repos/gcp-source
         ~/workspace
-        ~/workspace/private
         ~/workspace/botmaker
         ~/workspace/dataflow
+        ~/workspace/gcp-source
+        ~/workspace/private
         | fzf) # pipe it to fzf
         cd $destination
     # } else {
