@@ -23,7 +23,7 @@ export def --env f [
         ~/other-repos
         ~/other-repos/espanso
         ~/other-repos/nu
-        ~/all-repos/botmaker
+        ~/all-repos/
         ~/workspace
         ~/workspace/botmaker
         ~/workspace/dataflow
