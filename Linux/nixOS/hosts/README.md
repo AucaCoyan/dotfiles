@@ -2,6 +2,6 @@
 as root
 
 ```
-# ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/thanos /etc/nixos
+# ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/thanos /etc/nixos
 ```
 
