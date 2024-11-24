@@ -21,6 +21,7 @@
         {
           "properties": {
             "arch": "\uf303",
+            "cache_duration": "none",
             "debian": "\uf306",
             "fedora": "\uf30a",
             "linux": "\uf17c",

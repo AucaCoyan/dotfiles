@@ -135,13 +135,17 @@ def "timestamp into datetime" [] {
 export def extract [file: path] {
     let file_extension =  $file | path parse | get extension
     if $file_extension == 'zip' {
-        print "it's a zip"
+        print "📦 extracting zip..."
         unzip $file
-    }
-
-    if $file_extension == 'gz' and ($file | path parse | get stem | str ends-with 'tar') {
-        print "it's a tar.gz"
+    } else if $file_extension == 'gz' and ($file | path parse | get stem | str ends-with 'tar') {
+        print "📦 extracting tar.gz..."
         tar -xvzf $file
+    } else if $file_extension == 'xz' and ($file | path parse | get stem | str ends-with 'tar') {
+        print "📦 extracting tar.xz..."
+        tar -xJf $file
+    } else {
+        error make {msg: $"I don't know how to extract ($file_extension)", }
+        
     }
 }
 
