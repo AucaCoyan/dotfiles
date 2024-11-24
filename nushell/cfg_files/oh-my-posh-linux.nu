@@ -9,7 +9,13 @@ $env.PROMPT_INDICATOR = ""
 $env.POSH_PID = (random uuid)
 $env.POSH_SHELL_VERSION = (version | get version)
 
-# let _omp_executable: string = (echo "/home/linuxbrew/.linuxbrew/Cellar/oh-my-posh/23.14.1/bin/oh-my-posh")
+# TODO: know where is the oh-my-posh config with `hostnamectl` command
+#  Static hostname: nixos
+#        Icon name: computer-desktop
+#          Chassis: desktop 🖥️
+#       Machine ID: 9a23ef2eb40746daa2f6b9185db295f2
+#          Boot ID: 7d5d6f2d73aa45d395badb87f2265d99
+# Operating System: NixOS 25.05 (Warbler)   
 let _omp_executable: string = (echo "/home/linuxbrew/.linuxbrew/bin/oh-my-posh")
 
 # PROMPTS
