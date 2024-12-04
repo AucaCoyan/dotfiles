@@ -941,7 +941,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/cargo-make/cargo-make-comp
 source ~/other-repos/nu/nu_scripts/custom-completions/curl/curl-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/flutter/flutter-completions.nu
-source ~/other-repos/nu/nu_scripts/custom-completions/fd/fd-completions.nu
+# source ~/other-repos/nu/nu_scripts/custom-completions/fd/fd-completions.nu
 #source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
