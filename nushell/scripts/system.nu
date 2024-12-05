@@ -3,7 +3,7 @@
 export def "clean" [] {
     if $nu.os-info.name == "windows" {
         print "cleaning scoop cache..."
-        scoop cleanup --all
+        scoop cleanup --all --cache
 
         # TODO: close spotify
         print "cleaning Spotify cache"
