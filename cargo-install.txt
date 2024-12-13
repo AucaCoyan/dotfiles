@@ -1,8 +1,0 @@
-bacon v2.2.8:
-    bacon.exe
-cargo-watch v8.1.2:
-    cargo-watch.exe
-gfold v4.2.0:
-    gfold.exe
-rustlings v5.2.1 (C:\Users\aucac\other-repos\rustlings):
-    rustlings.exe
