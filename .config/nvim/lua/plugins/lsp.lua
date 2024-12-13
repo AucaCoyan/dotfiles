@@ -177,6 +177,12 @@ return {
             },
           },
         },
+        -- omnisharp = {
+        --   -- LSP webpage: https://github.com/OmniSharp/omnisharp-roslyn
+        --   -- plugin webpage: https://github.com/neovim/nvim-lspconfig/blob/master/doc/configs.md#omnisharp
+        --   cmd = { "dotnet", "~/AppData/Local/nvim-data/mason/packages/omnisharp/libexec/OmniSharp.dll" },
+        --   -- settings = {}
+        -- }
       }
 
       -- Ensure the servers and tools above are installed
