@@ -2,7 +2,7 @@
 
 Move the files into ~/dotfiles/repos/Linux/nixOS/ .... if you haven't yet
 
-create a symbolic link with
+create a symbolic link with 
 
 
 ```
@@ -10,6 +10,3 @@ create a symbolic link with
 ```
 as root
 
-```
-# ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha /etc/nixos
-```

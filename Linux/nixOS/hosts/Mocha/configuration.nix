@@ -1,19 +1,33 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
+
+{ config, pkgs, inputs, ... }:
+
 {
-  config,
-  pkgs,
-  ...
-}: {
-  imports = [
-    # Include the results of the hardware scan.
-    ./hardware-configuration.nix
-  ];
+  imports =
+    [ # Include the results of the hardware scan.
+      ./hardware-configuration.nix
+      inputs.home-manager.nixosModules.default
+    ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.grub.configurationLimit = 42;
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
+  fileSystems."/mnt/1Drive" = {
+   device = "/dev/disk/by-partlabel/1drive";
+   options = [ # If you don't have this options attribute, it'll default to "defaults" 
+     # boot options for fstab. Search up fstab mount options you can use
+     "rw" 
+     "users" # Allows any user to mount and unmount
+     "nofail" # Prevent system from failing if this drive doesn't mount
+   ];
+ };
+
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -43,8 +57,6 @@
     LC_TIME = "es_AR.UTF-8";
   };
 
-  #  fonts.fonts = with pkgs; [ fira-code ];
-
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
@@ -53,14 +65,15 @@
   services.xserver.desktopManager.pantheon.enable = true;
 
   # Configure keymap in X11
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "";
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "";
+  };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
   # Enable sound with pipewire.
-  sound.enable = true;
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -83,12 +96,21 @@
   users.users.aucac = {
     isNormalUser = true;
     description = "aucac";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [
-      firefox
-      #  thunderbird
+    #  thunderbird
     ];
   };
+
+  home-manager = {
+    extraSpecialArgs = { inherit inputs; };
+    users = {
+      "aucac" = import ./home.nix;
+    };
+  };
+
+  # Install firefox.
+  programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -96,15 +118,51 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-    wget
-    alejandra
-    git
-    gh
-    rustup
-    fnm
-    keepassxc
+   alejandra  
+   bat
+   bun
+   delta
+   difftastic
+   discord
+   # docker
+   # docker-compose
+   fd
+   fnm
+   fsearch
+   fzf
+   gcc
+   gh
+   git
+   gitmoji-cli
+   gfold
+   glab
+   gparted
+   # grafana
+   # grafana-loki
+   home-manager
+   keepassxc
+   nushell
+   neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   obsidian
+   oh-my-posh
+   onedrive
+   qdirstat
+   # postgresql
+   ripgrep
+   rustup
+   spotify
+   ticktick
+   telegram-desktop
+   tokei
+   vscode
+   wget
   ];
+
+  programs.neovim = {
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -117,7 +175,7 @@
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
+  services.openssh.enable = true;
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
@@ -131,5 +189,6 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
+
 }
