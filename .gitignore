@@ -26,3 +26,6 @@ nushell/nu/*
 .config/.espanso/match/work.yml
 nushell/work-env.nu
 
+# lazygit
+.config/lazygit/state.yml
+
