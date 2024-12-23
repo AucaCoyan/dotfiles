@@ -132,8 +132,6 @@ vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', { desc = 'new [b]uffer' })
 -- buffer delete
 vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = '[b]uffer [d]elete' })
 
--- inlay hints
-vim.lsp.inlay_hint.enable()
 vim.cmd.language = 'en_US' -- forces vim to have en_US interface language
 
 vim.opt.backup = false -- creates a backup file
