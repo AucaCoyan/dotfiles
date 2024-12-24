@@ -172,6 +172,7 @@ vim.opt.sidescrolloff = 8
 vim.g.python3_host_prog = '~/repos/dotfiles/.config/venv/Scripts/python'
 
 require 'config.autocmd'
+require 'config.keymaps'
 -- structured installation
 -- https://lazy.folke.io/installation
 require 'config.lazy'
