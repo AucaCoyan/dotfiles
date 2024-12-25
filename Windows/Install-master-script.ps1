@@ -121,20 +121,20 @@ try {
     # core
     scoop install 7zip extras/anydesk audacity autohotkey bat
     scoop install broot czkawka-gui clipboard dbeaver delta difftastic draw.io 
-    scoop install dust everything espanso fd firefox ffmpeg fzf gh gitui 
+    scoop install dust everything espanso fd firefox ffmpeg fzf gh
     scoop install main/glab glow extras/googlechrome httrack jpegview-fork
     scoop install keepassxc mailspring neovide neovim
     scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys 
     scoop install psreadline rga 
     scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
     scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist vlc extras/vscode watchexec 
-    scoop install windirstat windows-terminal zoxide
+    scoop install windirstat windows-terminal
 
     # nushell
     scoop install AntonOks_scoop-aoks/nushell-aoks
 
     # optional apps
-    scoop install brave calibre digikam extras/gimp insomnia tradingview
+    scoop install brave calibre digikam extras/gimp tradingview
     scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb 
     # scoop install authy azuredatastudio calibre gcc nomino
 
