@@ -54,12 +54,14 @@ return { -- Fuzzy Finder (files, lsp, etc)
       pickers = {
         find_files = {
           hidden = true,
+          theme = 'ivy',
         },
       },
       extensions = {
         ['ui-select'] = {
-          require('telescope.themes').get_dropdown(),
+          require('telescope.themes').get_ivy(),
         },
+        fzf = {},
       },
     }
 
