@@ -94,5 +94,15 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set('n', '<leader>nc', function()
       builtin.find_files { cwd = vim.fn.stdpath 'config' }
     end, { desc = '[N]vim [C]onfig files' })
+
+    -- Shortcut for searching your Neovim configuration files
+    vim.keymap.set('n', '<leader>np', function()
+      builtin.find_files { cwd = vim.fs.joinpath(vim.fn.stdpath 'data', 'lazy') }
+    end, { desc = '[N]vim [P]lugin files' })
+
+    -- Another shortcut for the dotfiles
+    vim.keymap.set('n', '<leader>dt', function()
+      builtin.find_files { cwd = '~/repos/dotfiles/' }
+    end, { desc = '[D]ot[f]iles' })
   end,
 }
