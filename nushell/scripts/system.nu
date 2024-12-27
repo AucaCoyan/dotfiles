@@ -96,7 +96,7 @@ export def "update" [] {
     print "✅ dotfiles done!"
     git -C  $"($env.Home)/other-repos/nu/nu_scripts" pull
     print "✅ nu_scipts done!"
-    git -C  $"($env.Home)/other-repos/npm" pull
+    git -C  $"($env.Home)/other-repos/nupm" pull
     print "✅ nupm done!"
 
     print "✅ done!"
