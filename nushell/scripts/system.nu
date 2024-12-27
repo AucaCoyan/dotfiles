@@ -90,6 +90,15 @@ export def "update" [] {
 
     # print "💫 flutter upgrade..."
     # flutter upgrade
+
+    print "⏬ updating repostories..."
+    git -C  $"($env.Home)/repos/dotfiles" pull
+    print "✅ dotfiles done!"
+    git -C  $"($env.Home)/other-repos/nu/nu_scripts" pull
+    print "✅ nu_scipts done!"
+    git -C  $"($env.Home)/other-repos/npm" pull
+    print "✅ nupm done!"
+
     print "✅ done!"
 }
 
