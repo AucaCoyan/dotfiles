@@ -20,7 +20,6 @@ export def --env f [
         --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
         -- . # any name
         ~/repos #all these dirs
-        ~/repos/dotfiles/.config/
         ~/other-repos
         ~/other-repos/espanso
         ~/other-repos/nu
