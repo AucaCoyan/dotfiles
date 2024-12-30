@@ -257,7 +257,7 @@ $env.config = {
                 match_text: { attr: u }
                 selected_match_text: { attr: ur }
             } 
-}
+        }
         {
             name: history_menu
             only_buffer_difference: true
