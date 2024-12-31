@@ -1,6 +1,6 @@
 # Automate your installation on Debian with a script
 
-run this script
+Download the `Install-master-script.sh` or run this script:
 
 ```bash
 wget "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Debian/Install-master-script.sh" --output-document=Install-master-script.sh
@@ -68,3 +68,20 @@ sudo mount /dev/cdrom /mnt
 cd /mnt
 sudo ./VBoxLinuxAdditions.run
 ```
+
+## Debian minimal
+
+Because sometimes I want the absolute minimum (for a VM for example) I did a
+barebones script with _just enough_ to compile espanso
+
+```bash
+wget "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Debian/Debian-minimal.sh" --output-document=Debian-minimal.sh
+```
+
+and run it with
+
+```bash
+chmod +x Debian-minimal.sh
+./Debian-minimal.sh
+```
+
