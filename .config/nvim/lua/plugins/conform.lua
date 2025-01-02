@@ -1,7 +1,7 @@
 return { -- Autoformat
   'stevearc/conform.nvim',
   log_level = vim.log.levels.DEBUG,
-  event = { 'BufWritePre' },
+  -- event = { 'BufWritePre' },
   cmd = { 'ConformInfo' },
   keys = {
     {
