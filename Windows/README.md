@@ -60,3 +60,11 @@ winget list
 # to export the actually installed
 winget export -o packages.json
 ```
+
+## Symlinks
+
+Run this to link wezterm config
+
+```powershell
+ New-Item -ItemType SymbolicLink -path ~/.wezterm.lua -Target C:\Users\aucac\repos\dotfiles\.config\wezterm\.wezterm.lua
+```
