@@ -8,7 +8,7 @@ export def "clean" [] {
         # TODO: close spotify
         print "cleaning Spotify cache"
         let SPOTIFY_TEMP_FOLDER = $"($env.LOCALAPPDATA)/Spotify/Storage"
-        rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
+        # rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
         # TODO: show how much mb were deleted
         # TODO: open spotify again!
 
@@ -52,6 +52,11 @@ export def "clean" [] {
     # - all networks not used by at least one container
     # - all dangling images
     # - unused build cache
+    
+    if $nu.os-info.name == "windows" {
+        # Clean disk manager
+        # c:\windows\SYSTEM32\cleanmgr.exe /dC /verylowdisk /autoclean
+    }
 }
 
 
