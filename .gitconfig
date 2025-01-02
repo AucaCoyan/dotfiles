@@ -6,7 +6,7 @@
 
 [core]
 	editor = code --wait
-  pager = delta
+	pager = delta
 
 [interactive]
    diffFilter = delta --color-only
