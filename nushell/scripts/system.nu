@@ -23,9 +23,10 @@ export def "clean" [] {
 
         let SPOTIFY_TEMP_FOLDER = "~/.cache/spotify/Storage/"
         # rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
-
+    } else if $nu.os-info.name == "macos" {
+        # let SPOTIFY_TEMP_FOLDER = "OS X: /Users/USERNAME/Library/Caches/com.spotify.client/Storage/"
+        print "on the works..."
     } else {
-        let SPOTIFY_TEMP_FOLDER = "OS X: /Users/USERNAME/Library/Caches/com.spotify.client/Storage/"
         error make {msg: "Could not find the OS name :(", }
     }
     # cross platform commands
@@ -74,9 +75,14 @@ export def "update" [] {
         brew update
         brew upgrade
 
+    } else if $nu.os-info.name == "macos" {
+        print "💫 updating brew"
+        brew update
+        brew upgrade
     } else {
         error make {msg: "Could not find the OS name :(", }
     }
+
     print "💫 rustup update..."
     # cross platform commands
     rustup update
@@ -87,8 +93,8 @@ export def "update" [] {
     print "💫 uv update..."
     uv self update
 
-    print "💫 rye update..."
-    rye self update
+    # print "💫 rye update..."
+    # rye self update
 
     print "💫 cargo-update..."
     cargo install-update --all
@@ -101,8 +107,8 @@ export def "update" [] {
     print "✅ dotfiles done!"
     git -C  $"($env.Home)/other-repos/nu/nu_scripts" pull
     print "✅ nu_scipts done!"
-    git -C  $"($env.Home)/other-repos/nupm" pull
-    print "✅ nupm done!"
+    # git -C  $"($env.Home)/other-repos/nupm" pull
+    # print "✅ nupm done!"
 
     print "✅ done!"
 }
