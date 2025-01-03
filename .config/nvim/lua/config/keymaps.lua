@@ -7,7 +7,7 @@
 -- collides with delete buffer
 
 -- run the selected lines
-vim.keymap.set('v', '<space>x', ':lua<CR>')
+vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'E[x]cecute the current visual line' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -18,13 +18,31 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- resize the windows
+-- normal mode
+vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize +2<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize -2<CR>')
+
+-- terminal mode
+vim.keymap.set('t', '<C-Up>', '<cmd>resize +2<CR>')
+vim.keymap.set('t', '<C-Down>', '<cmd>resize -2<CR>')
+vim.keymap.set('t', '<C-Left>', '<cmd>vertical resize +2<CR>')
+vim.keymap.set('t', '<C-Right>', '<cmd>vertical resize -2<CR>')
+
 -- [[ tabs]]
 -- go to next tab
 vim.keymap.set('n', '<Tab>', '<cmd>tabNext<CR>')
 -- shift tab
 vim.keymap.set('n', '<S-Tab>', '<cmd>tabprevious<CR>')
 -- new tab
-vim.keymap.set('n', '<leader>b', '<cmd>enew<CR>', { desc = 'new [b]uffer' })
+vim.keymap.set('n', '<leader>b', '<cmd>enew <CR>', { desc = 'new [b]uffer' })
+
+-- go to the 1st tab
+-- it doesn't work
+-- vim.keymap.set('n', '<C-\1>', '<cmd>tabfirst <CR>', { desc = 'Go to the first tab' })
+
 -- buffer delete
 vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = '[b]uffer [d]elete' })
 
@@ -35,12 +53,16 @@ vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
 -- save with Ctrl + S
 vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>')
 
+--- editing
+-- in visual mode, press `J` to move the lines down and `K` to move them up
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
 -- relative numbers
 -- vim.keymap.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 -- vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
-vim.keymap.set("n", "<leader>wK", "<cmd>WhichKey <CR>", { desc = "whichkey all keymaps" })
+vim.keymap.set('n', '<leader>wK', '<cmd>WhichKey <CR>', { desc = 'whichkey all keymaps' })
 
 -- set wrap
-vim.keymap.set({'n', 'i', 'v'}, '<A-z>', "<cmd>set wrap! <CR>", { desc = "Toggle word wrap"})
-
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
