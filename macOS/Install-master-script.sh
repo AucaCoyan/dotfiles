@@ -18,9 +18,8 @@ brew install nushell
 brew install fzf
 brew install ripgrep
 
-# ## install oh-my-posh
-# echo -e '\n### `oh-my-posh`'
-# brew install jandedobbeleer/oh-my-posh/oh-my-posh
+echo -e '\n### `oh-my-posh`'
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # Git Configuration
 echo -e '\n### Configure git'
@@ -60,11 +59,14 @@ echo -e '\n### Rust'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 
 # rust tools
-# echo -e '\n### cargo-binstall'
-# curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
+echo -e '\n### cargo-binstall'
+curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
-# cargo binstall gitmoji-rs
-# gitmoji init --default
+cargo binstall gitmoji-rs
+gitmoji init --default
+
+cargo binstall bat
+cargo binstall fd-find
 
 ## add brew to path
 # echo -e '\n### Adding `brew` to PATH'

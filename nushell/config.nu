@@ -927,7 +927,7 @@ use ~/other-repos/nu/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
 $env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
 
 # use nupm
-use ~/other-repos/nupm/nupm/
+# use ~/other-repos/nupm/nupm/
 
 # make `fnm` nushell compatible
 use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
@@ -975,6 +975,8 @@ if $nu.os-info.name == "linux" {
 
     # warden
     # source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
+} else if $nu.os-info.name == "macos" {
+    source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-macos.nu
 }
 
 # broken for nu version 0.89
