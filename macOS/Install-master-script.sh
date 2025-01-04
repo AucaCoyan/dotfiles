@@ -34,7 +34,8 @@ echo -e '\n### Configure git'
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 # set `git push` to automatically setup the remote branch (no need to --set-upstream-to=)
-git config --global --add --bool push.autoSetupRemote true
+git config --global --bool push.autoSetupRemote true
+git config --global pull.rebase true
 echo -e 'Git has been configured!'
 
 
