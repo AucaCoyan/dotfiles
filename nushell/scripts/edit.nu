@@ -2,10 +2,8 @@
 export def --env dotfiles [] {
     if $nu.os-info.name == "windows" {
         cd ~\repos\dotfiles\
-    } else if $nu.os-info.name == "linux" {
-        cd ~/repos/dotfiles/
     } else {
-        error make {msg: "Could not find the OS name :(", }
+        cd ~/repos/dotfiles/
     }
     nvim .
 }
@@ -15,10 +13,8 @@ export def --env dotfiles [] {
 export def --env nushell [] {
     if $nu.os-info.name == "windows" {
         cd ~\repos\dotfiles\nushell\
-    } else if $nu.os-info.name == "linux" {
-        cd ~/repos/dotfiles/nushell/
     } else {
-        error make {msg: "Could not find the OS name :(", }
+        cd ~/repos/dotfiles/nushell/
     }
     code . --profile nushell
 }
@@ -28,10 +24,8 @@ export def --env nushell [] {
 export def --env nu_scripts [] {
     if $nu.os-info.name == "windows" {
         cd ~\other-repos\nu\nu_scripts\
-    } else if $nu.os-info.name == "linux" {
-        cd ~/other-repos/nu/nu_scripts/
     } else {
-        error make {msg: "Could not find the OS name :(", }
+        cd ~/other-repos/nu/nu_scripts/
     }
     code .
 }
@@ -51,10 +45,8 @@ export def --env vimrc [] {
 export def --env espanso [] {
     if $nu.os-info.name == "windows" {
         cd ~\repos\dotfiles\.config\.espanso
-    } else if $nu.os-info.name == "linux" {
-        cd ~/repos/dotfiles/.config/.espanso
     } else {
-        error make {msg: "Could not find the OS name :(", }
+        cd ~/repos/dotfiles/.config/.espanso
     }
     nvim .
 }
