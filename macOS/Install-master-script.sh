@@ -6,8 +6,6 @@ echo -e "###### macOS installation script ######"
 
 # Brew
 echo -e '\n### `brew`'
-# || is an OR operator. Sends the command only if the first part gave an error
-# forward to /dev/null to bypass the "Press enter to continue" step
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 brew install git
