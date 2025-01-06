@@ -12,6 +12,9 @@ export def "clean" [] {
         # TODO: show how much mb were deleted
         # TODO: open spotify again!
 
+        print "🗑️ Empty recycle bin..."
+        pwsh -c "Clear-RecycleBin -DriveLetter C:\\"
+
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
         sudo nala clean
