@@ -11,39 +11,31 @@ export use system.nu
 export use typescript.nu
 export use yazi.nu
 
+# cd into folder with `fzf`
 export def --env f [
-    --all # include ~/all-repos folder
 ] {
-    # Usage: fd.exe [OPTIONS] [pattern] [path]...
-    # if $all {
-        let destination = (fd --max-depth 1 --min-depth 1
-        --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
-        -- . # any name
-        ~/repos #all these dirs
-        ~/other-repos
-        ~/other-repos/espanso
-        ~/other-repos/nu
-        ~/all-repos/
-        ~/workspace
-        ~/workspace/botmaker
-        ~/workspace/dataflow
-        ~/workspace/gcp-source
-        ~/workspace/private
-        | fzf) # pipe it to fzf
-        cd $destination
-    # } else {
-    #     let destination = (fd --max-depth 1 --min-depth 1
-    #     --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
-    #     -- . # any name
-    #     ~/repos #all these dirs
-    #     ~/other-repos
-    #     ~/workspace
-    #     ~/workspace/private
-    #     ~/workspace/botmaker
-    #     ~/workspace/dataflow
-    #     | fzf) # pipe it to fzf
-    #     cd $destination
-    # }
+    let destination = (fd --max-depth 1 --min-depth 1
+    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
+    -- . # any name
+    ~/repos #all these dirs
+    ~/other-repos
+    ~/other-repos/espanso
+    ~/other-repos/nu
+    ~/all-repos/
+    ~/workspace
+    ~/workspace/botmaker
+    ~/workspace/dataflow
+    ~/workspace/gcp-source
+    ~/workspace/private
+    | fzf) # pipe it to fzf
+    cd $destination
+    return $destination
+}
+
+# open git folder in $EDITOR
+export def --env g [] {
+    let directory = f
+    nvim $directory
 }
 
 export def list_scoop_packages [] {
