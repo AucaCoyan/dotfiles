@@ -13,7 +13,7 @@ export def "clean" [] {
         # TODO: open spotify again!
 
         print "🗑️ Empty recycle bin..."
-        pwsh -c "Clear-RecycleBin -DriveLetter C:\\"
+        pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
