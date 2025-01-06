@@ -78,7 +78,7 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- vim.keymap.set("n", "<leader>n", "<cmd>set nu!<CR>", { desc = "toggle line number" })
 -- vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
-vim.keymap.set('n', '<leader>wK', '<cmd>WhichKey <CR>', { desc = 'whichkey all keymaps' })
+vim.keymap.set('n', '<leader>wk', '<cmd>WhichKey <CR>', { desc = 'whichkey all keymaps' })
 
 -- set wrap
 vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
