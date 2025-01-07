@@ -82,3 +82,6 @@ vim.keymap.set('n', '<leader>wk', '<cmd>WhichKey <CR>', { desc = 'whichkey all k
 
 -- set wrap
 vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
+
+vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
+vim.keymap.set('n', '<leader>ps', '<cmd>!uv sync <CR>', { desc = '[p]ython: uv [s]ync' })
