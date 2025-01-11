@@ -9,7 +9,7 @@ export use oss.nu
 export use python.nu
 export use system.nu
 export use typescript.nu
-export use yazi.nu
+export use yazi.nu *
 
 # cd into folder with `fzf`
 export def --env f [
