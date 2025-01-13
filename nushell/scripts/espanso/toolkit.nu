@@ -1,4 +1,20 @@
-export def build [] {
+# Scripts for developing espanso
+# using nushell, you can source this file as:
+#
+# $ use ~/path/to/this/script/toolkit.nu
+#
+# and then you can call
+#
+# toolkit build
+# toolkit test
+# toolkit clean
+# and so on...
+
+const ESPANSO_DEV_FOLDER = "~/repos/espanso/"
+
+# build the binary
+export def --env build [] {
+    cd $ESPANSO_DEV_FOLDER
     print "📦 building the binary"
     print "     [x] Wayland"
     print "     [x] Debug"
@@ -8,6 +24,7 @@ export def build [] {
 }
 
 export def --env test [] {
+    cd $ESPANSO_DEV_FOLDER
     cd ./target/debug/
 
     # set capabilities
