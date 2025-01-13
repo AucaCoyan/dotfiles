@@ -996,5 +996,3 @@ if $nu.os-info.name == "linux" {
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts/ *
 
-# re export with `scripts` to list every custom fn I wrote
-# use ~/repos/dotfiles/nushell/scripts.nu

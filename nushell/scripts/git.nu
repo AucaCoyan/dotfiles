@@ -75,3 +75,9 @@ export def --env "fork this" [ghrepo:string] {
     let folder = gh repo view $ghrepo --json name | from json | get name
     cd $"~/repos/($folder)"
 }
+
+export def "git branch clean" [] {
+    print "running git fetch --prune"
+    git fetch --prune
+    print $"\n✔  done"
+}
