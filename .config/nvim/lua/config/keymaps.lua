@@ -85,3 +85,4 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Togg
 
 vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
 vim.keymap.set('n', '<leader>ps', '<cmd>!uv sync <CR>', { desc = '[p]ython: uv [s]ync' })
+vim.keymap.set('n', '<leader>pm', '<cmd>!isort . --force-single-line-imports<CR>', { desc = '[p]ython: isort i[m]ports' })

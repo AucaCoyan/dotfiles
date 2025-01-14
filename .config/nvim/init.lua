@@ -35,6 +35,6 @@ require 'config.options'
 require 'config.lazy'
 
 if vim.g.neovide then
-    vim.print(vim.g.neovide_version)
-    vim.o.guifont = "Hack,Noto_Color_Emoji:h12"
+  vim.print(vim.g.neovide_version)
+  vim.o.guifont = 'Hack,Noto_Color_Emoji:h12'
 end

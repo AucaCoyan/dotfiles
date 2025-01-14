@@ -15,22 +15,22 @@ return {
   {
     'eldritch-theme/eldritch.nvim',
     lazy = false,
+  },
+  {
+    'Mofiqul/vscode.nvim',
+    enabled = true,
+    opts = {
+      transparent_background = true,
+    },
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'eldritch'
+      vim.cmd.colorscheme 'vscode'
 
       -- You can configure highlights by doing something like:
       --vim.cmd.hi 'Comment gui=none'
     end,
   },
-  {
-    'Mofiqul/vscode.nvim',
-    enabled = false,
-    opts = {
-      transparent_background = true,
-    },
-  },
-  { 'ellisonleao/gruvbox.nvim', enabled = false, priority = 1000, opts = { transparent_background = true } },
+  { 'ellisonleao/gruvbox.nvim', enabled = true, priority = 1000, opts = { transparent_background = true } },
 }
