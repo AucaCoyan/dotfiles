@@ -33,3 +33,8 @@ require 'config.options'
 -- structured installation
 -- https://lazy.folke.io/installation
 require 'config.lazy'
+
+if vim.g.neovide then
+    vim.print(vim.g.neovide_version)
+    vim.o.guifont = "Hack,Noto_Color_Emoji:h12"
+end
