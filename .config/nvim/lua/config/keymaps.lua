@@ -36,10 +36,10 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- resize the windows
 -- normal mode
-vim.keymap.set('n', '<C-Up>', ':resize +2<CR>')
-vim.keymap.set('n', '<C-Down>', ':resize -2<CR>')
-vim.keymap.set('n', '<C-Left>', ':vertical resize +2<CR>')
-vim.keymap.set('n', '<C-Right>', ':vertical resize -2<CR>')
+vim.keymap.set('n', '<C-Up>', ':resize +4<CR>')
+vim.keymap.set('n', '<C-Down>', ':resize -4<CR>')
+vim.keymap.set('n', '<C-Left>', ':vertical resize +4<CR>')
+vim.keymap.set('n', '<C-Right>', ':vertical resize -4<CR>')
 
 -- terminal mode
 vim.keymap.set('t', '<C-Up>', '<cmd>resize +2<CR>')
