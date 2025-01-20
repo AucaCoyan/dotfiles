@@ -1,12 +1,16 @@
 -- [[ [[ Setting and options of vim/neovim]] ]]
 --  For more options, you can see `:help option-list`
 -- See `:help vim.opt`
+--
+-- as Sept 15th, 2024, it's recommended to use `vim.o` instead of `vim.opt`
+-- because the latter will be eventually deprecated
+-- source: https://github.com/neovim/neovim/issues/30383#issuecomment-2351519326
 
 -- [[ tab options ]]
 -- number of spaces that <Tab> in file uses
-vim.opt.tabstop = 4
+vim.o.tabstop = 4
 -- number of spaces to use for (auto)indent step (the number of spaces inserted for each indentation)
-vim.opt.shiftwidth = 4
+vim.o.shiftwidth = 4
 -- tells when the tab pages line is displayed
 -- always show tabs
 vim.opt.showtabline = 2
@@ -29,6 +33,9 @@ vim.opt.mouse = 'a'
 
 -- Don't show the mode, since it's already in the status line
 vim.opt.showmode = false
+
+-- set the background dark (for themes that have light and dark background)
+vim.o.background = 'dark'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
