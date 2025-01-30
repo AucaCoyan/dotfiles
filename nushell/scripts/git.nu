@@ -81,3 +81,12 @@ export def "git branch clean" [] {
     git fetch --prune
     print $"\n✔  done"
 }
+
+# git comes with a lot of old default configs. This helper function does some
+# better defaults to my preference
+#
+# based on: [so you think you know git](https://www.youtube.com/watch?v=aolI_Rz0ZqY)
+def better_default_config [] {
+    # `git stash --all` also stash untracked files
+    git config --global alias.staash 'stash --all'
+}
