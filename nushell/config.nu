@@ -153,7 +153,7 @@ $env.config = {
 # use ~/other-repos/nupm/nupm/
 
 # make `fnm` nushell compatible
-use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
+# use ~/other-repos/nu/nu_scripts/modules/fnm/fnm.nu
 
 # `cfg-files`
 source ~/repos/dotfiles/nushell/cfg_files/my-aliases.nu
