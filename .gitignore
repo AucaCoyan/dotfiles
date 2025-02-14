@@ -9,6 +9,7 @@ Windows/windows-terminal/state.json
 nushell/history.txt
 nushell/unused/
 nushell/nu/*
+nushell/plugin.msgpackz
 .config/helix/helix.log
 .vscode/settings.json
 **/history*
