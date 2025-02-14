@@ -1,3 +1,7 @@
+# log format
+$env.NU_LOG_FORMAT = $"%ANSI_START%%DATE%|%LEVEL%|%MSG%%ANSI_STOP%"
+$env.NU_LOG_DATE_FORMAT = "%Y-%m-%dT%H:%M:%S%.3f"
+
 # env.nu
 $env.home = if $nu.os-info.name == "windows" {
             $env.USERPROFILE
