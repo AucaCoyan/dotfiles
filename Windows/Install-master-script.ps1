@@ -116,32 +116,59 @@ try {
     scoop install git
     scoop bucket add extras
     scoop bucket add anderlli0053_DEV-tools https://github.com/anderlli0053/DEV-tools
-    scoop bucket add AntonOks_scoop-aoks https://github.com/AntonOks/scoop-aoks
+
+    # terminal apps
+    scoop install main/bat main/less
+    scoop install main/fzf
+    scoop install main/fd
+    scoop install main/gh
+    scoop install main/glab
+    scoop install main/nu
+    scoop install main/neovim extras/neovide
+    scoop install main/ripgrep
+    scoop install extras/vscode 
+    scoop install main/yazi
+
+    # graphical apps
+    scoop install extras/everything
+    scoop install extras/firefox
+    scoop install extras/googlechrome
+    scoop install extras/jpegview-fork
+    scoop install extras/keepassxc
+    scoop install extras/obs-studio
+    scoop install extras/obsidian
+    scoop install extras/peazip
+    scoop install extras/powertoys
+    scoop install extras/sumatrapdf 
+    scoop install extras/vlc
+    scoop install extras/windirstat
 
     # core
-    scoop install 7zip extras/anydesk audacity autohotkey bat
-    scoop install broot czkawka-gui clipboard dbeaver delta difftastic draw.io 
-    scoop install dust everything espanso fd firefox ffmpeg fzf gh
-    scoop install main/glab glow extras/googlechrome httrack jpegview-fork
-    scoop install keepassxc mailspring neovide neovim
-    scoop install obsidian oh-my-posh obs-studio ov peazip postman powertoys 
-    scoop install psreadline rga 
-    scoop install ripgrep rustdesk sad scoop-completion sublime-merge sumatrapdf teamviewer 
-    scoop install tealdeer telegram terminal-icons tokei vcpkg vcredist vlc extras/vscode watchexec 
-    scoop install windirstat windows-terminal
+    scoop install 7zip extras/anydesk autohotkey
+    scoop install czkawka-gui clipboard dbeaver delta difftastic
+    scoop install dust espanso ffmpeg
+    scoop install glow httrack
+    scoop install mailspring
+    scoop install oh-my-posh ov
+    scoop install rga
+    scoop install sad scoop-completion sublime-merge teamviewer
+    scoop install tealdeer telegram terminal-icons tokei vcpkg extras/vcredist watchexec
 
     # nushell
-    scoop install AntonOks_scoop-aoks/nushell-aoks
 
     # optional apps
-    scoop install brave calibre digikam extras/gimp tradingview
-    scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb 
+    # scoop install audacity extras/brave calibre digikam extras/gimp tradingview
+    # scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb
     # scoop install authy azuredatastudio calibre gcc nomino
 
     # programming languages
-    scoop install deno fnm 
+    scoop install deno fnm
     # scoop install python # installed via rye
-    scoop install main/rye
+    # scoop install main/uv
+    # uv python install <error>
+    # uv tool install ruff
+    # uv tool install isort
+    # uv tool install pytest
 
     # optional langs
     # scoop install flutter dotnet-sdk
