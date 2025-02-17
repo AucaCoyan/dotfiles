@@ -200,10 +200,11 @@ if $nu.os-info.name == "linux" {
 } else if $nu.os-info.name == "windows" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 
-    # source ~/repos/dotfiles/nushell/work-env.nu
+    if ($env.USERNAME == 'AucaMaillo') {
+        source ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
+        source ~/workspace/gcp-source/warden/shell_completions/nushell/warden-completions.nu
+    }
 
-    # warden
-    # source ~/workspace/warden/shell_completions/nushell/warden-completions.nu
 } else if $nu.os-info.name == "macos" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-macos.nu
 }
