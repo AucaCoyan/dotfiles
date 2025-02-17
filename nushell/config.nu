@@ -200,6 +200,11 @@ if $nu.os-info.name == "linux" {
 } else if $nu.os-info.name == "windows" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 
+    let has_ligh_theme = (pwsh -c "Get-ItemPropertyValue -Path 'HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize' -Name 'SystemUsesLightTheme'")
+    if ($has_ligh_theme == '1') {
+        use ~/other-repos/nu/nu_scripts/themes/nu-themes/github-light-default.nu
+        $env.config = ($env.config | merge {color_config: (github-light-default)})
+    }
     if ($env.USERNAME == 'AucaMaillo') {
         use ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
         source ~/workspace/gcp-source/warden/shell_completions/nushell/warden-completions.nu
