@@ -201,7 +201,7 @@ if $nu.os-info.name == "linux" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu
 
     if ($env.USERNAME == 'AucaMaillo') {
-        source ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
+        use ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
         source ~/workspace/gcp-source/warden/shell_completions/nushell/warden-completions.nu
     }
 
