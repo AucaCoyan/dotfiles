@@ -131,6 +131,9 @@ if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/nix/var/nix/profiles/default/bin')
 }
 
+# import the theme
+# use ~/repos/dotfiles/nushell/themes/base16.nu base16_theme 
+
 # config.nu
 $env.config = {
 
@@ -146,7 +149,11 @@ $env.config = {
     history: {
         file_format: "sqlite" # "sqlite" or "plaintext"
     }
+    # color_config: $base16_theme
+    # color_config: $light_theme
 }
+
+# source ~/other-repos/nu/nu_scripts/themes/nu-themes/dracula.nu
 
 # theme
 # https://github.com/nushell/nu_scripts/tree/main/themes
