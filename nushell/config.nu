@@ -213,8 +213,8 @@ if $nu.os-info.name == "linux" {
         $env.config = ($env.config | merge {color_config: (github-light-default)})
     }
     if ($env.USERNAME == 'AucaMaillo') {
-        use ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
-        source ~/workspace/gcp-source/warden/shell_completions/nushell/warden-completions.nu
+        # use ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
+        # source ~/workspace/gcp-source/warden/shell_completions/nushell/warden-completions.nu
     }
 
 } else if $nu.os-info.name == "macos" {
