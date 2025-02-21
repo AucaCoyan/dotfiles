@@ -23,7 +23,7 @@ export module "check pr" {
             print " building for wayland"
             cargo make --env NO_X11=true --profile release -- build-binary
         } else {
-            error make {msg: "cargo build not configured!" }
+            cargo make --profile release -- build-macos-arm-binary
         }
 
         print " running cargo test"
