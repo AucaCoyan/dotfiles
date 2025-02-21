@@ -78,6 +78,11 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 cargo binstall gitmoji-rs
 gitmoji init --default
 
+echo -e '\n### cargo binstall bat'
 cargo binstall bat
+
+echo -e '\n### cargo binstall fd-find'
 cargo binstall fd-find
 
+echo -e '\n### cargo-update'
+cargo binstall cargo-update
