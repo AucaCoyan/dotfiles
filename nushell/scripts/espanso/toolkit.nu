@@ -17,21 +17,32 @@ export def --env build [] {
     cd $ESPANSO_DEV_FOLDER
     print "📦 building the binary"
     print "     [x] Wayland"
-    print "     [x] Debug"
-    print "     [x] Binary"
+    print "     [x] Release"
+    print "     [x] build-binary"
 
-    cargo make build-binary
+    if $nu.os-info.name == "windows" {
+        # cargo make build-binary
+        cargo make --profile release --env NO_X11=true build-binary
+    } else if $nu.os-info.name == "linux" {
+        cargo make --profile release --env NO_X11=true build-binary
+
+    } else if $nu.os-info.name == "macos" {
+        print "on the works..."
+        # cargo make --profile release --env NO_X11=true build-binary
+
 }
 
 export def --env test [] {
     cd $ESPANSO_DEV_FOLDER
-    cd ./target/debug/
+    cd ./target/release/
 
-    # set capabilities
-    # sudo setcap "cap_dac_override+p" ./espanso
-    
-    print "`espanso service register`..."
-    ./espanso service register
+    if $nu.os-info.name == "linux" {
+        # set capabilities
+        # sudo setcap "cap_dac_override+p" ./espanso
+
+        print "`espanso service register`..."
+        ./espanso service register
+    }
 
     print "`espanso start`"
     ./espanso start
