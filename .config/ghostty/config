@@ -1,3 +1,3 @@
 theme = catppuccin-mocha
-command = `/opt/homebrew/bin/nu`
+# command = `/home/linuxbrew/.linuxbrew/bin/nu`
 
