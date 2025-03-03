@@ -103,7 +103,10 @@ export def "update" [] {
     # rye self update
 
     print "💫 cargo-update..."
-    cargo install-update --all
+
+    # TODO: breaks `cargo-make` and cargo-update is unable to freeze one
+    # crate, so I'm freezing all.
+    # cargo install-update --all
 
     # print "💫 flutter upgrade..."
     # flutter upgrade
