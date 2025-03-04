@@ -27,9 +27,9 @@ export def --env build [] {
         cargo make --profile release --env NO_X11=true build-binary
 
     } else if $nu.os-info.name == "macos" {
-        print "on the works..."
         # cargo make --profile release --env NO_X11=true build-binary
-
+        cargo make --profile release -- create-bundle
+    }
 }
 
 export def --env test [] {
@@ -54,4 +54,17 @@ export def clean [] {
     rm ~/.config/systemd/user/espanso.*
 
     print "Done!"
+}
+
+export def "act run" [] {
+    act workflow_dispatch
+}
+
+# deletes the tag and re-tags it again in the `origin` remote
+export def "tag-again" [] {
+    # TODO: pass the version as a variable
+    git tag -d v2.2.2
+    git push --delete origin v2.2.2
+    git tag v2.2.2
+    git push origin v2.2.2
 }
