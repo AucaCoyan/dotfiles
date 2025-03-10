@@ -117,6 +117,7 @@ if $nu.os-info.name == "windows" {
     $env.BUN_INSTALL = "$HOME/.bun"
     $env.PNPM_HOME = "$HOME/.local/share/pnpm"
     $env.DEBUGINFOD_URLS = "https://debuginfod.debian.net"
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '~/.local/share/uv/python/cpython-3.9.21-linux-x86_64-gnu/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.cargo/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.local/share/pnpm')
@@ -203,6 +204,8 @@ source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_history_search.nu
 source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_command_search.nu
 
 if $nu.os-info.name == "linux" {
+
+    $env.POSH_THEME = $"/home/($env.USER)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-linux.nu
 } else if $nu.os-info.name == "windows" {
     source ~/repos/dotfiles/nushell/cfg_files/oh-my-posh-windows.nu

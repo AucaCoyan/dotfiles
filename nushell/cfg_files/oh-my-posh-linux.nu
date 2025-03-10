@@ -1,10 +1,13 @@
 # make sure we have the right prompt render correctly
 if ($env.config? | is-not-empty) {
-$env.config = ($env.config | upsert render_right_prompt_on_last_line true)
+    $env.config = ($env.config | upsert render_right_prompt_on_last_line true)
 }
 
 $env.POWERLINE_COMMAND = 'oh-my-posh'
-$env.POSH_THEME = "/home/acoyan/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
+# for some reason this doesn't work
+# $env.POSH_THEME = $"/home/($env.USER)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
+$env.POSH_THEME = $"/home/($env.USER)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
+
 $env.PROMPT_INDICATOR = ""
 $env.POSH_PID = (random uuid)
 $env.POSH_SHELL_VERSION = (version | get version)
