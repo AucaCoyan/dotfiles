@@ -153,3 +153,8 @@ export def "parse botmaker response" [json: record] {
     $json | get result | from json
 }
 
+
+export def "clean-notes" [] {
+    cd ~/OneDrive/notes
+    glob '**/*{frankendebian,Mac mini}*' --exclude ['**/.obsidian/**/*']
+}
