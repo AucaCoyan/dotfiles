@@ -68,3 +68,23 @@ export def "tag-again" [] {
     git tag v2.2.2
     git push origin v2.2.2
 }
+
+# signs the executable in macOS
+#
+# [source](https://stackoverflow.com/questions/69354021/how-do-i-go-about-code-signing-a-macos-application)
+export def --env sign [] {
+    cd $ESPANSO_DEV_FOLDER
+
+    print " Signing the app ./target/mac/Espanso.app..."
+    codesign -f -o runtime --timestamp -s "Developer ID Application: Auca Coyan Maillot (6424323YUH)" ./target/mac/Espanso.app
+
+    print " Notarizing the app"
+
+    # TODO: check if `espanso.dmg` exists
+    print " Creating a disk image"
+    hdiutil create -srcfolder ./target/mac/Espanso.app -volname Espanso.app Espanso
+
+    # upload the disk image to notary service
+    # it doesn't work
+    # xcrun altool --notarize-app --primary-bundle-id "<your identifier>" -u "<your email>" -p "<app-specific pwd>" -t osx -f /path/to/MyApp.dmg
+}
