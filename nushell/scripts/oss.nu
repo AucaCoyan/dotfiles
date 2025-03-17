@@ -33,6 +33,30 @@ export module "check pr" {
     export def "nushell" [] {
         print "you already have toolkit.nu!"
     }
+
+    def "check-poetry-version" []: nothing -> bool {
+        # check if poetry is 1.8.3
+        # if (poetry --version == 1.8.3)
+        #
+        # doesnt work
+        # uv tool install bandit==1.7.1 
+        # uv tool install flake8==4.0.1
+        # uv tool install pytest-cov==4.0.0
+        # poetry add --dev pytest-cov==4.0.0
+        return true
+    }
+
+    export def "fury" [] {
+        # if not check-poetry-version {
+        #     error make {msg: "Poetry version is not 1.8.3", }
+        # }
+        poetry shell
+        poetry install
+
+        print "\n🔬 running tests"
+        poetry run pytest
+
+    }
 }
 
 export module "pr counts" {
