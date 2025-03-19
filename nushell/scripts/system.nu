@@ -9,7 +9,7 @@ export def "clean" [] {
         pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
         if ('~/AppData/Roaming/stremio/' | path exists) {
-        print "🗑️ Cleaning Stremio Cache..."
+            print "🗑️ Cleaning Stremio Cache..."
             rm ~\AppData\Roaming\stremio\stremio-server\stremio-cache\* --recursive
            }
 
@@ -31,8 +31,7 @@ export def "clean" [] {
 
     # clean the Temp folder
     print "cleaning TMP folder"
-    # needs admin access in windows
-    # ls $env.TEMP | par-each {|item| rm $item.name --recursive}
+    ls $env.TEMP | par-each {|item| rm $item.name --recursive --force}
 
     print "cleaning uv"
     uv cache prune
