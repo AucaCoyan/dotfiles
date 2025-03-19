@@ -8,8 +8,11 @@ export def "clean" [] {
         print "🗑️ Empty recycle bin..."
         pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
+        if ('~/AppData/Roaming/stremio/' | path exists) {
         print "🗑️ Cleaning Stremio Cache..."
-        rm ~\AppData\Roaming\stremio\stremio-server\stremio-cache\* --recursive
+            rm ~\AppData\Roaming\stremio\stremio-server\stremio-cache\* --recursive
+           }
+
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
         sudo nala clean
