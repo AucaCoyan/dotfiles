@@ -5,13 +5,6 @@ export def "clean" [] {
         print "cleaning scoop cache..."
         scoop cleanup --all --cache
 
-        # TODO: close spotify
-        print "cleaning Spotify cache"
-        let SPOTIFY_TEMP_FOLDER = $"($env.LOCALAPPDATA)/Spotify/Storage"
-        # rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
-        # TODO: show how much mb were deleted
-        # TODO: open spotify again!
-
         print "🗑️ Empty recycle bin..."
         pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
@@ -26,10 +19,7 @@ export def "clean" [] {
         print "nala autopurge"
         sudo nala autopurge
 
-        let SPOTIFY_TEMP_FOLDER = "~/.cache/spotify/Storage/"
-        # rm $SPOTIFY_TEMP_FOLDER --recursive --permanent
     } else if $nu.os-info.name == "macos" {
-        # let SPOTIFY_TEMP_FOLDER = "OS X: /Users/USERNAME/Library/Caches/com.spotify.client/Storage/"
         print "on the works..."
     } else {
         error make {msg: "Could not find the OS name :(", }
