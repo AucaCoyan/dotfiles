@@ -1,6 +1,9 @@
 -- [[ [[ Setting and options of vim/neovim]] ]]
---  For more options, you can see `:help option-list`
+-- For more options, you can see `:help option-list`
 -- See `:help vim.opt`
+--
+--  If you want to test an option with lua, type:
+--  `:lua vim.opt.<option> = 'value'` and see if it works.
 --
 -- as Sept 15th, 2024, it's recommended to use `vim.o` instead of `vim.opt`
 -- because the latter will be eventually deprecated
@@ -35,7 +38,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 -- set the background dark (for themes that have light and dark background)
-vim.o.background = 'dark'
+vim.o.background = 'light'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
