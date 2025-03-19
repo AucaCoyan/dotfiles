@@ -36,11 +36,15 @@ export def "clean" [] {
     print "cleaning uv"
     uv cache prune
 
-    print "cleaning npm cache"
-    npm cache clean --force
+    if (which ^npm | is-not-empty) {
+        print "cleaning npm cache"
+        npm cache clean --force
+    }
 
-    # print "cleaning bun cache"
-    # bun pm cache rm -g
+    if (which ^bun | is-not-empty) {
+        print "cleaning bun cache"
+        bun pm cache rm -g
+    }
 
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
@@ -51,7 +55,7 @@ export def "clean" [] {
     # - all networks not used by at least one container
     # - all dangling images
     # - unused build cache
-    
+
     if $nu.os-info.name == "windows" {
         # Clean disk manager
         # c:\windows\SYSTEM32\cleanmgr.exe /dC /verylowdisk /autoclean
@@ -81,24 +85,29 @@ export def "update" [] {
         error make {msg: "Could not find the OS name :(", }
     }
 
-    print "💫 rustup update..."
     # cross platform commands
-    rustup update
+    if (which ^rustup | is-not-empty) {
+        print "💫 rustup update..."
+        rustup update
+    }
 
-    print "💫 bun update..."
-    bun upgrade
+    if (which ^bun | is-not-empty) {
+        print "💫 bun update..."
+        bun upgrade
+    }
 
-    print "💫 uv update..."
-    uv self update
-
-    # print "💫 rye update..."
-    # rye self update
-
-    print "💫 cargo-update..."
+    if (which ^uv | is-not-empty) {
+        print "💫 uv update..."
+        uv self update
+    }
 
     # TODO: breaks `cargo-make` and cargo-update is unable to freeze one
     # crate, so I'm freezing all.
-    # cargo install-update --all
+    # if ((which ^cargo | is-not-empty) and (cargo install-update | $env.LAST_EXIT_CODE == 1)) {
+        # print "💫 cargo-update..."
+        # cargo install-update --all
+    # }
+
 
     # print "💫 flutter upgrade..."
     # flutter upgrade
