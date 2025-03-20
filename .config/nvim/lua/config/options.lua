@@ -38,7 +38,7 @@ vim.opt.mouse = 'a'
 vim.opt.showmode = false
 
 -- set the background dark (for themes that have light and dark background)
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
