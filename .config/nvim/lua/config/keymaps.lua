@@ -19,11 +19,12 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- collides with find on opened buffers
 
 -- run the current line
--- vim.keymap.set('n', '<space>x', ':.lua<CR>')
+-- [[ Lua]]
+vim.keymap.set('n', '<space>lx', ':.lua<CR>', { desc = '[l]ua: Excecute Lua [line]'})
 -- collides with delete buffer
 
 -- run the selected lines
-vim.keymap.set('v', '<space>x', ':lua<CR>', { desc = 'E[x]cecute the current visual line' })
+vim.keymap.set('v', '<space>lx', ':lua<CR>', { desc = 'E[x]cecute the current visual line' })
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
@@ -83,7 +84,13 @@ vim.keymap.set('n', '<leader>wk', '<cmd>WhichKey <CR>', { desc = 'whichkey all k
 -- set wrap in windows/linux and in macos
 vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
 
+-- [[ Python ]]
+vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
 vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
 vim.keymap.set('n', '<leader>ps', '<cmd>!uv sync <CR>', { desc = '[p]ython: uv [s]ync' })
 vim.keymap.set('n', '<leader>pm', '<cmd>!isort . --force-single-line-imports<CR>', { desc = '[p]ython: isort i[m]ports' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
+
+-- [[ Rust ]]
+vim.keymap.set('n', '<leader>rx', '<cmd>!cargo run<CR>', { desc = '[r]ust: cargo [r]un' })
+
