@@ -8,7 +8,7 @@ export def "clean" [] {
         print "🗑️ Empty recycle bin..."
         pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
-        if ('~/AppData/Roaming/stremio/' | path exists) {
+        if (ls ~/AppData/Roaming/stremio/stremio-server/stremio-cache/ | is-not-empty) {
             print "🗑️ Cleaning Stremio Cache..."
             rm ~\AppData\Roaming\stremio\stremio-server\stremio-cache\* --recursive
            }
