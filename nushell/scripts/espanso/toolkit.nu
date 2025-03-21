@@ -10,7 +10,7 @@
 # toolkit clean
 # and so on...
 
-const ESPANSO_DEV_FOLDER = "~/repos/espanso/"
+const ESPANSO_DEV_FOLDER = "~/repos/fix-unable-to-start-espanso/"
 
 # build the binary
 export def --env build [] {
@@ -32,6 +32,7 @@ export def --env build [] {
     }
 }
 
+# tests whatever workflow you want to test (issue repro, cargo test, whatever)
 export def --env test [] {
     cd $ESPANSO_DEV_FOLDER
     cd ./target/release/
@@ -48,6 +49,7 @@ export def --env test [] {
     ./espanso start
 }
 
+# commands to clean the state to be able to test again
 export def clean [] {
     print "Removing the espanso.service"
     # remove the service
