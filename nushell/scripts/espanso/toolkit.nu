@@ -114,4 +114,5 @@ export def --env sign [] {
         # upload the disk image to notary service
         # it doesn't work
         # xcrun altool --notarize-app --primary-bundle-id "<your identifier>" -u "<your email>" -p "<app-specific pwd>" -t osx -f /path/to/MyApp.dmg
+    }
 }
