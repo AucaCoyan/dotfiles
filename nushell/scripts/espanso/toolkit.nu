@@ -51,11 +51,18 @@ export def --env test [] {
 
 # commands to clean the state to be able to test again
 export def clean [] {
-    print "Removing the espanso.service"
-    # remove the service
-    rm ~/.config/systemd/user/espanso.*
+    if $nu.os-info.name == "linux" {
+        # remove the service
+        print "🔥 Removing the espanso.service..."
+        if ('~/.config/systemd/user/espanso.service' | path exists) {
+            rm ~/.config/systemd/user/espanso.*
+        }
+    }
 
-    print "Done!"
+    print "🔥 running cargo clean..."
+    cargo clean
+
+    print "✅ Done!"
 }
 
 export def "act run" [] {
