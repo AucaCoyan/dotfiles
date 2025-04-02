@@ -1,6 +1,21 @@
 export def rm_nvim_dirs [] {
     if $nu.os-info.name == "windows" {
-        error make {msg: "not implemented!", }
+        print "🔥 Removing `/nvim` and `/nvim-data` "
+
+        let path = [$env.home, "/AppData/Local/nvim-data" ] | str join
+        if ( $path | path exists) {
+            rm $path --recursive
+        }
+        let path = [$env.home, "/AppData/Local/nvim" ] | str join
+        if ( $path | path exists) {
+            rm $path --recursive
+        }
+
+        print "🔗 Making the symlinks"
+
+        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Local\nvim" -Target $HOME\repos\dotfiles\.config\nvim'
+
+        print "✅ Job's done!"
     } else if $nu.os-info.name == "linux" {
         # binary
         rm /usr/local/bin/nvim
@@ -8,6 +23,8 @@ export def rm_nvim_dirs [] {
         rm ~/.local/share/nvim/ --recursive
         # symlink
         rm ~/.config/nvim
+    } else if $nu.os-info.name == "macos" {
+    error make {msg: "not implemented!", }
     }
 }
 
