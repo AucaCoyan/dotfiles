@@ -3,18 +3,26 @@
 #
 # $ use ~/path/to/this/script/toolkit.nu
 #
-# and then you can call
+# After that, you NEED to setup the environment variable `ESPANSO_DEV_FOLDER`.
+# This is because you can have multiple folders (i.e. worktrees) and toolkit
+# needs to point to one at any point in time.
+# The shortest way is to:
+#
+# cd /into/your/folder/espanso
+# $env.ESPANSO_DEV_FOLDER = pwd
+#
+# ...and then you can call
 #
 # toolkit build
 # toolkit test
 # toolkit clean
-# and so on...
-
-const ESPANSO_DEV_FOLDER = "~/repos/espanso/"
+# etc...
 
 # build the binary
 export def --env build [] {
-    cd $ESPANSO_DEV_FOLDER
+    print "🚛 cd'in into the espanso dev folder"
+    cd $env.ESPANSO_DEV_FOLDER
+
     print "📦 building the binary"
     print "     [x] Wayland"
     print "     [x] Release"
@@ -34,7 +42,7 @@ export def --env build [] {
 
 # tests whatever workflow you want to test (issue repro, cargo test, whatever)
 export def --env test [] {
-    cd $ESPANSO_DEV_FOLDER
+    cd $env.ESPANSO_DEV_FOLDER
     cd ./target/release/
 
     if $nu.os-info.name == "linux" {
@@ -62,6 +70,8 @@ export def clean [] {
     print "🔥 running cargo clean..."
     cargo clean
 
+    # uninstall espanso*.deb
+    # sudo dpkg --remove espanso
     print "✅ Done!"
 }
 
@@ -82,7 +92,7 @@ export def "tag-again" [] {
 #
 # [source](https://stackoverflow.com/questions/69354021/how-do-i-go-about-code-signing-a-macos-application)
 export def --env sign [] {
-    cd $ESPANSO_DEV_FOLDER
+    cd $env.ESPANSO_DEV_FOLDER
 
     if $nu.os-info.name == "windows" {
         print "\n ⛏  building the resources"
@@ -122,4 +132,52 @@ export def --env sign [] {
         # it doesn't work
         # xcrun altool --notarize-app --primary-bundle-id "<your identifier>" -u "<your email>" -p "<app-specific pwd>" -t osx -f /path/to/MyApp.dmg
     }
+}
+
+# returns "wayland" or "x11"
+#
+# If the above command doesn't output anything, please try with this method.
+# https://unix.stackexchange.com/a/325972
+export def "check-desktop-environment" [] {
+    if $nu.os-info.name == "windows" {
+        error make {msg: $"Not usable in Windows", }
+    } else if $nu.os-info.name == "linux" {
+        return $env.XDG_SESSION_TYPE
+    } else if $nu.os-info.name == "macos" {
+        error make {msg: $"Not usable in macOS", }
+    }
+}
+
+export module package {
+    # builds the .deb package and if you like, reinstalls it
+    # run with `toolkit package-deb reinstall true
+    export def "build-deb" [--reinstall = false] {
+        if $nu.os-info.name == "windows" {
+            error make {msg: $"Not usable in Windows", }
+        } else if $nu.os-info.name == "linux" {
+            let my_var = check-desktop-environment
+            if $my_var == "wayland" {
+                echo "Building Wayland deb package"
+                cargo deb --verbose --package espanso --variant wayland -- --no-default-features --features "modulo wayland vendored-tls"
+            } else {
+                echo "Building X11 deb package"
+                cargo deb --verbose --package espanso -- --no-default-features --features "modulo vendored-tls"
+            }
+        } else if $nu.os-info.name == "macos" {
+            error make {msg: $"Not usable in macOS", }
+        }
+
+        if $reinstall {
+            sudo dpkg --remove espanso
+            chmod +x ./target/debian/espanso*.deb
+            sudo dpkg --install ./target/debian/espanso*.deb
+        }
+
+    }
+
+    # TODO
+    export def "build-fedora" [] {
+        error make {msg: $"Not implemented", }
+    }
+
 }
