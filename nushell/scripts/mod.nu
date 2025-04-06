@@ -28,7 +28,19 @@ export def --env f [
     ~/workspace/gcp-source
     ~/workspace/private
     | fzf) # pipe it to fzf
-    cd $destination
+
+    if $destination != null {
+         try {
+             cd $destination
+             return $destination
+         } catch {
+             print $"Failed to change directory to ($destination): ($in)"
+             return null
+         }
+    } else {
+         print "No directory selected."
+         return null
+    }
     return $destination
 }
 
