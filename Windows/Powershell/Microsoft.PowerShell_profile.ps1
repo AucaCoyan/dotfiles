@@ -74,11 +74,52 @@ fnm env --use-on-cd | Out-String | Invoke-Expression
 
 
 # catppuccin theme for FZF
-$ENV:FZF_DEFAULT_OPTS=@"
+$ENV:FZF_DEFAULT_OPTS = @"
 --color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8
 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc
 --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8
 "@
+
+function f {
+    $directories = @(
+        "$HOME\repos",
+        "$HOME\other-repos",
+        "$HOME\other-repos\espanso",
+        "$HOME\other-repos\nu",
+        "$HOME\all-repos\",
+        "$HOME\workspace",
+        "$HOME\workspace\botmaker",
+        "$HOME\workspace\dataflow",
+        "$HOME\workspace\gcp-source",
+        "$HOME\workspace\private"
+    )
+
+    $fdOutput = fd --max-depth 1 --min-depth 1 --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules -- . $directories | Out-String
+
+    if (Get-Command fzf -ErrorAction SilentlyContinue) {
+        $selectedDirectory = $fdOutput | fzf | Out-String
+    }
+    else {
+        Write-Warning "fzf is not installed. Using the first directory found by fd."
+        $selectedDirectory = ($fdOutput -split "`r`n")[0].Trim()
+    }
+
+    if ($selectedDirectory) {
+        try {
+            $selectedDirectory = $selectedDirectory | 
+            Set-Location $selectedDirectory
+            return $selectedDirectory
+        }
+        catch {
+            Write-Error "Failed to change directory to '$selectedDirectory': $($_.Exception.Message)"
+            return $null
+        }
+    }
+    else {
+        Write-Warning "No directory selected."
+        return $null
+    }
+}
 
 # -------------------------------------------------------------------------------------
 # Catppuccin
@@ -91,40 +132,40 @@ $Flavor = $Catppuccin['Mocha']
 # Modified from the built-in prompt function at: https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_prompts
 function prompt {
     $(if (Test-Path variable:/PSDebugContext) { "$($Flavor.Red.Foreground())[DBG]: " }
-      else { '' }) + "$($Flavor.Teal.Foreground())PS $($Flavor.Yellow.Foreground())" + $(Get-Location) +
-        "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> ' + $($PSStyle.Reset)
+        else { '' }) + "$($Flavor.Teal.Foreground())PS $($Flavor.Yellow.Foreground())" + $(Get-Location) +
+    "$($Flavor.Green.Foreground())" + $(if ($NestedPromptLevel -ge 1) { '>>' }) + '> ' + $($PSStyle.Reset)
 }
 # The above example requires the automatic variable $PSStyle to be available, so can be only used in PS 7.2+
 # Replace $PSStyle.Reset with "`e[0m" for PS 6.0 through PS 7.1 or "$([char]27)[0m" for PS 5.1
 
 
 $Colors = @{
-	# Largely based on the Code Editor style guide
-	# Emphasis, ListPrediction and ListPredictionSelected are inspired by the Catppuccin fzf theme
+    # Largely based on the Code Editor style guide
+    # Emphasis, ListPrediction and ListPredictionSelected are inspired by the Catppuccin fzf theme
 	
-	# Powershell colours
-	ContinuationPrompt     = $Flavor.Teal.Foreground()
-	Emphasis               = $Flavor.Red.Foreground()
-	Selection              = $Flavor.Surface0.Background()
+    # Powershell colours
+    ContinuationPrompt     = $Flavor.Teal.Foreground()
+    Emphasis               = $Flavor.Red.Foreground()
+    Selection              = $Flavor.Surface0.Background()
 	
-	# PSReadLine prediction colours
-	InlinePrediction       = $Flavor.Overlay0.Foreground()
-	ListPrediction         = $Flavor.Mauve.Foreground()
-	ListPredictionSelected = $Flavor.Surface0.Background()
+    # PSReadLine prediction colours
+    InlinePrediction       = $Flavor.Overlay0.Foreground()
+    ListPrediction         = $Flavor.Mauve.Foreground()
+    ListPredictionSelected = $Flavor.Surface0.Background()
 
-	# Syntax highlighting
-	Command                = $Flavor.Blue.Foreground()
-	Comment                = $Flavor.Overlay0.Foreground()
-	Default                = $Flavor.Text.Foreground()
-	Error                  = $Flavor.Red.Foreground()
-	Keyword                = $Flavor.Mauve.Foreground()
-	Member                 = $Flavor.Rosewater.Foreground()
-	Number                 = $Flavor.Peach.Foreground()
-	Operator               = $Flavor.Sky.Foreground()
-	Parameter              = $Flavor.Pink.Foreground()
-	String                 = $Flavor.Green.Foreground()
-	Type                   = $Flavor.Yellow.Foreground()
-	Variable               = $Flavor.Lavender.Foreground()
+    # Syntax highlighting
+    Command                = $Flavor.Blue.Foreground()
+    Comment                = $Flavor.Overlay0.Foreground()
+    Default                = $Flavor.Text.Foreground()
+    Error                  = $Flavor.Red.Foreground()
+    Keyword                = $Flavor.Mauve.Foreground()
+    Member                 = $Flavor.Rosewater.Foreground()
+    Number                 = $Flavor.Peach.Foreground()
+    Operator               = $Flavor.Sky.Foreground()
+    Parameter              = $Flavor.Pink.Foreground()
+    String                 = $Flavor.Green.Foreground()
+    Type                   = $Flavor.Yellow.Foreground()
+    Variable               = $Flavor.Lavender.Foreground()
 }
 
 # Set the colours
