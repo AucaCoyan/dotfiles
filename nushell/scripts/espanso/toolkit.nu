@@ -43,18 +43,25 @@ export def --env build [] {
 # tests whatever workflow you want to test (issue repro, cargo test, whatever)
 export def --env test [] {
     cd $env.ESPANSO_DEV_FOLDER
-    cd ./target/release/
+    print " ---------- creating AppImage ---------- "
+    cargo make --profile release -- create-app-image
+    cd ./target/linux/AppImage/out
+
+    print " ---------- runnin AppImage ---------- "
+    ./Espanso-x86_64.AppImage
+
+    # cd ./target/release/
 
     if $nu.os-info.name == "linux" {
         # set capabilities
         # sudo setcap "cap_dac_override+p" ./espanso
 
-        print "`espanso service register`..."
-        ./espanso service register
+        # print "`espanso service register`..."
+        # ./espanso service register
     }
 
-    print "`espanso start`"
-    ./espanso start
+    # print "`espanso start`"
+    # ./espanso start
 }
 
 # commands to clean the state to be able to test again
