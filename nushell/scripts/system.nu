@@ -5,6 +5,10 @@ export def "clean" [] {
         print "cleaning scoop cache..."
         scoop cleanup --all --cache
 
+        # clean the Temp folder
+        print "cleaning TMP folder"
+        ls $env.TEMP | par-each {|item| rm $item.name --recursive --force}
+
         print "🗑️ Empty recycle bin..."
         pwsh -c "Clear-RecycleBin -DriveLetter C -Force"
 
@@ -28,10 +32,6 @@ export def "clean" [] {
         error make {msg: "Could not find the OS name :(", }
     }
     # cross platform commands
-
-    # clean the Temp folder
-    print "cleaning TMP folder"
-    ls $env.TEMP | par-each {|item| rm $item.name --recursive --force}
 
     print "cleaning uv"
     uv cache prune
