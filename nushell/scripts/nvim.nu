@@ -11,10 +11,6 @@ export def rm_nvim_dirs [] {
             rm $path --recursive
         }
 
-        print "🔗 Making the symlinks"
-
-        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Local\nvim" -Target $HOME\repos\dotfiles\.config\nvim'
-
         print "✅ Job's done!"
     } else if $nu.os-info.name == "linux" {
         # binary
@@ -32,38 +28,66 @@ export def download_nvim [] {
     print "Downloading nvim"
 
     if $nu.os-info.name == "windows" {
-        error make {msg: "not implemented!", }
+        # direct downlaod
+        # curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-win64.zip
+
+        # scoop
+        scoop install neovim
+
     } else if $nu.os-info.name == "linux" {
-        let tag_name = gh api /repos/neovim/neovim/releases/latest | from json | get tag_name
+        # from https://github.com/nvim-lua/kickstart.nvim
+        # sudo apt update
+        # sudo apt install make gcc ripgrep unzip git xclip curl
 
-        curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-        gh api /repos/neovim/neovim/releases/latest
-        | from json
-        | get tarball_url
-        | curl -L $in
-        | save "neovim-latest.tar.gz"
+        # Now we install nvim
+        curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+        sudo rm -rf /opt/nvim-linux-x86_64
+        sudo mkdir -p /opt/nvim-linux-x86_64
+        sudo chmod a+rX /opt/nvim-linux-x86_64
+        sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
-        tar xpvf neovim-latest.tar.gz
-        rm neovim-latest.tar.gz
+        # make it available in /usr/local/bin, distro installs to /usr/bin
 
-        let folder_name = ls neovim-* | get name | first
-        #cp $"(folder_name)/"
-
+        # print "creating the config symlink"
+        ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+    } else if $nu.os-info.name == "macos" {
+        error make {msg: "not implemented!", }
     }
 }
 
 export def "install personal" [] {
     rm_nvim_dirs
     if $nu.os-info.name == "windows" {
-        error make {msg: "not implemented!", }
+        download_nvim
+
+        print "🔗 Making the symlinks"
+        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Local\nvim" -Target $HOME\repos\dotfiles\.config\nvim'
     } else if $nu.os-info.name == "linux" {
         download_nvim
 
         ## Clipboard for lazyVim
-        sudo nala install xclip -y
+        # sudo nala install xclip -y
 
-        print "creating the symlink"
-        ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+        print "🔗 Making the symlinks"
+        sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
     }
 }
 
+export def "install kickstart" [] {
+    rm_nvim_dirs
+    if $nu.os-info.name == "windows" {
+        download_nvim
+
+        git clone https://github.com/nvim-lua/kickstart.nvim.git $"($env.LOCALAPPDATA)/nvim"
+    } else if $nu.os-info.name == "linux" {
+        error make {msg: "not implemented!", }
+
+        # download_nvim
+        #
+        # ## Clipboard for lazyVim
+        # sudo nala install xclip -y
+        #
+        # print "creating the symlink"
+        # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+    }
+}
