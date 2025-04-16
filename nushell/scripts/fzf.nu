@@ -45,17 +45,26 @@ export def "checkout recent branch" [] {
     git checkout $branch
 }
 
-export def "fuzzy edit file" [] {
+
+alias fef = fuzzy-edit-file
+
+# selects with `fzf` and edits with `nvim`
+export def "fuzzy-edit-file" [] {
     let destination = (fd --min-depth 1
-    --hidden --no-ignore --ignore-vcs --exclude node_modules --exclude .git
+    --hidden
+    --no-ignore
+    --ignore-vcs
+    --exclude node_modules
+    --exclude .venv # also excludes nested .venv folders
+    --exclude .git
     -- . # any name
     | fzf) # pipe it to fzf
     nvim $destination
 }
 
 export def --env "fuzzy find directory" [] {
-        let destination = (fd --type directory --hidden --no-ignore 
-        --ignore-vcs --exclude node_modules --exclude .git 
+        let destination = (fd --type directory --hidden --no-ignore
+        --ignore-vcs --exclude node_modules --exclude .git
         -- . # any name
         . # This dir
         | fzf) # pipe it to fzf
