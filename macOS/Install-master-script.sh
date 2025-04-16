@@ -9,15 +9,16 @@ echo -e '\n### `brew`'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # ==> Formulae
-brew install git
-brew install gh
-brew install neovim
-brew install nushell
-# brew install glab
+brew install delta
 brew install fzf
-brew install ripgrep
+# brew install glab
+brew install gh
+brew install git
 brew install lazygit
 brew install mdbook
+brew install neovim
+brew install nushell
+brew install ripgrep
 
 brew install fnm
 fnm install --latest
@@ -27,9 +28,9 @@ brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # ==> Casks
 # install `FiraCode`
-brew install --cask font-fira-code-nerd-font
 brew install --cask brave-browser
 brew install --cask discord
+brew install --cask font-fira-code-nerd-font
 brew install --cask ghostty
 brew install --cask librewolf
 brew install --cask obsidian
