@@ -8,6 +8,7 @@ echo -e "###### macOS installation script ######"
 echo -e '\n### `brew`'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
+# ==> Formulae
 brew install git
 brew install gh
 brew install neovim
@@ -15,19 +16,24 @@ brew install nushell
 # brew install glab
 brew install fzf
 brew install ripgrep
+brew install lazygit
+brew install mdbook
 
 brew install fnm
 fnm install --latest
 
-brew install --cask ghostty
-
-brew install --cask obsidian
-
 echo -e '\n### `oh-my-posh`'
 brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
+# ==> Casks
 # install `FiraCode`
 brew install --cask font-fira-code-nerd-font
+brew install --cask brave-browser
+brew install --cask discord
+brew install --cask ghostty
+brew install --cask librewolf
+brew install --cask obsidian
+brew install --cask vlc
 
 # Git Configuration
 echo -e '\n### Configure git'
@@ -67,6 +73,9 @@ ln -s -F ~/repos/dotfiles/.config/nvim ~/.config/nvim
 echo -e '\n### making a symlink to ~/repos/dotfiles/.config/ghostty'
 # mkdir -p ~/Library/Application\ Support/com.mitchellh.ghostty
 ln -s -F ~/repos/dotfiles/.config/ghostty ~/Library/Application\ Support/com.mitchellh.ghostty
+
+echo -e '\n### making a symlink to ~/repos/dotfiles/.config/lazygit/'
+ln -s -F ~/repos/dotfiles/.config/lazygit ~/Library/Application\ Support
 
 echo -e '\n### Rust'
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
