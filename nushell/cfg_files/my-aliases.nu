@@ -43,7 +43,6 @@ alias "cargo list" = cargo install --list
 alias "cargo --list" = cargo install --list
 
 # set the theme for `gitui` and `bat
-alias gitui = gitui -t mocha.ron
 alias bat = bat --theme="gruvbox-dark"
 alias cat = bat --theme="gruvbox-dark"
 
@@ -56,6 +55,8 @@ if $nu.os-info.name == "linux" {
 } else if $nu.os-info.name == "windows" {
     alias espanso = espansod
 }
+
+alias l = lazygit
 
 # python
 # doesn't work
