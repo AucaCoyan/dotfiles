@@ -1,63 +1,63 @@
-  
-  0   7zip               22.01  
+
+  0   7zip               22.01
   1   azuredatastudio    1.42.0
-  2   bat                0.23.0 
+  2   bat                0.23.0
   3   brave              1.50.11
-  4   calibre            6.15.0 
-  5   carapace-bin       0.22.0 
-  6   CascadiaCode-NF    2.3.3  
-  7   czkawka            5.1.0  
-  8   czkawka-gui        5.1.0  
-  9   dark               3.11.2 
- 10   delta              0.15.1 
+  4   calibre            6.15.0
+  5   carapace-bin       0.22.0
+  6   CascadiaCode-NF    2.3.3
+  7   czkawka            5.1.0
+  8   czkawka-gui        5.1.0
+  9   dark               3.11.2
+ 10   delta              0.15.1
  11   discord            1.0.901
- 12   draw.io            21.1.2 
- 13   dust               0.8.5  
+ 12   draw.io            21.1.2
+ 13   dust               0.8.5
  14   everything         1.4.1.1
- 15   fd                 8.7.0  
- 16   fnm                1.33.1 
- 17   fvm                2.4.1  
- 18   fzf                0.39.0 
- 19   Github-CLI         2.26.1 
- 20   gitleaks           8.16.2 
- 21   glab               1.27.1 
- 22   glow               1.5.0  
- 23   go                 1.20.3 
+ 15   fd                 8.7.0
+ 16   fnm                1.33.1
+ 17   fvm                2.4.1
+ 18   fzf                0.39.0
+ 19   Github-CLI         2.26.1
+ 20   gitleaks           8.16.2
+ 21   glab               1.27.1
+ 22   glow               1.5.0
+ 23   go                 1.20.3
  24   googlechrome       109.0.5
- 25   helix              23.03  
+ 25   helix              23.03
  26   inkscape           1.2.2_2
  27   insomnia           2023.1.
- 28   jpegview           1.0.37 
- 29   lsd                0.23.1 
- 30   mailspring         1.10.8 
- 31   mpv                0.35.1 
- 32   neovide            0.10.3 
- 33   neovim             0.9.0  
- 34   netcat             1.12   
- 35   nu                 0.78.0 
- 36   obs-studio         29.0.2 
- 37   obsidian           1.1.16 
+ 28   jpegview           1.0.37
+ 29   lsd                0.23.1
+ 30   mailspring         1.10.8
+ 31   mpv                0.35.1
+ 32   neovide            0.10.3
+ 33   neovim             0.9.0
+ 34   netcat             1.12
+ 35   nu                 0.78.0
+ 36   obs-studio         29.0.2
+ 37   obsidian           1.1.16
  38   oh-my-posh         14.29.0
- 39   peazip             9.1.0  
- 40   pnpm               7.28.0 
+ 39   peazip             9.1.0
+ 40   pnpm               7.28.0
  41   postman            10.12.0
- 42   powertoys          0.68.1 
- 43   psreadline         2.2.6  
- 44   responsively       1.0.1  
- 45   rga                0.9.6  
- 46   ripgrep            13.0.0 
- 47   rnr                0.4.2  
- 48   rustdesk           1.1.9  
- 49   rustup             1.25.2 
- 50   scoop-completion   0.2.4  
- 51   spotify-tui        0.25.0 
- 52   sqlitebrowser      3.12.2 
+ 42   powertoys          0.68.1
+ 43   psreadline         2.2.6
+ 44   responsively       1.0.1
+ 45   rga                0.9.6
+ 46   ripgrep            13.0.0
+ 47   rnr                0.4.2
+ 48   rustdesk           1.1.9
+ 49   rustup             1.25.2
+ 50   scoop-completion   0.2.4
+ 51   spotify-tui        0.25.0
+ 52   sqlitebrowser      3.12.2
  53   stremio            4.4.159
- 54   sumatrapdf         3.4.6  
- 55   tealdeer           1.6.1  
- 56   telegram           4.7.1  
- 57   terminal-icons     0.10.0 
- 58   vlc                3.0.18 
- 59   vscode             1.76.1 
- 60   windirstat         1.1.2  
+ 54   sumatrapdf         3.4.6
+ 55   tealdeer           1.6.1
+ 56   telegram           4.7.1
+ 57   terminal-icons     0.10.0
+ 58   vlc                3.0.18
+ 59   vscode             1.76.1
+ 60   windirstat         1.1.2
  61   zoxide             0.9.0

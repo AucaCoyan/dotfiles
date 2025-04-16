@@ -24,4 +24,3 @@ sudo nixos-rebuild switch --flake /etc/nixos#default
 
 nixos can't be symlinked because of:
 https://github.com/NixOS/nix/issues/8013
-

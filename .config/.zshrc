@@ -136,7 +136,7 @@ source /usr/share/doc/fzf/examples/key-bindings.zsh
 source /usr/share/doc/fzf/examples/completion.zsh
 
 ########################################### starship ######################################
-# Install starship/starship in .zshrc 
+# Install starship/starship in .zshrc
 # SUSPENDED
 # eval "$(starship init zsh)"
 

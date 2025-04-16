@@ -133,7 +133,7 @@ if $nu.os-info.name == "windows" {
 }
 
 # import the theme
-# use ~/repos/dotfiles/nushell/themes/base16.nu base16_theme 
+# use ~/repos/dotfiles/nushell/themes/base16.nu base16_theme
 
 # config.nu
 $env.config = {

@@ -93,4 +93,3 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<M-z>', '<cmd>set wrap! <CR>', { desc = 'Togg
 
 -- [[ Rust ]]
 vim.keymap.set('n', '<leader>rx', '<cmd>!cargo run<CR>', { desc = '[r]ust: cargo [r]un' })
-

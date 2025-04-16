@@ -20,7 +20,7 @@ export def main [
     mut query_parts = []
 
     let date = if $date == null and $milestone == null {
-        (date now) - 4wk 
+        (date now) - 4wk
     } else {
         $date
     }

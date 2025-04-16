@@ -19,7 +19,7 @@ alias cat='batcat'
 alias grep='rgrep'
 
 
-# Set the fish-colored-man plugin to 
+# Set the fish-colored-man plugin to
 # Solarized Dark & Green highlight
 set -g man_blink -o red
 set -g man_bold -o green

@@ -9,7 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
-  
+
   nix.settings.experimental-features = ["nix-command" "flakes" ];
 
   # Bootloader.
@@ -84,7 +84,7 @@ systemd.services."shutdown-server" = {
   # services.cron = {
   #   enable = true;
   #   systemCronJobs = [
-  #      "59 23 * * *      root       shutdown -h now" 
+  #      "59 23 * * *      root       shutdown -h now"
   #   ];
   # };
 

@@ -10,5 +10,3 @@ if $nu.os-name == 'macos' {
     sudo /usr/local/bin/zigup master
     rm ./zigup
 }
-
-

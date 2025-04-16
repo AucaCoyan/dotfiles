@@ -1,5 +1,5 @@
 
-# cleans the cache and others temp files in the system 
+# cleans the cache and others temp files in the system
 export def "clean" [] {
     if $nu.os-info.name == "windows" {
         print "cleaning scoop cache..."
@@ -123,4 +123,3 @@ export def "update" [] {
 
     print "✅ done!"
 }
-

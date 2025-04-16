@@ -2,7 +2,7 @@
 # --> https://gist.github.com/ClipplerBlood/4a36c677c79ee7c67f81b5bd30b30478
 
 export def "main" [] {
-    
+
     def where-file [] {
         $in | where {|| ($in | str contains ".")}
     }
@@ -16,9 +16,9 @@ export def "main" [] {
     }
 
     let editedDir = (
-        fd 
-        | std edit oil 
-        | split row "\n" 
+        fd
+        | std edit oil
+        | split row "\n"
         | each {|| $in | str trim}
         | where {|| not ($in | is-empty)}
     )
@@ -36,19 +36,19 @@ export def "main" [] {
 
     let toDelFiles = $toDel | where-file
     let toDelDirs = $toDel | where-dir
-    
+
 
     # Build the changes table
     let changes = $toAdd
         | each {|| {
-            operation: $"(ansi green)ADD(ansi reset)", 
-            path: $in, 
+            operation: $"(ansi green)ADD(ansi reset)",
+            path: $in,
             type: (fType $in)}}
         | append (
             $toDel
             | each {|| {
-                operation: $"(ansi red)DEL(if (fType $in) == "dir" {' '} else {''})(ansi reset)", 
-                path: $in, 
+                operation: $"(ansi red)DEL(if (fType $in) == "dir" {' '} else {''})(ansi reset)",
+                path: $in,
                 type: (fType $in)}}
         )
 
@@ -63,7 +63,7 @@ export def "main" [] {
         print $"(ansi yellow) Deleting folders will also delete their contents (ansi reset)"
     }
     print $changes
-    
+
     # Prompt user for confirm
     let confirmed = input "Do you confirm the changes? Type \"yes\"\n"
 
@@ -75,8 +75,8 @@ export def "main" [] {
     $toAddFiles | each {|e|
         $e
         | path split
-        | reduce -f "" {|p, acc| 
-            let $currPath = [$acc $p] | path join  
+        | reduce -f "" {|p, acc|
+            let $currPath = [$acc $p] | path join
             if not ($currPath | path exists) {
                 if ($p | str contains ".") {
                     touch $currPath
@@ -89,17 +89,17 @@ export def "main" [] {
         print $"(ansi green)󰝒 Created file ($e)(ansi reset)"
     }
 
-    $toAddDirs | each {|e| 
+    $toAddDirs | each {|e|
         mkdir $e
         print $"(ansi green)󰉗 Created dir ($e)(ansi reset)"
     }
 
-    $toDelFiles | each {|e| 
+    $toDelFiles | each {|e|
         rm -t $e
         print $"(ansi red)󰮘 Deleted file ($e)(ansi reset)"
     }
 
-    $toDelDirs | each {|e| 
+    $toDelDirs | each {|e|
         rm -t -r -f $e
         print $"(ansi red)󰉘 Deleted folder ($e)(ansi reset)"
     }
@@ -121,7 +121,7 @@ def "std edit" [
     let content = $in | default ""
     let buffer = $env.TEMP? | default $env.TMP? | default "/tmp" | path join $buffer
     let editor = $editor | default $env.EDITOR? | default $env.VISUAL? | default $env.config?.buffer_editor?
-    
+
     if $editor == null {
         if $env.EDITOR == null {
         error make { msg: "Editor not found!" }

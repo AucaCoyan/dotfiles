@@ -4,7 +4,7 @@ const tablen = 8
 
 # calculate required tabs/spaces to get a nicely aligned table
 def pad-tabs [input_name max_indent] {
-    let input_length = ($input_name | str length) 
+    let input_length = ($input_name | str length)
     let required_tabs = $max_indent - ($input_length / $tablen | into int)
     seq 0 $required_tabs | reduce -f "" {|it, acc| $acc + (char tab)}
 }
@@ -39,9 +39,9 @@ export def fuzzy-log-unit-search [] {
 alias crb = checkout recent branch
 
 export def "checkout recent branch" [] {
-    let branch = git branch --sort=-committerdate 
-        | fzf --header "Checkout recent branch" --preview "git diff --color=always {1}" 
-        | str trim 
+    let branch = git branch --sort=-committerdate
+        | fzf --header "Checkout recent branch" --preview "git diff --color=always {1}"
+        | str trim
     git checkout $branch
 }
 

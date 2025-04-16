@@ -27,7 +27,7 @@ cp target/debian/espanso-wayland*.deb espanso-debian-wayland-amd64.deb
 
 echo "  Done!"
     '#
-    
+
     print "running: "
     print $script
 

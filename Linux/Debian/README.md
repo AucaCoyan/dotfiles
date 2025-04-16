@@ -84,4 +84,3 @@ and run it with
 chmod +x Debian-minimal.sh
 ./Debian-minimal.sh
 ```
-

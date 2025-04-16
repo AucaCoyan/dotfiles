@@ -75,4 +75,3 @@ staged = "  ${count}"
 renamed = "﫦${count}"
 deleted = " ${count}"
 style = "bg:#E0B25D fg:#000000"
-

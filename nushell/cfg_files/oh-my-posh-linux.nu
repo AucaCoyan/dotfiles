@@ -18,7 +18,7 @@ $env.POSH_SHELL_VERSION = (version | get version)
 #          Chassis: desktop 🖥️
 #       Machine ID: 9a23ef2eb40746daa2f6b9185db295f2
 #          Boot ID: 7d5d6f2d73aa45d395badb87f2265d99
-# Operating System: NixOS 25.05 (Warbler)   
+# Operating System: NixOS 25.05 (Warbler)
 let _omp_executable: string = (echo "/home/linuxbrew/.linuxbrew/bin/oh-my-posh")
 
 # PROMPTS
@@ -98,7 +98,7 @@ $env.PROMPT_COMMAND_RIGHT = {|| _omp_get_prompt right }
 #     ^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print primary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
 # }
 
-# $env.PROMPT_COMMAND_RIGHT = { ||    
+# $env.PROMPT_COMMAND_RIGHT = { ||
 #     ^"/home/linuxbrew/.linuxbrew/bin/oh-my-posh" print right $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.POSH_SHELL_VERSION)" $"--execution-time=(posh_cmd_duration)" $"--status=($env.LAST_EXIT_CODE)" $"--terminal-width=(posh_width)"
 # }
 

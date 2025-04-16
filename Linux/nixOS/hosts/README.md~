@@ -2,11 +2,10 @@
 
 Move the files into ~/dotfiles/repos/Linux/nixOS/ .... if you haven't yet
 
-create a symbolic link with 
+create a symbolic link with
 
 
 ```
 # ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/thanos /etc/nixos
 ```
 as root
-

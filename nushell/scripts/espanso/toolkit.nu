@@ -104,7 +104,7 @@ export def --env sign [] {
     if $nu.os-info.name == "windows" {
         print "\n ⛏  building the resources"
         cargo make --profile release -- build-windows-resources
-    
+
         print "\n ✍  signing the resources"
         cargo make sign-windows-resources
 

@@ -13,7 +13,7 @@ export-env {
 
     # PROMPTS
     $env.PROMPT_MULTILINE_INDICATOR = (^(
-        [$env.home, "\\scoop\\apps\\oh-my-posh\\current\\oh-my-posh.exe"] 
+        [$env.home, "\\scoop\\apps\\oh-my-posh\\current\\oh-my-posh.exe"]
         | str join
         ) print secondary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.NU_VERSION)")
 
@@ -25,7 +25,7 @@ export-env {
 
         let width = ((term size).columns | into string)
         ^(
-    [$env.home, "\\scoop\\apps\\oh-my-posh\\current\\oh-my-posh.exe"] 
+    [$env.home, "\\scoop\\apps\\oh-my-posh\\current\\oh-my-posh.exe"]
     | str join) print primary $"--config=($env.POSH_THEME)" --shell=nu $"--shell-version=($env.NU_VERSION)" $"--execution-time=($cmd_duration)" $"--terminal-width=($width)"
     }
 }

@@ -7,7 +7,7 @@ export module "check pr" {
         print " running cargo clippy"
         # --locked is for prevent updating the cargo.lock file
         # is for any situation in which you don't want to update the deps.
-        cargo clippy --workspace --all-targets --all-features --no-deps # --locked 
+        cargo clippy --workspace --all-targets --all-features --no-deps # --locked
         # if $nu.os-info.name == "windows" {
         #     cargo clippy -- -D warnings
         # } else if $nu.os-info.name = "linux" {
@@ -39,7 +39,7 @@ export module "check pr" {
         # if (poetry --version == 1.8.3)
         #
         # doesnt work
-        # uv tool install bandit==1.7.1 
+        # uv tool install bandit==1.7.1
         # uv tool install flake8==4.0.1
         # uv tool install pytest-cov==4.0.0
         # poetry add --dev pytest-cov==4.0.0
@@ -200,16 +200,16 @@ export module "pr counts" {
 }
 
 # grabs the repo name of a github (ORG/repo) string
-# 
-# for exaple 
-# grab repo name "organization/my_special_repo" 
-# returns "myspecial_repo" 
+#
+# for exaple
+# grab repo name "organization/my_special_repo"
+# returns "myspecial_repo"
 export def "grab repo name" [ghrepo: string]: [string -> string] {
     $ghrepo | split column "/" | get column2 | last
 }
 
 # Generic fn to clone all repos of one organization into a specific folder
-# 
+#
 # # Parameters
 # `list_of_repos` is a list of <ORG/REPO> from github
 #   for example:
@@ -230,7 +230,7 @@ export def "grab repo name" [ghrepo: string]: [string -> string] {
 def "clone all" [list_of_repos: list<string>, destination: path] {
         print $" creating ($destination) folder"
         mkdir $destination
-        
+
         for $repo in $list_of_repos {
             let repo_name = grab repo name $repo
             let single_repo_dir = $"($destination)/($repo_name)"
@@ -259,7 +259,7 @@ export module "clone all" {
 
     export def --env "espanso forks" [] {
         let repos_dir = $"($env.home)/repos"
-        
+
         let list_of_repos = [
             "espanso"
             "website"
@@ -284,7 +284,7 @@ export module "clone all" {
 
     export def --env "nushell forks" [] {
         let repos_dir = $"($env.home)/repos"
-        
+
         let list_of_repos = [
             "nushell"
             "nu_scripts"

@@ -8,7 +8,7 @@ Import-Module scoop-completion
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
 
-# Full path of scripting directory 
+# Full path of scripting directory
 # https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.2#psscriptroot
 $profileDir = $PSScriptRoot;
 
@@ -106,7 +106,7 @@ function f {
 
     if ($selectedDirectory) {
         try {
-            $selectedDirectory = $selectedDirectory | 
+            $selectedDirectory = $selectedDirectory |
             Set-Location $selectedDirectory
             return $selectedDirectory
         }
@@ -142,12 +142,12 @@ function prompt {
 $Colors = @{
     # Largely based on the Code Editor style guide
     # Emphasis, ListPrediction and ListPredictionSelected are inspired by the Catppuccin fzf theme
-	
+
     # Powershell colours
     ContinuationPrompt     = $Flavor.Teal.Foreground()
     Emphasis               = $Flavor.Red.Foreground()
     Selection              = $Flavor.Surface0.Background()
-	
+
     # PSReadLine prediction colours
     InlinePrediction       = $Flavor.Overlay0.Foreground()
     ListPrediction         = $Flavor.Mauve.Foreground()

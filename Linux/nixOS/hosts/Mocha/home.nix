@@ -78,7 +78,7 @@
     enable = true;
     userName = "Auca Maillot";
     userEmail = "aucacoyan@gmail.com";
-    
+
     extraConfig = {
       pull.rebase = true;
     };

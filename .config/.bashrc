@@ -144,4 +144,3 @@ if [ -d "$FNM_PATH" ]; then
   eval "`fnm env`"
 fi
 . "/home/acoyan/.deno/env"
-

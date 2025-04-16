@@ -13,4 +13,3 @@ and then:
 ```console
 stylua .
 ```
-

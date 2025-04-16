@@ -8,7 +8,7 @@ export def --env new [folder: string] {
         error make {msg: $" 📂 ($folder) folder exists"
         help: "I can only create new project on non-existing folders"
         }
-    } 
+    }
     mkdir $folder
 
     print " 📂 cd into it..."
@@ -85,7 +85,7 @@ def config_tsconfig [] {
     upsert compilerOptions.target ESNext |
     upsert compilerOptions.sourceMap true |
     upsert compilerOptions.outDir dist |
-    upsert include ["src/**/*"] | 
+    upsert include ["src/**/*"] |
     save tsconfig.json --force
 }
 

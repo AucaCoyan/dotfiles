@@ -20,9 +20,9 @@
 
   fileSystems."/mnt/1Drive" = {
    device = "/dev/disk/by-partlabel/1drive";
-   options = [ # If you don't have this options attribute, it'll default to "defaults" 
+   options = [ # If you don't have this options attribute, it'll default to "defaults"
      # boot options for fstab. Search up fstab mount options you can use
-     "rw" 
+     "rw"
      "users" # Allows any user to mount and unmount
      "nofail" # Prevent system from failing if this drive doesn't mount
    ];
@@ -118,7 +118,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   alejandra  
+   alejandra
    bat
    bun
    delta

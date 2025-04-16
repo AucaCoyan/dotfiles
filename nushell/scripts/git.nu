@@ -7,7 +7,7 @@ export def summary [] {
 export def "multi pull-workspace-repos" [] {
     let workspace_list = (ls ~/workspace/)
 
-    $workspace_list.name | each { |repo| 
+    $workspace_list.name | each { |repo|
         print -n $"pulling ($repo)\n"
         cd $repo
         git pull
@@ -19,13 +19,13 @@ export def "multi pull" [] {
     let repos_list = (ls ~/repos/ )
     let other_repos_list = (ls ~/other-repos/)
 
-    $repos_list.name | each { |repo| 
+    $repos_list.name | each { |repo|
         print -n $"fetching ($repo)\n"
         cd $repo
         git fetch
     }
 
-    $other_repos_list.name | each { |repo| 
+    $other_repos_list.name | each { |repo|
         print -n $"fetching ($repo)\n"
         cd $repo
         git fetch
@@ -36,7 +36,7 @@ export def "multi pull" [] {
 export def "multi pull-mule-repos" [] {
     let workspace_list = (ls ~/workspace/digital*)
 
-    $workspace_list.name | each { |repo| 
+    $workspace_list.name | each { |repo|
         print -n $"fetching ($repo)\n"
         cd $repo
         git pull origin HEAD
@@ -44,13 +44,13 @@ export def "multi pull-mule-repos" [] {
 }
 
 export def gone [] {
-    git branch --merged 
-    | lines 
-    | where $it !~ '\*' 
-    | str trim 
-    | where $it != 'master' and $it != 'main' 
+    git branch --merged
+    | lines
+    | where $it !~ '\*'
+    | str trim
+    | where $it != 'master' and $it != 'main'
     | each {
-         |it| git branch -d $it 
+         |it| git branch -d $it
          }
 }
 

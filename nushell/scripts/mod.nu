@@ -15,7 +15,7 @@ export use yazi.nu *
 export def --env f [
 ] {
     let destination = (fd --max-depth 1 --min-depth 1
-    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules 
+    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules
     -- . # any name
     ~/repos #all these dirs
     ~/other-repos
@@ -54,7 +54,7 @@ export def user-profile-path [] {
     [
         $env.USERPROFILE,
         "\\repos\\dotfiles\\Powershell\\oh-my-posh.config.json"
-    ] 
+    ]
     | str join
 }
 
@@ -73,8 +73,8 @@ export def new-junction [
         "-Target",
         $target
         ] |
-        str join 
-        ' '     # add this separator to join with spaces 
+        str join
+        ' '     # add this separator to join with spaces
         )
         echo $command
         pwsh -Command $command
@@ -85,8 +85,8 @@ export def new-junction [
         $target
         $name,
         ] |
-        str join 
-        ' '     # add this separator to join with spaces 
+        str join
+        ' '     # add this separator to join with spaces
         )
         echo $command
         bash -c $command
@@ -102,7 +102,7 @@ export def "from jwt" []: string -> record {
         header:    ($in.0 | decode base64 --url --nopad | decode )
         payload:   ($in.1 | decode base64 --url --nopad | decode )
         signature: ($in.2 | decode base64 --url --nopad | decode )
-      } | convert-datetime 'exp' 
+      } | convert-datetime 'exp'
       | convert-datetime 'iat'
       | convert-datetime 'nbf'
     )

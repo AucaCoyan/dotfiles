@@ -20,9 +20,9 @@ export def main [folder: path] {
 #        # mv --verbose $".\\($subs)" $"($el).srt"
 #        break
 #        cd ..
-#        } 
+#        }
     $files | each { |dir|
-        
+
         cd $dir
         mv "2_English.srt" $"..\\..\\($dir).srt"
         ls

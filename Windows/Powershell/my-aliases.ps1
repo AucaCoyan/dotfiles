@@ -1,6 +1,6 @@
 # Alias File
 # Exported by : aucac
-# 
+#
 # Remember to remove any "ReadOnly" alias with:
 # :%s/.*ReadOnly*\n//gc
 # and delete empty lines with

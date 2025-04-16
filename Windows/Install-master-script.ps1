@@ -11,13 +11,13 @@ $ErrorActionPreference = 'Stop'
 
 $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
-# --------------------- Install-master-script.ps1 --------------------- 
+# --------------------- Install-master-script.ps1 ---------------------
 
 # import Appx or this wont work
 # https://superuser.com/questions/1456837/powershell-get-appxpackage-not-working
 if ($PSVersionTable.PSVersion.Major -eq 5) {
     # -UseWindowsPowershell it doesn't work on PS 5.0, only in 7.0
-    Import-Module -Name Appx 
+    Import-Module -Name Appx
 }
 elseif ($PSVersionTable.PSVersion.Major -eq 7) {
     # -UseWindowsPowershell it doesn't work on PS 5.0, only in 7.0
@@ -45,7 +45,7 @@ else {
     Write-Host "Winget found. Skipping`n" -ForegroundColor Yellow
 }
 
-# Install PS7 
+# Install PS7
 Write-Host "Installing Powershell 7 - " -ForegroundColor Yellow -NoNewline; Write-Host "[2-10]" -ForegroundColor Green -BackgroundColor Black
 If (!(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe")) {
     winget install --id Microsoft.Powershell --source winget #  --accept-package-agreements --accept-source-agreements doesnt work on PS 5.0
@@ -126,7 +126,7 @@ try {
     scoop install main/nu
     scoop install main/neovim extras/neovide
     scoop install main/ripgrep
-    scoop install extras/vscode 
+    scoop install extras/vscode
     scoop install main/yazi
 
     # graphical apps
@@ -139,7 +139,7 @@ try {
     scoop install extras/obsidian
     scoop install extras/peazip
     scoop install extras/powertoys
-    scoop install extras/sumatrapdf 
+    scoop install extras/sumatrapdf
     scoop install extras/vlc
     scoop install extras/windirstat
 
@@ -195,7 +195,7 @@ if (!$dotfilesFolderExists) {
 }
 else {
     Write-Host "~/repos/dotfiles/ folder found. Skipping`n" -ForegroundColor Yellow
-    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
+    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n"
 }
 
 # hardlink the .gitconfig
@@ -208,7 +208,7 @@ if (!$dotgitconfigExists) {
 }
 else {
     Write-Host "~/.gitconfig found. Skipping`n" -ForegroundColor Yellow
-    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n" 
+    # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n"
 }
 
 # Install glyphed fonts
@@ -238,7 +238,7 @@ try {
     # (you don't need to create the directory)
     Expand-Archive ".\$Font.zip" -DestinationPath $fontsToInstallDirectory
 
-    
+
     # install the fonts
     $fontsToInstall = Get-ChildItem $fontsToInstallDirectory -Recurse -Include '*.ttf'
 
@@ -352,14 +352,14 @@ if (!$nu_scriptsFolderExists) {
 }
 else {
     Write-Host "~/other-repos/nu/nu_scripts/ folder found. Skipping`n" -ForegroundColor Yellow
-    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
+    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n"
 }
 if (!$nupmFolderExists) {
     git clone https://github.com/nushell/nupm "$HOME\other-repos\nupm"
 }
 else {
     Write-Host "~/other-repos/nupm/ folder found. Skipping`n" -ForegroundColor Yellow
-    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n" 
+    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n"
 }
 
 # Catppuccin
