@@ -114,7 +114,6 @@ export def --env sign [] {
         print "\n ✍  Signing the app"
         cargo make sign-windows-installer
 
-
         print "\n ⛏  building the portable"
         cargo make --profile release --skip-tasks build-windows-resources -- build-windows-portable
 
@@ -187,4 +186,13 @@ export module package {
         error make {msg: $"Not implemented", }
     }
 
-}
+    # TODO
+    export def "build-appimage" [] {
+        if $nu.os-info.name == "linux" {
+            cargo make --profile release -- create-app-image
+        } else {
+        error make {msg: $"Not implemented", }
+        }
+    }
+
+} # package module
