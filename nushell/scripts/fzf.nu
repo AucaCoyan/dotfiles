@@ -54,11 +54,18 @@ export def "fuzzy-edit-file" [] {
     --hidden
     --no-ignore
     --ignore-vcs
+    --exclude '*.pyc'
+    --exclude '*.o'
+    --exclude '*.dll'
     --exclude node_modules
     --exclude .venv # also excludes nested .venv folders
     --exclude .git
+
     -- . # any name
-    | fzf) # pipe it to fzf
+    | fzf
+    --preview 'fzf-preview.sh {}' 
+    --bind 'focus:transform-header:file --brief {}'
+    ) # pipe it to fzf
     nvim $destination
 }
 
