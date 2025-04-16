@@ -1,4 +1,4 @@
-export def fuzzy-history-search [] { bat $nu.history-path | fzf | clip }
+export def fuzzy-history-search [] { history | get command | uniq | fzf }
 
 const tablen = 8
 
