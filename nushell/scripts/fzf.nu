@@ -63,7 +63,7 @@ export def "fuzzy-edit-file" [] {
 
     -- . # any name
     | fzf
-    --preview 'fzf-preview.sh {}' 
+    --preview 'fzf-preview.sh {}'
     --bind 'focus:transform-header:file --brief {}'
     ) # pipe it to fzf
     nvim $destination

@@ -207,7 +207,10 @@ if (!$dotgitconfigExists) {
     New-Item -Type HardLink -path ~/.gitconfig -Target ~\repos\dotfiles\.gitconfig
 }
 else {
-    Write-Host "~/.gitconfig found. Skipping`n" -ForegroundColor Yellow
+    Write-Host "~/.gitconfig found. Renaming to gitconfig.bak...`n" -ForegroundColor Yellow
+    Rename-Item -Path ~/.gitconfig -NewName gitconfig.bak
+    Write-Host "Creating Symlink" -ForegroundColor Yellow
+    New-Item -Type HardLink -path ~/.gitconfig -Target ~\repos\dotfiles\.gitconfig
     # Write-Error "~\repos\dotfiles\ folder exists. Stopping excecution.`n"
 }
 
