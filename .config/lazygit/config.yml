@@ -25,3 +25,74 @@ git:
   paging:
     colorArg: always
     pager: delta --dark --paging=never
+
+customCommands:
+  # init git flow
+  - key: 'n'
+    context: 'localBranches'
+    prompts:
+      - type: 'menu'
+        title: 'What kind of branch is it?'
+        key: 'BranchType'
+        options:
+          - name: 'feature'
+            description: 'a feature branch'
+            value: 'feature'
+          - name: 'hotfix'
+            description: 'a hotfix branch'
+            value: 'hotfix'
+          - name: 'release'
+            description: 'a release branch'
+            value: 'release'
+      - type: 'input'
+        title: 'What is the new branch name?'
+        key: 'BranchName'
+        initialValue: ''
+    command: "git flow {{.Form.BranchType}} start {{.Form.BranchName}}"
+    loadingText: 'Creating branch'
+
+  # Create GitHub pull request
+  - key: "<c-r>"
+    command: "gh pr create --fill --web"
+    context: "global"
+    loadingText: "Creating pull request on GitHub"
+
+  # Open PR in the browser
+  - key: "G"
+    command: "gh pr view --web {{.SelectedLocalBranch.UpstreamBranch}}"
+    context: "localBranches"
+    description: "Go to MR in gitlab"
+    stream: true
+
+  # Select a PR number to checkout
+  - key: "v"
+    context: "localBranches"
+    loadingText: "Checking out GitHub Pull Request..."
+    command: "gh pr checkout {{.Form.PullRequestNumber}}"
+    prompts:
+      - type: "menuFromCommand"
+        title: "Which PR do you want to check out?"
+        key: "PullRequestNumber"
+        command: >-
+          gh pr list --json number,title,headRefName,updatedAt
+          --template '{{`{{range .}}{{printf "#%v: %s - %s (%s)" .number .title .headRefName (timeago .updatedAt)}}{{end}}`}}'
+        filter: '#(?P<number>[0-9]+): (?P<title>.+) - (?P<ref_name>[^ ]+).*'
+        valueFormat: '{{.number}}'
+        labelFormat: '{{"#" | black | bold}}{{.number | white | bold}} {{.title | yellow | bold}}{{" [" | black | bold}}{{.ref_name | green}}{{"]" | black | bold}}'
+
+  # add gitmojis to the commit
+  - command: git commit -m '{{ .Form.emoji }} {{ .Form.message }}'
+    context: files
+    description: Commit changes using gitmojis
+    key: C
+    prompts:
+    - command: gitmoji list
+      filter: ^(.*?)\t(:.*?:)\t(.*)$
+      key: emoji
+      labelFormat: '{{ .group_1 }} - {{ .group_3 }}'
+      title: 'Select a gitmoji:'
+      type: menuFromCommand
+      valueFormat: '{{ .group_2 }}'
+    - key: message
+      title: 'Enter a commit message:'
+      type: input
