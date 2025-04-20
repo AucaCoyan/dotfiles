@@ -1,35 +1,5 @@
-export use espanso *
+export use espanso
 export module "check pr" {
-    export def "espanso" [] {
-        print " checking format"
-        cargo fmt --all -- --check
-
-        print " running cargo clippy"
-        # --locked is for prevent updating the cargo.lock file
-        # is for any situation in which you don't want to update the deps.
-        cargo clippy --workspace --all-targets --all-features --no-deps # --locked
-        # if $nu.os-info.name == "windows" {
-        #     cargo clippy -- -D warnings
-        # } else if $nu.os-info.name = "linux" {
-        #     cargo clippy -p espanso --features wayland -- -D warnings
-        # } else {
-        #     error make {msg: "cargo build not configured!" }
-        # }
-
-        print " running cargo build"
-        if $nu.os-info.name == "windows" {
-            cargo make -- build-binary
-        } else if $nu.os-info.name == "linux" {
-            print " building for wayland"
-            cargo make --env NO_X11=true --profile release -- build-binary
-        } else {
-            cargo make --profile release -- build-macos-arm-binary
-        }
-
-        print " running cargo test"
-        cargo test
-    }
-
     export def "nushell" [] {
         print "you already have toolkit.nu!"
     }
@@ -204,7 +174,7 @@ export module "pr counts" {
 # for exaple
 # grab repo name "organization/my_special_repo"
 # returns "myspecial_repo"
-export def "grab repo name" [ghrepo: string]: [string -> string] {
+def "grab repo name" [ghrepo: string]: [string -> string] {
     $ghrepo | split column "/" | get column2 | last
 }
 
@@ -242,55 +212,4 @@ def "clone all" [list_of_repos: list<string>, destination: path] {
                 gh repo clone $repo $single_repo_dir
             }
         }
-}
-
-# clone repos
-export module "clone all" {
-    export def --env "espanso repos" [] {
-        let list_of_repos = [
-            "espanso/espanso"
-            "espanso/website"
-            "espanso/hub"
-            "espanso/hub-frontend"
-        ]
-
-        clone all $list_of_repos $"($env.home)/other-repos/espanso"
-    }
-
-    export def --env "espanso forks" [] {
-        let repos_dir = $"($env.home)/repos"
-
-        let list_of_repos = [
-            "espanso"
-            "website"
-            "hub"
-            "hub-frontend"
-        ]
-
-        clone all $list_of_repos $repos_dir
-    }
-
-    export def --env "nushell repos" [] {
-        let nu_dir = $"($env.home)/other-repos/nu"
-
-        let list_of_repos = [
-            "nushell"
-            "nu_scripts"
-            "vscode-nushell-lang"
-        ]
-
-        clone all $list_of_repos $nu_dir
-    }
-
-    export def --env "nushell forks" [] {
-        let repos_dir = $"($env.home)/repos"
-
-        let list_of_repos = [
-            "nushell"
-            "nu_scripts"
-            "vscode-nushell-lang"
-        ]
-
-        clone all $list_of_repos $repos_dir
-    }
 }

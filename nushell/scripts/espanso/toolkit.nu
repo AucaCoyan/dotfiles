@@ -154,8 +154,39 @@ export def "check-desktop-environment" [] {
     }
 }
 
+export def "check-pr" [] {
+    print " checking format"
+    cargo fmt --all -- --check
+
+    print " running cargo clippy"
+    # --locked is for prevent updating the cargo.lock file
+    # is for any situation in which you don't want to update the deps.
+    cargo clippy --workspace --all-targets --all-features --no-deps # --locked
+    # if $nu.os-info.name == "windows" {
+    #     cargo clippy -- -D warnings
+    # } else if $nu.os-info.name = "linux" {
+    #     cargo clippy -p espanso --features wayland -- -D warnings
+    # } else {
+    #     error make {msg: "cargo build not configured!" }
+    # }
+
+    print " running cargo build"
+    if $nu.os-info.name == "windows" {
+        cargo make -- build-binary
+    } else if $nu.os-info.name == "linux" {
+        print " building for wayland"
+        cargo make --env NO_X11=true --profile release -- build-binary
+    } else {
+        cargo make --profile release -- build-macos-arm-binary
+    }
+
+    print " running cargo test"
+    cargo test
+}
+
 export module package {
     # builds the .deb package and if you like, reinstalls it
+    #
     # run with `toolkit package-deb reinstall true
     export def "build-deb" [--reinstall = false] {
         if $nu.os-info.name == "windows" {
@@ -182,11 +213,11 @@ export module package {
     }
 
     # TODO
-    export def "build-fedora" [] {
-        error make {msg: $"Not implemented", }
-    }
+    # export def "build-fedora" [] {
+    #     error make {msg: $"Not implemented", }
+    # }
 
-    # TODO
+    # builds the AppImage
     export def "build-appimage" [] {
         if $nu.os-info.name == "linux" {
             cargo make --profile release -- create-app-image
@@ -196,3 +227,4 @@ export module package {
     }
 
 } # package module
+
