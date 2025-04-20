@@ -33,7 +33,7 @@ export def --env nu_scripts [] {
 # cd into AppData/local/nvim/lua/custom && nvim .
 export def --env vimrc [] {
     if $nu.os-info.name == "windows" {
-        cd ~\AppData\Local\nvim\lua\custom
+        cd ~\AppData\Local\nvim
         nvim .
     } else {
         cd ~/repos/dotfiles/.config/preconfigured-nvim/kickstart.nvim/
