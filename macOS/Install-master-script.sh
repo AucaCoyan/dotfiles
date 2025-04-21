@@ -19,6 +19,7 @@ brew install mdbook
 brew install neovim
 brew install nushell
 brew install ripgrep
+brew install tig
 
 brew install fnm
 fnm install --latest
