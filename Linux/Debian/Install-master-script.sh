@@ -64,9 +64,6 @@ source ~/.bashrc
 # brew recommends to install gcc, but I prefer to have it just on nala or apt-get
 # brew install gcc
 
-# `nushell`
-echo -e '\n### Install nushell'
-brew install nushell
 
 # repos and other-repos folders
 echo -e '\n### create ~/repos/'
@@ -117,8 +114,6 @@ cp ~/other-repos/catppuccin/bat/themes/*.tmTheme "$(bat --config-dir)/themes"
 bat cache --build
 # bat theme is assigned in my-aliases.nu
 
-echo -e '\n### `ripgrep`'
-brew install ripgrep
 
 echo -e '\n### `fd`'
 sudo apt-get install fd-find -y
@@ -126,8 +121,6 @@ echo -e '\n### symlinking fd-find to bat because of the name collition'
 ln --symbolic --force --no-dereference $(which fdfind) ~/.local/bin/fd
 
 ## install oh-my-posh
-echo -e '\n### `oh-my-posh`'
-brew install jandedobbeleer/oh-my-posh/oh-my-posh
 
 # install `FiraCode`
 echo -e '\nInstalling Font FiraCode'
@@ -198,16 +191,9 @@ sudo apt-get install pkg-config libssl-dev -y
 cargo binstall gitmoji-rs
 gitmoji init --default
 
-echo -e '\n### bacon'
 cargo binstall --locked bacon
-
-echo -e '\n### cargo-update'
 cargo binstall cargo-update
-
-echo -e '\n### tokei'
 cargo binstall tokei
-
-echo -e '\n### gfold'
 cargo binstall --locked gfold
 
 echo -e '\n### qdirstat'
@@ -220,11 +206,16 @@ sudo dpkg -i git-delta*.deb
 echo -e '\n### Making Applications folder'
 mkdir --parents ~/Applications
 
-echo -e '\n### glab'
-brew install glab
-
-echo -e '\n### fzf'
+brew install biome
 brew install fzf
+brew install glab
+brew install jandedobbeleer/oh-my-posh/oh-my-posh
+# `nushell`
+brew install nushell
+brew install ripgrep
+
+# yazi and dependencies
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 
 # Clean up
 echo -e '\n### Clean up'
