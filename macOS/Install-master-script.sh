@@ -9,6 +9,7 @@ echo -e '\n### `brew`'
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
 # ==> Formulae
+brew install biome
 brew install delta
 brew install fzf
 # brew install glab
@@ -20,6 +21,9 @@ brew install neovim
 brew install nushell
 brew install ripgrep
 brew install tig
+
+# yazi and dependencies
+brew install yazi ffmpeg sevenzip jq poppler fd ripgrep fzf zoxide resvg imagemagick font-symbols-only-nerd-font
 
 brew install fnm
 fnm install --latest
