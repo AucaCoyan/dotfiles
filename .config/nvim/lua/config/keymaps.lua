@@ -7,12 +7,18 @@
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- Clear highlights on search when pressing <Esc> in normal mode
+--  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- [[ Common shortcuts from other editors and modern OSes]]
+-- save with Ctrl + S
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', { desc = 'general save file' })
+vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>')
 
--- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+-- set wrap in windows/linux and in macos
+vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
+
 
 -- source the entire file
 -- vim.keymap.set('n', '<space><space>x', '<cmd>source %<CR>')
@@ -48,7 +54,7 @@ vim.keymap.set('t', '<C-Down>', '<cmd>resize -2<CR>')
 vim.keymap.set('t', '<C-Left>', '<cmd>vertical resize +2<CR>')
 vim.keymap.set('t', '<C-Right>', '<cmd>vertical resize -2<CR>')
 
--- [[ tabs]]
+-- [[ tabs ]]
 -- go to next tab
 vim.keymap.set('n', '<Tab>', '<cmd>tabNext<CR>')
 -- shift tab
@@ -63,12 +69,12 @@ vim.keymap.set('n', '<leader>b', '<cmd>enew <CR>', { desc = 'new [b]uffer' })
 -- buffer delete
 vim.keymap.set('n', '<leader>x', '<cmd>bd<CR>', { desc = '[b]uffer [d]elete' })
 
+-- [[ Diagnostic keymaps ]]
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+
 -- quickfix list
 vim.keymap.set('n', '<M-j>', '<cmd>cnext<CR>')
 vim.keymap.set('n', '<M-k>', '<cmd>cprev<CR>')
-
--- save with Ctrl + S
-vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>')
 
 --- editing
 -- in visual mode, press `J` to move the lines down and `K` to move them up
@@ -81,13 +87,9 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 
 vim.keymap.set('n', '<leader>wk', '<cmd>WhichKey <CR>', { desc = 'whichkey all keymaps' })
 
--- set wrap in windows/linux and in macos
-vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
 
 -- [[ Python ]]
 vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
-vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })
-vim.keymap.set('n', '<leader>ps', '<cmd>!uv sync <CR>', { desc = '[p]ython: uv [s]ync' })
 vim.keymap.set('n', '<leader>pm', '<cmd>!isort . --force-single-line-imports<CR>', { desc = '[p]ython: isort i[m]ports' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
 
