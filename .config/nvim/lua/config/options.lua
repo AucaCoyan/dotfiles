@@ -80,6 +80,7 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Minimal number of screen lines to keep above and below the cursor.
 vim.opt.scrolloff = 10
+vim.opt.sidescrolloff = 8
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.opt.hlsearch = true
@@ -104,4 +105,8 @@ vim.opt.swapfile = false
 vim.opt.termguicolors = true
 -- display lines as one long line
 vim.opt.wrap = false
-vim.opt.sidescrolloff = 8
+
+-- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
+-- instead raise a dialog asking if you wish to save the current file(s)
+-- See `:help 'confirm'`
+vim.opt.confirm = true
