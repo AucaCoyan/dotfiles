@@ -1,0 +1,50 @@
+{
+    "recommendations": [
+        // basic defaults
+        "vscodevim.vim",
+        "usernamehw.errorlens",
+        "catppuccin.catppuccin-vsc",
+        "catppuccin.catppuccin-vsc-icons",
+        "wakatime.vscode-wakatime",
+        "fill-labs.dependi",
+        // files and format support
+        "remcohaszing.schemastore",
+        "redhat.vscode-yaml",
+        "tamasfe.even-better-toml",
+        // nushell addition to the defaults
+        "thenuprojectcontributors.vscode-nushell-lang",
+        // optional:
+        "streetsidesoftware.code-spell-checker",
+        "davidanson.vscode-markdownlint",
+        "editorconfig.editorconfig",
+        // GitHub
+        "github.vscode-pull-request-github",
+        "github.remotehub",
+        "github.vscode-github-actions",
+        // ---------------- Other profiles ---------------- 
+        // python
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+        "ms-python.flake8",
+        "ms-python.pylint",
+        "ms-python.isort",
+        // rust
+        "rust-lang.rust-analyzer",
+        "vadimcn.vscode-lldb",
+        // various languages
+        "ms-dotnettools.csharp",
+        "ms-dotnettools.csdevkit",
+        "ms-vscode.cpptools",
+        "ms-vscode.powershell",
+        "dart-code.dart-code",
+        "dart-code.flutter",
+        "bradlc.vscode-tailwindcss",
+    ],
+    "unwantedRecommendations": [
+        "ms-toolsai.jupyter",
+        "ms-toolsai.jupyter-renderers",
+        "github.copilot",
+    ],
+}

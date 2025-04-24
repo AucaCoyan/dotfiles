@@ -1,0 +1,282 @@
+{
+    "workbench.settings.editor": "json",
+    // change font
+    "editor.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "scm.inputFontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "chat.editor.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "debug.console.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "editor.codeLensFontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "notebook.output.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "markdown.preview.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    "editor.inlayHints.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    // ui
+    "editor.minimap.enabled": false,
+    // "window.menuBarVisibility": "hidden",
+    "problems.defaultViewMode": "table",
+    "editor.rulers": [
+        81
+    ],
+    "editor.lineNumbers": "relative",
+    // "workbench.editor.showTabs": false,
+    "[search-result]": {
+        "editor.lineNumbers": "on"
+    },
+    "scm.defaultViewMode": "tree",
+    // APC
+    // "apc.activityBar": {
+    // "position": "bottom",
+    // "hideSettings": true,
+    // "size": 28
+    // },
+    // "apc.electron": {
+    // "titleBarStyle": "hiddenInset",
+    // "trafficLightPosition": {
+    // "x": 12,
+    // "y": 10
+    // }
+    // // overriden configs
+    // // "window.commandCenter": false,
+    // // "workbench.layoutControl.enabled": false
+    // },
+    // "apc.font.family": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
+    // "apc.statusBar": {
+    // "position": "editor-bottom",
+    // "height": 28,
+    // "fontSize": 14
+    // },
+    // custom css
+    // "apc.stylesheet": {
+    // ".sidebar > .composite": "height: 12px !important", // removes the title of the sidebar
+    // ".title-label": "display: none !important",
+    // ".title-actions": "display: none !important",
+    // ".tabs-and-actions-container > .editor-actions": "display: none !important", // left of the tabs (preview markdown, etc)
+    // ".titlebar-center": "display: none !important", // name of the project (top middle of the window)
+    // ".titlebar-right": "display: none !important",
+    // ".inline-tabs-placeholder": "display: none !important",
+    // // ".split-view-view .visible": "background-color: #110f17 !important" // special background color of Geist Theme
+    // },
+    // Misc
+    "workbench.startupEditor": "none",
+    "explorer.compactFolders": false,
+    "editor.linkedEditing": true,
+    // "breadcrumbs.filePath": "off", // file location in breradcrumbs
+    // specific langs
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[yaml]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
+    },
+    "editor.formatOnSave": true,
+    "editor.stickyScroll.enabled": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "git.openRepositoryInParentFolders": "always",
+    "glassit.alpha": 255,
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "notebook.lineNumbers": "on",
+    "openapi.platformUrl": "https://platform.42crunch.com",
+    "openapi.platformServices": "",
+    "openapi.platformScandManager": {
+        "timeout": 0,
+        "url": "",
+        "auth": "none",
+        "header": {
+            "name": "",
+            "value": ""
+        }
+    },
+    "openapi.docker": {
+        "replaceLocalhost": true,
+        "useHostNetwork": true
+    },
+    "openapi.platformConformanceScanRuntime": "docker",
+    "openapi.platformConformanceScanImage": "42crunch/scand-agent:v2.0.0",
+    "redhat.telemetry.enabled": false,
+    "ruff.showNotifications": "always",
+    "rust-analyzer.check.command": "clippy",
+    "rust-analyzer.check.extraArgs": [
+        //"--all-targets",
+        // "--all-features",
+        // "--all-targets", // it doesnt work with this flag
+        "--",
+        "-W",
+        "clippy::pedantic",
+        "-A",
+        "clippy::too_many_lines",
+        "-A",
+        "clippy::needless_pass_by_value",
+        "-A",
+        "clippy::missing_errors_doc",
+        "-A",
+        "clippy::missing_panics_doc",
+        "-A",
+        "clippy::cast_possible_wrap",
+        "-A",
+        "clippy::module_name_repetitions",
+        "-A",
+        "clippy::match_same_arms",
+        "-A",
+        "clippy::unnecessary_wraps",
+        "-A",
+        "clippy::cast_possible_truncation",
+        "-A",
+        "clippy::cast_sign_loss",
+        "-A",
+        "clippy::ptr_as_ptr",
+        "-A",
+        "clippy::as_conversions",
+        "-A",
+        "clippy::used_underscore_binding",
+        "-A",
+        "clippy::no_effect_underscore_binding",
+        "-A",
+        "clippy::borrow_as_ptr",
+        "-A",
+        "clippy::must_use_candidate",
+        "-A",
+        "clippy::similar_names",
+        "-A",
+        "clippy::struct_excessive_bools",
+        "-A",
+        "clippy::struct_field_names",
+        "-A",
+        "clippy::wildcard_imports",
+        "-A",
+        "clippy::items_after_statements",
+        "-A",
+        "clippy::used_underscore_binding",
+        "-A",
+        "clippy::module_name_repetitions",
+        "-A",
+        "clippy::cast_lossless",
+        "-A",
+        "clippy::unused_self"
+    ],
+    "security.workspace.trust.untrustedFiles": "open",
+    "sqlfluff.dialect": "tsql",
+    "sqlfluff.excludeRules": [
+        "ambiguous.column_count"
+    ],
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.localEchoStyle": "dim",
+    // Vim
+    "vim.highlightedyank.color": "#a9dc7660",
+    "vim.highlightedyank.duration": 250,
+    "vim.highlightedyank.enable": true,
+    "vim.leader": " ",
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "b",
+                "d"
+            ],
+            "commands": [
+                "workbench.action.closeActiveEditor"
+            ]
+        },
+        // move up down left right on tooltips with HJKL
+        {
+            "command": "editor.action.scrollLeftHover",
+            "key": "h",
+            "when": "editorHoverFocused"
+        },
+        {
+            "command": "editor.action.scrollDownHover",
+            "key": "j",
+            "when": "editorHoverFocused"
+        },
+        {
+            "command": "editor.action.scrollUpHover",
+            "key": "k",
+            "when": "editorHoverFocused"
+        },
+        {
+            "command": "editor.action.scrollRightHover",
+            "key": "l",
+            "when": "editorHoverFocused"
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": [
+                "<space>"
+            ],
+            "commands": [
+                "whichkey.show"
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.visualModeKeyBindings": [
+        // Bind > and < in visual mode to indent/outdent lines (repeatable):
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        }
+    ],
+    "workbench.colorCustomizations": {
+        "terminal.ansiBlack": "#1D2021",
+        "terminal.ansiBlue": "#00a1f9",
+        "terminal.ansiBrightBlack": "#665C54",
+        "terminal.ansiBrightBlue": "#0D6678",
+        "terminal.ansiBrightCyan": "#8BA59B",
+        "terminal.ansiBrightGreen": "#237e02",
+        "terminal.ansiBrightMagenta": "#8F4673",
+        "terminal.ansiBrightRed": "#FB543F",
+        "terminal.ansiBrightWhite": "#FDF4C1",
+        "terminal.ansiBrightYellow": "#FAC03B",
+        "terminal.ansiCyan": "#8BA59B",
+        "terminal.ansiGreen": "#95C085",
+        "terminal.ansiMagenta": "#8F4673",
+        "terminal.ansiRed": "#FB543F",
+        "terminal.ansiWhite": "#A89984",
+        "terminal.ansiYellow": "#FAC03B",
+        "terminal.background": "#131212",
+        "terminal.foreground": "#dddad6"
+    },
+    "workbench.iconTheme": "catppuccin-mocha",
+    "workbench.sideBar.location": "right",
+    // deny telemetry and others
+    "workbench.layoutControl.enabled": false,
+    "window.zoomLevel": 1,
+    "workbench.colorTheme": "Catppuccin Mocha"
+}

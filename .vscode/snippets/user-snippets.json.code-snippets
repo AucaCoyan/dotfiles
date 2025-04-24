@@ -1,0 +1,94 @@
+{
+  // Place your global snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and
+  // description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope
+  // is left empty or omitted, the snippet gets applied to all languages. The prefix is what is
+  // used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders.
+  // Placeholders with the same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"scope": "javascript,typescript",
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "component": {
+    "scope": "javascript,typescript",
+    "prefix": "next-page",
+    "body": [
+      "export default function ${1:Pagename}({ }) {",
+      "  return (",
+      "    <main>${2:component}",
+      "    </main>",
+      "  )",
+      "}"
+    ],
+    "description": "React component"
+  },
+  "react-component": {
+    "scope": "javascript, typescript",
+    "prefix": "react-component",
+    "body": [
+      "export default function ${1:Pagename}({ }) {",
+      "  return (",
+      "    <main>${2:component}",
+      "    </main>",
+      "  )",
+      "}"
+    ]
+  },
+  "ustate": {
+    "scope": "javascript,typescript",
+    "prefix": "ustate",
+    "body": [
+      "const [${1:state}, set${2:state}] = useState()"
+    ],
+    "description": "useState React hook"
+  },
+  "reactArrowFunctionExportComponent": {
+    // "key": "reactArrowFunctionExportComponent", // "key" not allowed
+    "prefix": "rafce",
+    "body": [
+      "import React from 'react'",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = () => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "typescriptReactArrowFunctionExportComponent": {
+    // "key": "typescriptReactArrowFunctionExportComponent", // "key" not allowed
+    "prefix": "tsrafce",
+    "body": [
+      "import React from 'react'",
+      "",
+      "type Props = {}",
+      "",
+      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
+      "  return (",
+      "    <div>${1:first}</div>",
+      "  )",
+      "}",
+      "",
+      "export default ${1:${TM_FILENAME_BASE}}"
+    ],
+    "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface",
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  },
+  "useState": {
+    "prefix": "useStateSnippet",
+    "body": [
+      "const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})"
+    ],
+    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  }
+}
