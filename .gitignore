@@ -11,8 +11,13 @@ nushell/unused/
 nushell/nu/*
 nushell/plugin.msgpackz
 .config/helix/helix.log
-.vscode/settings.json
 **/history*
+
+.vscode/globalStorage
+.vscode/profiles
+.vscode/sync
+.vscode/workspaceStorage
+
 
 # lazy.nvim commit hashes
 .config/nvim/lazy-lock.json
