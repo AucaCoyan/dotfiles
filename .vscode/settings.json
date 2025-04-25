@@ -75,6 +75,7 @@
     "chat.extensionTools.enabled": false,
     "chat.detectParticipant.enabled": false,
     "chat.unifiedChatView": false,
+    "workbench.editor.empty.hint": "hidden",
     // Allow to open files from WSL
     "security.workspace.trust.untrustedFiles": "open",
     // ---------------------------------- Git ----------------------------------- 
