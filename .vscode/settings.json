@@ -17,6 +17,9 @@
     // ----------------------------- UI Changes --------------------------------- 
     // General window features
     //
+    // Make the window a lil bit bigger. It's a float, so you can put decimal
+    // values (1.5, or 0.7)
+    "window.zoomLevel": 1,
     // "File - Edit - View ..." menu
     "window.menuBarVisibility": "hidden",
     // Command pallete (the rectangle on the top of the title bar)
@@ -29,30 +32,38 @@
     "workbench.startupEditor": "none",
     // show a single title of the opened file
     "workbench.editor.showTabs": "single",
-    "editor.minimap.enabled": false,
     "workbench.sideBar.location": "right",
+    // Editor section
+    "editor.minimap.enabled": false,
     "editor.rulers": [
         81
     ],
     "editor.lineNumbers": "relative",
+    "editor.linkedEditing": true,
+    "editor.formatOnSave": true,
+    "editor.stickyScroll.enabled": true,
     // sub menus, or toolbars
+    // File Explorer
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     // don't nest folders in a line
     "explorer.compactFolders": false,
+    // Other windows
     "problems.defaultViewMode": "table",
     "[search-result]": {
         "editor.lineNumbers": "on"
     },
-    // Make the window a lil bit bigger. It's a float, so you can put decimal
-    // values (1.5, or 0.7)
-    "window.zoomLevel": 1,
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.localEchoStyle": "dim",
     // Themes
-    "workbench.iconTheme": "catppuccin-mocha",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.colorTheme": "Catppuccin Latte",
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 230,
     "chat.agent.enabled": false,
+    "security.workspace.trust.untrustedFiles": "open",
     // ---------------------------------- Git ----------------------------------- 
     "git.autofetch": true,
     "git.confirmSync": false,
@@ -269,12 +280,4 @@
     // // ".split-view-view .visible": "background-color: #110f17 !important" // special background color of Geist Theme
     // },
     // Misc
-    // ----------------------------- Undocumented Config --------------------------------- 
-    "editor.linkedEditing": true,
-    // "breadcrumbs.filePath": "off", // file location in breradcrumbs
-    "editor.formatOnSave": true,
-    "editor.stickyScroll.enabled": true,
-    "security.workspace.trust.untrustedFiles": "open",
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
-    "terminal.integrated.localEchoStyle": "dim",
 }
