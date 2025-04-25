@@ -110,8 +110,8 @@
   nixpkgs.config.allowUnfree = true;
 
   environment.sessionVariables = {
-    FLAKE = "/etc/nixos/"
-  }
+    FLAKE = "/etc/nixos/";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

@@ -21,9 +21,11 @@ as root
 rebuild switch with:
 
 ```
-sudo nixos-rebuild switch --flake /etc/nixos#default
+# to upgrade
+sudo nixos-rebuild switch --flake /etc/nixos#default --upgrade --impure
 ```
 
+`--impure` is because sudo needs to read `/home/` subdirectories
 
 nixos can't be symlinked because of:
 https://github.com/NixOS/nix/issues/8013
