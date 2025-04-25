@@ -12,6 +12,9 @@ as root
 
 ```
 # ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha /etc/nixos
+
+# or, just the configuration file
+# ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha/configuration.nix /etc/nixos/configuration.nix
 ```
 
 
@@ -24,3 +27,9 @@ sudo nixos-rebuild switch --flake /etc/nixos#default
 
 nixos can't be symlinked because of:
 https://github.com/NixOS/nix/issues/8013
+
+## use flakes
+
+```
+# ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha/flake.nix /etc/nixos/flake.nix
+```

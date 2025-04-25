@@ -15,19 +15,13 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.grub.configurationLimit = 42;
+  nix.gc = {
+      automatic = true;
+      dates = "daily";
+      options = "--delete-older-than-30d";
+  };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
-  fileSystems."/mnt/1Drive" = {
-   device = "/dev/disk/by-partlabel/1drive";
-   options = [ # If you don't have this options attribute, it'll default to "defaults"
-     # boot options for fstab. Search up fstab mount options you can use
-     "rw"
-     "users" # Allows any user to mount and unmount
-     "nofail" # Prevent system from failing if this drive doesn't mount
-   ];
- };
-
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -115,6 +109,10 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  environment.sessionVariables = {
+    FLAKE = "/etc/nixos/"
+  }
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -136,13 +134,16 @@
    gitmoji-cli
    gfold
    glab
+   ghostty
    gparted
    # grafana
    # grafana-loki
    home-manager
    keepassxc
-   nushell
+   lazygit
    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+   nh
+   nushell
    obsidian
    oh-my-posh
    onedrive
@@ -150,7 +151,8 @@
    # postgresql
    ripgrep
    rustup
-   spotify
+   signal-desktop
+   syncthing
    ticktick
    telegram-desktop
    tokei
