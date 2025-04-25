@@ -35,3 +35,9 @@ https://github.com/NixOS/nix/issues/8013
 ```
 # ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha/flake.nix /etc/nixos/flake.nix
 ```
+
+## diff the configurations
+
+```
+nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-link
+```
