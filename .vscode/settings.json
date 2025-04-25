@@ -33,8 +33,13 @@
     // show a single title of the opened file
     "workbench.editor.showTabs": "single",
     "workbench.sideBar.location": "right",
-    // Editor section
+    // ==== Editor section ====
+    // disable the problems entirely
+    "problems.visibility": true,
     "editor.minimap.enabled": false,
+    // make the diff decorations (lines added, modified, deleted) appear only on the gutter
+    // not on the scroll bar, or the explorer view
+    "scm.diffDecorations": "gutter",
     "editor.rulers": [
         81
     ],
@@ -44,6 +49,8 @@
     "editor.stickyScroll.enabled": true,
     // sub menus, or toolbars
     // File Explorer
+    // don't show problems in the file tree
+    "problems.decorations.enabled": false,
     "explorer.confirmDelete": false,
     "explorer.confirmDragAndDrop": false,
     // don't nest folders in a line
@@ -57,12 +64,18 @@
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.localEchoStyle": "dim",
-    // Themes
-    "workbench.iconTheme": "catppuccin-latte",
-    "workbench.colorTheme": "Catppuccin Latte",
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 230,
+    // Disable Copilot
     "chat.agent.enabled": false,
+    "chat.commandCenter.enabled": false,
+    "chat.mcp.enabled": false,
+    "chat.edits2.enabled": false,
+    "chat.mcp.discovery.enabled": false,
+    "chat.extensionTools.enabled": false,
+    "chat.detectParticipant.enabled": false,
+    "chat.unifiedChatView": false,
+    // Allow to open files from WSL
     "security.workspace.trust.untrustedFiles": "open",
     // ---------------------------------- Git ----------------------------------- 
     "git.autofetch": true,
@@ -84,7 +97,6 @@
         "default": "right",
         "jupyter-notebook": "left"
     },
-    "ruff.showNotifications": "always",
     "notebook.lineNumbers": "on",
     // [[ Rust ]]
     "rust-analyzer.check.command": "clippy",
@@ -154,6 +166,7 @@
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
+    "vim.statusBarColorControl": false,
     "vim.leader": " ",
     "vim.useSystemClipboard": true,
     // when yanking, flash-highlight the selection
@@ -245,6 +258,11 @@
     "telemetry.feedback.enabled": true,
     // Other
     "redhat.telemetry.enabled": false,
+    "workbench.iconTheme": "catppuccin-frappe",
+    "workbench.colorTheme": "Catppuccin Frappé",
+    "security.allowedUNCHosts": [
+        "wsl.localhost"
+    ],
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
