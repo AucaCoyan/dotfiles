@@ -14,8 +14,7 @@ matches:
   - trigger: ":espansodiscord"
     replace: "https://discord.gg/DFcCNDg7bB"
 
-# yaml-language-server: $schema=https://gist.githubusercontent.com/AucaCoyan/6bee7ef5eac923eb74adee73bdbf6818/raw/e826b3ce430d4e2d3c41cbbdcbeb979556d17832/espanso-schema.json
-# personal
+  # personal
   - trigger: "ag."
     replace: "aucacoyan@gmail.com"
   - trigger: "ah."
