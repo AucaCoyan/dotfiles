@@ -41,11 +41,12 @@
     // not on the scroll bar, or the explorer view
     "scm.diffDecorations": "gutter",
     "editor.rulers": [
-        81
+        80
     ],
     "editor.lineNumbers": "relative",
     "editor.linkedEditing": true,
     "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
     "editor.stickyScroll.enabled": true,
     // sub menus, or toolbars
     // File Explorer
@@ -84,9 +85,13 @@
     "git.enableSmartCommit": true,
     "git.openRepositoryInParentFolders": "always",
     "scm.defaultViewMode": "tree",
+    "diffEditor.ignoreTrimWhitespace": false,
     // ------------------------- Specific languages ----------------------------- 
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "biomejs.biome"
     },
     "[yaml]": {
         "editor.defaultFormatter": null,
@@ -94,6 +99,9 @@
     },
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "biomejs.biome"
+    },
     // [[ Python ]]
     "notebook.cellToolbarLocation": {
         "default": "right",
@@ -166,6 +174,11 @@
         "ambiguous.column_count"
     ],
     // [[ PowerShell ]]
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    // [[ VS Code Snippets]]
+    "[snippets]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
@@ -259,12 +272,11 @@
     // ------------------------- Disable Telemetry ------------------------------ 
     // VS Code telemetry
     "telemetry.feedback.enabled": true,
-    // Other
+    // ------------------------------- Other ------------------------------------ 
     "redhat.telemetry.enabled": false,
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
-    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
     "workbench.colorTheme": "Catppuccin Latte",
     "workbench.iconTheme": "catppuccin-latte",
     // --------------------------- Advaced Changes ------------------------------

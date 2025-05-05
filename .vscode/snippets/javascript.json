@@ -23,5 +23,15 @@
       "}"
     ],
     "description": "React component"
+  },
+  "JSDoc: new type definition": {
+    "prefix": "jsnewtype",
+    "body": [
+      "/**",
+      " * @typedef {object} ${1:TypeName} description del tipo",
+      " * @property {string} object.name Name of the person",
+      " * @property {number} object.age age of the person",
+      " */"
+    ]
   }
 }
