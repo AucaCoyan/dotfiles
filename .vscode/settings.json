@@ -89,7 +89,8 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[yaml]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
+        "editor.defaultFormatter": null,
+        "editor.tabSize": 2
     },
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -164,6 +165,7 @@
     "sqlfluff.excludeRules": [
         "ambiguous.column_count"
     ],
+    // [[ PowerShell ]]
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
@@ -259,11 +261,12 @@
     "telemetry.feedback.enabled": true,
     // Other
     "redhat.telemetry.enabled": false,
-    "workbench.iconTheme": "catppuccin-frappe",
-    "workbench.colorTheme": "Catppuccin Frappé",
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
+    "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
+    "workbench.colorTheme": "Catppuccin Latte",
+    "workbench.iconTheme": "catppuccin-latte",
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
