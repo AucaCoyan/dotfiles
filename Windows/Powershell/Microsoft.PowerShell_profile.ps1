@@ -101,13 +101,12 @@ function f {
     }
     else {
         Write-Warning "fzf is not installed. Using the first directory found by fd."
-        $selectedDirectory = ($fdOutput -split "`r`n")[0].Trim()
+        $selectedDirectory = ($fdOutput -split "`r`n")[0].Trim().Trim()
     }
 
     if ($selectedDirectory) {
         try {
-            $selectedDirectory = $selectedDirectory |
-            Set-Location $selectedDirectory
+            Set-Location -Path $selectedDirectory
             return $selectedDirectory
         }
         catch {
