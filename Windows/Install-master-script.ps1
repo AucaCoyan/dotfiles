@@ -115,21 +115,23 @@ try {
     # git is required for buckets
     scoop install git
     scoop bucket add extras
-    scoop bucket add anderlli0053_DEV-tools https://github.com/anderlli0053/DEV-tools
 
     # terminal apps
     scoop install main/bat main/less
-    scoop install main/fzf
+    scoop install main/delta
     scoop install main/fd
+    scoop install main/fzf
     scoop install main/gh
     scoop install main/glab
-    scoop install main/nu
     scoop install main/neovim extras/neovide
+    scoop install main/nu
+    scoop install main/oh-my-posh
     scoop install main/ripgrep
-    scoop install extras/vscode
+    scoop install main/tokei
     scoop install main/yazi
 
     # graphical apps
+    scoop install extras/czkawka-gui
     scoop install extras/everything
     scoop install extras/firefox
     scoop install extras/googlechrome
@@ -141,29 +143,46 @@ try {
     scoop install extras/powertoys
     scoop install extras/sumatrapdf
     scoop install extras/vlc
+    scoop install extras/vscode
     scoop install extras/windirstat
+    # scoop install main/innounp Inno Setup
 
-    # core
-    scoop install 7zip extras/anydesk autohotkey
-    scoop install czkawka-gui clipboard dbeaver delta difftastic
-    scoop install dust espanso ffmpeg
-    scoop install glow httrack
+    # Additional
+    # scoop install main/poppler # PDF rendering library
+    # scoop install extras/anydesk
+    scoop install 7zip
+    scoop install extras/autohotkey
+    scoop install clipboard
+    scoop install main/difftastic
+    scoop install dbeaver
+    scoop install dust
+    scoop install espanso 
+    scoop install main/ffmpeg
+    scoop install glow
+    scoop install httrack
     scoop install mailspring
-    scoop install oh-my-posh ov
+    scoop install ov
+    scoop install main/pandoc
     scoop install rga
-    scoop install sad scoop-completion sublime-merge teamviewer
-    scoop install tealdeer telegram terminal-icons tokei vcpkg extras/vcredist watchexec
-
-    # nushell
+    scoop install sad
+    scoop install scoop-completio
+    scoop install sublime-merge
+    scoop install tealdeer 
+    scoop install teamviewer
+    scoop install telegram
+    scoop install terminal-icons
+    scoop install extras/vcredist 
+    scoop install main/vcpkg
+    scoop install watchexec
 
     # optional apps
     # scoop install audacity extras/brave calibre digikam extras/gimp tradingview
     # scoop install mongodb mongodb-compass mongosh postgresql sqlite surrealdb
-    # scoop install authy azuredatastudio calibre gcc nomino
+    # scoop install authy calibre gcc nomino
 
     # programming languages
-    scoop install deno fnm
-    # scoop install python # installed via rye
+    scoop install main/deno
+    scoop install main/fnm
     # scoop install main/uv
     # uv python install <error>
     # uv tool install ruff
