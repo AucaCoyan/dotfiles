@@ -156,7 +156,7 @@ try {
     scoop install main/difftastic
     scoop install dbeaver
     scoop install dust
-    scoop install espanso 
+    scoop install espanso
     scoop install main/ffmpeg
     scoop install glow
     scoop install httrack
@@ -167,11 +167,11 @@ try {
     scoop install sad
     scoop install scoop-completio
     scoop install sublime-merge
-    scoop install tealdeer 
+    scoop install tealdeer
     scoop install teamviewer
     scoop install telegram
     scoop install terminal-icons
-    scoop install extras/vcredist 
+    scoop install extras/vcredist
     scoop install main/vcpkg
     scoop install watchexec
 

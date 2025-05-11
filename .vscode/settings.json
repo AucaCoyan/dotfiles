@@ -3,7 +3,7 @@
 // https://github.com/AucaCoyan/dotfiles/tree/main/.vscode
 {
     // The most importat things first:
-    // - Use json to configure the settings: 
+    // - Use json to configure the settings:
     "workbench.settings.editor": "json",
     // Use your Nerd font everywhere
     "editor.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
@@ -14,7 +14,7 @@
     "notebook.output.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
     "markdown.preview.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
     "editor.inlayHints.fontFamily": "FiraCode Nerd Font, Segoe UI Emoji, Consolas, 'Courier New', monospace",
-    // ----------------------------- UI Changes --------------------------------- 
+    // ----------------------------- UI Changes ---------------------------------
     // General window features
     //
     // Make the window a lil bit bigger. It's a float, so you can put decimal
@@ -79,14 +79,14 @@
     "workbench.editor.empty.hint": "hidden",
     // Allow to open files from WSL
     "security.workspace.trust.untrustedFiles": "open",
-    // ---------------------------------- Git ----------------------------------- 
+    // ---------------------------------- Git -----------------------------------
     "git.autofetch": true,
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "git.openRepositoryInParentFolders": "always",
     "scm.defaultViewMode": "tree",
     "diffEditor.ignoreTrimWhitespace": false,
-    // ------------------------- Specific languages ----------------------------- 
+    // ------------------------- Specific languages -----------------------------
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
@@ -269,16 +269,16 @@
             ]
         }
     ],
-    // ------------------------- Disable Telemetry ------------------------------ 
+    // ------------------------- Disable Telemetry ------------------------------
     // VS Code telemetry
     "telemetry.feedback.enabled": true,
-    // ------------------------------- Other ------------------------------------ 
+    // ------------------------------- Other ------------------------------------
     "redhat.telemetry.enabled": false,
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
-    "workbench.colorTheme": "Catppuccin Latte",
-    "workbench.iconTheme": "catppuccin-latte",
+    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.iconTheme": "catppuccin-mocha",
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
