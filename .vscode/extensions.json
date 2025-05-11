@@ -21,7 +21,7 @@
         "github.vscode-pull-request-github",
         "github.remotehub",
         "github.vscode-github-actions",
-        // ---------------- Other profiles ---------------- 
+        // ---------------- Other profiles ----------------
         // python
         "ms-python.python",
         "charliermarsh.ruff",
