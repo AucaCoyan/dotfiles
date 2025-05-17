@@ -2,9 +2,6 @@
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
 
-# scoop autocompletion
-Import-Module scoop-completion
-
 # Terminal icons and colors for ls
 Import-Module -Name Terminal-Icons
 

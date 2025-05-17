@@ -145,6 +145,7 @@ try {
     scoop install extras/vlc
     scoop install extras/vscode
     scoop install extras/windirstat
+    scoop install extras/windows-terminal
     # scoop install main/innounp Inno Setup
 
     # Additional
@@ -160,12 +161,12 @@ try {
     scoop install main/ffmpeg
     scoop install glow
     scoop install httrack
-    scoop install mailspring
+    # scoop install mailspring
     scoop install ov
     scoop install main/pandoc
     scoop install rga
     scoop install sad
-    scoop install scoop-completio
+    scoop install scoop-completion
     scoop install sublime-merge
     scoop install tealdeer
     scoop install teamviewer
