@@ -66,7 +66,7 @@
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.localEchoStyle": "dim",
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
-    "glassit.alpha": 230,
+    "glassit.alpha": 240,
     // Disable Copilot
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
