@@ -155,7 +155,7 @@ try {
     scoop install extras/autohotkey
     scoop install clipboard
     scoop install main/difftastic
-    scoop install dbeaver
+    # scoop install dbeaver
     scoop install dust
     scoop install espanso
     scoop install main/ffmpeg
