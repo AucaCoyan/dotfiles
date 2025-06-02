@@ -12,4 +12,8 @@
 	// 	],
 	// 	"description": "Log output to console"
 	// }
+	"pydantic field": {
+		"prefix": "pdfd",
+		"body": "${1:field_name}: ${2:type} = Field(alias=\"${lookup_name}\")"
+	}
 }

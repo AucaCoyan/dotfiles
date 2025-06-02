@@ -91,7 +91,7 @@
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "biomejs.biome"
+        "editor.defaultFormatter": "vscode.json-language-features"
     },
     "[yaml]": {
         "editor.defaultFormatter": null,
@@ -108,6 +108,7 @@
         "jupyter-notebook": "left"
     },
     "notebook.lineNumbers": "on",
+    "python.analysis.typeCheckingMode": "basic",
     // [[ Rust ]]
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.check.extraArgs": [
