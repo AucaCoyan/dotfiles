@@ -1,3 +1,35 @@
+# cd into folder with `fzf`
+export def --env f [] {
+    let destination = (fd --max-depth 1 --min-depth 1
+    --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules
+    -- . # any name
+    ~/repos #all these dirs
+    ~/other-repos
+    ~/other-repos/espanso
+    ~/other-repos/nu
+    ~/all-repos/
+    ~/workspace
+    ~/workspace/botmaker
+    ~/workspace/dataflow
+    ~/workspace/gcp-source
+    ~/workspace/private
+    | fzf) # pipe it to fzf
+
+    if $destination != null {
+         try {
+             cd $destination
+             return $destination
+         } catch {
+             print $"Failed to change directory to ($destination): ($in)"
+             return null
+         }
+    } else {
+         print "No directory selected."
+         return null
+    }
+    return $destination
+}
+
 export def fuzzy-history-search [] { history | get command | uniq | fzf }
 
 const tablen = 8
