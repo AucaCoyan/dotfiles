@@ -153,7 +153,6 @@
    ripgrep
    rustup
    signal-desktop
-   syncthing
    ticktick
    telegram-desktop
    tokei
