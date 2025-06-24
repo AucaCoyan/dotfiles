@@ -13,6 +13,7 @@ export def --env f [] {
     ~/workspace/dataflow
     ~/workspace/gcp-source
     ~/workspace/private
+    ~/workspace/private/template-project
     | fzf) # pipe it to fzf
 
     if $destination != null {
