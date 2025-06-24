@@ -45,6 +45,8 @@ matches:
     replace: "pareció "
   - trigger: "tambien "
     replace: "también "
+  - trigger: "portugues "
+    replace: "portugués "
 
   # Print the current date
   - trigger: ";date"
