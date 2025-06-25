@@ -47,6 +47,8 @@ matches:
     replace: "también "
   - trigger: "portugues "
     replace: "portugués "
+  - trigger: "dise;ador "
+    replace: "diseñador "
 
   # Print the current date
   - trigger: ";date"
