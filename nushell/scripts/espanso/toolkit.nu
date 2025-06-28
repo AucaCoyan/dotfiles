@@ -227,3 +227,31 @@ export module package {
     }
 
 } # package module
+
+# makes the symlink between the config folder and dotfiles/.espanso
+export def "make symlink" [] {
+    print "🔗 creating the symlink"
+
+    print "Checking if espanso is running"
+    let espanso_proceses = (ps | where name =~ 'espanso*' | length)
+    if ($espanso_proceses > 0) {
+        print "Yup, stopping espanso"
+        espanso stop
+    }
+
+    # TODO: Ask for confirmation of deletion of the folder
+
+    if $nu.os-info.name == "windows" {
+        let path = [$env.home, "/AppData/Roaming/espanso/" ] | str join
+        if ( $path | path exists) {
+            rm $path --recursive
+        }
+        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Roaming\espanso\" -Target $HOME\repos\dotfiles\.config\.espanso\'
+    } else if $nu.os-info.name == "linux" {
+        error make {msg: "not implemented!", }
+        ln -s ~/repos/dotfiles/.config/.espanso  ~/.config/espanso
+    } else {
+        error make {msg: "not implemented!", }
+    }
+    print "✅ Done!"
+}
