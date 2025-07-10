@@ -50,3 +50,10 @@ export def --env espanso [] {
     }
     nvim .
 }
+
+export def --env botmaker-template [] {
+    if $nu.os-info.name == "windows" {
+        cd ~\workspace\private\botmaker-book\
+        nvim src\08_ca_template.md
+    }
+}
