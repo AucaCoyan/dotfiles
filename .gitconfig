@@ -5,9 +5,13 @@
 	defaultBranch = main
 
 [core]
-	editor = code --wait
+	# editor = code --wait
+	editor = nvim
 	pager = delta
 
+	symlinks = false
+    # auto converty crlf to lf and back among different platforms
+	autocrlf = true
 [interactive]
    diffFilter = delta --color-only
 
@@ -40,6 +44,20 @@
 
 [pull]
 	rebase = true
+
+[credential "helperselector"]
+	selected = manager
+[credential]
+	helper = manager
+[safe]
+	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/test-ts-web
+	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/redirect-google-chat
+	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/fps-grow-triage-detector
+[pager]
+	diff = diffnav
+[credential "https://source.developers.google.com"]
+	helper = gcloud.cmd
+
 # To use these themes, first include this file in your own gitconfig file:
 #
 # [include]

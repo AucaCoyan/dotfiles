@@ -72,3 +72,11 @@ hard on each other. I use [`pyenv`](https://github.com/pyenv/pyenv) and
 
 Follow [this](https://www.atlassian.com/git/tutorials/dotfiles) tutorial to start
 backing up your dotfiles and to install them on a new system
+
+# Symlink the `.gitconfig`
+On windows, in PowerShell with admin priviledges:
+
+```pwsh
+New-Item -Type SymbolicLink -path ~/.gitconfig -Target ~\repos\dotfiles\.gitconfig
+```
+
