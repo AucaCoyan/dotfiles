@@ -1,5 +1,7 @@
 # nixOS setup
 
+## Setup
+
 Move the files into ~/dotfiles/repos/Linux/nixOS/ .... if you haven't yet
 
 create a symbolic link with
@@ -18,26 +20,48 @@ as root
 ```
 
 
-rebuild switch with:
-
-```
-# to upgrade
-sudo nixos-rebuild switch --flake /etc/nixos#default --upgrade --impure
-```
-
-`--impure` is because sudo needs to read `/home/` subdirectories
-
 nixos can't be symlinked because of:
 https://github.com/NixOS/nix/issues/8013
 
-## use flakes
+### if you use flakes
 
 ```
 # ln --symbolic --force --no-dereference ~/repos/dotfiles/Linux/nixOS/hosts/Mocha/flake.nix /etc/nixos/flake.nix
 ```
 
-## diff the configurations
+## Update
+
+```
+sudo nixos-rebuild switch --flake /etc/nixos#default --upgrade --impure
+```
+
+`--impure` is because sudo needs to read `/home/` subdirectories
+
+Update the flakes with
+
+```
+nix flake update
+```
+
+## Cleanup
+
+You can clean the repositories with
+
+```
+nh clean user
+```
+
+## Diff the generations
+
+See the history of changes
+
+```
+nvd history
+```
+
+Or compare two specific gens
 
 ```
 nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-link
 ```
+

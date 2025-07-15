@@ -123,6 +123,7 @@
    alejandra
    bat
    bun
+   cargo-tarpaulin # rust coverage
    delta
    difftastic
    discord
@@ -152,6 +153,8 @@
    obsidian
    oh-my-posh
    onedrive
+   openssl
+   pkg-config
    qdirstat
    # postgresql
    ripgrep
