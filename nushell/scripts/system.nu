@@ -17,6 +17,10 @@ export def "clean" [] {
             rm ~\AppData\Roaming\stremio\stremio-server\stremio-cache\* --recursive
            }
 
+        # Update the Microsoft Store Apps
+        # pwsh -c "Get-AppxPackage | ForEach-Object { Add-AppxPackage -Path $_.InstallLocation -Update }"
+        # Commented out because it draws a ton of errors
+
     } else if $nu.os-info.name == "linux" {
         print "cleaning apt cache..."
         sudo nala clean
