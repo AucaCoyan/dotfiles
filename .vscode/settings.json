@@ -70,6 +70,8 @@
     // Disable Copilot
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
+    // Disable Model Context Protocol (MCP)
+    // https://code.visualstudio.com/docs/copilot/chat/mcp-servers
     "chat.mcp.enabled": false,
     "chat.edits2.enabled": false,
     "chat.mcp.discovery.enabled": false,
@@ -109,6 +111,10 @@
     },
     "notebook.lineNumbers": "on",
     "python.analysis.typeCheckingMode": "standard",
+    "pylint.args": [
+        "--rcfile",
+        "${workspaceFolder}/.code_quality/pylint.toml"
+    ],
     // [[ Rust ]]
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.check.extraArgs": [
