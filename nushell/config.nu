@@ -193,6 +193,7 @@ source ~/other-repos/nu/nu_scripts/custom-completions/scoop/scoop-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/tealdeer/tldr-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/uv/uv-completions.nu
+source ~/other-repos/nu/nu_scripts/custom-completions/yt-dlp/yt-dlp-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
 
 # `auto-generate`
