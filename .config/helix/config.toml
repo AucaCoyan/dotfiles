@@ -5,10 +5,15 @@ line-number = "relative"
 mouse = false
 bufferline = "multiple"
 
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
+
+[editor.inline-diagnostics]
+cursor-line = "info"
+
 
 [editor.file-picker]
 # disable filter hidden files (dotfiles)
