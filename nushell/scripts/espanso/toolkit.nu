@@ -86,13 +86,10 @@ export def "act run" [] {
     act workflow_dispatch
 }
 
-# deletes the tag and re-tags it again in the `origin` remote
-export def "tag-again" [tag: string] {
-    # TODO: pass the version as a variable
-    git tag -d v2.2.2
-    git push --delete origin v2.2.2
-    git tag v2.2.2
-    git push origin v2.2.2
+# tags the current commit locally and in the `origin` remote
+export def "tag-commit" [tag: string] {
+    git tag $tag
+    git push origin $tag
 }
 
 # signs the executable in macOS
