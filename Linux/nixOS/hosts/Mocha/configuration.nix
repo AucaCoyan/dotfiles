@@ -57,7 +57,7 @@
   # Enable the Pantheon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
   # services.xserver.desktopManager.pantheon.enable = true;
 
   # Configure keymap in X11
@@ -69,8 +69,11 @@
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true; # powers up BT on boot
+
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -83,6 +86,7 @@
     # use the example session manager (no others are packaged yet so this is enabled by default,
     # no need to redefine it in your config for now)
     #media-session.enable = true;
+
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
@@ -90,7 +94,7 @@
 
   # enable avahi for finding *.local domains
   services.avahi.enable = true;
-  services.avahi.nssmdns = true;
+  services.avahi.nssmdns4 = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aucac = {
@@ -165,6 +169,7 @@
    ticktick
    telegram-desktop
    tokei
+   vlc
    vscode
    wget
   ];
