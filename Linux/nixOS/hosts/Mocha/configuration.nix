@@ -5,20 +5,19 @@
 { config, pkgs, inputs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      inputs.home-manager.nixosModules.default
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    inputs.home-manager.nixosModules.default
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   # boot.loader.grub.configurationLimit = 42;
   nix.gc = {
-      automatic = true;
-      dates = "daily";
-      options = "--delete-older-than-30d";
+    automatic = true;
+    dates = "daily";
+    options = "--delete-older-than-30d";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -102,16 +101,15 @@
     isNormalUser = true;
     description = "aucac";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
+    packages = with pkgs;
+      [
+        #  thunderbird
+      ];
   };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "aucac" = import ./home.nix;
-    };
+    users = { "aucac" = import ./home.nix; };
   };
 
   # Install firefox.
@@ -120,9 +118,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.sessionVariables = {
-    FLAKE = "/etc/nixos/";
-  };
+  environment.sessionVariables = { FLAKE = "/etc/nixos/"; };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

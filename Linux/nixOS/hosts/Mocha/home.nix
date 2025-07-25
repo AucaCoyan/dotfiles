@@ -67,9 +67,7 @@
   #
   #  /etc/profiles/per-user/aucac/etc/profile.d/hm-session-vars.sh
   #
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
@@ -79,14 +77,12 @@
     userName = "Auca Maillot";
     userEmail = "aucacoyan@gmail.com";
 
-    extraConfig = {
-      pull.rebase = true;
-    };
+    extraConfig = { pull.rebase = true; };
   };
 
   #programs.nushell = {
-    #enable = true;
-    #configFile.source = "/home/users/aucac/dotfiles/nushell/config.nu";
+  #enable = true;
+  #configFile.source = "/home/users/aucac/dotfiles/nushell/config.nu";
 
   #};
 }

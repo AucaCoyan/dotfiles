@@ -5,12 +5,11 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+  ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -33,9 +32,7 @@
 
   virtualisation.docker.logDriver = "json-file";
 
-  virtualisation.docker.daemon.settings = {
-    userland-proxy = false;
-  };
+  virtualisation.docker.daemon.settings = { userland-proxy = false; };
 
   # Set your time zone.
   time.timeZone = "America/Argentina/Buenos_Aires";
@@ -69,16 +66,16 @@
     };
   };
 
-systemd.services."shutdown-server" = {
-  script = ''
-    set -eu
-    /run/current-system/sw/bin/shutdown -h now
-  '';
-  serviceConfig = {
-    Type = "oneshot";
-    User = "root";
+  systemd.services."shutdown-server" = {
+    script = ''
+      set -eu
+      /run/current-system/sw/bin/shutdown -h now
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "root";
+    };
   };
-};
 
   # it works, but it's deprecated
   # services.cron = {
@@ -93,7 +90,7 @@ systemd.services."shutdown-server" = {
     isNormalUser = true;
     description = "thanos";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
     shell = pkgs.nushell;
   };
 
@@ -103,21 +100,21 @@ systemd.services."shutdown-server" = {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   bat
-   docker
-   docker-compose
-   gh
-   git
-   gitmoji-cli
-   grafana
-   grafana-loki
-   home-manager
-   gcc
-   oh-my-posh
-   postgresql
-   neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   nushell
-   wget
+    bat
+    docker
+    docker-compose
+    gh
+    git
+    gitmoji-cli
+    grafana
+    grafana-loki
+    home-manager
+    gcc
+    oh-my-posh
+    postgresql
+    neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    nushell
+    wget
   ];
 
   programs.neovim = {

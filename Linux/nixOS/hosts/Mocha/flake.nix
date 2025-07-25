@@ -12,10 +12,18 @@
 
   outputs = { self, nixpkgs, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       modules = [
         ./configuration.nix
         inputs.home-manager.nixosModules.default
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+
+          home-manager.users.aucac = import ./home.nix;
+
+          # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+        }
       ];
     };
   };
