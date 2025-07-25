@@ -56,7 +56,9 @@
 
   # Enable the Pantheon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
-  services.xserver.desktopManager.pantheon.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.xserver.desktopManager.plasma6.enable = true;
+  # services.xserver.desktopManager.pantheon.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
