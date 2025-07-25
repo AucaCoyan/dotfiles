@@ -186,6 +186,23 @@
     "[snippets]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
+    // [[ nix ]]
+    "[nix]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "nix.enableLanguageServer": true,
+    "nix.serverPath": "nil",
+    "nix.serverSettings": {
+        "nil": {
+            // https://github.com/oxalica/nil/blob/main/docs/configuration.md for all options available
+            "formatting": {
+                "command": [
+                    "nixfmt"
+                ]
+            }
+        }
+    },
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
