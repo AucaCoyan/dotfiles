@@ -57,6 +57,7 @@
   # Enable the Pantheon Desktop Environment.
   services.xserver.displayManager.lightdm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
+  # https://wiki.nixos.org/wiki/Category:Desktop_environment
   services.desktopManager.plasma6.enable = true;
   # services.xserver.desktopManager.pantheon.enable = true;
 
@@ -126,52 +127,55 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-   alejandra
-   bat
-   bun
-   cargo-tarpaulin # rust coverage
-   delta
-   difftastic
-   discord
-   # docker
-   # docker-compose
-   fd
-   fnm
-   fsearch
-   fzf
-   gcc
-   gh
-   git
-   gitmoji-cli
-   gfold
-   glab
-   ghostty
-   gparted
-   # grafana
-   # grafana-loki
-   home-manager
-   keepassxc
-   lazygit
-   neovim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-   nh
-   nushell
-   nvd # diff between nix versions
-   obsidian
-   oh-my-posh
-   onedrive
-   openssl
-   pkg-config
-   qdirstat
-   # postgresql
-   ripgrep
-   rustup
-   signal-desktop
-   ticktick
-   telegram-desktop
-   tokei
-   vlc
-   vscode
-   wget
+    alejandra
+    bat
+    bun
+    cargo-tarpaulin # rust coverage
+    delta
+    difftastic
+    discord
+    # docker
+    # docker-compose
+    fd
+    fnm
+    fsearch
+    fzf
+    gcc
+    gh
+    git
+    gitmoji-cli
+    gfold
+    glab
+    ghostty
+    gparted
+    # grafana
+    # grafana-loki
+    home-manager
+    keepassxc
+    lazygit
+    neovim # Nano editor is also installed by default.
+    wl-clipboard # for the clipboard interaction
+    nh
+    nil # nix LSP
+    nixfmt # Official formatter
+    nushell
+    nvd # diff between nix versions
+    obsidian
+    oh-my-posh
+    onedrive
+    openssl
+    pkg-config
+    qdirstat
+    # postgresql
+    ripgrep
+    rustup
+    signal-desktop
+    ticktick
+    telegram-desktop
+    tokei
+    vlc
+    vscode
+    wget
   ];
 
   programs.neovim = {
@@ -179,6 +183,22 @@
     viAlias = true;
     vimAlias = true;
   };
+
+  programs.git = {
+    enable = true;
+    config = {
+      user.name = "Auca Coyan";
+      user.email = "aucacoyan@gmail.com";
+      init.defaultBranch = "main";
+    };
+
+    # TODO in home manager
+    # extraConfig = {
+    #   pull.rebase = true;
+    # };
+  };
+
+  programs.nh.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
