@@ -118,7 +118,9 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.sessionVariables = { FLAKE = "/etc/nixos/"; };
+  environment.sessionVariables = {
+    FLAKE = "/home/aucac/repos/dotfiles/Linux/nixOS/hosts/Mocha";
+  };
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
