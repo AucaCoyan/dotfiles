@@ -43,6 +43,12 @@ Update the flakes with
 nix flake update
 ```
 
+with `nh`
+
+```
+nh os switch . --hostname default --update
+```
+
 ## Cleanup
 
 You can clean the repositories with
