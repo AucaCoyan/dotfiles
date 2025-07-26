@@ -55,6 +55,14 @@ You can clean the repositories with
 
 ```
 nh clean user
+# try also with
+nh clean all --keep 5
+```
+
+And to clean older generations you need sudo permissions:
+
+```
+sudo nix-collect-garbage --delete-old
 ```
 
 ## Diff the generations
