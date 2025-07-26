@@ -2,10 +2,16 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, inputs, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     inputs.home-manager.nixosModules.default
   ];
@@ -20,7 +26,10 @@
     options = "--delete-older-than-30d";
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -100,16 +109,20 @@
   users.users.aucac = {
     isNormalUser = true;
     description = "aucac";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs;
-      [
-        #  thunderbird
-      ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
+    packages = with pkgs; [
+      #  thunderbird
+    ];
   };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "aucac" = import ./home.nix; };
+    users = {
+      "aucac" = import ./home.nix;
+    };
   };
 
   # Install firefox.
@@ -118,8 +131,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.sessionVariables = {
-    FLAKE = "/home/aucac/repos/dotfiles/Linux/nixOS/hosts/Mocha";
+  environment.variables = {
+    NH_FLAKE = "/home/aucac/repos/dotfiles/Linux/nixOS/hosts/Mocha";
   };
 
   # List packages installed in system profile. To search, run:
