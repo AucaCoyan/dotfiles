@@ -117,6 +117,7 @@
         "--rcfile",
         "${workspaceFolder}/.code_quality/pylint.toml"
     ],
+    "flake8.enabled": false,
     // [[ Rust ]]
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.check.extraArgs": [
@@ -305,7 +306,6 @@
     ],
     "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "catppuccin-frappe",
-    "flake8.enabled": false,
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
