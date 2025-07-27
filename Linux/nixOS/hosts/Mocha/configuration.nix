@@ -159,6 +159,7 @@
     lazygit
     neovim # Nano editor is also installed by default.
     wl-clipboard # for the clipboard interaction
+    mdbook
     nh
     nil # nix LSP
     nixfmt # Official formatter
