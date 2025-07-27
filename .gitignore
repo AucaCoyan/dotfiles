@@ -17,7 +17,7 @@ nushell/plugin.msgpackz
 .vscode/profiles
 .vscode/sync
 .vscode/workspaceStorage
-
+.vscode/History
 
 # lazy.nvim commit hashes
 .config/nvim/lazy-lock.json
