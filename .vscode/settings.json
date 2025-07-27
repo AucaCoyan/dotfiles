@@ -73,11 +73,13 @@
     // Disable Model Context Protocol (MCP)
     // https://code.visualstudio.com/docs/copilot/chat/mcp-servers
     "chat.mcp.enabled": false,
+    "workbench.secondarySideBar.defaultVisibility": "hidden",
     "chat.edits2.enabled": false,
     "chat.mcp.discovery.enabled": false,
     "chat.extensionTools.enabled": false,
     "chat.detectParticipant.enabled": false,
     "chat.unifiedChatView": false,
+    "workbench.settings.showAISearchToggle": false,
     "workbench.editor.empty.hint": "hidden",
     // Allow to open files from WSL
     "security.workspace.trust.untrustedFiles": "open",
