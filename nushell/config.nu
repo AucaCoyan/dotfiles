@@ -107,7 +107,8 @@ $env.ENV_CONVERSIONS = {
 # $env.PATH = ($env.PATH | split row (char esep) | prepend '/some/path')
 
 # me abre una ventana de code cada vez que abro nu
-#$env.EDITOR = code
+
+$env.EDITOR = "nvim"
 
 if $nu.os-info.name == "windows" {
 } else if $nu.os-info.name == "linux" {
