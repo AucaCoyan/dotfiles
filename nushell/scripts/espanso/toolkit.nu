@@ -23,20 +23,15 @@ export def --env build [] {
     print "🚛 cd'in into the espanso dev folder"
     cd $env.ESPANSO_DEV_FOLDER
 
-    print "📦 building the binary"
-    print "     [x] Wayland"
-    print "     [x] Release"
-    print "     [x] build-binary"
-
+    print " running cargo build"
     if $nu.os-info.name == "windows" {
         # cargo make build-binary
-        cargo make --profile release --env NO_X11=true build-binary
+        cargo build
     } else if $nu.os-info.name == "linux" {
-        cargo make --profile release --env NO_X11=true build-binary
-
+        cargo build --no-default-features --features modulo,vendored-tls,wayland
     } else if $nu.os-info.name == "macos" {
-        # cargo make --profile release --env NO_X11=true build-binary
-        cargo make --profile release -- create-bundle
+        cargo build --target aarch64-apple-darwin
+        cargo build --target x86_64-apple-darwin
     }
 }
 
@@ -158,7 +153,8 @@ export def "check-pr" [] {
     print " running cargo clippy"
     # --locked is for prevent updating the cargo.lock file
     # is for any situation in which you don't want to update the deps.
-    cargo clippy --workspace --all-targets --all-features --no-deps # --locked
+    cargo clippy --target=aarch64-apple-darwin -- --deny warnings
+    cargo clippy --target=x86_64-apple-darwin -- --deny warnings
     # if $nu.os-info.name == "windows" {
     #     cargo clippy -- -D warnings
     # } else if $nu.os-info.name = "linux" {
@@ -168,17 +164,9 @@ export def "check-pr" [] {
     # }
 
     print " running cargo build"
-    if $nu.os-info.name == "windows" {
-        cargo make -- build-binary
-    } else if $nu.os-info.name == "linux" {
-        print " building for wayland"
-        cargo make --env NO_X11=true --profile release -- build-binary
-    } else {
-        cargo make --profile release -- build-macos-arm-binary
-    }
-
+    build
     print " running cargo test"
-    cargo test
+    cargo test --workspace --exclude espanso-modulo --exclude espanso-ipc --no-default-features --features vendored-tls
 }
 
 export module package {
