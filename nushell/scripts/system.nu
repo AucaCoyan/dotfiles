@@ -127,3 +127,32 @@ export def "update" [] {
 
     print "✅ done!"
 }
+
+# upgrades espanso portable
+export def "upgrade espanso" [] {
+    if $nu.os-info.name == "windows" {
+        # TODO: Delete if exisiting the files in the current folder
+        gh run download --repo espanso/espanso --name 'Windows Artifacts'
+        rm ./Espanso-Win-Installer-x86_64.exe
+        mv ./Espanso-Win-Portable-x86_64.zip ~/Applications
+
+        # stop espanso before overwriting
+        # ^espansod stop
+
+        if ('~/Applications/espanso-portable-old/' | path exists) {
+            rm ~/Applications/espanso-portable-old --recursive --force
+        }
+        if ('~/Applications/espanso-portable/' | path exists) {
+            mv ~/Applications/espanso-portable ~/Applications/espanso-portable-old --force
+        }
+
+        print "📦 extracting zip..."
+        pwsh -c $"Expand-Archive -Path ~/Applications/Espanso-Win-Portable-x86_64.zip -DestinationPath ~/Applications -Force"
+
+        print "📦 Symlink the config"
+        pwsh -c 'New-Item -type junction -Path "$HOME\Applications\espanso-portable\.espanso" -Target $HOME\repos\dotfiles\.config\.espanso\'
+
+        print "Starting espanso"
+        ~/Applications/espanso-portable/espansod.exe start
+    }
+}
