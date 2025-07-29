@@ -3,14 +3,6 @@
 #
 # $ use ~/path/to/this/script/toolkit.nu
 #
-# After that, you NEED to setup the environment variable `ESPANSO_DEV_FOLDER`.
-# This is because you can have multiple folders (i.e. worktrees) and toolkit
-# needs to point to one at any point in time.
-# The shortest way is to:
-#
-# cd /into/your/folder/espanso
-# $env.ESPANSO_DEV_FOLDER = pwd
-#
 # ...and then you can call
 #
 # toolkit build
@@ -20,9 +12,6 @@
 
 # build the binary
 export def --env build [] {
-    print "🚛 cd'in into the espanso dev folder"
-    cd $env.ESPANSO_DEV_FOLDER
-
     print " running cargo build"
     if $nu.os-info.name == "windows" {
         # cargo make build-binary
@@ -36,7 +25,7 @@ export def --env build [] {
 }
 
 # tests whatever workflow you want to test (issue repro, cargo test, whatever)
-export def --env test [] {
+export def --env try [] {
     cd $env.ESPANSO_DEV_FOLDER
     print " ---------- creating AppImage ---------- "
     cargo make --profile release -- create-app-image
@@ -148,23 +137,25 @@ export def "check-desktop-environment" [] {
 
 export def "check-pr" [] {
     print " checking format"
-    cargo fmt --all -- --check
+    cargo fmt --all --check
 
     print " running cargo clippy"
     # --locked is for prevent updating the cargo.lock file
     # is for any situation in which you don't want to update the deps.
-    cargo clippy --target=aarch64-apple-darwin -- --deny warnings
-    cargo clippy --target=x86_64-apple-darwin -- --deny warnings
-    # if $nu.os-info.name == "windows" {
-    #     cargo clippy -- -D warnings
-    # } else if $nu.os-info.name = "linux" {
-    #     cargo clippy -p espanso --features wayland -- -D warnings
-    # } else {
-    #     error make {msg: "cargo build not configured!" }
-    # }
+    if $nu.os-info.name == "windows" {
+        cargo clippy -- -D warnings
+    } else if $nu.os-info.name == "linux" {
+        bash -c 'cargo clippy --target=x86_64-unknown-linux-gnu -- --deny warnings'
+    } else {
+        cargo clippy --target=aarch64-apple-darwin -- --deny warnings
+        cargo clippy --target=x86_64-apple-darwin -- --deny warnings
+    }
 
     print " running cargo build"
     build
+}
+
+export def "test" [] {
     print " running cargo test"
     cargo test --workspace --exclude espanso-modulo --exclude espanso-ipc --no-default-features --features vendored-tls
 }
