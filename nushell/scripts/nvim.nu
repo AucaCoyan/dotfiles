@@ -71,13 +71,13 @@ export def "install personal" [] {
         print "🔗 Making the symlinks"
         sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
     }
+    nvim
 }
 
 export def "install kickstart" [] {
     rm_nvim_dirs
     if $nu.os-info.name == "windows" {
         download_nvim
-
         git clone https://github.com/nvim-lua/kickstart.nvim.git $"($env.LOCALAPPDATA)/nvim"
     } else if $nu.os-info.name == "linux" {
         error make {msg: "not implemented!", }
@@ -90,6 +90,7 @@ export def "install kickstart" [] {
         # print "creating the symlink"
         # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
     }
+    nvim
 }
 
 export def "install nvchad" [] {
@@ -109,6 +110,5 @@ export def "install nvchad" [] {
         # print "creating the symlink"
         # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
     }
-
     nvim
 }
