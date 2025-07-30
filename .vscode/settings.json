@@ -119,6 +119,7 @@
     ],
     "flake8.enabled": false,
     // [[ Rust ]]
+    // "rust-analyzer.check.command": "check",
     "rust-analyzer.check.command": "clippy",
     "rust-analyzer.check.extraArgs": [
         "--all",
@@ -321,6 +322,8 @@
     ],
     "workbench.colorTheme": "Catppuccin Frappé",
     "workbench.iconTheme": "catppuccin-frappe",
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
