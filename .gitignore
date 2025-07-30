@@ -19,8 +19,11 @@ nushell/plugin.msgpackz
 .vscode/workspaceStorage
 .vscode/History
 
+# Other licenses (not the root)
+**/LICENSE
+
 # lazy.nvim commit hashes
-.config/nvim/lazy-lock.json
+**/lazy-lock.json
 
 # chadrc is tracked, do not look up for changes
 .config/preconfigured-nvim/NvChad/custom/chadrc.lua
