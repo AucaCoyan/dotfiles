@@ -139,6 +139,8 @@ export def "check-pr" [] {
     print " checking format"
     cargo fmt --all --check
 
+    build
+
     print " running cargo clippy"
     # --locked is for prevent updating the cargo.lock file
     # is for any situation in which you don't want to update the deps.
@@ -151,8 +153,7 @@ export def "check-pr" [] {
         cargo clippy --target=x86_64-apple-darwin -- --deny warnings
     }
 
-    print " running cargo build"
-    build
+    test
 }
 
 export def "test" [] {
