@@ -20,7 +20,7 @@ export def rm_nvim_dirs [] {
         # symlink
         rm ~/.config/nvim
     } else if $nu.os-info.name == "macos" {
-    error make {msg: "not implemented!", }
+        error make {msg: "not implemented!", }
     }
 }
 
@@ -90,4 +90,25 @@ export def "install kickstart" [] {
         # print "creating the symlink"
         # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
     }
+}
+
+export def "install nvchad" [] {
+    rm_nvim_dirs
+    if $nu.os-info.name == "windows" {
+        download_nvim
+
+        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Local\nvim" -Target $HOME\repos\dotfiles\.config\preconfigured-nvim\NvChad'
+    } else if $nu.os-info.name == "linux" {
+        error make {msg: "not implemented!", }
+
+        # download_nvim
+        #
+        # ## Clipboard for lazyVim
+        # sudo nala install xclip -y
+        #
+        # print "creating the symlink"
+        # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+    }
+
+    nvim
 }
