@@ -105,12 +105,10 @@ export def "update" [] {
         uv self update
     }
 
-    # TODO: breaks `cargo-make` and cargo-update is unable to freeze one
-    # crate, so I'm freezing all.
-    # if ((which ^cargo | is-not-empty) and (cargo install-update | $env.LAST_EXIT_CODE == 1)) {
-        # print "💫 cargo-update..."
-        # cargo install-update --all
-    # }
+    if ((which ^cargo | is-not-empty) and (cargo install-update | $env.LAST_EXIT_CODE == 1)) {
+        print "💫 cargo-update..."
+        cargo install-update --all
+    }
 
 
     # print "💫 flutter upgrade..."
