@@ -110,3 +110,26 @@ export def --env "fuzzy find directory" [] {
         | fzf) # pipe it to fzf
         cd $destination
 }
+
+
+# fast `cd`
+export def --env d [] {
+    let destination = (fd --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules
+    -- . # any name
+    | fzf) # pipe it to fzf
+
+    if $destination != null {
+         try {
+             cd $destination
+             return $destination
+         } catch {
+             print $"Failed to change directory to ($destination): ($in)"
+             return null
+         }
+    } else {
+         print "No directory selected."
+         return null
+    }
+    return $destination
+}
+
