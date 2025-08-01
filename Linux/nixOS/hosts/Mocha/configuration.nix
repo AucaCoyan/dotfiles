@@ -65,12 +65,22 @@
   # Enable the X11 windowing system.
   services.xserver.enable = true;
 
-  # Enable the Pantheon Desktop Environment.
+  # Desktop environment
+  # https://wiki.nixos.org/wiki/Category:Desktop_environment
   services.xserver.displayManager.lightdm.enable = true;
   services.displayManager.sddm.wayland.enable = true;
-  # https://wiki.nixos.org/wiki/Category:Desktop_environment
+
+  # KDE
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
-  # services.xserver.desktopManager.pantheon.enable = true;
+
+  # Cosmic
+  # # Enable the login manager
+  # services.displayManager.cosmic-greeter.enable = true;
+  # # Enable the COSMIC DE itself
+  # services.desktopManager.cosmic.enable = true;
+  # # Enable XWayland support in COSMIC
+  # services.desktopManager.cosmic.xwayland.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
@@ -159,9 +169,12 @@
     # grafana-loki
     home-manager
     keepassxc
+    kdotool
     lazygit
+    lnav
     neovim # Nano editor is also installed by default.
     wl-clipboard # for the clipboard interaction
+    mattermost-desktop
     mdbook
     nh
     nil # nix LSP
