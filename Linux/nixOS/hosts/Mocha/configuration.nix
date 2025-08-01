@@ -68,7 +68,6 @@
   # Desktop environment
   # https://wiki.nixos.org/wiki/Category:Desktop_environment
   services.xserver.displayManager.lightdm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
 
   # KDE
   services.displayManager.sddm.wayland.enable = true;
