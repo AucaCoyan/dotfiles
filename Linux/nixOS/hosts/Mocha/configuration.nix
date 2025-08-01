@@ -190,8 +190,9 @@
     ripgrep
     rustup
     signal-desktop
-    ticktick
     telegram-desktop
+    ticktick
+    tig
     tokei
     vlc
     vscode
