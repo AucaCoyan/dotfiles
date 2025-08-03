@@ -61,10 +61,30 @@
     "[search-result]": {
         "editor.lineNumbers": "on"
     },
-    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.defaultProfile.windows": "nushell",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "terminal.integrated.defaultProfile.linux": "bash",
     "terminal.integrated.localEchoStyle": "dim",
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "nushell": {
+            "path": "${env:Home}/scoop/shims/nu.exe"
+        },
+    },
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 240,
     // Disable Copilot
