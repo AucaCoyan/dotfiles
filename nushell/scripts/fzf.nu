@@ -114,12 +114,13 @@ export def --env "fuzzy find directory" [] {
 
 # fast `cd`
 export def --env d [] {
-    let destination = (fd --type directory --hidden --no-ignore --ignore-vcs 
+    let destination = (fd --type directory --hidden --no-ignore --ignore-vcs
         --exclude '.git/**'
         --exclude node_modules
-        --exclude 'target/**/build/**'
-        --exclude 'target/**/incremental/**'
-        --exclude 'target/**/.fingerprint/**'
+        --exclude '**/.venv/**'
+        --exclude '**/target/**/build/**'
+        --exclude '**/target/**/incremental/**'
+        --exclude '**/target/**/.fingerprint/**'
     -- . # any name
     | fzf) # pipe it to fzf
 
@@ -137,4 +138,3 @@ export def --env d [] {
     }
     return $destination
 }
-
