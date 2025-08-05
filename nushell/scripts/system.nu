@@ -127,7 +127,7 @@ export def "update" [] {
 }
 
 # upgrades espanso portable
-export def "upgrade espanso" [] {
+export def --env "upgrade espanso" [] {
     if $nu.os-info.name == "windows" {
         # TODO: Delete if exisiting the files in the current folder
         gh run download --repo espanso/espanso --name 'Windows Artifacts'
@@ -151,6 +151,8 @@ export def "upgrade espanso" [] {
         pwsh -c 'New-Item -type junction -Path "$HOME\Applications\espanso-portable\.espanso" -Target $HOME\repos\dotfiles\.config\.espanso\'
 
         print "Starting espanso"
-        ~/Applications/espanso-portable/espansod.exe start
+        cd ~/Applications/espanso-portable
+        espanso env-path register
+        espanso start
     }
 }
