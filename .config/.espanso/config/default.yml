@@ -43,3 +43,5 @@
 #
 # Customizing the search shortcut
 search_shortcut: ALT+SHIFT+SPACE
+
+backend: clipboard
