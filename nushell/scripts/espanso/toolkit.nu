@@ -142,15 +142,13 @@ export def "check-pr" [] {
     build
 
     print " running cargo clippy"
-    # --locked is for prevent updating the cargo.lock file
-    # is for any situation in which you don't want to update the deps.
     if $nu.os-info.name == "windows" {
-        cargo clippy -- -D warnings
+        pwsh -c 'cargo clippy --deny warnings'
     } else if $nu.os-info.name == "linux" {
-        bash -c 'cargo clippy --target=x86_64-unknown-linux-gnu -- --deny warnings'
+        bash -c 'cargo clippy --deny warnings'
     } else {
-        cargo clippy --target=aarch64-apple-darwin -- --deny warnings
-        cargo clippy --target=x86_64-apple-darwin -- --deny warnings
+        bash -c 'cargo clippy --target aarch64-apple-darwin -- --deny warnings'
+        bash -c 'cargo clippy --target x86_64-apple-darwin -- --deny warnings'
     }
 
     test
