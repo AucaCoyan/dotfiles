@@ -45,7 +45,7 @@ export def new-junction [
         )
         echo $command
         pwsh -Command $command
-    } else if $nu.os-info.name == "linux" {
+    } else {
         let command = ([
         "ln",
         "-s",
@@ -57,8 +57,6 @@ export def new-junction [
         )
         echo $command
         bash -c $command
-    } else {
-        error make {msg: "Could not find the OS name :(", }
     }
 }
 
