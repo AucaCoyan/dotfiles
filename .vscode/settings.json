@@ -40,9 +40,6 @@
     // make the diff decorations (lines added, modified, deleted) appear only on the gutter
     // not on the scroll bar, or the explorer view
     "scm.diffDecorations": "gutter",
-    "editor.rulers": [
-        80
-    ],
     "editor.lineNumbers": "relative",
     "editor.linkedEditing": true,
     "editor.formatOnSave": true,
@@ -124,20 +121,29 @@
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.rulers": [
+            80
+        ],
     },
     // [[ Python ]]
+    "[python]": {
+        "editor.rulers": [
+            80,
+            140
+        ],
+        "python.analysis.typeCheckingMode": "standard",
+        "pylint.args": [
+            "--rcfile",
+            "${workspaceFolder}/.code_quality/pylint.toml"
+        ],
+        "flake8.enabled": false,
+    },
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
     },
     "notebook.lineNumbers": "on",
-    "python.analysis.typeCheckingMode": "standard",
-    "pylint.args": [
-        "--rcfile",
-        "${workspaceFolder}/.code_quality/pylint.toml"
-    ],
-    "flake8.enabled": false,
     // [[ Rust ]]
     // "rust-analyzer.check.command": "check",
     "rust-analyzer.check.command": "clippy",
