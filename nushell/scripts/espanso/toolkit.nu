@@ -156,7 +156,7 @@ export def "check-pr" [] {
 
 export def "test" [] {
     print " running cargo test"
-    cargo test --workspace --exclude espanso-modulo --exclude espanso-ipc --no-default-features --features vendored-tls
+    cargo test --workspace --exclude espanso-modulo --exclude espanso-ipc --no-default-features --features modulo,vendored-tls
 }
 
 export module package {
