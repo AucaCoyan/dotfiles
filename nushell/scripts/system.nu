@@ -22,14 +22,27 @@ export def "clean" [] {
         # Commented out because it draws a ton of errors
 
     } else if $nu.os-info.name == "linux" {
-        print "cleaning apt cache..."
-        sudo nala clean
+        let hostname = sys host | get hostname
 
-        print "nala autoremove"
-        sudo nala autoremove
-        print "nala autopurge"
-        sudo nala autopurge
+        match $hostname {
+            "nixos" => {
+                nh clean all --keep 3
+            }
 
+            "frankendebian" => {
+
+                print "cleaning apt cache..."
+                sudo nala clean
+
+                print "nala autoremove"
+                sudo nala autoremove
+                print "nala autopurge"
+                sudo nala autopurge
+            }
+            _ => { 
+                error make {msg: "Could not find the OS hostname :(", }
+            }
+        }
     } else if $nu.os-info.name == "macos" {
         print "on the works..."
     } else {
@@ -74,13 +87,26 @@ export def "update" [] {
         scoop update --all
 
     } else if $nu.os-info.name == "linux" {
-        print "💫 updating apt"
-        sudo nala upgrade # updates the pkgs and then upgrades the system
+        let hostname = sys host | get hostname
 
-        print "💫 updating brew"
-        brew update
-        brew upgrade
+        match $hostname {
+            "nixos" => {
+                nh os switch  --hostname default --update
+            }
 
+            "frankendebian" => {
+                print "💫 updating apt"
+                sudo nala upgrade # updates the pkgs and then upgrades the system
+
+                print "💫 updating brew"
+                brew update
+                brew upgrade
+            }
+            _ => { 
+                error make {msg: "Could not find the OS hostname :(", }
+            }
+
+        }
     } else if $nu.os-info.name == "macos" {
         print "💫 updating brew"
         brew update
