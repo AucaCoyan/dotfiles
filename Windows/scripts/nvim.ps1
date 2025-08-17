@@ -37,7 +37,7 @@ try {
     }
 
     # symlink the nvim folder
-    New-Item -ItemType Junction -Path $originPath -Target $destinationPath
+    New-Item -ItemType SymbolicLink -Path $originPath -Target $destinationPath
 }
 catch { Write-Warning $_ }
 Write-Output "Job's done!"

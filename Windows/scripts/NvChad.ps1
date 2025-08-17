@@ -32,7 +32,7 @@ Write-Output "2. Making the symlinks"
 $originPath = "$HOME\AppData\Local\nvim\lua\custom"
 $destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\NvChad\custom\"
 
-New-Item -ItemType Junction `
+New-Item -ItemType SymbolicLink `
     -Path $originPath `
     -Target $destinationPath
 

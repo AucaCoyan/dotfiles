@@ -25,7 +25,7 @@ Write-Output "2. Making the symlinks"
 $originPath = "$HOME\AppData\Local\nvim"
 $destinationPath = "$HOME\repos\dotfiles\.config\preconfigured-nvim\nvim-nu\"
 
-New-Item -ItemType Junction `
+New-Item -ItemType SymbolicLink `
     -Path $originPath `
     -Target $destinationPath
 
