@@ -34,7 +34,7 @@ export def new-junction [
         let command = ([
         "New-Item",
         "-ItemType",
-        "Junction",
+        "SymbolicLink",
         "-Path",
         $name,
         "-Target",

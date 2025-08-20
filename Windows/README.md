@@ -34,7 +34,7 @@ And probably you'll need some symlinks
 # Delete the contents first
 rm $HOME\Downloads -Recurse -Force
 # and create the symlink
-New-Item -ItemType Junction -Path $HOME\Downloads -Target $HOME\OneDrive\Downloads\
+New-Item -ItemType SymbolicLink -Path $HOME\Downloads -Target $HOME\OneDrive\Downloads\
 ```
 
 ## How to check your installed packages
@@ -67,4 +67,11 @@ Run this to link wezterm config
 
 ```powershell
  New-Item -ItemType SymbolicLink -path ~/.wezterm.lua -Target C:\Users\aucac\repos\dotfiles\.config\wezterm\.wezterm.lua
+```
+
+Link your Proton notes and *.kdbx
+```powershell
+New-Item -ItemType SymbolicLink -path 'C:\Users\aucac\OneDrive\notes' -Target 'C:\Users\aucac\Proton Drive\aucacoyan\My files\notes'
+New-Item -ItemType SymbolicLink -path 'C:\Users\aucac\OneDrive\Pass brataia.kdbx' -Target 'C:\Users\aucac\Proton Drive\aucacoyan\My files\Pass brataia.kdbx'
+
 ```
