@@ -154,6 +154,7 @@
     # docker-compose
     fd
     fnm
+    freefilesync
     fsearch
     fzf
     gcc
