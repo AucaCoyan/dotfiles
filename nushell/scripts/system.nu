@@ -92,6 +92,8 @@ export def "update" [] {
         match $hostname {
             "nixos" => {
                 nh os switch  --hostname default --update
+                # do not update anything else after this command
+                return
             }
 
             "frankendebian" => {
