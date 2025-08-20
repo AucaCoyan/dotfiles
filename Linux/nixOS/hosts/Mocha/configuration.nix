@@ -37,8 +37,7 @@
   # Enable OpenGL
   hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
   };
 
   # Load nvidia driver for Xorg and Wayland
@@ -184,11 +183,20 @@
   # Install firefox.
   programs.firefox.enable = true;
 
+  programs.steam.enable = true;
+  programs.steam.gamescopeSession.enable = true;
+  programs.gamemode.enable = true; # optimizations to the OS
+
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  environment.variables = {
-    NH_FLAKE = "/home/aucac/repos/dotfiles/Linux/nixOS/hosts/Mocha";
+  environment = {
+    variables = {
+      NH_FLAKE = "/home/aucac/repos/dotfiles/Linux/nixOS/hosts/Mocha";
+    };
+    sessionVariables = {
+      STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/aucac/.steam/root/compatibilitytools.d";
+    };
   };
 
   # List packages installed in system profile. To search, run:
@@ -225,6 +233,7 @@
     lnav
     neovim # Nano editor is also installed by default.
     wl-clipboard # for the clipboard interaction
+    mangohud # steam fps and gpu monitor
     mattermost-desktop
     mdbook
     nh
@@ -237,6 +246,7 @@
     onedrive
     openssl
     pkg-config
+    protonup # steam's proton
     qdirstat
     # postgresql
     ripgrep
