@@ -34,17 +34,60 @@
     "flakes"
   ];
 
-  # fileSystems."/mnt/share" = {
-  #   device = "//192.168.0.8/";
-  #   fsType = "cifs";
-  #   options =
-  #     let
-  #       # this line prevents hanging on network split
-  #       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+  fileSystems."/mnt/samba_share/Documents" = {
+    device = "//192.168.0.8/Documents";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
 
-  #     in
-  #     [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
-  # };
+  fileSystems."/mnt/samba_share/movies" = {
+    device = "//192.168.0.8/movies";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
+
+  fileSystems."/mnt/samba_share/Music" = {
+    device = "//192.168.0.8/Music";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
+
+  fileSystems."/mnt/samba_share/titan" = {
+    device = "//192.168.0.8/titan";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
+
+  fileSystems."/mnt/samba_share/tvseries" = {
+    device = "//192.168.0.8/tvseries";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
 
   # Enable OpenGL
   hardware.graphics = {
@@ -310,6 +353,10 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  services.samba = {
+    enable = true;
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
