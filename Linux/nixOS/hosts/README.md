@@ -51,6 +51,11 @@ nh os switch . --hostname default --update
 
 ## Cleanup
 
+Delete unused packages of non-existing generations with
+```
+nix-store --gc
+```
+
 You can clean the repositories with
 
 ```
@@ -65,17 +70,28 @@ And to clean older generations you need sudo permissions:
 sudo nix-collect-garbage --delete-old
 ```
 
-## Diff the generations
+## Generations
 
-See the history of changes
+- List the numbers with
+
+```
+ls /nix/var/nix/profiles/system-* -l
+```
+
+- Diff between the generations
 
 ```
 nvd history
 ```
 
-Or compare two specific gens
+- Or compare two specific generations
 
 ```
 nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-link
 ```
 
+- delete a generation with 
+
+```
+nix-env --delete-generations 10 11 14
+```

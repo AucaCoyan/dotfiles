@@ -26,17 +26,24 @@ export def "clean" [] {
 
         match $hostname {
             "nixos" => {
-                nh clean all --keep 3
+                print "👪 You have currently these generations:"
+                ls /nix/var/nix/profiles/system-* -l
+
+                print "🧹 clean unused packages by all generations"
+                nix-store --gc
+                # This cleans more that I would like to auto-clean
+                # nh clean all --keep 3
+                return
             }
 
             "frankendebian" => {
 
-                print "cleaning apt cache..."
+                print "🧹 cleaning apt cache..."
                 sudo nala clean
 
-                print "nala autoremove"
+                print "🧹 nala autoremove"
                 sudo nala autoremove
-                print "nala autopurge"
+                print "🧹 nala autopurge"
                 sudo nala autopurge
             }
             _ => { 
@@ -50,16 +57,16 @@ export def "clean" [] {
     }
     # cross platform commands
 
-    print "cleaning uv"
+    print "🧹 cleaning uv"
     uv cache prune
 
     if (which ^npm | is-not-empty) {
-        print "cleaning npm cache"
+        print "🧹 cleaning npm cache"
         npm cache clean --force
     }
 
     if (which ^bun | is-not-empty) {
-        print "cleaning bun cache"
+        print "🧹 cleaning bun cache"
         bun pm cache rm -g
     }
 
