@@ -34,6 +34,8 @@
     "flakes"
   ];
 
+  # documented here:
+  # https://www.reddit.com/r/NixOS/comments/6ft8do/mounting_samba_shares_in_nixos/
   fileSystems."/mnt/samba_share/Documents" = {
     device = "//192.168.0.8/Documents";
     fsType = "cifs";
