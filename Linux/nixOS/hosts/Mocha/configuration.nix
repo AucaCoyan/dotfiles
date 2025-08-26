@@ -267,6 +267,7 @@
     discord
     # docker
     # docker-compose
+    element-desktop # matrix client
     fd
     fnm
     freefilesync
