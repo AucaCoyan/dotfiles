@@ -58,6 +58,8 @@ matches:
         type: date
         params:
           format: "%d/%m/%Y"
+  - trigger: "timezoneTZ"
+    replace: "TZ=America/Argentina/Buenos_Aires"
 
   - trigger: ";isodate"
     replace: "{{mydate}}"
