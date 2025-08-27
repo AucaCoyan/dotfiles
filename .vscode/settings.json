@@ -139,6 +139,7 @@
         ],
         "flake8.enabled": false,
     },
+    "python.analysis.typeCheckingMode": "standard",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
