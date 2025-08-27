@@ -71,6 +71,14 @@ curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-
 echo -e '\n### cargo-update'
 cargo binstall cargo-update
 
+echo -e '\n### nvim'
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+sudo rm -rf /opt/nvim
+sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
+
+echo -e '\n### symlinking config...'
+ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+
 # Clean up
 echo -e '\n### Clean up'
 sudo apt autoremove -y

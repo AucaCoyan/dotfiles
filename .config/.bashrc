@@ -124,3 +124,5 @@ alias l='ls -CF'
 
 # deno
 # . "/home/acoyan/.deno/env"
+
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"

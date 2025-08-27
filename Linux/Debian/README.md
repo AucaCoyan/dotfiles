@@ -83,7 +83,7 @@ After the installation it's only pending:
 | oh-my-posh                          | ✅            | ❌                  | ❌         |
 | ripgrep                             | ✅            | ❌                  | ✅         |
 | yazi                                | ✅            | ❌                  | ❌         |
-| nvim                                | ✅            | ❌                  | ❌         |
+| nvim                                | ❌            | ❌                  | ✅         |
 
 ## Common problems
 
