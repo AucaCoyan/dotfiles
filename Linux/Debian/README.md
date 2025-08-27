@@ -84,3 +84,39 @@ and run it with
 chmod +x Debian-minimal.sh
 ./Debian-minimal.sh
 ```
+
+| Feature                             | Debian-master | Debian-mini-espanso | Debian-OMV |
+| ----------------------------------- | ------------- | ------------------- | ---------- |
+| nala                                | ✅            | ✅                  | ❌         |
+| git & git config                    | ✅            | ✅                  | ❌         |
+| curl                                | ✅            | ✅                  | ❌         |
+| gh                                  | ✅            | ❌                  | ❌         |
+| brew                                | ✅            | ❌                  | ❌         |
+| ~/repos                             | ✅            | ✅                  | ❌         |
+| ~/other-repos                       | ✅            | ❌                  | ❌         |
+| ~/other-repos/nu/nu_scripts         | ✅            | ❌                  | ❌         |
+| ~/other-repos/nu/nupm               | ✅            | ❌                  | ❌         |
+| nushell & symlink ~/.config/nushell | ✅            | ❌                  | ❌         |
+| bat                                 | ✅            | ❌                  | ❌         |
+| bat config                          | ✅            | ❌                  | ❌         |
+| fd                                  | ✅            | ❌                  | ❌         |
+| NerdFont                            | ✅            | ✅                  | ❌         |
+| rust                                | ✅            | ✅                  | ❌         |
+| fnm                                 | ✅            | ❌                  | ❌         |
+| bun                                 | ✅            | ❌                  | ❌         |
+| rye                                 | ✅            | ❌                  | ❌         |
+| vs code                             | ✅            | ❌                  | ❌         |
+| cargo-binstall                      | ✅            | ✅                  | ❌         |
+| cargo-update                        | ✅            | ✅                  | ❌         |
+| gitmoji-rs                          | ✅            | ❌                  | ❌         |
+| bacon                               | ✅            | ❌                  | ❌         |
+| tokei                               | ✅            | ❌                  | ❌         |
+| gfold                               | ✅            | ❌                  | ❌         |
+| qdirstat                            | ✅            | ❌                  | ❌         |
+| biome                               | ✅            | ❌                  | ❌         |
+| fzf                                 | ✅            | ❌                  | ❌         |
+| glab                                | ✅            | ❌                  | ❌         |
+| oh-my-posh                          | ✅            | ❌                  | ❌         |
+| ripgrep                             | ✅            | ❌                  | ❌         |
+| yazi                                | ✅            | ❌                  | ❌         |
+| nvim                                | ✅            | ❌                  | ❌         |
