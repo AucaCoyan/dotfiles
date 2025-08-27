@@ -46,7 +46,7 @@ export def "clean" [] {
                 print "🧹 nala autopurge"
                 sudo nala autopurge
             }
-            _ => { 
+            _ => {
                 error make {msg: "Could not find the OS hostname :(", }
             }
         }
@@ -113,7 +113,7 @@ export def "update" [] {
                 brew update
                 brew upgrade
             }
-            _ => { 
+            _ => {
                 error make {msg: "Could not find the OS hostname :(", }
             }
 

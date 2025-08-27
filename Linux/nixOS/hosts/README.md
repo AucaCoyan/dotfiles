@@ -90,7 +90,7 @@ nvd history
 nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-link
 ```
 
-- delete a generation with 
+- delete a generation with
 
 ```
 nix-env --delete-generations 10 11 14

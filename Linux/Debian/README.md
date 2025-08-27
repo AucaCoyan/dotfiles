@@ -47,7 +47,7 @@ After the installation it's only pending:
 - change login shell to `nushell`
 - `gh auth login` and select browser
 
-## Possible problems:
+## Possible problems
 
 nvim `:checkhealth` clipboard not found
 In debian you can install `xclip` with:
