@@ -13,6 +13,80 @@ chmod +x Install-master-script.sh
 ./Install-master-script.sh
 ```
 
+## Debian minimal
+
+Because sometimes I want the absolute minimum (for a VM for example) I did a
+barebones script with _just enough_ to compile espanso
+
+```bash
+wget "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Debian/Debian-minimal.sh" --output-document=Debian-minimal.sh
+```
+
+and run it with
+
+```bash
+chmod +x Debian-minimal.sh
+./Debian-minimal.sh
+```
+
+## Debian-OMV
+
+```bash
+wget "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Debian/Debian-OMV.sh" --output-document=Debian-OMV.sh
+chmod +x Debian-OMV.sh
+./Debian-OMV.sh
+```
+
+## Post-Installation
+
+After the installation it's only pending:
+
+- add a nice wallpaper
+- change the theme of Gnome Terminal to Catppuccin Mocha
+- `gh auth login` and select browser
+
+## Table of features
+
+| Feature                             | Debian-master | Debian-mini-espanso | Debian-OMV |
+| ----------------------------------- | ------------- | ------------------- | ---------- |
+| nala                                | ✅            | ✅                  | ✅         |
+| git                                 | ✅            | ✅                  | ✅         |
+| git config                          | ✅            | ✅                  | ❌         |
+| curl                                | ✅            | ✅                  | ✅         |
+| gh                                  | ✅            | ❌                  | ❌         |
+| brew                                | ✅            | ❌                  | ❌         |
+| ~/repos & clone AucaCoyan/dotfiles  | ✅            | ✅                  | ✅         |
+| ~/other-repos                       | ✅            | ❌                  | ❌         |
+| ~/other-repos/nu/nu_scripts         | ✅            | ❌                  | ❌         |
+| ~/other-repos/nu/nupm               | ✅            | ❌                  | ❌         |
+| nushell & symlink ~/.config/nushell | ✅            | ❌                  | ❌         |
+| bash & symlink ~/.bashrc            | ❌            | ❌                  | ✅         |
+| bat                                 | ✅            | ❌                  | ✅         |
+| bat config                          | ✅            | ❌                  | ❌         |
+| fd                                  | ✅            | ❌                  | ❌         |
+| NerdFont                            | ✅            | ✅                  | ❌         |
+| rust                                | ✅            | ✅                  | ❌         |
+| fnm                                 | ✅            | ❌                  | ❌         |
+| bun                                 | ✅            | ❌                  | ❌         |
+| rye                                 | ✅            | ❌                  | ❌         |
+| vs code                             | ✅            | ❌                  | ❌         |
+| cargo-binstall                      | ✅            | ✅                  | ❌         |
+| cargo-update                        | ✅            | ✅                  | ❌         |
+| gitmoji-rs                          | ✅            | ❌                  | ❌         |
+| bacon                               | ✅            | ❌                  | ❌         |
+| tokei                               | ✅            | ❌                  | ❌         |
+| gfold                               | ✅            | ❌                  | ❌         |
+| qdirstat                            | ✅            | ❌                  | ❌         |
+| biome                               | ✅            | ❌                  | ❌         |
+| fzf                                 | ✅            | ❌                  | ❌         |
+| glab                                | ✅            | ❌                  | ❌         |
+| oh-my-posh                          | ✅            | ❌                  | ❌         |
+| ripgrep                             | ✅            | ❌                  | ✅         |
+| yazi                                | ✅            | ❌                  | ❌         |
+| nvim                                | ✅            | ❌                  | ❌         |
+
+## Common problems
+
 If you have
 
 ```bash
@@ -40,19 +114,16 @@ and add:
 <username>   ALL=(ALL:ALL) ALL
 ```
 
-After the installation it's only pending:
-
-- add a nice wallpaper
-- change the theme of Gnome Terminal to Catppuccin Mocha
-- change login shell to `nushell`
-- `gh auth login` and select browser
-
-## Possible problems
-
 nvim `:checkhealth` clipboard not found
-In debian you can install `xclip` with:
+In debian you can install `xclip` or `wl-clipboard` with:
 
-sudo apt-get install xclip
+```bash
+sudo apt-get install xclip # for X11
+```
+
+```bash
+sudo apt-get install wl-clipboard # for Wayland
+```
 
 ## If you are in a VirtuaBox
 
@@ -68,55 +139,3 @@ sudo mount /dev/cdrom /mnt
 cd /mnt
 sudo ./VBoxLinuxAdditions.run
 ```
-
-## Debian minimal
-
-Because sometimes I want the absolute minimum (for a VM for example) I did a
-barebones script with _just enough_ to compile espanso
-
-```bash
-wget "https://raw.githubusercontent.com/AucaCoyan/dotfiles/main/Linux/Debian/Debian-minimal.sh" --output-document=Debian-minimal.sh
-```
-
-and run it with
-
-```bash
-chmod +x Debian-minimal.sh
-./Debian-minimal.sh
-```
-
-| Feature                             | Debian-master | Debian-mini-espanso | Debian-OMV |
-| ----------------------------------- | ------------- | ------------------- | ---------- |
-| nala                                | ✅            | ✅                  | ❌         |
-| git & git config                    | ✅            | ✅                  | ❌         |
-| curl                                | ✅            | ✅                  | ❌         |
-| gh                                  | ✅            | ❌                  | ❌         |
-| brew                                | ✅            | ❌                  | ❌         |
-| ~/repos                             | ✅            | ✅                  | ❌         |
-| ~/other-repos                       | ✅            | ❌                  | ❌         |
-| ~/other-repos/nu/nu_scripts         | ✅            | ❌                  | ❌         |
-| ~/other-repos/nu/nupm               | ✅            | ❌                  | ❌         |
-| nushell & symlink ~/.config/nushell | ✅            | ❌                  | ❌         |
-| bat                                 | ✅            | ❌                  | ❌         |
-| bat config                          | ✅            | ❌                  | ❌         |
-| fd                                  | ✅            | ❌                  | ❌         |
-| NerdFont                            | ✅            | ✅                  | ❌         |
-| rust                                | ✅            | ✅                  | ❌         |
-| fnm                                 | ✅            | ❌                  | ❌         |
-| bun                                 | ✅            | ❌                  | ❌         |
-| rye                                 | ✅            | ❌                  | ❌         |
-| vs code                             | ✅            | ❌                  | ❌         |
-| cargo-binstall                      | ✅            | ✅                  | ❌         |
-| cargo-update                        | ✅            | ✅                  | ❌         |
-| gitmoji-rs                          | ✅            | ❌                  | ❌         |
-| bacon                               | ✅            | ❌                  | ❌         |
-| tokei                               | ✅            | ❌                  | ❌         |
-| gfold                               | ✅            | ❌                  | ❌         |
-| qdirstat                            | ✅            | ❌                  | ❌         |
-| biome                               | ✅            | ❌                  | ❌         |
-| fzf                                 | ✅            | ❌                  | ❌         |
-| glab                                | ✅            | ❌                  | ❌         |
-| oh-my-posh                          | ✅            | ❌                  | ❌         |
-| ripgrep                             | ✅            | ❌                  | ❌         |
-| yazi                                | ✅            | ❌                  | ❌         |
-| nvim                                | ✅            | ❌                  | ❌         |
