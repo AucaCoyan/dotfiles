@@ -36,7 +36,7 @@ mkdir --parents ~/.local/bin
 sudo ln --symbolic --force --no-dereference /usr/bin/batcat /usr/local/bin/bat
 
 echo -e '\n### ripgrep'
-sudo apt install rust-ripgrep -y
+sudo apt install ripgrep -y
 
 # Clean up
 echo -e '\n### Clean up'
