@@ -95,3 +95,10 @@ nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-li
 ```
 nix-env --delete-generations 10 11 14
 ```
+
+- delete ALL generations with
+
+```
+sudo nix-collect-garbage -d
+```
+
