@@ -20,7 +20,6 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  # boot.loader.grub.configurationLimit = 42;
 
   # Use the local time so windows don't reset to UTC
   time.hardwareClockInLocalTime = true;
