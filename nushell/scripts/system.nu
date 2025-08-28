@@ -27,7 +27,7 @@ export def "clean" [] {
         match $hostname {
             "nixos" => {
                 print "👪 You have currently these generations:"
-                ls /nix/var/nix/profiles/system-* -l
+                print (ls /nix/var/nix/profiles/system-*)
 
                 print "🧹 clean unused packages by all generations"
                 nix-store --gc

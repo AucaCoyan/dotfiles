@@ -5,7 +5,7 @@
 {
   config,
   pkgs,
-  inputs,
+  # inputs, # for home-manager, unused
   ...
 }:
 
@@ -13,7 +13,8 @@
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
-    inputs.home-manager.nixosModules.default
+    # unused
+    # inputs.home-manager.nixosModules.default
   ];
 
   # Bootloader.
@@ -334,6 +335,7 @@
       user.name = "Auca Coyan";
       user.email = "aucacoyan@gmail.com";
       init.defaultBranch = "main";
+      pull.rebase = true;
     };
 
     # TODO in home manager
