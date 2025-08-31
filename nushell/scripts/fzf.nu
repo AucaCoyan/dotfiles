@@ -9,11 +9,7 @@ export def --env f [] {
     ~/other-repos/nu
     ~/all-repos/
     ~/workspace
-    ~/workspace/botmaker
-    ~/workspace/dataflow
-    ~/workspace/gcp-source
     ~/workspace/private
-    ~/workspace/private/template-project
     | fzf) # pipe it to fzf
 
     if $destination != null {
