@@ -13,6 +13,13 @@ $PSDefaultParameterValues['*:ErrorAction'] = 'Stop'
 
 # --------------------- Install-master-script.ps1 ---------------------
 
+$runAsAdmin = [bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")
+
+if (!$runAsAdmin) {
+    Write-Error "Script is not running as admin. Please run with admin priviledges"
+    $host.Exit()
+}
+
 # import Appx or this wont work
 # https://superuser.com/questions/1456837/powershell-get-appxpackage-not-working
 if ($PSVersionTable.PSVersion.Major -eq 5) {
