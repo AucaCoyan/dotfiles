@@ -30,57 +30,12 @@ else {
 # clear screen
 Clear-Host
 
-# Check for winget and install
-Write-Host "`nInstalling winget - " -ForegroundColor Yellow -NoNewline; Write-Host "[1-10]" -ForegroundColor Green -BackgroundColor Black
-$hasPackageManager = Get-AppPackage -name "Microsoft.DesktopAppInstaller"
-$hasWingetexe = Test-Path "C:\Users\$env:Username\AppData\Local\Microsoft\WindowsApps\winget.exe"
-if (!$hasPackageManager -or !$hasWingetexe) {
-    $releases_url = "https://api.github.com/repos/microsoft/winget-cli/releases/latest"
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-    $releases = Invoke-RestMethod -uri "$($releases_url)"
-    $latestRelease = $releases.assets | Where-Object { $_.browser_download_url.EndsWith("msixbundle") } | Select-Object -First 1
-    Add-AppxPackage -Path $latestRelease.browser_download_url
-}
-else {
-    Write-Host "Winget found. Skipping`n" -ForegroundColor Yellow
-}
-
-# Install PS7
-Write-Host "Installing Powershell 7 - " -ForegroundColor Yellow -NoNewline; Write-Host "[2-10]" -ForegroundColor Green -BackgroundColor Black
-If (!(Test-Path "C:\Program Files\PowerShell\7\pwsh.exe")) {
-    winget install --id Microsoft.Powershell --source winget #  --accept-package-agreements --accept-source-agreements doesnt work on PS 5.0
-}
-else {
-    Write-Host "pwsh.exe found. Skipping`n" -ForegroundColor Yellow
-}
-
-
-# Install Windows Terminal
-# Write-Host "`nInstalling Windows Terminal - " -ForegroundColor Yellow -NoNewline ; Write-Host "[3-10]" -ForegroundColor Green -BackgroundColor Black
-# $hasWindowsTerminal = Get-AppPackage -Name "Microsoft.WindowsTerminal"
-# try {
-#     if (!$env:WT_SESSION -eq $true -or !$hasWindowsTerminal) {
-#         winget install --id=Microsoft.WindowsTerminal -e # --accept-package-agreements --accept-source-agreements doesnt work on PS 5.0
-#     }
-#    else {
-#       Write-Host "Windows Terminal found. Skipping`n" -ForegroundColor Yellow
-#    }
-#}
-#catch { Write-Warning $_ }
-
 # make ~/all-repos/ ~/repos/ and ~/other-repos/ folders
-Write-Host "`ncreating `\*repos` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`ncreating `\*repos` - " -ForegroundColor Yellow -NoNewline; Write-Host "[1-10]" -ForegroundColor Green -BackgroundColor Black
 
-$allReposFolderExists = Test-Path "C:\Users\$env:Username\all-repos\"
 $reposFolderExists = Test-Path "C:\Users\$env:Username\repos\"
 $otherReposFolderExists = Test-Path "C:\Users\$env:Username\other-repos\"
 
-if (!$allReposFolderExists) {
-    New-Item -ItemType Directory "C:\Users\$env:Username\all-repos\"
-}
-else {
-    Write-Host "~/all-repos/ folder found. Skipping`n" -ForegroundColor Yellow
-}
 if (!$reposFolderExists) {
     New-Item -ItemType Directory "C:\Users\$env:Username\repos\"
 }
@@ -95,7 +50,7 @@ else {
 }
 
 # scoop install
-Write-Host "`nInstalling scoop & apps - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[6-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nInstalling scoop & apps - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[2-10]" -ForegroundColor Green -BackgroundColor Black
 try {
     $scoopIsInstalled = [Boolean](Get-Command 'scoop' -ErrorAction SilentlyContinue)
     if (!$scoopIsInstalled) {
@@ -126,6 +81,7 @@ try {
     scoop install main/neovim extras/neovide
     scoop install main/nu
     scoop install main/oh-my-posh
+    scoop install main/pwsh
     scoop install main/ripgrep
     scoop install main/tokei
     scoop install main/yazi
@@ -141,11 +97,11 @@ try {
     scoop install extras/obsidian
     scoop install extras/peazip
     scoop install extras/powertoys
+    scoop install extras/signal
     scoop install extras/sumatrapdf
     scoop install extras/vlc
     scoop install extras/vscode
     scoop install extras/windirstat
-    scoop install extras/windows-terminal
     # scoop install main/innounp Inno Setup
 
     # Additional
@@ -153,28 +109,25 @@ try {
     # scoop install extras/anydesk
     scoop install 7zip
     scoop install extras/autohotkey
-    scoop install clipboard
+    # scoop install clipboard
     scoop install main/difftastic
     # scoop install dbeaver
-    scoop install dust
-    scoop install espanso
+    # scoop install dust
+    # scoop install espanso
     scoop install main/ffmpeg
-    scoop install glow
-    scoop install httrack
+    # scoop install glow
+    # scoop install httrack
     # scoop install mailspring
     scoop install ov
-    scoop install main/pandoc
-    scoop install rga
+    # scoop install rga main/pandoc
     scoop install sad
-    scoop install scoop-completion
-    scoop install sublime-merge
-    scoop install tealdeer
-    scoop install teamviewer
-    scoop install telegram
+    # scoop install scoop-completion
+    # scoop install teamviewer
+    # scoop install telegram
     scoop install terminal-icons
     scoop install extras/vcredist
     scoop install main/vcpkg
-    scoop install watchexec
+    # scoop install watchexec
 
     # optional apps
     # scoop install audacity extras/brave calibre digikam extras/gimp tradingview
@@ -182,7 +135,7 @@ try {
     # scoop install authy calibre gcc nomino
 
     # programming languages
-    scoop install main/deno
+    # scoop install main/deno
     scoop install main/fnm
     # scoop install main/uv
     # uv python install <error>
@@ -199,7 +152,7 @@ try {
 catch { Write-Warning $_ }
 
 # configure `git
-Write-Host "`nconfiguring git" -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nconfiguring git" -ForegroundColor Yellow -NoNewline; Write-Host "[3-10]" -ForegroundColor Green -BackgroundColor Black
 git config --global user.name "Auca Maillot"
 git config --global user.email "aucacoyan@gmail.com"
 # set `git push` to automatically setup the remote branch (no need to --set-upstream-to=)
@@ -236,7 +189,7 @@ else {
 
 # Install glyphed fonts
 $Font = "FiraCode"
-Write-Host "`nInstalling glyphed fonts for OMP [$Font] - " -ForegroundColor Yellow -NoNewline ; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
+Write-Host "`nInstalling glyphed fonts for OMP [$Font] - " -ForegroundColor Yellow -NoNewline ; Write-Host "[6-10]" -ForegroundColor Green -BackgroundColor Black
 try {
     $fontsToInstallDirectory = "$Font-temp"
 
@@ -290,59 +243,27 @@ try {
 }
 catch { Write-Warning $_ }
 
-# Install NuGet
-# it doesn't work either :shrug:
-Write-Host "`nInstalling NuGet" -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
-scoop install nuget
-
-# Set PSGallery as trusted
-Write-Host "`nSetting PSGallery as trusted repo - " -ForegroundColor Yellow -NoNewline ; Write-Host "[5-10]" -ForegroundColor Green -BackgroundColor Black
-Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
-
-# Install ps modules in PS7
-Write-Host "`nInstalling Z,PsReadLine,Terminal-Icons modules - "  -ForegroundColor Yellow -NoNewline ; Write-Host "[7-10]" -ForegroundColor Green -BackgroundColor Black
-
-if ($PSVersionTable.PSVersion.Major -eq 7) {
-    try {
-        Install-Module -Name z -RequiredVersion 1.1.3 -Force -Scope CurrentUser -AllowClobber -confirm:$false
-        Install-Module -Name Terminal-Icons -RequiredVersion 0.8.0 -Force -Scope CurrentUser -confirm:$false
-        Install-Module -Name PSReadLine -RequiredVersion 2.2.6 -Force -AllowPrerelease -Scope CurrentUser -SkipPublisherCheck
-    }
-    catch { Write-Warning $_ }
-}
-else {
-    <#     try {
-        Start-Job -ScriptBlock {
-            Start-Process "C:\Program Files\PowerShell\7\pwsh.exe" -ArgumentList { -Command Install-Module -Name z -RequiredVersion 1.1.3 -Force -Scope CurrentUser -AllowClobber -confirm:$false } -NoNewWindow
-            Start-Process "C:\Program Files\PowerShell\7\pwsh.exe" -ArgumentList { -Command Install-Module -Name Terminal-Icons -RequiredVersion 0.8.0 -Force -Scope CurrentUser -confirm:$false } -NoNewWindow
-            Start-Process "C:\Program Files\PowerShell\7\pwsh.exe" -ArgumentList { -Command Install-Module -Name PSReadLine -RequiredVersion 2.2.6 -Force -AllowPrerelease -Scope CurrentUser -SkipPublisherCheck } -NoNewWindow
-        } | Wait-Job | Receive-Job
-    }
-    catch { Write-Warning $_ } #>
-}
-
 # Set PS profile
-Write-Host "`nApplying Powershell profile - " -ForegroundColor Yellow -NoNewline ; Write-Host "[8-10]" -ForegroundColor Green -BackgroundColor Black
-try {
+# Write-Host "`nApplying Powershell profile - " -ForegroundColor Yellow -NoNewline ; Write-Host "[8-10]" -ForegroundColor Green -BackgroundColor Black
+# try {
     # backup
     # if (Test-Path $profile) { Rename-Item $profile -NewName Microsoft.PowerShell_profile.ps1.bak }
 
-    $originPath = "$HOME\OneDrive\Documents\PowerShell\"
-    $destinationPath = "$HOME\repos\dotfiles\Windows\PowerShell"
+    # $originPath = "$HOME\OneDrive\Documents\PowerShell\"
+    # $destinationPath = "$HOME\repos\dotfiles\Windows\PowerShell"
 
     # delete the folder if it exists
-    $LocalStateExits = Test-Path $originPath
-    if ($LocalStateExits) {
-        Remove-Item $originPath -Recurse -Force
-    }
+    # $LocalStateExits = Test-Path $originPath
+    # if ($LocalStateExits) {
+    #     Remove-Item $originPath -Recurse -Force
+    # }
 
     # symlink the settings.json
-    New-Item -ItemType SymbolicLink -Path $originPath -Target $destinationPath
-}
-catch { Write-Warning $_ }
+    # New-Item -ItemType SymbolicLink -Path $originPath -Target $destinationPath
+# }
+# catch { Write-Warning $_ }
 
 # todo:
-# Oh-My-Posh install, add to default prompt, add theme
 # pipx
 # cargo install
 # npm -g install
@@ -377,59 +298,7 @@ else {
     Write-Host "~/other-repos/nu/nu_scripts/ folder found. Skipping`n" -ForegroundColor Yellow
     # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n"
 }
-if (!$nupmFolderExists) {
-    git clone https://github.com/nushell/nupm "$HOME\other-repos\nupm"
-}
-else {
-    Write-Host "~/other-repos/nupm/ folder found. Skipping`n" -ForegroundColor Yellow
-    # Write-Error "~\other-repos\nu\nu_scripts\ folder exists. Stopping excecution.`n"
-}
-
-# Catppuccin
-Write-Host "`nCloning Catppuccin repos - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
-
-$catp_bat = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\bat"
-$catp_mailspring = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\mailspring"
-$catp_powershell = Test-Path "C:\Users\$env:Username\other-repos\catppuccin\powershell"
-
-if (!$catp_bat) {
-    git clone https://github.com/catppuccin/bat "$HOME\other-repos\catppuccin\bat"
-}
-else {
-    Write-Host "~/other-repos/catppuccin/bat/ folder found. Skipping`n" -ForegroundColor Yellow
-}
-if (!$catp_mailspring) {
-    git clone https://github.com/catppuccin/mailspring "$HOME\other-repos\catppuccin\mailspring"
-}
-else {
-    Write-Host "~/other-repos/catppuccin/mailspring/ folder found. Skipping`n" -ForegroundColor Yellow
-}
-if (!$catp_powershell) {
-    git clone https://github.com/catppuccin/powershell "$HOME\other-repos\catppuccin\powershell"
-    mkdir "$HOME\repos\dotfiles\Windows\Powershell\Modules\Catppuccin"
-    cp "$HOME\other-repos\catppuccin\powershell\*" "$HOME\repos\dotfiles\Windows\Powershell\Modules\Catppuccin\" -Recurse -Force
-}
-else {
-    Write-Host "~/other-repos/catppuccin/powershell/ folder found. Skipping`n" -ForegroundColor Yellow
-}
 
 # Install node and npm
 Write-Host "`nInstalling node with fnm - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
 fnm install --latest
-
-# Set bat symlink
-Write-Host "`nApplying bat settings - " -ForegroundColor Yellow -NoNewline ; Write-Host "[11-11]" -ForegroundColor Green -BackgroundColor Black
-try {
-    $originPath = "$HOME\AppData\Roaming\bat"
-    $destinationPath = "$HOME\repos\dotfiles\.config\bat"
-
-    # delete the folder if it exists
-    $LocalStateExits = Test-Path $originPath
-    if ($LocalStateExits) {
-        Remove-Item $originPath -Recurse -Force
-    }
-
-    # symlink the settings.json
-    New-Item -ItemType SymbolicLink -Path $originPath -Target $destinationPath
-}
-catch { Write-Warning $_ }
