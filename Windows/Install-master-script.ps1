@@ -165,6 +165,10 @@ git config --global user.email "aucacoyan@gmail.com"
 # set `git push` to automatically setup the remote branch (no need to --set-upstream-to=)
 # git config --global --add --bool push.autoSetupRemote true
 
+Write-Host "`nInstall diffnav (git diff pager)" -ForegroundColor Yellow -NoNewline; Write-Host "[3-10]" -ForegroundColor Green -BackgroundColor Black
+scoop install main/go
+go install github.com/dlvhdr/diffnav@latest
+
 # clone `dotfiles`
 Write-Host "`ncloning `\dotfiles\` - " -ForegroundColor Yellow -NoNewline; Write-Host "[4-10]" -ForegroundColor Green -BackgroundColor Black
 
