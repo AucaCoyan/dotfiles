@@ -1,5 +1,9 @@
 theme = "tokyonight_storm"
 
+[keys.normal]
+G = "goto_file_end"
+X = "extend_line_above"
+
 [editor]
 line-number = "relative"
 mouse = false
