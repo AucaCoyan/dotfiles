@@ -7,7 +7,6 @@ export def --env f [] {
     ~/other-repos
     ~/other-repos/espanso
     ~/other-repos/nu
-    ~/all-repos/
     ~/workspace
     ~/workspace/private
     | fzf) # pipe it to fzf
