@@ -97,19 +97,6 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -118,15 +105,6 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-# change gnu's ls for exa, a more advanced list explorer
-# -l (--long) display the files  in a table along their metadata
-# -s (--sort) sorts by type of file (directories, then socket, then link)
-alias ls="exa --long --sort=type"
-#       for alphabetical sorting use -s name
-
-# enable 'config' alias for configuring dotfiles in the $HOME/.cfg folder
-alias config='/usr/bin/git --git-dir=/home/auca/.cfg/ --work-tree=/home/auca'
-alias python3='python3'
 
 ######################################## fzf keybindings ##################################
 # Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
@@ -143,3 +121,19 @@ source /usr/share/doc/fzf/examples/completion.zsh
 ######################################## zsh autocomplete #################################
 # set Tab key to autocomplete
 bindkey '^I' autosuggest-accept
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/Users/aucamaillot/.zsh/completions:"* ]]; then export FPATH="/Users/aucamaillot/.zsh/completions:$FPATH"; fi
+. "/Users/aucamaillot/.deno/env"
+# Initialize zsh completions (added by deno install script)
+autoload -Uz compinit
+compinit
+# bun completions
+[ -s "/Users/aucamaillot/.bun/_bun" ] && source "/Users/aucamaillot/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# fnm
+eval "$(fnm env --use-on-cd --shell zsh)"
