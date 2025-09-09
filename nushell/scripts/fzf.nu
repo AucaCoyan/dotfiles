@@ -64,15 +64,12 @@ export def fuzzy-log-unit-search [] {
     }
 }
 
-alias crb = checkout recent branch
-
 export def "checkout recent branch" [] {
     let branch = git branch --sort=-committerdate
         | fzf --header "Checkout recent branch" --preview "git diff --color=always {1}"
         | str trim
     git checkout $branch
 }
-
 
 alias fef = fuzzy-edit-file
 
