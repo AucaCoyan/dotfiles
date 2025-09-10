@@ -13,17 +13,17 @@ cargo binstall cargo-nextest --secure
 # $tmp | Remove-Item
 
 Write-Host "`nInstalling gitmoji-rs" -ForegroundColor Yellow
-cargo install gitmoji-rs
+cargo binstall gitmoji-rs
 Write-Host "`nInitializing gitmoji-rs" -ForegroundColor Yellow
 gitmoji init --default
 Write-Host "`nInstalling bacon" -ForegroundColor Yellow
-cargo install --locked bacon
+cargo binstall --locked bacon
 Write-Host "`nInstalling cargo-update" -ForegroundColor Yellow
-cargo install cargo-update
+cargo binstall cargo-update
 Write-Host "`nInstalling tokei" -ForegroundColor Yellow
-cargo install tokei
+cargo binstall tokei
 Write-Host "`nInstalling gfold" -ForegroundColor Yellow
-cargo install --locked gfold
+cargo binstall --locked gfold
 
 # authenticate to github
 gh auth login
