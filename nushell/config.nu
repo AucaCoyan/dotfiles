@@ -111,6 +111,7 @@ $env.ENV_CONVERSIONS = {
 $env.EDITOR = "nvim"
 
 if $nu.os-info.name == "windows" {
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
 } else if $nu.os-info.name == "linux" {
     # Documentation for nvim
     # alias nvim = "~/bin/nvim"
