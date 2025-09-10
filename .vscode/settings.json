@@ -347,10 +347,17 @@
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
-    "workbench.colorTheme": "Catppuccin Frappé",
-    "workbench.iconTheme": "catppuccin-frappe",
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    "C_Cpp.intelliSenseEngine": "disabled",
+    // ------------------------------- Theme ------------------------------------
+    // This
+    // "workbench.colorTheme": "Catppuccin Frappé",
+    // is replaced with:
+    "window.autoDetectColorScheme": true,
+    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
+    "workbench.iconTheme": "catppuccin-latte",
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
