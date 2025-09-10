@@ -142,8 +142,9 @@ try {
     # scoop install authy calibre gcc nomino
 
     # programming languages
-    # scoop install main/deno
+    scoop install main/deno
     scoop install main/fnm
+    scoop install main/bun
     # scoop install main/uv
     # uv python install <error>
     # uv tool install ruff
