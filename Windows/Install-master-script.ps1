@@ -85,6 +85,7 @@ try {
     scoop install main/fzf
     scoop install main/gh
     scoop install main/glab
+    scoop install extras/lazygit
     scoop install main/neovim extras/neovide
     scoop install main/nu
     scoop install main/oh-my-posh
