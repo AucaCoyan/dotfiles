@@ -42,6 +42,7 @@ Write-Host "`ncreating `\*repos` - " -ForegroundColor Yellow -NoNewline; Write-H
 
 $reposFolderExists = Test-Path "C:\Users\$env:Username\repos\"
 $otherReposFolderExists = Test-Path "C:\Users\$env:Username\other-repos\"
+$homeApplicationsFolderExists = Test-Path "C:\Users\$env:Username\Applications\"
 
 if (!$reposFolderExists) {
     New-Item -ItemType Directory "C:\Users\$env:Username\repos\"
@@ -54,6 +55,12 @@ if (!$otherReposFolderExists) {
 }
 else {
     Write-Host "~/other-repos/ folder found. Skipping`n" -ForegroundColor Yellow
+}
+if (!$homeApplicationsFolderExists) {
+    New-Item -ItemType Directory "C:\Users\$env:Username\Applications\"
+}
+else {
+    Write-Host "~/Applications/ folder found. Skipping`n" -ForegroundColor Yellow
 }
 
 # scoop install
