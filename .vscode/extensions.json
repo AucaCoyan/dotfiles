@@ -41,6 +41,7 @@
         "dart-code.dart-code",
         "dart-code.flutter",
         "bradlc.vscode-tailwindcss",
+        "jnoortheen.nix-ide",
     ],
     "unwantedRecommendations": [
         "ms-toolsai.jupyter",
