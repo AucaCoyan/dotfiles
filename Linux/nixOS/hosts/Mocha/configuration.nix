@@ -218,6 +218,10 @@
     };
 
     nh.enable = true;
+
+    # Run unpatched dynamic binaries on NixOS.
+    # see: github.com/nix-community/nix-ld
+    nix-ld.enable = true;
   };
 
   # List packages installed in system profile. To search, run:
