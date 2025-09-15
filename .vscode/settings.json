@@ -87,12 +87,16 @@
     // Disable Copilot
     "chat.agent.enabled": false,
     "chat.commandCenter.enabled": false,
-    // Disable Model Context Protocol (MCP)
-    // https://code.visualstudio.com/docs/copilot/chat/mcp-servers
-    "chat.mcp.enabled": false,
+    // this is the chat sidebar
     "workbench.secondarySideBar.defaultVisibility": "hidden",
     "chat.edits2.enabled": false,
-    "chat.mcp.discovery.enabled": false,
+    "chat.mcp.access": "none",
+    "chat.mcp.discovery.enabled": {
+        "claude-desktop": false,
+        "windsurf": false,
+        "cursor-global": false,
+        "cursor-workspace": false
+    },
     "chat.extensionTools.enabled": false,
     "chat.detectParticipant.enabled": false,
     "chat.unifiedChatView": false,
