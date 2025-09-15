@@ -208,6 +208,7 @@
         user.email = "aucacoyan@gmail.com";
         init.defaultBranch = "main";
         pull.rebase = true;
+        push.autoSetupRemote = true;
       };
     };
 
