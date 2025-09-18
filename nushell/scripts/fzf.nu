@@ -80,9 +80,12 @@ export def "fuzzy log unit search" [] {
 }
 
 export def "fuzzy checkout" [] {
-    let branch = git branch --sort=-committerdate
+    mut branch = git branch --sort=-committerdate
         | fzf --header "Checkout recent branch" --preview "git diff --color=always {1}"
         | str trim
+    if ($branch | str starts-with '* ') {
+        $branch = $branch | str replace '* ' ''
+    }
     git checkout $branch
 }
 
