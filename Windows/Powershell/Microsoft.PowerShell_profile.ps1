@@ -83,18 +83,14 @@ function f {
         "$HOME\other-repos",
         "$HOME\other-repos\espanso",
         "$HOME\other-repos\nu",
-        "$HOME\all-repos\",
         "$HOME\workspace",
-        "$HOME\workspace\botmaker",
-        "$HOME\workspace\dataflow",
-        "$HOME\workspace\gcp-source",
         "$HOME\workspace\private"
     )
 
     $fdOutput = fd --max-depth 1 --min-depth 1 --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules -- . $directories | Out-String
 
     if (Get-Command fzf -ErrorAction SilentlyContinue) {
-        $selectedDirectory = $fdOutput | fzf | Out-String
+        $selectedDirectory = $fdOutput | fzf | Out-String -NoNewline
     }
     else {
         Write-Warning "fzf is not installed. Using the first directory found by fd."
