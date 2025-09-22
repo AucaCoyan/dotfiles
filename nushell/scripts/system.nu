@@ -167,7 +167,7 @@ export def "update" [] {
 export def --env "upgrade espanso" [] {
     if $nu.os-info.name == "windows" {
         # TODO: Delete if exisiting the files in the current folder
-        gh run download --repo espanso/espanso --name 'Windows Artifacts'
+        # gh run download --repo espanso/espanso --name 'Windows Artifacts'
         rm ./Espanso-Win-Installer-x86_64.exe
         mv ./Espanso-Win-Portable-x86_64.zip ~/Applications
 
