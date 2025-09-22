@@ -19,8 +19,8 @@ ln --symbolic --force --no-dereference ~/repos/dotfiles/.vscode ./User
 and macOS (to review)
 
 ```nushell
-cd ~/.config/Code
+cd ~/Library/Application\ Support/Code
 mv User/ User.backup/
-ln --symbolic --force --no-dereference ~/repos/dotfiles/.vscode ./User
+ln -s -F ~/repos/dotfiles/.vscode ./User
 ln ~/repos/dotfiles/.vscode/settings.json  ~/repos/dotfiles/.vscode/extensions.json ~/repos/dotfiles/.vscode/keybindings.json ~/repos/dotfiles/.vscode/tasks.json '/Users/aucamaillot/Library/Application Support/Code/User/'
 ```
