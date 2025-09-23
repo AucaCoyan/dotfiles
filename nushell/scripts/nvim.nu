@@ -48,8 +48,6 @@ export def download_nvim [] {
 
         # make it available in /usr/local/bin, distro installs to /usr/bin
 
-        # print "creating the config symlink"
-        ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
     } else if $nu.os-info.name == "macos" {
         error make {msg: "not implemented!", }
     }
@@ -70,6 +68,8 @@ export def "install personal" [] {
 
         print "🔗 Making the symlinks"
         sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
+
+        ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
     }
     nvim
 }
@@ -82,13 +82,13 @@ export def "install kickstart" [] {
     } else if $nu.os-info.name == "linux" {
         error make {msg: "not implemented!", }
 
-        # download_nvim
-        #
+        download_nvim
+
         # ## Clipboard for lazyVim
         # sudo nala install xclip -y
-        #
-        # print "creating the symlink"
-        # ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+
+        print "🔗 Making the symlinks"
+        ln -s ~/repos/dotfiles/.config/preconfigured-nvim/kickstart.nvim ~/.config/nvim
     }
     nvim
 }
