@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -91,7 +91,7 @@ plugins=(git                        # git
          gh                         # autocomplete for GH CLI
      )
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -106,17 +106,9 @@ alias zshconfig="nvim ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-######################################## fzf keybindings ##################################
-# Append this line to ~/.zshrc to enable fzf keybindings for Zsh:
-source /usr/share/doc/fzf/examples/key-bindings.zsh
-
-# Append this line to ~/.zshrc to enable fuzzy auto-completion for Zsh:
-source /usr/share/doc/fzf/examples/completion.zsh
-
 ########################################### starship ######################################
 # Install starship/starship in .zshrc
-# SUSPENDED
-# eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 ######################################## zsh autocomplete #################################
 # set Tab key to autocomplete
@@ -137,3 +129,11 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 
 # fnm
 eval "$(fnm env --use-on-cd --shell zsh)"
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+    [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
+
+# make node-gyp use specifically this python
+export NODE_GYP_FORCE_PYTHON=$HOME/.local/bin/python3.10
