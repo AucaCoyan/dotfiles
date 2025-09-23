@@ -93,6 +93,7 @@
     "github.copilot.nextEditSuggestions.enabled": false,
     "github.copilot.nextEditSuggestions.fixes": false,
     "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    "github.copilot.editor.enableCodeActions": false,
     // ghost copilot suggestions
     "editor.inlineSuggest.enabled": false,
     "chat.edits2.enabled": false,
