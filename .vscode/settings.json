@@ -93,6 +93,7 @@
     "github.copilot.nextEditSuggestions.enabled": false,
     "github.copilot.nextEditSuggestions.fixes": false,
     "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    // ⭐️ at the left of the code prompting AI code actions
     "github.copilot.editor.enableCodeActions": false,
     // ghost copilot suggestions
     "editor.inlineSuggest.enabled": false,
