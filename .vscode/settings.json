@@ -233,6 +233,18 @@
         "-A",
         "clippy::missing_const_for_fn",
     ],
+    // [[ PHP ]]
+    "[php]": {
+        // according to PSR-12
+        // source: https://www.php-fig.org/psr/psr-12/
+        "editor.rulers": [
+            80
+        ],
+        "files.trimTrailingWhitespace": true,
+        "files.insertFinalNewline": true,
+        "files.eol": "\n",
+        "editor.tabSize": 4,
+    },
     // [[ SQL ]]
     "sqlfluff.dialect": "tsql",
     "sqlfluff.excludeRules": [

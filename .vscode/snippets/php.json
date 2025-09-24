@@ -1,0 +1,9 @@
+{
+	// Snippets documentation
+	// https://code.visualstudio.com/docs/editing/userdefinedsnippets#_snippet-syntax
+	"php intelephense ignore error": {
+		"prefix": "@ignore",
+		"body": "/** @disregard ${1:PHP Code} ${2:description} */",
+		"description": "ignores php intelephense error code"
+	}
+}
