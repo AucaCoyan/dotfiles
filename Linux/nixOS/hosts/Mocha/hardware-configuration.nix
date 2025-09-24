@@ -27,12 +27,17 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" = {
-    device = "/dev/disk/by-uuid/13613a1c-d464-45d4-ac66-663b8bec7532";
+    device = "/dev/disk/by-uuid/567782d0-9c7f-4150-a00c-24b4a180a7f6";
     fsType = "ext4";
   };
 
+  fileSystems."/mnt/samba_share/Documentos" = {
+    device = "systemd-1";
+    fsType = "autofs";
+  };
+
   fileSystems."/boot" = {
-    device = "/dev/disk/by-uuid/85D7-EDF9";
+    device = "/dev/disk/by-uuid/15C7-1939";
     fsType = "vfat";
     options = [
       "fmask=0077"
@@ -41,18 +46,38 @@
   };
 
   fileSystems."/home" = {
-    device = "/dev/disk/by-uuid/72df1441-bfdf-4feb-b6ac-bb0596337d81";
+    device = "/dev/disk/by-uuid/edf2b4d5-33fe-40ae-8aa7-f871063d3639";
     fsType = "ext4";
   };
 
-  swapDevices = [ ];
+  fileSystems."/mnt/samba_share/Documentos" = {
+    device = "//192.168.0.8/Documentos";
+    fsType = "cifs";
+  };
 
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
+  fileSystems."/mnt/samba_share/movies" = {
+    device = "//192.168.0.8/movies";
+    fsType = "cifs";
+  };
+
+  fileSystems."/mnt/samba_share/Music" = {
+    device = "//192.168.0.8/Music";
+    fsType = "cifs";
+  };
+
+  fileSystems."/mnt/samba_share/titan" = {
+    device = "//192.168.0.8/titan";
+    fsType = "cifs";
+  };
+
+  fileSystems."/mnt/samba_share/tvseries" = {
+    device = "//192.168.0.8/tvseries";
+    fsType = "cifs";
+  };
+
+  swapDevices = [
+    { device = "/dev/disk/by-uuid/ffc2e9a3-e7bc-4ad6-b51b-ecf1e4be4b7c"; }
+  ];
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
