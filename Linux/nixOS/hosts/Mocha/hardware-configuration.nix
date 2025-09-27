@@ -31,11 +31,6 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/samba_share/Documentos" = {
-    device = "systemd-1";
-    fsType = "autofs";
-  };
-
   fileSystems."/boot" = {
     device = "/dev/disk/by-uuid/15C7-1939";
     fsType = "vfat";
