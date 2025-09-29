@@ -113,3 +113,7 @@ function f {
     }
 }
 
+
+# setup the node gyp version
+$env:NODE_GYP_FORCE_PYTHON = "$HOME\AppData\Roaming\uv\python\cpython-3.10.18-windows-x86_64-none\python.exe"
+
