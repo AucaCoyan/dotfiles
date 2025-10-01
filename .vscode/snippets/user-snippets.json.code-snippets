@@ -15,80 +15,14 @@
   // 	],
   // 	"description": "Log output to console"
   // }
-  "component": {
-    "scope": "javascript,typescript",
-    "prefix": "next-page",
-    "body": [
-      "export default function ${1:Pagename}({ }) {",
-      "  return (",
-      "    <main>${2:component}",
-      "    </main>",
-      "  )",
-      "}"
-    ],
-    "description": "React component"
+  "//remove-before-merge": {
+    "prefix": "//rm",
+    "body": "// TODO: Remove before merge",
+    "description": "// TODO: Remove before merge"
   },
-  "react-component": {
-    "scope": "javascript, typescript",
-    "prefix": "react-component",
-    "body": [
-      "export default function ${1:Pagename}({ }) {",
-      "  return (",
-      "    <main>${2:component}",
-      "    </main>",
-      "  )",
-      "}"
-    ]
-  },
-  "ustate": {
-    "scope": "javascript,typescript",
-    "prefix": "ustate",
-    "body": [
-      "const [${1:state}, set${2:state}] = useState()"
-    ],
-    "description": "useState React hook"
-  },
-  "reactArrowFunctionExportComponent": {
-    // "key": "reactArrowFunctionExportComponent", // "key" not allowed
-    "prefix": "rafce",
-    "body": [
-      "import React from 'react'",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = () => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "description": "Creates a React Arrow Function Component with ES7 module system",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "typescriptReactArrowFunctionExportComponent": {
-    // "key": "typescriptReactArrowFunctionExportComponent", // "key" not allowed
-    "prefix": "tsrafce",
-    "body": [
-      "import React from 'react'",
-      "",
-      "type Props = {}",
-      "",
-      "const ${1:${TM_FILENAME_BASE}} = (props: Props) => {",
-      "  return (",
-      "    <div>${1:first}</div>",
-      "  )",
-      "}",
-      "",
-      "export default ${1:${TM_FILENAME_BASE}}"
-    ],
-    "description": "Creates a React Arrow Function Component with ES7 module system and TypeScript interface",
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
-  },
-  "useState": {
-    "prefix": "useStateSnippet",
-    "body": [
-      "const [${1:first}, set${1/(.*)/${1:/capitalize}/}] = useState(${2:second})"
-    ],
-    "scope": "typescript,typescriptreact,javascript,javascriptreact"
+  "#remove-before-merge": {
+    "prefix": "#rm",
+    "body": "# TODO: Remove before merge",
+    "description": "# TODO: Remove before merge"
   }
 }

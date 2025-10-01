@@ -12,17 +12,9 @@
   // 	],
   // 	"description": "Log output to console"
   // }
-  "component": {
-    "prefix": "next-page",
-    "body": [
-      "export default function Page({ }) {",
-      "  return (",
-      "    <main>",
-      "    </main>",
-      "  )",
-      "}"
-    ],
-    "description": "React component"
+  "console.log": {
+    "prefix": "cl",
+    "body": "console.log(`${1:summary}: ${${2:variable}}`);"
   },
   "JSDoc: new type definition": {
     "prefix": "jsnewtype",
