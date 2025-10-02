@@ -19,14 +19,6 @@
         Run 'C:\Windows apps shortcuts\Windows Terminal - Shortcut.lnk'
 }
 
-; Win + W = Whatsapp
-#w::
-{ if WinExist("Whatsapp")
-    WinActivate ; Use the window found by WinExist.
-    else
-        Run 'C:\Windows apps shortcuts\WhatsApp - Shortcut.lnk'
-}
-
 ; -------------------------------------------------------------------------------
 ; Move window to the another monitor
 ; Win + F is "move to the left"
