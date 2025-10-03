@@ -80,7 +80,7 @@
         },
         "nushell": {
             "path": "${env:Home}/scoop/shims/nu.exe"
-        },
+        }
     },
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 240,
@@ -117,18 +117,28 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "git.openRepositoryInParentFolders": "always",
+    "git.blame.editorDecoration.enabled": false, // git blame lens
     "scm.defaultViewMode": "tree",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     // ------------------------- Specific languages -----------------------------
     "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.tabSize": 4,
+        "editor.indentSize": "tabSize"
     },
     "[jsonc]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "vscode.json-language-features",
+        "editor.formatOnType": true,
+        "editor.indentSize": "tabSize",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 4,
     },
     "[yaml]": {
         "editor.defaultFormatter": null,
         "editor.tabSize": 2
+    },
+    "[github-actions-workflow]": {
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
@@ -136,7 +146,7 @@
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
             80
-        ],
+        ]
     },
     // [[ Python ]]
     "[python]": {
@@ -149,7 +159,7 @@
             "--rcfile",
             "${workspaceFolder}/.code_quality/pylint.toml"
         ],
-        "flake8.enabled": false,
+        "flake8.enabled": false
     },
     "python.analysis.typeCheckingMode": "standard",
     "notebook.cellToolbarLocation": {
@@ -243,7 +253,7 @@
         "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true,
         "files.eol": "\n",
-        "editor.tabSize": 4,
+        "editor.tabSize": 4
     },
     // [[ SQL ]]
     "sqlfluff.dialect": "tsql",
@@ -272,6 +282,18 @@
                 ]
             }
         }
+    },
+    // [[ docker ]]
+    "[dockercompose]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.autoIndent": "advanced",
+        "editor.quickSuggestions": {
+            "other": true,
+            "comments": false,
+            "strings": true
+        },
+        "editor.defaultFormatter": "redhat.vscode-yaml"
     },
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
@@ -363,7 +385,7 @@
             ]
         }
     ],
-    // ------------------------- Disable Telemetry ------------------------------
+    // ------------------------------ Telemetry ---------------------------------
     // VS Code telemetry
     "telemetry.feedback.enabled": true,
     // ------------------------------- Other ------------------------------------
@@ -379,7 +401,7 @@
     // "workbench.colorTheme": "Catppuccin Frappé",
     // is replaced with:
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Catppuccin Latte",
+    "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
     "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
     "workbench.iconTheme": "catppuccin-macchiato",
     // --------------------------- Advaced Changes ------------------------------
