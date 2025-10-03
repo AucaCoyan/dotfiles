@@ -110,6 +110,16 @@ $env.ENV_CONVERSIONS = {
 
 $env.EDITOR = "nvim"
 
+export def nvim [file] {
+	$env.NVIM_APPNAME = "nvim"
+	^nvim $file
+}
+
+export def kvim [file] {
+	$env.NVIM_APPNAME = "nvim-kickstart"
+	^nvim $file
+}
+
 if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
 } else if $nu.os-info.name == "linux" {
