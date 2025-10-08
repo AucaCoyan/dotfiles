@@ -1,6 +1,11 @@
 // Place your key bindings in this file to override the defaultsauto[]
 [
   {
+    // in macOS the default is Opt + Esc (Alt + Esc)
+    "key": "ctrl+.",
+    "command": "editor.action.triggerSuggest"
+  },
+  {
     "key": "shift+enter",
     "command": "-python.execSelectionInTerminal",
     "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
