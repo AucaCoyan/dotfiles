@@ -78,7 +78,12 @@ export def "install kickstart" [] {
     rm_nvim_dirs
     if $nu.os-info.name == "windows" {
         download_nvim
-        git clone https://github.com/nvim-lua/kickstart.nvim.git $"($env.LOCALAPPDATA)/nvim"
+
+        # or directly clone into AppData
+        # git clone https://github.com/nvim-lua/kickstart.nvim.git $"($env.LOCALAPPDATA)/nvim"
+
+        print "🔗 Making the symlinks"
+        pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Local\nvim-kickstart" -Target $HOME\repos\dotfiles\.config\preconfigured-nvim\kickstart.nvim'
     } else if $nu.os-info.name == "linux" {
         error make {msg: "not implemented!", }
 
