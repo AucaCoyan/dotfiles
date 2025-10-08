@@ -23,6 +23,8 @@ return {
 
     -- Add your own debuggers here
     'leoluz/nvim-dap-go',
+    'vadimcn/codelldb',
+    'Microsoft/vscode-python',
   },
   keys = {
     -- Basic debugging keymaps, feel free to change to your liking!
