@@ -47,9 +47,8 @@ export def download_nvim [] {
         sudo tar -C /opt -xzf nvim-linux-x86_64.tar.gz
 
         # make it available in /usr/local/bin, distro installs to /usr/bin
-
     } else if $nu.os-info.name == "macos" {
-        error make {msg: "not implemented!", }
+        brew install neovim
     }
 }
 
@@ -70,6 +69,9 @@ export def "install personal" [] {
         sudo ln -sf /opt/nvim-linux-x86_64/bin/nvim /usr/local/bin/
 
         ln -s ~/repos/dotfiles/.config/nvim ~/.config/nvim
+
+    } else if $nu.os-info.name == "macos" {
+        error make {msg: "not implemented!", }
     }
     nvim
 }
@@ -94,6 +96,12 @@ export def "install kickstart" [] {
 
         print "🔗 Making the symlinks"
         ln -s ~/repos/dotfiles/.config/preconfigured-nvim/kickstart.nvim ~/.config/nvim
+    } else if $nu.os-info.name == "macos" {
+        download_nvim
+
+        print "🔗 Making the symlinks"
+        error make {msg: "TODO: make a symlink to kickstart-nvim config folder", }
+
     }
     nvim
 }
