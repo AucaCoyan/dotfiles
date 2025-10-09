@@ -15,10 +15,20 @@
   // 	],
   // 	"description": "Log output to console"
   // }
+  "//uncomment-before-merge": {
+    "prefix": "//uc",
+    "body": "// TODO: Uncomment before merge",
+    "description": "// TODO: Uncomment before merge"
+  },
   "//remove-before-merge": {
     "prefix": "//rm",
     "body": "// TODO: Remove before merge",
     "description": "// TODO: Remove before merge"
+  },
+  "#uncomment-before-merge": {
+    "prefix": "#uc",
+    "body": "# TODO: Uncomment before merge",
+    "description": "# TODO: Uncomment before merge"
   },
   "#remove-before-merge": {
     "prefix": "#rm",
