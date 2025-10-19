@@ -1,0 +1,231 @@
+// Place your snippets for yaml here. Each snippet is defined under a snippet name and has a prefix, body and 
+// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+// same ids are connected.
+// Example:
+// "Print to console": {
+// 	"prefix": "log",
+// 	"body": [
+// 		"console.log('$1');",
+// 		"$2"
+// 	],
+// 	"description": "Log output to console"
+// }
+{
+	"Depends On": {
+		"prefix": "depends_on:",
+		"body": [
+			"depends_on: ${1:trigger}"
+		],
+		"description": "Insert an Espanso depends_on key"
+	},
+	"Force Mode": {
+		"prefix": "force_mode:",
+		"body": [
+			"force_mode: ${1|clipboard,keys|}"
+		],
+		"description": "Choose an Espanso injection method for this trigger"
+	},
+	"Form Fields": {
+		"prefix": "form_fields:",
+		"body": [
+			"form_fields:",
+			"\t${1:field_name}:",
+			"\t\t$0"
+		],
+		"description": "Insert Espanso form fields"
+	},
+	"Form": {
+		"prefix": "form:",
+		"body": [
+			"form: |",
+			"\t${1:form_name}:",
+			"\t\t${2|multiline: true,default: ,choice: |}"
+		],
+		"description": "Insert an Espanso form"
+	},
+	"Label": {
+		"prefix": "label:",
+		"body": [
+			"label: ${1:label_text}"
+		],
+		"description": "Insert an Espanso label"
+	},
+	"Layout": {
+		"prefix": "layout:",
+		"body": [
+			"layout: [[${1|field,\\|,>|}]]",
+			"fields:",
+			"\t${1:field}: "
+		],
+		"description": "Insert an Espanso form layout"
+	},
+	"Left Word": {
+		"prefix": "left_word: true",
+		"body": [
+			"left_word: true"
+		],
+		"description": "Insert Espanso left_word: true"
+	},
+	"Name": {
+		"prefix": "- name:",
+		"body": [
+			"- name: ${1:var_name}",
+			"\ttype: ${2|echo,date,choice,clipboard,form,script,shell,random|}",
+			"\tparams:",
+			"\t\t$0"
+		],
+		"description": "Insert an Espanso variable name field and type"
+	},
+	"Paragraph": {
+		"prefix": "paragraph: true",
+		"body": [
+			"paragraph: true"
+		],
+		"description": "Insert Espanso markdown paragraph: true"
+	},
+	"Params": {
+		"prefix": "params:",
+		"body": [
+			"params:",
+			"\t$0"
+		],
+		"description": "Insert an Espanso params field"
+	},
+	"Propagate Case": {
+		"prefix": "propagate_case: true",
+		"body": [
+			"propagate_case: true"
+		],
+		"description": "Insert Espanso propagate_case: true"
+	},
+	"Regex": {
+		"prefix": "- regex:",
+		"body": [
+			"- regex: ${1} ",
+			"\t${2|replace,form,markdown,html,image_path|}: ${3}"
+		],
+		"description": "Insert a simple Espanso regex trigger"
+	},
+	"Regex with variable": {
+		"prefix": "- regexvar",
+		"body": [
+			"- regex: ${1}",
+			"\t${2|replace,form,markdown,html,image_path|}: '{{${3|replacement,\\|,>|}}}'",
+			"\tvars:",
+			"\t\t- name: ${3}",
+			"\t\t\ttype: ${4|echo,date,choice,clipboard,form,script,shell,random|}",
+			"\t\t\tparams:",
+			"\t\t\t\t${5|echo: ,format: ,values: ,layout: ,args: ,cmd: ,choices: |}"
+		],
+		"description": "Insert an Espanso regex with variable type and parameter"
+	},
+	"Right Word": {
+		"prefix": "right_word: true",
+		"body": [
+			"right_word: true"
+		],
+		"description": "Insert Espanso right_word: true"
+	},
+	"Search Terms": {
+		"prefix": "search_terms:",
+		"body": [
+			"search_terms:",
+			"\t- ${1:term}",
+			"\t- ${2:term}"
+		],
+		"description": "Insert Espanso search terms"
+	},
+	"Trigger": {
+		"prefix": "- trigger:",
+		"body": [
+			"- trigger: ${1}",
+			"\t${2|replace,form,markdown,html,image_path|}: ${3}"
+		],
+		"description": "Insert a simple Espanso trigger"
+	},
+	"Trigger with variable": {
+		"prefix": "- triggervar",
+		"body": [
+			"- trigger: ${1}",
+			"\t${2|replace,form,markdown,html,image_path|}: '{{${3:output}}}'",
+			"\tvars:",
+			"\t\t- name: ${3}",
+			"\t\t\ttype: ${4|echo,date,choice,clipboard,form,script,shell,random|}",
+			"\t\t\tparams:",
+			"\t\t\t\t${5|echo: ,format: ,values: ,layout: ,args: ,cmd: ,choices: |}"
+		],
+		"description": "Insert an Espanso trigger with variable type and parameters"
+	},
+	"Triggers": {
+		"prefix": "- triggers:",
+		"body": [
+			"- triggers: [${1}, ${2}]",
+			"\t${3|replace,form,markdown,html,image_path|}: ${4}"
+		],
+		"description": "Insert a simple Espanso triggers list"
+	},
+	"Type": {
+		"prefix": "type:",
+		"body": [
+			"type: ${2|echo,date,choice,clipboard,form,script,shell,random|}"
+		],
+		"description": "Insert an Espanso type item"
+	},
+	"Uppercase Style": {
+		"prefix": "uppercase_style:",
+		"body": [
+			"uppercase_style: ${1|capitalize,capitalize_words,uppercase|}"
+		],
+		"description": "Insert an Espanso uppercase style"
+	},
+	"Vars": {
+		"prefix": "vars:",
+		"body": [
+			"vars:",
+			"- name: ${1:var_name}",
+			"\ttype: ${2|echo,date,choice,clipboard,form,script,shell,random|}",
+			"\tparams:",
+			"\t\t${3|echo: ,format: ,values: ,layout: ,args: ,cmd: ,choices: |}"
+		],
+		"description": "Insert an Espanso variable"
+	},
+	"Word": {
+		"prefix": "word: true",
+		"body": [
+			"word: true"
+		],
+		"description": "Insert an Espanso word: true"
+	},
+	"Espanso inline script match": {
+		"prefix": "esp_script",
+		"body": [
+			"\t- ${1|trigger,regex,triggers|}: ${2}",
+			"\t\t${3|replace,form,markdown,html,image_path|}: '{{${4:output}}}'",
+			"\t\tvars:",
+			"\t\t\t- name: ${4}",
+			"\t\t\t\ttype: script",
+			"\t\t\t\tparams:",
+			"\t\t\t\t\targs:",
+			"\t\t\t\t\t\t- ${5|python,zsh,pwsh,powershell,sh|}",
+			"\t\t\t\t\t\t- -c",
+			"\t\t\t\t\t\t- |",
+			"\t\t\t\t\t\t\t${6:code}"
+		],
+		"description": "Insert an Espanso script trigger"
+	},
+	"Espanso shell match": {
+		"prefix": "esp_shell",
+		"body": [
+			"\t- ${1|trigger,regex,triggers|}: ${2}",
+			"\t\t${3|replace,form,markdown,html,image_path|}: '{{${4:output}}}'",
+			"\t\tvars:",
+			"\t\t\t- name: ${4}",
+			"\t\t\t\ttype: shell",
+			"\t\t\t\tparams:",
+			"\t\t\t\t\tshell: ${5|bash,zsh,pwsh,cmd,powershell,sh|}",
+			"\t\t\t\t\tcmd: ${6:command}"
+		],
+		"description": "Insert an Espanso shell trigger"
+	}
+}
