@@ -131,11 +131,16 @@
         "editor.formatOnType": true,
         "editor.indentSize": "tabSize",
         "editor.detectIndentation": false,
-        "editor.tabSize": 4,
+        "editor.tabSize": 4
     },
     "[yaml]": {
         "editor.defaultFormatter": null,
         "editor.tabSize": 2
+    },
+    "[markdown]": {
+        "editor.rulers": [
+            80
+        ]
     },
     "[github-actions-workflow]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
@@ -241,7 +246,7 @@
         // "-A",
         // "clippy::unused_self"
         "-A",
-        "clippy::missing_const_for_fn",
+        "clippy::missing_const_for_fn"
     ],
     // [[ PHP ]]
     "[php]": {
@@ -403,7 +408,7 @@
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
     "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.iconTheme": "catppuccin-macchiato"
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
