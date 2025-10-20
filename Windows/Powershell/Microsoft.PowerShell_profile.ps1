@@ -66,7 +66,7 @@ Set-PSReadLineKeyHandler -Chord '"', "'" `
 
 # `fnm`:
 # load the `.node-version` or `.nvmrc` file on cd and load the NodeJS version correctly
-fnm env --use-on-cd | Out-String | Invoke-Expression
+fnm env --use-on-cd --version-file-strategy=recursive | Out-String | Invoke-Expression
 # more on `fnm` autocompletion below!
 
 
