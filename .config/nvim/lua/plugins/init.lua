@@ -11,7 +11,7 @@
 -- NOTE: Here is where you install your plugins.
 return {
   -- TODO: does it work?
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
+  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
 
   -- TODO: see if we need these
   -- require 'kickstart.plugins.debug',
