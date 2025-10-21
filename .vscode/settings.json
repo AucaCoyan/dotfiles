@@ -120,6 +120,7 @@
     "git.blame.editorDecoration.enabled": false, // git blame lens
     "scm.defaultViewMode": "tree",
     "diffEditor.ignoreTrimWhitespace": true,
+    "git.replaceTagsWhenPull": true,
     // ------------------------- Specific languages -----------------------------
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
