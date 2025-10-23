@@ -122,6 +122,7 @@ export def kvim [file] {
 
 if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
+    $env.NODE_GYP_FORCE_PYTHON = "~/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none/python.exe"
 } else if $nu.os-info.name == "linux" {
     # Documentation for nvim
     # alias nvim = "~/bin/nvim"
