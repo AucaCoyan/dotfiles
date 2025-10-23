@@ -121,6 +121,7 @@
     "scm.defaultViewMode": "tree",
     "diffEditor.ignoreTrimWhitespace": true,
     "git.replaceTagsWhenPull": true,
+    "git.rebaseWhenSync": true,
     // ------------------------- Specific languages -----------------------------
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
@@ -149,10 +150,22 @@
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
             80
         ]
+    },
+    "[typescript]": {
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+        },
+        "editor.defaultFormatter": "biomejs.biome",
+        "editor.rulers": [
+            80
+        ],
     },
     // [[ Python ]]
     "[python]": {
