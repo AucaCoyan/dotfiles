@@ -45,10 +45,10 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/samba_share/Documentos" = {
-    device = "//192.168.0.8/Documentos";
-    fsType = "cifs";
-  };
+  # fileSystems."/mnt/samba_share/Documentos" = {
+  #   device = "//192.168.0.8/Documentos";
+  #   fsType = "cifs";
+  # };
 
   fileSystems."/mnt/samba_share/movies" = {
     device = "//192.168.0.8/movies";
