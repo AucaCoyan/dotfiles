@@ -132,7 +132,7 @@ function f {
     fi
 
     local selected_directory
-    
+
     # 3. Check for fzf and use it for selection
     # `type fzf` attempts to locate the command. `&>/dev/null` suppresses its output.
     if type fzf &>/dev/null; then

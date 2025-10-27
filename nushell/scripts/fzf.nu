@@ -125,8 +125,8 @@ export def --env "fuzzy find directory" [] {
     let dir = git top level folder # dir to start searching
 
     let destination = (
-        fd --type directory 
-        --hidden 
+        fd --type directory
+        --hidden
         --no-ignore
         --ignore-vcs
         --exclude node_modules
