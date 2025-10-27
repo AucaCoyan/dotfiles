@@ -31,9 +31,10 @@ nushell/plugin.msgpackz
 # espanso
 .config/.espanso/match/packages/
 
+# lazygit
+.config/lazygit/state.yml
+
 # work config
 .config/.espanso/match/work.yml
 nushell/work-env.nu
-
-# lazygit
-.config/lazygit/state.yml
+nushell/scripts/typedesk/*
