@@ -257,6 +257,7 @@
     keepassxc
     kdotool
     lazygit
+    librewolf
     lnav
     wl-clipboard # for the clipboard interaction
     mangohud # steam fps and gpu monitor
