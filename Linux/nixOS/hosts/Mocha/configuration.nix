@@ -284,6 +284,7 @@
     ticktick
     tig
     tokei
+    veracrypt
     vlc
     vscode
     wget
