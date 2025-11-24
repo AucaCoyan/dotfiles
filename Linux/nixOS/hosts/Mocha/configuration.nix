@@ -12,8 +12,10 @@
 {
   imports = [
     # Include the results of the hardware scan.
+    # ../../common/secrets.nix
     ./hardware-configuration.nix
-    # inputs.home-manager.nixosModules.default # unused
+    # unused
+    # inputs.home-manager.nixosModules.default
   ];
 
   # Allow unfree packages
@@ -230,7 +232,9 @@
   environment.systemPackages = with pkgs; [
     alejandra
     bat
+    # beekeeper-studio # Insecure electron version
     bun
+    calibre
     cargo-tarpaulin # rust coverage
     cifs-utils # for the samba shares
     delta
@@ -251,6 +255,7 @@
     glab
     ghostty
     gparted
+    # grayjay
     # grafana
     # grafana-loki
     home-manager
@@ -273,7 +278,8 @@
     onedrive
     openssl
     pkg-config
-    protonup # steam's proton
+    # protonmail-desktop # doesn't work
+    protonup-ng # steam's proton
     qdirstat
     # postgresql
     ripgrep
@@ -290,6 +296,42 @@
     vscode
     wget
   ];
+
+  services.promtail = {
+    enable = true;
+    configuration = {
+      server = {
+        http_listen_port = 3031;
+        grpc_listen_port = 0;
+      };
+      positions = {
+        filename = "/tmp/positions.yaml";
+      };
+      clients = [
+        {
+          url = "http://192.168.0.8:3100/loki/api/v1/push";
+        }
+      ];
+      scrape_configs = [
+        {
+          job_name = "journal";
+          journal = {
+            max_age = "12h";
+            labels = {
+              job = "systemd-journal";
+              host = "nixos";
+            };
+          };
+          relabel_configs = [
+            {
+              source_labels = [ "__journal__systemd_unit" ];
+              target_label = "unit";
+            }
+          ];
+        }
+      ];
+    };
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
