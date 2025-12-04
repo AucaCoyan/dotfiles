@@ -143,6 +143,8 @@ if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/home/linuxbrew/.linuxbrew/bin')
     # nix-shell
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/nix/var/nix/profiles/default/bin')
+} else if $nu.os-info.name == "macos" {
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/Cellar/php@8.2/8.2.29_2/bin')
 }
 
 # import the theme
