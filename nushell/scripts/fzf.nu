@@ -39,7 +39,20 @@ export def --env f [] {
     return $destination
 }
 
-export def "fuzzy history search" [] { history | get command | uniq | fzf }
+export def "fuzzy history search" [] {
+    let command = history
+        | get command
+        | uniq
+        | fzf --color=dark
+
+    if $nu.os-info.name == "windows" {
+        error make {msg: $"Not implemented in Windows", }
+    } else if $nu.os-info.name == "linux" {
+        error make {msg: $"Not implemented in Linux", }
+    } else if $nu.os-info.name == "macos" {
+        $command | pbcopy
+    }
+}
 
 const tablen = 8
 
