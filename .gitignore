@@ -40,3 +40,4 @@ nushell/work-env.nu
 nushell/scripts/typedesk/*
 
 .DS_Store
+secrets.*
