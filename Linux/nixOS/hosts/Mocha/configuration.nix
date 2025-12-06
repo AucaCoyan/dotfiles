@@ -286,6 +286,7 @@
     rustup
     samba
     signal-desktop
+    slack
     systemctl-tui
     telegram-desktop
     ticktick
