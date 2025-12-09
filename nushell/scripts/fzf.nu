@@ -18,7 +18,6 @@ export def --env f [] {
     -- . # any name
     ~/repos #all these dirs
     ~/other-repos
-    ~/other-repos/espanso
     ~/other-repos/nu
     ~/workspace
     ~/workspace/private
