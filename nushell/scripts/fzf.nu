@@ -2,8 +2,9 @@
 #
 # `f` is a git repo (directory) finder (`f`)
 # `e` is edit a file with `bat` preview (`fuzzy edit file`)
-# and `d` is a fast `cd` that takes the root .git folder, even if you are nested
+# `d` is a fast `cd` that takes the root .git folder, even if you are nested
 #   (`fuzzy find directory`)
+# `h` is a fuzzy history search that copies the selected command to clipboard
 #
 # also:
 # - `fuzzy checkout` can checkout a git branch
@@ -42,16 +43,13 @@ export def "fuzzy history search" [] {
     let command = history
         | get command
         | uniq
+        | str join "\n"
         | fzf --color=dark
 
-    if $nu.os-info.name == "windows" {
-        error make {msg: $"Not implemented in Windows", }
-    } else if $nu.os-info.name == "linux" {
-        error make {msg: $"Not implemented in Linux", }
-    } else if $nu.os-info.name == "macos" {
-        $command | pbcopy
-    }
+    commandline edit --insert $command
 }
+
+export alias h = fuzzy history search
 
 const tablen = 8
 
