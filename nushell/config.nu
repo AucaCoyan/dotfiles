@@ -253,3 +253,6 @@ if $nu.os-info.name == "linux" {
 
 # import the module scripts
 use ~/repos/dotfiles/nushell/scripts/ *
+
+mkdir ($nu.data-dir | path join "vendor/autoload")
+tv init nu | save -f ($nu.data-dir | path join "vendor/autoload/tv.nu")
