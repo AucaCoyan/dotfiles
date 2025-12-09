@@ -5,7 +5,6 @@ export use git.nu
 export use helix.nu
 # export use oil.nu
 # export use nvim.nu
-export use oss.nu
 export use python.nu
 export use system.nu
 export use typescript.nu
