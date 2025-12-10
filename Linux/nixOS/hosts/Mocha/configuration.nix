@@ -230,7 +230,6 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    alejandra
     bat
     # beekeeper-studio # Insecure electron version
     bun
@@ -265,7 +264,7 @@
     librewolf
     lnav
     wl-clipboard # for the clipboard interaction
-    mangohud # steam fps and gpu monitor
+    # mangohud # steam fps and gpu monitor
     mattermost-desktop
     mdbook
     nh
@@ -275,7 +274,7 @@
     nvd # diff between nix versions
     obsidian
     oh-my-posh
-    onedrive
+    # onedrive
     openssl
     pkg-config
     # protonmail-desktop # doesn't work
@@ -288,11 +287,12 @@
     signal-desktop
     slack
     systemctl-tui
-    telegram-desktop
+    # telegram-desktop
+    television
     ticktick
     tig
     tokei
-    veracrypt
+    # veracrypt
     vlc
     vscode
     wget
