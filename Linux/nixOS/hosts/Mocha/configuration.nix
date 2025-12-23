@@ -36,25 +36,6 @@
   # Use the local time so windows don't reset to UTC
   time.hardwareClockInLocalTime = true;
 
-  services.samba = {
-    enable = true;
-  };
-
-  # Enable avahi for finding *.local domains
-  # this is required for samba and local websites
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    publish = {
-      enable = true;
-      addresses = true;
-      domain = true;
-      hinfo = true;
-      userServices = true;
-      workstation = true;
-    };
-  };
-
   # Samba folders
   # source here:
   # https://www.reddit.com/r/NixOS/comments/6ft8do/mounting_samba_shares_in_nixos/
@@ -67,16 +48,16 @@
   # so the system can find the credentials
   # Do:
   # `sudo nvim` and then `:w /etc/nixos/smb-secrets`
-  # fileSystems."/mnt/samba_share/Documentos" = {
-  #   device = "//192.168.0.8/Documents";
-  #   fsType = "cifs";
-  #   options =
-  #     let
-  #       # this line prevents hanging on network split
-  #       automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
-  #     in
-  #     [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
-  # };
+  fileSystems."/mnt/samba_share/Documentos" = {
+    device = "//192.168.0.8/Documentos";
+    fsType = "cifs";
+    options =
+      let
+        # this line prevents hanging on network split
+        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
+      in
+      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
+  };
 
   fileSystems."/mnt/samba_share/movies" = {
     device = "//192.168.0.8/movies";
@@ -148,34 +129,40 @@
 
   # Enable the X11 windowing system.
   # You can disable this if you're only using the Wayland session.
-  services.xserver.enable = true;
-  # Desktop environment
-  # https://wiki.nixos.org/wiki/Category:Desktop_environment
-  # Enable the KDE Plasma Desktop Environment.
-  services.displayManager.sddm.enable = true;
-  services.desktopManager.plasma6.enable = true;
+  # services.xserver.enable = true;
 
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
+  services = {
+    # Desktop environment
+    # https://nixos.wiki/wiki/Category:Desktop_environment
+    # Enable the KDE Plasma Desktop Environment.
+    displayManager.sddm.enable = true;
+    desktopManager.plasma6.enable = true;
+    displayManager.sddm.wayland.enable = true;
+
+    # Configure keymap in X11
+    xserver.xkb = {
+      layout = "us";
+      variant = "";
+    };
+
+    # Enable CUPS to print documents.
+    printing.enable = true;
+
+    # Enable sound with pipewire.
+    pulseaudio.enable = false;
+
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+    };
   };
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true; # powers up BT on boot
 
-  # Enable sound with pipewire.
-  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aucac = {
@@ -226,6 +213,77 @@
     # see: github.com/nix-community/nix-ld
     nix-ld.enable = true;
   };
+
+  services.samba = {
+    enable = true;
+  };
+
+  # Enable avahi for finding *.local domains
+  # this is required for samba and local websites
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    publish = {
+      enable = true;
+      addresses = true;
+      domain = true;
+      hinfo = true;
+      userServices = true;
+      workstation = true;
+    };
+  };
+
+  services.promtail = {
+    enable = true;
+    configuration = {
+      server = {
+        http_listen_port = 3031;
+        grpc_listen_port = 0;
+      };
+      positions = {
+        filename = "/tmp/positions.yaml";
+      };
+      clients = [
+        {
+          url = "http://192.168.0.8:3100/loki/api/v1/push";
+        }
+      ];
+      scrape_configs = [
+        {
+          job_name = "journal";
+          journal = {
+            max_age = "12h";
+            labels = {
+              job = "systemd-journal";
+              host = "nixos";
+            };
+          };
+          relabel_configs = [
+            {
+              source_labels = [ "__journal__systemd_unit" ];
+              target_label = "unit";
+            }
+          ];
+        }
+      ];
+    };
+  };
+
+  services.syncthing = {
+    enable = true;
+    group = "users";
+    user = "aucac";
+    dataDir = "/home/aucac"; # Default folder for new synced folders
+    configDir = "/home/aucac/repos/dotfiles/.config/syncthing"; # Folder for Syncthing's settings and keys
+  };
+
+  # This value determines the NixOS release from which the default
+  # settings for stateful data, like file locations and database versions
+  # on your system were taken. It‘s perfectly fine and recommended to leave
+  # this value at the release version of the first install of this system.
+  # Before changing this value read the documentation for this option
+  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+  system.stateVersion = "25.05"; # Did you read the comment?
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -297,57 +355,4 @@
     vscode
     wget
   ];
-
-  services.promtail = {
-    enable = true;
-    configuration = {
-      server = {
-        http_listen_port = 3031;
-        grpc_listen_port = 0;
-      };
-      positions = {
-        filename = "/tmp/positions.yaml";
-      };
-      clients = [
-        {
-          url = "http://192.168.0.8:3100/loki/api/v1/push";
-        }
-      ];
-      scrape_configs = [
-        {
-          job_name = "journal";
-          journal = {
-            max_age = "12h";
-            labels = {
-              job = "systemd-journal";
-              host = "nixos";
-            };
-          };
-          relabel_configs = [
-            {
-              source_labels = [ "__journal__systemd_unit" ];
-              target_label = "unit";
-            }
-          ];
-        }
-      ];
-    };
-  };
-
-  services.syncthing = {
-    enable = true;
-    group = "users";
-    user = "aucac";
-    dataDir = "/home/aucac"; # Default folder for new synced folders
-    configDir = "/home/aucac/repos/dotfiles/.config/syncthing"; # Folder for Syncthing's settings and keys
-  };
-
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "25.05"; # Did you read the comment?
-
 }
