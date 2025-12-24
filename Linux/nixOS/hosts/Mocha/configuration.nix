@@ -292,6 +292,7 @@
     # beekeeper-studio # Insecure electron version
     bun
     calibre
+    cargo
     cargo-tarpaulin # rust coverage
     cifs-utils # for the samba shares
     delta
@@ -340,7 +341,7 @@
     qdirstat
     # postgresql
     ripgrep
-    rustup
+    rustc
     samba
     signal-desktop
     slack
