@@ -326,6 +326,7 @@
     # mangohud # steam fps and gpu monitor
     mattermost-desktop
     mdbook
+    neovide
     nh
     nil # nix LSP
     nixfmt # Official formatter
@@ -355,5 +356,6 @@
     vlc
     vscode
     wget
+    zellij
   ];
 }
