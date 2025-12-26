@@ -72,3 +72,5 @@ alias "gimtoji commit" = gitmoji commit
 # fzf
 alias hi = fuzzy-history-search
 alias hf = fuzzy-command-search
+
+alias sail = vendor/bin/sail
