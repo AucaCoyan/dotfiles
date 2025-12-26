@@ -187,7 +187,7 @@ if [[ ":$FPATH:" != *":/Users/aucamaillot/.zsh/completions:"* ]]; then export FP
 autoload -Uz compinit
 compinit
 # bun completions
-[ -s "/Users/aucamaillot/.bun/_bun" ] && source "/Users/aucamaillot/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -203,3 +203,8 @@ eval "$(pyenv init - zsh)"
 
 # make node-gyp use specifically this python
 export NODE_GYP_FORCE_PYTHON=$HOME/.local/bin/python3.10
+
+# Docker completions
+fpath=("$HOME/.docker/completions" $fpath)
+autoload -Uz compinit
+compinit
