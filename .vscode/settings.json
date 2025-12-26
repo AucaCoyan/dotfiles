@@ -84,19 +84,20 @@
     },
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 240,
-    // Disable Copilot
-    "chat.agent.enabled": false,
-    "chat.commandCenter.enabled": false,
+    // ---------------------------------- AI -------------------------------------
+    // Copilot
+    "chat.agent.enabled": true,
+    "chat.commandCenter.enabled": true,
+    // tab suggestions for copilot
+    "github.copilot.nextEditSuggestions.enabled": true,
+    "github.copilot.nextEditSuggestions.fixes": true,
+    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
+    // ghost copilot suggestions
+    "editor.inlineSuggest.enabled": true,
     // this is the chat sidebar
     "workbench.secondarySideBar.defaultVisibility": "hidden",
-    // tab suggestions for copilot
-    "github.copilot.nextEditSuggestions.enabled": false,
-    "github.copilot.nextEditSuggestions.fixes": false,
-    "github.copilot.nextEditSuggestions.allowWhitespaceOnlyChanges": false,
     // ⭐️ at the left of the code prompting AI code actions
     "github.copilot.editor.enableCodeActions": false,
-    // ghost copilot suggestions
-    "editor.inlineSuggest.enabled": false,
     "chat.edits2.enabled": false,
     "chat.mcp.access": "none",
     "chat.mcp.discovery.enabled": {
@@ -107,11 +108,8 @@
     },
     "chat.extensionTools.enabled": false,
     "chat.detectParticipant.enabled": false,
-    "chat.unifiedChatView": false,
     "workbench.settings.showAISearchToggle": false,
     "workbench.editor.empty.hint": "hidden",
-    // Allow to open files from WSL
-    "security.workspace.trust.untrustedFiles": "open",
     // ---------------------------------- Git -----------------------------------
     "git.autofetch": true,
     "git.confirmSync": false,
@@ -119,7 +117,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.blame.editorDecoration.enabled": false, // git blame lens
     "scm.defaultViewMode": "tree",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "git.replaceTagsWhenPull": true,
     "git.rebaseWhenSync": true,
     // ------------------------- Specific languages -----------------------------
@@ -205,6 +203,8 @@
         "clippy::todo",
         "-W",
         "clippy::undocumented_unsafe_blocks",
+        "-A",
+        "clippy::default_trait_access",
         "-A",
         "clippy::missing_docs_in_private_items",
         "-A",
@@ -314,6 +314,9 @@
         },
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
+    "docker.extension.enableComposeLanguageServer": false,
+    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
+    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
@@ -407,14 +410,14 @@
     // ------------------------------ Telemetry ---------------------------------
     // VS Code telemetry
     "telemetry.feedback.enabled": true,
-    // ------------------------------- Other ------------------------------------
     "redhat.telemetry.enabled": false,
+    // ------------------------------- Other ------------------------------------
     "security.allowedUNCHosts": [
         "wsl.localhost"
     ],
-    "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-    "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     "C_Cpp.intelliSenseEngine": "disabled",
+    // Allow to open files from WSL
+    "security.workspace.trust.untrustedFiles": "open",
     // ------------------------------- Theme ------------------------------------
     // This
     // "workbench.colorTheme": "Catppuccin Frappé",
@@ -422,7 +425,7 @@
     "window.autoDetectColorScheme": true,
     "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
     "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-    "workbench.iconTheme": "catppuccin-macchiato"
+    "workbench.iconTheme": "catppuccin-macchiato",
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
