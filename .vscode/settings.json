@@ -120,6 +120,7 @@
     "diffEditor.ignoreTrimWhitespace": false,
     "git.replaceTagsWhenPull": true,
     "git.rebaseWhenSync": true,
+    "git.detectWorktrees": false,
     // ------------------------- Specific languages -----------------------------
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
