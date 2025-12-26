@@ -21,9 +21,9 @@ theme:
   searchingActiveBorderColor:
     - '#f9e2af'
 git:
-  paging:
-    colorArg: always
-    pager: delta --dark --paging=never
+  pagers:
+    - colorArg: always
+      pager: delta --dark --paging=never
 customCommands:
   # Create GitHub pull request
   - key: "<c-r>"
