@@ -28,6 +28,9 @@ nushell/plugin.msgpackz
 # chadrc is tracked, do not look up for changes
 .config/preconfigured-nvim/NvChad/custom/chadrc.lua
 
+# syncthing config
+.config/syncthing
+
 # espanso
 .config/.espanso/match/packages/
 
