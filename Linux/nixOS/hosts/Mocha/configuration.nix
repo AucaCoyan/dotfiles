@@ -351,6 +351,7 @@
     television
     ticktick
     tig
+    tlrc
     tokei
     # veracrypt
     vlc
