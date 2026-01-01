@@ -171,6 +171,7 @@
     extraGroups = [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = with pkgs; [
       kdePackages.kate
@@ -276,6 +277,9 @@
     dataDir = "/home/aucac"; # Default folder for new synced folders
     configDir = "/home/aucac/repos/dotfiles/.config/syncthing"; # Folder for Syncthing's settings and keys
   };
+
+  virtualisation.docker.enable = true;
+
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
