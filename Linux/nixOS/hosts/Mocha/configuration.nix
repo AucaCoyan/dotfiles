@@ -341,6 +341,7 @@
     # onedrive
     openssl
     pkg-config
+    prek
     # protonmail-desktop # doesn't work
     protonup-ng # steam's proton
     qdirstat
