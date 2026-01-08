@@ -94,7 +94,13 @@ sudo nix-collect-garbage --delete-old
 
 - List the numbers with
 
+```bash
+sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
 ```
+
+or, the files:
+
+```bash
 ls /nix/var/nix/profiles/system-* -l
 ```
 
@@ -113,7 +119,7 @@ nvd diff /nix/var/nix/profiles/system-11-link /nix/var/nix/profiles/system-16-li
 - delete a generation with
 
 ```
-nix-env --delete-generations 10 11 14
+sudo nix-env --delete-generations 10 11 12 13 14 --profile /nix/var/nix/profiles/system
 ```
 
 - delete ALL generations with
@@ -122,3 +128,9 @@ nix-env --delete-generations 10 11 14
 sudo nix-collect-garbage -d
 ```
 
+- don't forget to garbage collect after you delete a generation
+
+```bash
+sudo nix-store --gc
+
+```
