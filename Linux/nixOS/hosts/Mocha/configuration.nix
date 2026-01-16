@@ -295,7 +295,7 @@
     bat
     # beekeeper-studio # Insecure electron version
     bun
-    calibre
+    # calibre
     cargo
     cargo-tarpaulin # rust coverage
     cifs-utils # for the samba shares
@@ -304,7 +304,7 @@
     discord
     # docker
     # docker-compose
-    element-desktop # matrix client
+    # element-desktop # matrix client
     fd
     fnm
     freefilesync
