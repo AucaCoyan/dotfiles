@@ -3,7 +3,8 @@
 	email = aucacoyan@gmail.com
 [init]
 	defaultBranch = main
-
+; [pager]
+; 	diff = diffnav
 [core]
 	# editor = code --wait
 	editor = nvim
@@ -36,9 +37,6 @@
 ; [includeIf "gitdir:~/workspace/"]
 ;     path = ~/workspace/private/.gitconfig
 
-[includeIf "gitdir:~/all-repos/"]
-    path = ~/workspace/private/.gitconfig
-
 [push]
     autoSetupRemote = true
 
@@ -49,14 +47,6 @@
 	selected = manager
 [credential]
 	helper = manager
-[safe]
-	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/test-ts-web
-	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/redirect-google-chat
-	directory = %(prefix)///wsl.localhost/Ubuntu/home/aucamaillo/workspace/fps-grow-triage-detector
-[pager]
-	diff = diffnav
-[credential "https://source.developers.google.com"]
-	helper = gcloud.cmd
 
 # To use these themes, first include this file in your own gitconfig file:
 #
