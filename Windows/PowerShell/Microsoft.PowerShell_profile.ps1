@@ -18,6 +18,8 @@ $profileDir = $PSScriptRoot;
 $PSDefaultParameterValues["Out-File:Encoding"] = "utf8"
 
 # a bunch of aliases nice functions
+. "$profileDir/my-aliases.ps1"
+
 function open($file) {
     invoke-item $file
 }
