@@ -7,6 +7,7 @@
 # side by side comparision
 alias diff = delta
 alias 'git diff' = git diff-words
+alias 'git bisect status' = git bisect log
 
 # misspellings for clear, cd
 alias cler =  clear
