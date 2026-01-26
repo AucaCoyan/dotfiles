@@ -332,6 +332,7 @@
     # grayjay
     # grafana
     # grafana-loki
+    helix
     home-manager
     keepassxc
     kdotool
