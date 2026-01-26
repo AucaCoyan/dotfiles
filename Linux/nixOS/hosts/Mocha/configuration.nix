@@ -144,6 +144,7 @@
       layout = "us";
       variant = "";
     };
+    xserver.videoDrivers = [ "amdgpu" ];
 
     # Enable CUPS to print documents.
     printing.enable = true;
@@ -159,8 +160,14 @@
     };
   };
 
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true; # powers up BT on boot
+  hardware = {
+    bluetooth.enable = true;
+    bluetooth.powerOnBoot = true; # powers up BT on boot
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+  };
 
   security.rtkit.enable = true;
 
@@ -213,6 +220,12 @@
     # Run unpatched dynamic binaries on NixOS.
     # see: github.com/nix-community/nix-ld
     nix-ld.enable = true;
+
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+    gamemode.enable = true;
   };
 
   services.samba = {
@@ -280,7 +293,6 @@
 
   virtualisation.docker.enable = true;
 
-
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
   # on your system were taken. It‘s perfectly fine and recommended to leave
@@ -324,7 +336,7 @@
     keepassxc
     kdotool
     lazygit
-    librewolf
+    # librewolf
     lnav
     wl-clipboard # for the clipboard interaction
     # mangohud # steam fps and gpu monitor
