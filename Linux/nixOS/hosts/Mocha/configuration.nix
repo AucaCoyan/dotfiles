@@ -375,6 +375,7 @@
     vlc
     vscode
     wget
+    yazi
     zellij
   ];
 }
