@@ -23,4 +23,4 @@ cursor-line = "info"
 # disable filter hidden files (dotfiles)
 hidden = false
 # read git-ignored files
-git-ignore = true
+git-ignore = false
