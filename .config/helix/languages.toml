@@ -1,12 +1,28 @@
+# C lang
 [[language]]
-name = "python"
-roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
+name = "c"
+file-types = ["c", "h"]
+formatter = { command = 'clang-format' }
 auto-format = true
 
-[language-server.pyright]
-config = {}
-timeout = 600000
+# Cpp lang
+[[language]]
+name = "cpp"
+file-types = ["cpp", "cc", "cxx", "hpp", "hcc", "hxx"]
+formatter = { command = 'clang-format' }
+auto-format = true
 
+# JSON
+# [[language]]
+# name = "json"
+# language-servers = ["vscode-json"]
+# auto-format = true
+
+# [language-server.vscode-json]
+# command = "vscode-json-language-server"
+# config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+
+# nushell
 [[language]]
 name = "nu"
 scope = "source.nu"
@@ -23,3 +39,33 @@ nu-lsp = { command = "nu", args = [ "--lsp" ] }
 [[grammar]]
 name = "nu"
 source = { git = "https://github.com/nushell/tree-sitter-nu", rev = "7dd29f9616822e5fc259f5b4ae6c4ded9a71a132" } # latest
+
+# Python
+[[language]]
+name = "python"
+roots = ["pyproject.toml", "setup.py", "Poetry.lock", ".git"]
+auto-format = true
+
+[language-server.pyright]
+config = {}
+timeout = 600000
+
+# Vue
+[[language]]
+name = "vue"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "vue"] }
+language-servers = ["typescript-language-server"]
+
+[[language-server.typescript-language-server.config.plugins]]
+name = "@vue/typescript-plugin"
+location = "/full/path/to/node_modules/@vue/typescript-plugin"
+languages = ["vue"]
+
+# Yaml
+[language-server.yaml-language-server.config.yaml]
+format = { enable = true }
+validation = true
+
+[language-server.yaml-language-server.config.yaml.schemas]
+"https://json.schemastore.org/github-workflow.json" = ".github/workflows/*.{yml,yaml}"
