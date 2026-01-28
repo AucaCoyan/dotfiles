@@ -14,15 +14,21 @@
 
 # cd into folder with `fzf`
 export def --env f [] {
-    let destination = (fd --max-depth 1 --min-depth 1
+    let find_dirs = (fd --max-depth 1 --min-depth 1
     --type directory --hidden --no-ignore --ignore-vcs --exclude node_modules
     -- . # any name
     ~/repos #all these dirs
     ~/other-repos
     ~/other-repos/nu
-    ~/workspace
-    ~/workspace/private
-    | fzf) # pipe it to fzf
+    ~/workspace)
+
+    let additional_dirs = [
+        # Do not put the trailing slash `/`. It doesn't work on macOS
+        $"($env.Home)/Drive",
+        $"($env.Home)/Drive/Downloads",
+    ]
+
+    let destination = [$find_dirs, $additional_dirs] | str join "\n" | fzf
 
     if $destination != null {
          try {
