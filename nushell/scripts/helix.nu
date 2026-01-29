@@ -9,7 +9,7 @@ export def "install personal config" [] {
         pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Roaming\helix\" -Target $HOME\repos\dotfiles\.config\helix\'
     } else if $nu.os-info.name == "linux" {
         error make {msg: "not implemented!", }
-        ln -s ~/repos/dotfiles/.config/helix  ~/.config/helix
+        ln -s ~/repos/dotfiles/.config/helix  ~/.config/
     } else {
         error make {msg: "OS not detected!", }
     }
