@@ -314,8 +314,8 @@
     delta
     difftastic
     discord
-    # docker
-    # docker-compose
+    docker
+    docker-compose
     # element-desktop # matrix client
     fd
     fnm
