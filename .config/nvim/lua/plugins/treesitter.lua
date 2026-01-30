@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'jsdoc', 'lua', 'luadoc', 'markdown', 'python', 'rust','vim', 'vimdoc' },
+      ensure_installed = { 'jsdoc', 'lua', 'luadoc', 'markdown', 'python', 'rust', 'vim', 'vimdoc' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {

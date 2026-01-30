@@ -64,7 +64,6 @@ return {
       { '<leader>l', group = '[L]SP' },
       { '<leader>n', group = '[N]vim' },
       { '<leader>p', group = '[P]ython' },
-      { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]ettings' },
       { '<leader>w', group = '[W]orkspace' },
       { '<leader>t', group = '[T]oggle' },

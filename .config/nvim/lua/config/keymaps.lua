@@ -19,14 +19,13 @@ vim.keymap.set({ 'n', 'i', 'v' }, '<C-s>', '<cmd> w <cr>')
 -- set wrap in windows/linux and in macos
 vim.keymap.set({ 'n', 'i', 'v' }, '<A-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
 
-
 -- source the entire file
 -- vim.keymap.set('n', '<space><space>x', '<cmd>source %<CR>')
 -- collides with find on opened buffers
 
 -- run the current line
 -- [[ Lua]]
-vim.keymap.set('n', '<space>lx', ':.lua<CR>', { desc = '[l]ua: Excecute Lua [line]'})
+vim.keymap.set('n', '<space>lx', ':.lua<CR>', { desc = '[l]ua: Excecute Lua [line]' })
 -- collides with delete buffer
 
 -- run the selected lines
@@ -86,7 +85,6 @@ vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 -- vim.keymap.set("n", "<leader>rn", "<cmd>set rnu!<CR>", { desc = "toggle relative number" })
 
 vim.keymap.set('n', '<leader>wk', '<cmd>WhichKey <CR>', { desc = 'whichkey all keymaps' })
-
 
 -- [[ Python ]]
 vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requirements.txt <CR>', { desc = '[p]ython: uv [p]ip [i]nstall requirements' })

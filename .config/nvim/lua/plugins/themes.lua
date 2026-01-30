@@ -12,7 +12,6 @@ return {
       flavour = 'mocha',
       transparent_background = true,
     },
-
   },
   {
     'eldritch-theme/eldritch.nvim',
@@ -26,7 +25,11 @@ return {
       transparent_background = true,
     },
   },
-  { 'ellisonleao/gruvbox.nvim', enabled = true, priority = 1000, opts = { transparent_background = true },
+  {
+    'ellisonleao/gruvbox.nvim',
+    enabled = true,
+    priority = 1000,
+    opts = { transparent_background = true },
 
     init = function()
       -- Load the colorscheme here.
