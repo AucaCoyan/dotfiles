@@ -335,7 +335,6 @@
     helix
     home-manager
     keepassxc
-    kdotool
     lazygit
     # librewolf
     lnav
