@@ -110,15 +110,15 @@ $env.ENV_CONVERSIONS = {
 
 $env.EDITOR = "nvim"
 
-export def nvim [file] {
-	$env.NVIM_APPNAME = "nvim"
-	^nvim $file
-}
-
-export def kvim [file] {
-	$env.NVIM_APPNAME = "nvim-kickstart"
-	^nvim $file
-}
+# export def nvim [file] {
+# 	$env.NVIM_APPNAME = "nvim"
+# 	^nvim $file
+# }
+#
+# export def kvim [file] {
+# 	$env.NVIM_APPNAME = "nvim-kickstart"
+# 	^nvim $file
+# }
 
 if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
@@ -144,7 +144,7 @@ if $nu.os-info.name == "windows" {
     # nix-shell
     $env.PATH = ($env.PATH | split row (char esep) | prepend '/nix/var/nix/profiles/default/bin')
 } else if $nu.os-info.name == "macos" {
-    $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/Cellar/php@8.2/8.2.29_2/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | prepend '/opt/homebrew/Cellar/php@8.2/8.2.30/bin')
 }
 
 # import the theme
