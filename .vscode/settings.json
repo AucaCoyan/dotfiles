@@ -21,6 +21,7 @@
     // values (1.5, or 0.7)
     "window.zoomLevel": 1,
     // "File - Edit - View ..." menu
+    // unused in macOS
     "window.menuBarVisibility": "hidden",
     // Command pallete (the rectangle on the top of the title bar)
     "window.commandCenter": false,
@@ -33,6 +34,9 @@
     // show a single title of the opened file
     "workbench.editor.showTabs": "single",
     "workbench.sideBar.location": "right",
+    // Integrated browser settings
+    "workbench.browser.openLocalhostLinks": true,
+    "simpleBrowser.useIntegratedBrowser": true,
     // ==== Editor section ====
     // disable the problems entirely
     "problems.visibility": true,
@@ -56,7 +60,7 @@
     // Other windows
     "problems.defaultViewMode": "table",
     "[search-result]": {
-        "editor.lineNumbers": "on"
+        "editor.lineNumbers": "on",
     },
     "terminal.integrated.defaultProfile.windows": "nushell",
     "terminal.integrated.defaultProfile.osx": "zsh",
@@ -65,22 +69,22 @@
     "terminal.integrated.profiles.windows": {
         "PowerShell": {
             "source": "PowerShell",
-            "icon": "terminal-powershell"
+            "icon": "terminal-powershell",
         },
         "Command Prompt": {
             "path": [
                 "${env:windir}\\Sysnative\\cmd.exe",
-                "${env:windir}\\System32\\cmd.exe"
+                "${env:windir}\\System32\\cmd.exe",
             ],
             "args": [],
-            "icon": "terminal-cmd"
+            "icon": "terminal-cmd",
         },
         "Git Bash": {
-            "source": "Git Bash"
+            "source": "Git Bash",
         },
         "nushell": {
-            "path": "${env:Home}/scoop/shims/nu.exe"
-        }
+            "path": "${env:Home}/scoop/shims/nu.exe",
+        },
     },
     // make the window transparent, (requires the extension s-nlf-fh.glassit)
     "glassit.alpha": 240,
@@ -125,41 +129,42 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.tabSize": 4,
-        "editor.indentSize": "tabSize"
+        "editor.indentSize": "tabSize",
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.formatOnType": true,
         "editor.indentSize": "tabSize",
         "editor.detectIndentation": false,
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
     },
     "[yaml]": {
         "editor.defaultFormatter": null,
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
+        "diffEditor.ignoreTrimWhitespace": false,
     },
     "[markdown]": {
         "editor.rulers": [
             80
-        ]
+        ],
     },
     "[github-actions-workflow]": {
-        "editor.defaultFormatter": "redhat.vscode-yaml"
+        "editor.defaultFormatter": "redhat.vscode-yaml",
     },
     // [[ Javascript ]]
     "javascript.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "always"
+            "source.organizeImports": "always",
         },
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
             80
-        ]
+        ],
     },
     "[typescript]": {
         "editor.codeActionsOnSave": {
-            "source.organizeImports": "always"
+            "source.organizeImports": "always",
         },
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
@@ -177,12 +182,12 @@
             "--rcfile",
             "${workspaceFolder}/.code_quality/pylint.toml"
         ],
-        "flake8.enabled": false
+        "flake8.enabled": false,
     },
     "python.analysis.typeCheckingMode": "standard",
     "notebook.cellToolbarLocation": {
         "default": "right",
-        "jupyter-notebook": "left"
+        "jupyter-notebook": "left",
     },
     "notebook.lineNumbers": "on",
     // [[ Rust ]]
@@ -261,7 +266,7 @@
         // "-A",
         // "clippy::unused_self"
         "-A",
-        "clippy::missing_const_for_fn"
+        "clippy::missing_const_for_fn",
     ],
     // [[ PHP ]]
     "[php]": {
@@ -273,8 +278,9 @@
         "files.trimTrailingWhitespace": true,
         "files.insertFinalNewline": true,
         "files.eol": "\n",
-        "editor.tabSize": 4
+        "editor.tabSize": 4,
     },
+    // "php.validate.executablePath": "/opt/homebrew/Cellar/php@8.2/8.2.30/bin/php",
     // [[ SQL ]]
     "sqlfluff.dialect": "tsql",
     "sqlfluff.excludeRules": [
@@ -284,12 +290,12 @@
     "powershell.codeFormatting.pipelineIndentationStyle": "IncreaseIndentationForFirstPipeline",
     // [[ VS Code Snippets]]
     "[snippets]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
+        "editor.defaultFormatter": "vscode.json-language-features",
     },
     // [[ nix ]]
     "[nix]": {
         "editor.insertSpaces": true,
-        "editor.tabSize": 2
+        "editor.tabSize": 2,
     },
     "nix.enableLanguageServer": true,
     "nix.serverPath": "nil",
@@ -299,9 +305,9 @@
             "formatting": {
                 "command": [
                     "nixfmt"
-                ]
-            }
-        }
+                ],
+            },
+        },
     },
     // [[ docker ]]
     "[dockercompose]": {
@@ -311,9 +317,9 @@
         "editor.quickSuggestions": {
             "other": true,
             "comments": false,
-            "strings": true
+            "strings": true,
         },
-        "editor.defaultFormatter": "redhat.vscode-yaml"
+        "editor.defaultFormatter": "redhat.vscode-yaml",
     },
     "docker.extension.enableComposeLanguageServer": false,
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
@@ -336,7 +342,7 @@
             ],
             "commands": [
                 "workbench.action.quickOpen"
-            ]
+            ],
         },
         {
             "before": [
@@ -345,7 +351,7 @@
             ],
             "commands": [
                 "workbench.view.explorer"
-            ]
+            ],
         },
         {
             "before": [
@@ -355,29 +361,29 @@
             ],
             "commands": [
                 "workbench.action.closeActiveEditor"
-            ]
+            ],
         },
         // move up down left right on tooltips with HJKL
         {
             "command": "editor.action.scrollLeftHover",
             "key": "h",
-            "when": "editorHoverFocused"
+            "when": "editorHoverFocused",
         },
         {
             "command": "editor.action.scrollDownHover",
             "key": "j",
-            "when": "editorHoverFocused"
+            "when": "editorHoverFocused",
         },
         {
             "command": "editor.action.scrollUpHover",
             "key": "k",
-            "when": "editorHoverFocused"
+            "when": "editorHoverFocused",
         },
         {
             "command": "editor.action.scrollRightHover",
             "key": "l",
-            "when": "editorHoverFocused"
-        }
+            "when": "editorHoverFocused",
+        },
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
         {
@@ -386,8 +392,8 @@
             ],
             "commands": [
                 "whichkey.show"
-            ]
-        }
+            ],
+        },
     ],
     "vim.visualModeKeyBindings": [
         // Bind > and < in visual mode to indent/outdent lines (repeatable):
@@ -397,7 +403,7 @@
             ],
             "commands": [
                 "editor.action.indentLines"
-            ]
+            ],
         },
         {
             "before": [
@@ -405,8 +411,8 @@
             ],
             "commands": [
                 "editor.action.outdentLines"
-            ]
-        }
+            ],
+        },
     ],
     // ------------------------------ Telemetry ---------------------------------
     // VS Code telemetry
