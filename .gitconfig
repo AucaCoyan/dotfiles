@@ -12,7 +12,7 @@
 
 	symlinks = false
     # auto converty crlf to lf and back among different platforms
-	autocrlf = true
+	autocrlf = input
 [interactive]
    diffFilter = delta --color-only
 
