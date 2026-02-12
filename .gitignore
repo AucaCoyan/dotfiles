@@ -13,11 +13,12 @@ nushell/plugin.msgpackz
 .config/helix/helix.log
 **/history*
 
+.vscode/History
+.vscode/chatLanguageModels.json
 .vscode/globalStorage
 .vscode/profiles
 .vscode/sync
 .vscode/workspaceStorage
-.vscode/History
 
 # Other licenses (not the root)
 **/LICENSE
