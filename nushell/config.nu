@@ -148,7 +148,7 @@ if $nu.os-info.name == "windows" {
 }
 
 # import the theme
-# use ~/repos/dotfiles/nushell/themes/base16.nu base16_theme
+source ~/repos/dotfiles/nushell/themes/gruvbox-dark-soft.nu
 
 # config.nu
 $env.config = {
@@ -165,16 +165,7 @@ $env.config = {
     history: {
         file_format: "sqlite" # "sqlite" or "plaintext"
     }
-    # color_config: $base16_theme
-    # color_config: $light_theme
 }
-
-# source ~/other-repos/nu/nu_scripts/themes/nu-themes/dracula.nu
-
-# theme
-# https://github.com/nushell/nu_scripts/tree/main/themes
-# use ~/other-repos/nu/nu_scripts/themes/nu-themes/catppuccin-mocha.nu
-# $env.config = ($env.config | merge {color_config: (catppuccin-mocha)})
 
 # use nupm
 # use ~/other-repos/nupm/nupm/
@@ -204,13 +195,10 @@ source ~/other-repos/nu/nu_scripts/custom-completions/cargo/cargo-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/just/just-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/flutter/flutter-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/fd/fd-completions.nu
-# source ~/other-repos/nu/nu_scripts/custom-completions/gcloud/gcloud-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/gh/gh-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/git/git-completions.nu
-# source ~/other-repos/nu/nu_scripts/custom-completions/make/make-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/npm/npm-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/pnpm/pnpm-completions.nu
-# source ~/other-repos/nu/nu_scripts/custom-completions/poetry/poetry-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rg/rg-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/rye/rye-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/rustup/rustup-completions.nu
@@ -220,11 +208,6 @@ source ~/other-repos/nu/nu_scripts/custom-completions/vscode/vscode-completions.
 source ~/other-repos/nu/nu_scripts/custom-completions/uv/uv-completions.nu
 source ~/other-repos/nu/nu_scripts/custom-completions/yt-dlp/yt-dlp-completions.nu
 # source ~/other-repos/nu/nu_scripts/custom-completions/yarn/yarn-v4-completions.nu
-
-# `auto-generate`
-# source ~/other-repos/nu/nu_scripts/custom-completions/auto-generate/completions/dotnet.nu
-
-# use ~/other-repos/nu/nu_scripts/modules/with_externals/loc.nu
 
 # fzf searches
 source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_history_search.nu
