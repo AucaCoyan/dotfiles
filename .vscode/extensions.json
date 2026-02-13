@@ -3,10 +3,13 @@
         // basic defaults
         "vscodevim.vim",
         "usernamehw.errorlens",
-        "catppuccin.catppuccin-vsc",
-        "catppuccin.catppuccin-vsc-icons",
         "wakatime.vscode-wakatime",
         "fill-labs.dependi",
+        // themes
+        "catppuccin.catppuccin-vsc",
+        "catppuccin.catppuccin-vsc-icons",
+        "jonathanharty.gruvbox-material-icon-theme",
+        "jdinhlife.gruvbox",
         // files and format support
         "remcohaszing.schemastore",
         "redhat.vscode-yaml",

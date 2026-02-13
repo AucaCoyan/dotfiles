@@ -42,6 +42,7 @@ nushell/plugin.msgpackz
 .config/.espanso/match/work.yml
 nushell/work-env.nu
 nushell/scripts/typedesk/*
+nushell/vendor/autoload/oh-my-posh.nu
 
 .DS_Store
 secrets.*

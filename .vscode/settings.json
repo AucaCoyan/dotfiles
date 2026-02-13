@@ -430,9 +430,9 @@
     // "workbench.colorTheme": "Catppuccin Frappé",
     // is replaced with:
     "window.autoDetectColorScheme": true,
-    "workbench.preferredLightColorTheme": "Catppuccin Macchiato",
-    "workbench.preferredDarkColorTheme": "Catppuccin Macchiato",
-    "workbench.iconTheme": "catppuccin-macchiato",
+    "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
+    "workbench.preferredDarkColorTheme": "Gruvbox Dark Soft",
+    "workbench.iconTheme": "gruvbox-material-icon-theme",
     "json.schemaDownload.trustedDomains": {
         "https://schemastore.azurewebsites.net/": true,
         "https://raw.githubusercontent.com/": true,
