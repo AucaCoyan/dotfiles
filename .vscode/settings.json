@@ -324,6 +324,8 @@
     "docker.extension.enableComposeLanguageServer": false,
     "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
+    // [[ Zig ]]
+    "zig.zls.enabled": "on",
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
@@ -439,7 +441,7 @@
         "https://www.schemastore.org/": true,
         "https://json.schemastore.org/": true,
         "https://json-schema.org/": true,
-        "https://biomejs.dev": true
+        "https://biomejs.dev": true,
     },
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
