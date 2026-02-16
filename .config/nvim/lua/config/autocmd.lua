@@ -22,3 +22,11 @@ vim.api.nvim_create_autocmd('BufWinEnter', {
     end
   end,
 })
+
+-- set filetype = JSON on the following
+vim.api.nvim_create_autocmd({ 'BufNewFile', 'BufRead' }, {
+  desc = 'Apply the JSON fileype on the following formats:',
+  -- follows vim glob pattenrs (file-pattern)
+  pattern = { 'composer.lock', '*.jsonc', '*.jsonl' },
+  command = 'set filetype=json',
+})
