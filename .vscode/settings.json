@@ -130,6 +130,8 @@
         "editor.defaultFormatter": "vscode.json-language-features",
         "editor.tabSize": 4,
         "editor.indentSize": "tabSize",
+        "editor.formatOnType": true,
+        "editor.detectIndentation": false
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features",
@@ -169,7 +171,7 @@
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
             80
-        ],
+        ]
     },
     // [[ Python ]]
     "[python]": {
