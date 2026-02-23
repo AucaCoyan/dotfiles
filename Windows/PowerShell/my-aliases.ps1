@@ -27,3 +27,19 @@ set-alias -Name:"cd_with_fnm" -Value:"Set-LocationWithFnm" -Description:"" -Opti
 set-alias -Name:"git log" -Value:"git log --graph --pretty=format:'%C(bold red)%an%C(reset) - %C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white) %C(bold cyan)%d%C(reset)'" -Description:"" -Option:"None"
 set-alias -Name:"touch" -Value:"New-Item" -Description:"" -Option:"None"
 set-alias -Name:"l" -Value:"lazygit" -Description:"lazygit" -Option:"None"
+
+set-alias -Name: "ls" -Value: "Get-ChildItem" -Description: "" -Option: "AllScope"
+set-alias -Name: "cp" -Value: "Copy-Item" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "mv" -Value: "Move-Item" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "rm" -Value: "Remove-Item" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "touch" -Value: "New-Item -ItemType File" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "cat" -Value: "Get-Content" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "echo" -Value: "Write-Output" -Description: "" -Option: "AllScope"
+
+set-alias -Name: "man" -Value: "Get-Help" -Description: "" -Option: "AllScope"
+
