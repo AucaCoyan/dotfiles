@@ -122,7 +122,8 @@ $env.EDITOR = "nvim"
 
 if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
-    $env.NODE_GYP_FORCE_PYTHON = "~/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none/python.exe"
+    $env.NODE_GYP_FORCE_PYTHON = $"($env.HOME)/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none/python.exe"
+    # $env.PATH = ($env.PATH | split row (char esep) | prepend '~/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none')
 } else if $nu.os-info.name == "linux" {
     # Documentation for nvim
     # alias nvim = "~/bin/nvim"
@@ -216,7 +217,7 @@ source ~/other-repos/nu/nu_scripts/modules/fuzzy/fuzzy_command_search.nu
 if $nu.os-info.name == "linux" {
     oh-my-posh init nu --config  $"/home/($env.USER)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
 } else if $nu.os-info.name == "windows" {
-    oh-my-posh init nu --config $"($env.HOME)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json" $"/home/($env.USER)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
+    oh-my-posh init nu --config $"($env.HOME)/repos/dotfiles/nushell/cfg_files/oh-my-posh.config.json"
 
     if ($env.USERNAME == 'AucaMaillo') {
         # use ~/workspace/gcp-source/all-bots/nushell/all-workspace.nu *
