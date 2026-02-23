@@ -4,6 +4,9 @@
 # https://www.nushell.sh/blog/2023-03-14-nushell_0_77.html#reworked-aliases-breaking-changes-kubouch
 # alias ls = (ls | sort-by type)
 
+# copy to clipboard
+alias pbcopy = clip
+
 # side by side comparision
 alias diff = delta
 alias 'git diff' = git diff-words
