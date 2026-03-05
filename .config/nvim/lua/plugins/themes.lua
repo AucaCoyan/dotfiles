@@ -20,7 +20,7 @@ return {
   },
   {
     'Mofiqul/vscode.nvim',
-    enabled = false,
+    enabled = true,
     opts = {
       transparent_background = true,
     },

@@ -91,5 +91,5 @@ vim.keymap.set('n', '<leader>pi', '<cmd>!uv pip install --requirements requireme
 vim.keymap.set('n', '<leader>pm', '<cmd>!isort . --force-single-line-imports<CR>', { desc = '[p]ython: isort i[m]ports' })
 vim.keymap.set({ 'n', 'i', 'v' }, '<M-z>', '<cmd>set wrap! <CR>', { desc = 'Toggle word wrap' })
 
--- [[ Rust ]]
-vim.keymap.set('n', '<leader>rx', '<cmd>!cargo run<CR>', { desc = '[r]ust: cargo [r]un' })
+-- [[ Run ]]
+vim.keymap.set('n', '<leader>r', '<cmd>!yarn run electron .<CR>', { desc = '[r]un' })

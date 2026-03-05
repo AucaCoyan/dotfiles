@@ -70,6 +70,9 @@ else
     echo -e '\n ~/other-repos/nu/nu_scripts found. Skipping!'
 fi
 
+echo -e '\n### making a symlink to ~/.zshrc'
+ln -s -F ~/repos/dotfiles/.config/.zshrc  ~/.zshrc
+
 echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s -F ~/repos/dotfiles/nushell ~/Library/Application\ Support/
 

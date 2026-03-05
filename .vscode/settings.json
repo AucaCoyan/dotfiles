@@ -121,7 +121,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.blame.editorDecoration.enabled": false, // git blame lens
     "scm.defaultViewMode": "tree",
-    "diffEditor.ignoreTrimWhitespace": false,
+    "diffEditor.ignoreTrimWhitespace": true,
     "git.replaceTagsWhenPull": true,
     "git.rebaseWhenSync": true,
     "git.detectWorktrees": false,
@@ -281,6 +281,7 @@
         "files.insertFinalNewline": true,
         "files.eol": "\n",
         "editor.tabSize": 4,
+        "editor.defaultFormatter": "laravel.vscode-laravel" // uses Laravel Pint
     },
     // "php.validate.executablePath": "/opt/homebrew/Cellar/php@8.2/8.2.30/bin/php",
     // [[ SQL ]]
