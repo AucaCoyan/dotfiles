@@ -121,7 +121,7 @@
     "git.openRepositoryInParentFolders": "always",
     "git.blame.editorDecoration.enabled": false, // git blame lens
     "scm.defaultViewMode": "tree",
-    "diffEditor.ignoreTrimWhitespace": true,
+    "diffEditor.ignoreTrimWhitespace": false,
     "git.replaceTagsWhenPull": true,
     "git.rebaseWhenSync": true,
     "git.detectWorktrees": false,
@@ -131,7 +131,7 @@
         "editor.tabSize": 4,
         "editor.indentSize": "tabSize",
         "editor.formatOnType": true,
-        "editor.detectIndentation": false
+        "editor.detectIndentation": false,
     },
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features",
@@ -143,7 +143,7 @@
     "[yaml]": {
         "editor.defaultFormatter": null,
         "editor.tabSize": 2,
-        "diffEditor.ignoreTrimWhitespace": false,
+        "diffEditor.ignoreTrimWhitespace": true,
     },
     "[markdown]": {
         "editor.rulers": [
@@ -171,8 +171,9 @@
         "editor.defaultFormatter": "biomejs.biome",
         "editor.rulers": [
             80
-        ]
+        ],
     },
+    "js/ts.updateImportsOnFileMove.enabled": "always",
     // [[ Python ]]
     "[python]": {
         "editor.rulers": [
