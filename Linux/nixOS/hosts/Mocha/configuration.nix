@@ -357,6 +357,8 @@
     # protonmail-desktop # doesn't work
     protonup-ng # steam's proton
     qdirstat
+    quickemu
+    qemu
     # postgresql
     ripgrep
     rustc
