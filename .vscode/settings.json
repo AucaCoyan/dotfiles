@@ -330,6 +330,12 @@
     "containers.orchestratorClient": "com.microsoft.visualstudio.orchestrators.dockercompose",
     // [[ Zig ]]
     "zig.zls.enabled": "on",
+    "[zig]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "ziglang.vscode-zig",
+        "editor.stickyScroll.defaultModel": "foldingProviderModel",
+        "files.eol": "\n"
+    },
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
     "vim.disableExtension": false,
