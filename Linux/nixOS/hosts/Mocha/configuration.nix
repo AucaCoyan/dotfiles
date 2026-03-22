@@ -306,6 +306,7 @@
   environment.systemPackages = with pkgs; [
     bat
     # beekeeper-studio # Insecure electron version
+    brave
     bun
     # calibre
     cargo
