@@ -330,9 +330,9 @@
     glab
     ghostty
     gparted
-    # grayjay
     # grafana
     # grafana-loki
+    jellyfin-desktop
     helix
     home-manager
     keepassxc
