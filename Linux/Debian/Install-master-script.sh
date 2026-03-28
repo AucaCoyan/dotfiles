@@ -181,6 +181,10 @@ sudo apt-get install ./vscode-stable-x64-linux.deb
 # Symlink kitty
 # ln -s ~/repos/dotfiles/.config/kitty ~/.config/kitty
 
+# Symlink .bashrc
+echo -e '\n### .bashrc'
+ln --symbolic --force --no-dereference ~/repos/dotfiles/.config/.bashrc ~/.bashrc
+
 # rust tools
 echo -e '\n### cargo-binstall'
 curl -L --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
