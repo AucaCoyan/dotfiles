@@ -30,8 +30,8 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Use latest kernel.
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  # Use latest kernel. Breaks bluetooth when awake from a sleep state
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the local time so windows don't reset to UTC
   time.hardwareClockInLocalTime = true;
