@@ -184,6 +184,7 @@
       kdePackages.kate
       #  thunderbird
     ];
+    shell = pkgs.zsh;
   };
 
   environment = {
@@ -226,6 +227,30 @@
       gamescopeSession.enable = true;
     };
     gamemode.enable = true;
+
+    zsh = {
+      enable = true;
+      # missing zsh-autosuggestions and fzf-tab
+      # because they are external plugins
+
+      ohMyZsh = {
+        enable = true;
+        theme = "agnoster";
+        plugins = [
+          "zsh-autosuggestions"
+          "colored-man-pages" # add colors to manpages
+          "cp" # cp now has a progress bar
+          "fzf-tab"
+          "vi-mode" # vi-mode in zsh.... wait what?
+        ];
+      };
+
+      promptInit = ''
+        if [ -f ~/repos/dotfiles/.config/zsh/.zshrc ]; then
+          source ~/repos/dotfiles/.config/zsh/.zshrc
+        fi
+      '';
+    };
   };
 
   services.samba = {
