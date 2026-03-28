@@ -1,3 +1,5 @@
+#!/usr/bin/bash
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -122,7 +124,7 @@ alias l='ls -CF'
 #   eval "`fnm env`"
 # fi
 
-# deno
-# . "/home/acoyan/.deno/env"
-
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
+# shellcheck source=/home/aucac/repos/dotfiles/.config/f.sh
+source ~/repos/dotfiles/.config/f.sh
