@@ -210,12 +210,6 @@
       };
     };
 
-    neovim = {
-      enable = true;
-      viAlias = true;
-      vimAlias = true;
-    };
-
     nh.enable = true;
 
     # Run unpatched dynamic binaries on NixOS.
@@ -358,7 +352,6 @@
     # grafana
     # grafana-loki
     jellyfin-desktop
-    helix
     home-manager
     keepassxc
     lazygit
@@ -368,7 +361,6 @@
     # mangohud # steam fps and gpu monitor
     mattermost-desktop
     mdbook
-    neovide
     nh
     nil # nix LSP
     nixfmt # Official formatter
