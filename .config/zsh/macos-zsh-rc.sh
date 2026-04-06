@@ -52,6 +52,9 @@ source $ZSH/oh-my-zsh.sh
 # Then source your shared config
 source ~/repos/dotfiles/.config/zsh/.zshrc
 
+# source fzf-file-widget
+source ~/repos/dotfiles/.config/fzf-file-widget.sh
+
 # Add deno completions to search path
 if [[ ":$FPATH:" != *":/Users/aucamaillot/.zsh/completions:"* ]]; then export FPATH="/Users/aucamaillot/.zsh/completions:$FPATH"; fi
 . "/Users/aucamaillot/.deno/env"

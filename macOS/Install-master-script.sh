@@ -71,7 +71,7 @@ else
 fi
 
 echo -e '\n### making a symlink to ~/.zshrc'
-ln -s -F ~/repos/dotfiles/.config/.zshrc  ~/.zshrc
+ln -s -F ~/repos/dotfiles/.config/zsh/macos-zsh-rc.sh ~/.zshrc
 
 echo -e '\n### making a symlink to ~/repos/dotfiles/nushell'
 ln -s -F ~/repos/dotfiles/nushell ~/Library/Application\ Support/
