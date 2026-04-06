@@ -390,6 +390,7 @@
     tig
     tlrc
     tokei
+    uv
     # veracrypt
     vlc
     vscode
