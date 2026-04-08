@@ -65,4 +65,4 @@ compinit
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # make node-gyp use specifically this python
-export NODE_GYP_FORCE_PYTHON=$HOME/.local/bin/python3.10
+# export NODE_GYP_FORCE_PYTHON=$HOME/.local/bin/python3.10
