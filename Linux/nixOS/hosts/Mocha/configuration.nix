@@ -255,7 +255,7 @@
   # this is required for samba and local websites
   services.avahi = {
     enable = true;
-    nssmdns4 = true;
+    nssmdns4 = true; # adds mdns4_minimal to nsswitch automatically
     publish = {
       enable = true;
       addresses = true;
@@ -302,6 +302,7 @@
     docker-compose
     # element-desktop # matrix client
     fd
+    ffmpeg
     fnm
     freefilesync
     fsearch
