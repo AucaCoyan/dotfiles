@@ -5,7 +5,7 @@ export def --env dotfiles [] {
     } else {
         cd ~/repos/dotfiles/
     }
-    nvim .
+    code .
 }
 
 

@@ -110,7 +110,7 @@ export def "update terminal" [] {
     let osc_screen_foreground_color = '10;'
     let osc_screen_background_color = '11;'
     let osc_cursor_color = '12;'
-        
+
     $"
     (ansi -o $osc_screen_foreground_color)($theme.foreground)(char bel)
     (ansi -o $osc_screen_background_color)($theme.background)(char bel)

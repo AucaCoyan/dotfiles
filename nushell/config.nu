@@ -122,6 +122,8 @@ $env.EDITOR = "nvim"
 
 if $nu.os-info.name == "windows" {
     $env.PATH = ($env.PATH | split row (char esep) | append '~/.bun/bin')
+    $env.PATH = ($env.PATH | split row (char esep) | append '~/AppData/Roaming/uv/python/cpython-3.14.5-windows-x86_64-none')
+
     $env.NODE_GYP_FORCE_PYTHON = $"($env.HOME)/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none/python.exe"
     # $env.PATH = ($env.PATH | split row (char esep) | prepend '~/AppData/Roaming/uv/python/cpython-3.10.18-windows-x86_64-none')
 } else if $nu.os-info.name == "linux" {
