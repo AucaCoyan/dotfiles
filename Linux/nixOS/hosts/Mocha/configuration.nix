@@ -320,7 +320,7 @@
     home-manager
     keepassxc
     lazygit
-    librewolf
+    # librewolf
     lnav
     wl-clipboard # for the clipboard interaction
     # mangohud # steam fps and gpu monitor
