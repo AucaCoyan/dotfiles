@@ -304,6 +304,7 @@
     fd
     ffmpeg
     fnm
+    forgejo-cli
     freefilesync
     fsearch
     fzf
