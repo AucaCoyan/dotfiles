@@ -292,8 +292,6 @@
     brave
     bun
     # calibre
-    cargo
-    cargo-tarpaulin # rust coverage
     cifs-utils # for the samba shares
     delta
     difftastic
@@ -315,13 +313,10 @@
     glab
     ghostty
     gparted
-    # grafana
-    # grafana-loki
     jellyfin-desktop
     home-manager
     keepassxc
     lazygit
-    # librewolf
     lnav
     wl-clipboard # for the clipboard interaction
     # mangohud # steam fps and gpu monitor
@@ -334,23 +329,17 @@
     nvd # diff between nix versions
     obsidian
     oh-my-posh
-    # onedrive
     openssl
     pkg-config
     prek
     # protonmail-desktop # doesn't work
     protonup-ng # steam's proton
     qdirstat
-    quickemu
-    qemu
-    # postgresql
     ripgrep
-    rustc
     samba
     signal-desktop
     slack
     systemctl-tui
-    # telegram-desktop
     television
     ticktick
     tig
@@ -363,5 +352,19 @@
     wget
     yazi
     zellij
+
+    # virtual machines
+    # quickemu
+    # qemu
+
+    # services
+    # grafana
+    # grafana-loki
+    # postgresql
+
+    # rust lang
+    # rustc
+    # cargo
+    # cargo-tarpaulin # rust coverage
   ];
 }
