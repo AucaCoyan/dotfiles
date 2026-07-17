@@ -338,7 +338,6 @@
     ripgrep
     samba
     signal-desktop
-    slack
     systemctl-tui
     television
     ticktick
