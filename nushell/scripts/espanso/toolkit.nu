@@ -66,6 +66,38 @@ export def clean [] {
     print "✅ Done!"
 }
 
+export def clear-userdata [] {
+    if $nu.os-info.name == "linux" {
+        print "🔥 Removing the espanso user data..."
+        print "TODO: implement this command"
+        # if ('~/.config/espanso' | path exists) {
+        #     rm ~/.config/espanso --recursive
+        # }
+    } else if $nu.os-info.name == "windows" {
+        print "🔥 Removing the espanso user data..."
+        let path = [$env.home, "/AppData/Roaming/espanso/" ] | str join
+        if ( $path | path exists) {
+            rm $path --recursive
+        }
+        print "$USER/AppData/Roaming/espanso/ cleaned!"
+
+        let path = [$env.home, "/AppData/Local/espanso/" ] | str join
+        if ( $path | path exists) {
+            rm $path --recursive
+        }
+        print "$USER/AppData/Local/espanso/ cleaned!"
+        print "✅ Done!"
+    } else if $nu.os-info.name == "macos" {
+        print "🔥 Removing the espanso user data..."
+        print "TODO: implement this command"
+        # if ('~/.config/espanso' | path exists) {
+        #     rm ~/.config/espanso --recursive
+        # }
+    } else {
+        error make {msg: $"Not implemented for this OS"}
+    }
+}
+
 export def "act run" [] {
     act workflow_dispatch
 }
@@ -135,21 +167,25 @@ export def "check-desktop-environment" [] {
     }
 }
 
+export def clippy [] {
+    print " running cargo clippy"
+    if $nu.os-info.name == "windows" {
+        pwsh -c 'cargo clippy -- --deny warnings'
+    } else if $nu.os-info.name == "linux" {
+        bash -c 'cargo clippy -- --deny warnings'
+    } else {
+        bash -c 'cargo clippy --target aarch64-apple-darwin -- --deny warnings'
+        bash -c 'cargo clippy --target x86_64-apple-darwin -- --deny warnings'
+    }
+}
+
 export def "check-pr" [] {
     print " checking format"
     cargo fmt --all --check
 
     build
 
-    print " running cargo clippy"
-    if $nu.os-info.name == "windows" {
-        pwsh -c 'cargo clippy --deny warnings'
-    } else if $nu.os-info.name == "linux" {
-        bash -c 'cargo clippy --deny warnings'
-    } else {
-        bash -c 'cargo clippy --target aarch64-apple-darwin -- --deny warnings'
-        bash -c 'cargo clippy --target x86_64-apple-darwin -- --deny warnings'
-    }
+    clippy
 
     test
 }
@@ -214,13 +250,8 @@ export def "make symlink" [] {
         espanso stop
     }
 
-    # TODO: Ask for confirmation of deletion of the folder
-
     if $nu.os-info.name == "windows" {
-        let path = [$env.home, "/AppData/Roaming/espanso/" ] | str join
-        if ( $path | path exists) {
-            rm $path --recursive
-        }
+        clear-userdata
         pwsh -c 'New-Item -type junction -Path "$HOME\AppData\Roaming\espanso\" -Target $HOME\repos\dotfiles\.config\.espanso\'
     } else if $nu.os-info.name == "linux" {
         error make {msg: "not implemented!", }
