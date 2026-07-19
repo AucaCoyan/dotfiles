@@ -454,14 +454,14 @@
     "workbench.preferredLightColorTheme": "Gruvbox Light Soft",
     "workbench.preferredDarkColorTheme": "Gruvbox Dark Soft",
     "workbench.iconTheme": "gruvbox-material-icon-theme",
-    "json.schemaDownload.trustedDomains": {
-        "https://schemastore.azurewebsites.net/": true,
-        "https://raw.githubusercontent.com/": true,
-        "https://www.schemastore.org/": true,
-        "https://json.schemastore.org/": true,
-        "https://json-schema.org/": true,
-        "https://biomejs.dev": true,
-    },
+    "yaml.disableSchemaDetection": [
+        "**/.github/workflows/*.yml",
+        "**/.github/workflows/*.yaml",
+        "**/.gitea/workflows/*.yml",
+        "**/.gitea/workflows/*.yaml",
+        "**/.forgejo/workflows/*.yml",
+        "**/.forgejo/workflows/*.yaml"
+    ],
     // --------------------------- Advaced Changes ------------------------------
     // These changes comes with an extension, and they mess up with the CSS of
     // VS Code, handle with care!
