@@ -182,6 +182,7 @@
         ],
     },
     "js/ts.updateImportsOnFileMove.enabled": "always",
+    "js/ts.experimental.useTsgo": true,
     // [[ Python ]]
     "[python]": {
         "editor.rulers": [
