@@ -210,6 +210,19 @@
       };
     };
 
+    neovim = {
+      enable = true;
+      viAlias = true;
+      vimAlias = true;
+      # withNodeJs = true;
+      # withPython3 = true;
+      configure = {
+        customLuaRc = ''
+          -- here your lua!
+        '';
+      };
+    };
+
     nh.enable = true;
 
     # Run unpatched dynamic binaries on NixOS.
@@ -307,10 +320,8 @@
     fsearch
     fzf
     gcc
-    gh
     gitmoji-cli
     gfold
-    glab
     ghostty
     gparted
     jellyfin-desktop
@@ -351,6 +362,10 @@
     wget
     yazi
     zellij
+
+    # services CLI's
+    gh
+    # glab
 
     # virtual machines
     # quickemu
