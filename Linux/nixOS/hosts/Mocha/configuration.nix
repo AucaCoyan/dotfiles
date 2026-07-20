@@ -314,12 +314,9 @@
     # element-desktop # matrix client
     fd
     ffmpeg
-    fnm
-    forgejo-cli
     freefilesync
     fsearch
     fzf
-    gcc
     gitmoji-cli
     gfold
     ghostty
@@ -327,8 +324,6 @@
     jellyfin-desktop
     home-manager
     keepassxc
-    lazygit
-    lnav
     wl-clipboard # for the clipboard interaction
     # mangohud # steam fps and gpu monitor
     mattermost-desktop
@@ -349,22 +344,25 @@
     ripgrep
     samba
     signal-desktop
-    systemctl-tui
-    television
     ticktick
     tig
     tlrc
-    tokei
-    uv
     # veracrypt
     vlc
     vscode
     wget
-    yazi
+
+    # TUIs
+    lnav
+    lazygit
+    systemctl-tui
+    television
     zellij
+    yazi
 
     # services CLI's
     gh
+    forgejo-cli
     # glab
 
     # virtual machines
@@ -375,6 +373,12 @@
     # grafana
     # grafana-loki
     # postgresql
+
+    # programming languages and tools
+    fnm
+    gcc
+    uv
+    tokei
 
     # rust lang
     # rustc
