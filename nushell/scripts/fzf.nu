@@ -20,7 +20,7 @@ export def --env f [] {
     ~/repos #all these dirs
     ~/other-repos
     ~/other-repos/nu
-    ~/workspace)
+    )
 
     let additional_dirs = [
         # Do not put the trailing slash `/`. It doesn't work on macOS
