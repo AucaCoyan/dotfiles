@@ -267,3 +267,9 @@ export def "make symlink" [] {
     }
     print "✅ Done!"
 }
+
+# kill all processes of espanso
+export def kill [] {
+    # fails to source $pid
+    # ps | where name == "espanso" | get pid | each { |pid| kill $pid }
+}
