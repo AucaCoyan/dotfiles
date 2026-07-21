@@ -5,7 +5,7 @@ fzf-file-widget() {
     fzf --preview 'bat --style=numbers --color=always --line-range :500 {}' \
         --preview-window right:60% \
         --height 80%)
-  
+
   if [[ -n $selected ]]; then
     LBUFFER="${LBUFFER}${selected}"
   fi
