@@ -79,20 +79,26 @@ export def clear-userdata [] {
         if ( $path | path exists) {
             rm $path --recursive
         }
-        print "$USER/AppData/Roaming/espanso/ cleaned!"
+        print "User's ~/AppData/Roaming/espanso/ cleaned!"
 
         let path = [$env.home, "/AppData/Local/espanso/" ] | str join
         if ( $path | path exists) {
             rm $path --recursive
         }
-        print "$USER/AppData/Local/espanso/ cleaned!"
+        print "User's ~/AppData/Local/espanso/ cleaned!"
         print "✅ Done!"
     } else if $nu.os-info.name == "macos" {
         print "🔥 Removing the espanso user data..."
-        print "TODO: implement this command"
-        # if ('~/.config/espanso' | path exists) {
-        #     rm ~/.config/espanso --recursive
-        # }
+        let path = [$env.home, ".config/espanso" ] | str join
+        if ($path | path exists) {
+            rm $path --recursive
+        }
+        print "User's ~/.config/espanso/ cleaned!"
+        let path = [$env.home, "/Library/Caches/espanso" ] | str join
+        if ($path | path exists) {
+            rm $path --recursive
+        }
+        print "User's ~/Library/Caches/espanso/ cleaned!"
     } else {
         error make {msg: $"Not implemented for this OS"}
     }
