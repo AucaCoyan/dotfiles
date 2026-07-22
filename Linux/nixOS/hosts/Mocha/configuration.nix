@@ -351,6 +351,9 @@
     vscode
     wget
 
+    # system support  and utilities
+    unrar
+
     # TUIs
     lnav
     lazygit
