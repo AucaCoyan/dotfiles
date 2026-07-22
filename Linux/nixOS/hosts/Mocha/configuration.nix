@@ -303,7 +303,6 @@
     bat
     # beekeeper-studio # Insecure electron version
     brave
-    bun
     # calibre
     cifs-utils # for the samba shares
     delta
