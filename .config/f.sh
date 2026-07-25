@@ -7,7 +7,6 @@ function f {
         "$HOME/repos"
         "$HOME/other-repos"
         "$HOME/other-repos/nu"
-        "$HOME/workspace"
     )
 
     # 2. Run fd and pipe its output to a variable
