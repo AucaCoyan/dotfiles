@@ -4,6 +4,8 @@ function f {
     # 1. Define and convert directories from Windows-style to Unix-style
     # In Zsh/Unix, $HOME is used, and paths use forward slashes.
     local directories=(
+        "$HOME"
+        "$HOME/Drive"
         "$HOME/repos"
         "$HOME/other-repos"
         "$HOME/other-repos/nu"
