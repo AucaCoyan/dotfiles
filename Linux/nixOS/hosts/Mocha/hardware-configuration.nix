@@ -45,28 +45,13 @@
     fsType = "ext4";
   };
 
-  fileSystems."/mnt/samba_share/Documentos" = {
-    device = "//192.168.0.8/Documentos";
+  fileSystems."/mnt/samba_share/important" = {
+    device = "//192.168.0.8/important";
     fsType = "cifs";
   };
 
-  fileSystems."/mnt/samba_share/movies" = {
-    device = "//192.168.0.8/movies";
-    fsType = "cifs";
-  };
-
-  fileSystems."/mnt/samba_share/Music" = {
-    device = "//192.168.0.8/Music";
-    fsType = "cifs";
-  };
-
-  fileSystems."/mnt/samba_share/titan" = {
-    device = "//192.168.0.8/titan";
-    fsType = "cifs";
-  };
-
-  fileSystems."/mnt/samba_share/tvseries" = {
-    device = "//192.168.0.8/tvseries";
+  fileSystems."/mnt/samba_share/bulk" = {
+    device = "//192.168.0.8/bulk";
     fsType = "cifs";
   };
 

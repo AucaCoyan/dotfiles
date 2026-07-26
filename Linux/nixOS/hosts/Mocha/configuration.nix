@@ -48,8 +48,8 @@
   # so the system can find the credentials
   # Do:
   # `sudo nvim` and then `:w /etc/nixos/smb-secrets`
-  fileSystems."/mnt/samba_share/Documentos" = {
-    device = "//192.168.0.8/Documentos";
+  fileSystems."/mnt/samba_share/important" = {
+    device = "//192.168.0.8/important";
     fsType = "cifs";
     options =
       let
@@ -59,41 +59,8 @@
       [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
   };
 
-  fileSystems."/mnt/samba_share/movies" = {
-    device = "//192.168.0.8/movies";
-    fsType = "cifs";
-    options =
-      let
-        # this line prevents hanging on network split
-        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
-      in
-      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
-  };
-
-  fileSystems."/mnt/samba_share/Music" = {
-    device = "//192.168.0.8/Music";
-    fsType = "cifs";
-    options =
-      let
-        # this line prevents hanging on network split
-        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
-      in
-      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
-  };
-
-  fileSystems."/mnt/samba_share/titan" = {
-    device = "//192.168.0.8/titan";
-    fsType = "cifs";
-    options =
-      let
-        # this line prevents hanging on network split
-        automount_opts = "x-systemd.automount,noauto,x-systemd.idle-timeout=60,x-systemd.device-timeout=5s,x-systemd.mount-timeout=5s,user,users";
-      in
-      [ "${automount_opts},credentials=/etc/nixos/smb-secrets,uid=1000,gid=100" ];
-  };
-
-  fileSystems."/mnt/samba_share/tvseries" = {
-    device = "//192.168.0.8/tvseries";
+  fileSystems."/mnt/samba_share/bulk" = {
+    device = "//192.168.0.8/bulk";
     fsType = "cifs";
     options =
       let
