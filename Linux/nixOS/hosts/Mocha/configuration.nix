@@ -137,6 +137,9 @@
   };
 
   security.rtkit.enable = true;
+  security.pki.certificateFiles = [
+    ../../../caddy.crt
+  ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.aucac = {
