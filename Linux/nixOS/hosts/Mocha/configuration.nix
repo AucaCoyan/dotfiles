@@ -122,6 +122,8 @@
     desktopManager.plasma6.enable = true;
     displayManager.sddm.wayland.enable = true;
 
+    flatpak.enable = true;
+
     # Configure keymap in X11
     xserver.xkb = {
       layout = "us";
