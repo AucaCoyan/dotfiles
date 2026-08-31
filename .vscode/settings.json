@@ -162,7 +162,6 @@
         "editor.defaultFormatter": "redhat.vscode-yaml",
     },
     // [[ Javascript ]]
-    "javascript.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
         "editor.codeActionsOnSave": {
             "source.organizeImports": "always",
@@ -291,7 +290,7 @@
         "files.insertFinalNewline": true,
         "files.eol": "\n",
         "editor.tabSize": 4,
-        "editor.defaultFormatter": "laravel.vscode-laravel" // uses Laravel Pint
+        "editor.defaultFormatter": "laravel.vscode-laravel", // uses Laravel Pint
     },
     // "php.validate.executablePath": "/opt/homebrew/Cellar/php@8.2/8.2.30/bin/php",
     // [[ SQL ]]
@@ -343,7 +342,7 @@
         "editor.formatOnSave": true,
         "editor.defaultFormatter": "ziglang.vscode-zig",
         "editor.stickyScroll.defaultModel": "foldingProviderModel",
-        "files.eol": "\n"
+        "files.eol": "\n",
     },
     // --------------------------------- Vim ------------------------------------
     // These options are for the extension vscodevim.vim
