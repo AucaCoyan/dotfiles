@@ -44,3 +44,4 @@ nushell/vendor/autoload/oh-my-posh.nu
 
 .DS_Store
 secrets.*
+.vscode/agent-sessions.code-workspace
