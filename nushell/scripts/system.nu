@@ -65,11 +65,6 @@ export def "clean" [] {
         npm cache clean --force
     }
 
-    if (which ^bun | is-not-empty) {
-        print "🧹 cleaning bun cache"
-        bun pm cache rm -g
-    }
-
     # TODO: This removes any stopped container
     # so if you stopped your db just for some reason,
     # it throws away the data
@@ -130,11 +125,6 @@ export def "update" [] {
     if (which ^rustup | is-not-empty) {
         print "💫 rustup update..."
         rustup update
-    }
-
-    if (which ^bun | is-not-empty) {
-        print "💫 bun update..."
-        bun upgrade
     }
 
     if (which ^uv | is-not-empty) {
