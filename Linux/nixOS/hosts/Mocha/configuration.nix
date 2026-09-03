@@ -331,6 +331,7 @@
     ripgrep
     samba
     signal-desktop
+    telegram-desktop
     ticktick
     tig
     tlrc
