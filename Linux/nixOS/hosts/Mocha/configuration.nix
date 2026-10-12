@@ -288,6 +288,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    anki
     bat
     # beekeeper-studio # Insecure electron version
     brave
@@ -375,5 +376,9 @@
     # rustc
     # cargo
     # cargo-tarpaulin # rust coverage
+
+    # wine
+    wineWow64Packages.stable
+    winetricks
   ];
 }
