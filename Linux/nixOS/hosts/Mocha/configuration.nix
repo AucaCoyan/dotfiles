@@ -326,7 +326,6 @@
     openssl
     pkg-config
     prek
-    # protonmail-desktop # doesn't work
     protonup-ng # steam's proton
     qdirstat
     ripgrep
@@ -343,6 +342,8 @@
 
     # system support  and utilities
     unrar
+    libreoffice
+    portfolio
 
     # TUIs
     lnav
