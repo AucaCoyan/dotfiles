@@ -343,6 +343,7 @@
     # system support  and utilities
     unrar
     libreoffice
+    picard
     portfolio
 
     # TUIs
