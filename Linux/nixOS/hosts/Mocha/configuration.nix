@@ -347,6 +347,7 @@
     portfolio
 
     # TUIs
+    jq # dependency of television
     lnav
     lazygit
     systemctl-tui
